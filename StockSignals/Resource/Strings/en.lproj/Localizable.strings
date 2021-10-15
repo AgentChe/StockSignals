@@ -1,0 +1,21 @@
+/*
+  Localizable.strings
+  StockSignals
+
+  Created by Andrey Chernyshev on 19.04.2021.
+  
+*/
+
+// MARK: General
+"Cancel" = "Cancel";
+"Continue" = "Continue";
+
+// MARK: ImagePicker
+"ImagePicker.TakePhoto" = "Take photo";
+"ImagePicker.CameraRoll" = "Camera roll";
+"ImagePicker.PhotoLibrary" = "Photo library";
+
+// MARK: Tab
+"Tab.Signals" = "Signals";
+"Tab.Notifications" = "Notifications";
+"Tab.WatchList" = "Watch List";
