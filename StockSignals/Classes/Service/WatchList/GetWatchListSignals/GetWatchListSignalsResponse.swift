@@ -1,0 +1,41 @@
+//
+//  GetWatchListSignalsResponse.swift
+//  StockSignals
+//
+//  Created by Andrey Chernyshev on 21.10.2021.
+//
+
+final class GetWatchListSignalsResponse {
+    static func map(from response: Any) -> [WatchListSignal] {
+        guard
+            let json = response as? [String: Any],
+            let body = json["body"] as? [[String: Any]]
+        else {
+            return []
+        }
+        
+        return body.compactMap { signalJSON -> WatchListSignal? in
+            guard
+                let imageUrl = signalJSON["image"] as? String,
+                let symbol = signalJSON["symbol"] as? String,
+                let company = signalJSON["company"] as? String,
+                let price = signalJSON["price"] as? Double,
+                let change = signalJSON["change"] as? Double,
+                let volume = signalJSON["volume"] as? String,
+                let peRatio = signalJSON["pe_ratio"] as? Double,
+                let marketCap = signalJSON["market_cap"] as? String
+            else {
+                return nil
+            }
+            
+            return WatchListSignal(imageUrl: imageUrl,
+                                   symbol: symbol,
+                                   company: company,
+                                   price: price,
+                                   change: change,
+                                   volume: volume,
+                                   peRatio: peRatio,
+                                   marketCap: marketCap)
+        }
+    }
+}

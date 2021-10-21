@@ -12,7 +12,7 @@ final class TabViewCoordinator {
     
     lazy var signalsVC = NavigationController(rootViewController: UIViewController())
     lazy var notificationsVC = NavigationController(rootViewController: UIViewController())
-    lazy var watchListVC = NavigationController(rootViewController: UIViewController())
+    lazy var watchListVC = NavigationController(rootViewController: WatchListViewController.make())
     
     private var previousVC: UIViewController?
     
