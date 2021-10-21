@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         
-        // TODO
-//        FirebaseApp.configure()
+        FirebaseApp.configure()
         
         addDelegates()
         

@@ -17,7 +17,7 @@ final class GlobalDefinitions {
     static let amplitudeApiKey = ""
     static let appsFlyerApiKey = ""
 
-    static let appleAppID = ""
+    static let appleAppID = "1590833155"
 
     static let termsOfServiceUrl = ""
     static let privacyPolicyUrl = ""

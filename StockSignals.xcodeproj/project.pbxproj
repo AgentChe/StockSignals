@@ -47,6 +47,7 @@
 		96BDBCBF2719D5F900E43708 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBCBC2719CCF900E43708 /* SF-Pro-Display-Regular.otf */; };
 		96BDBCC02719D5F900E43708 /* SF-Pro-Display-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBCBB2719CCF300E43708 /* SF-Pro-Display-Semibold.otf */; };
 		96BDBCC12719D5F900E43708 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBCBA2719CCEA00E43708 /* SF-Pro-Display-Bold.otf */; };
+		96BDBD35272165F100E43708 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBD34272165F100E43708 /* GoogleService-Info.plist */; };
 		CFCA8DE48D921377EA7168EA /* Pods_StockSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,7 @@
 		96BDBCBA2719CCEA00E43708 /* SF-Pro-Display-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Bold.otf"; sourceTree = "<group>"; };
 		96BDBCBB2719CCF300E43708 /* SF-Pro-Display-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Semibold.otf"; sourceTree = "<group>"; };
 		96BDBCBC2719CCF900E43708 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
+		96BDBD34272165F100E43708 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -153,6 +155,7 @@
 				96BDBCB82719CCAF00E43708 /* Fonts */,
 				96BDBC9F2719C6B600E43708 /* Strings */,
 				96BDBC4A2719C56700E43708 /* Info.plist */,
+				96BDBD34272165F100E43708 /* GoogleService-Info.plist */,
 				96BDBCA32719C70E00E43708 /* StockSignals-Bridging-Header.h */,
 				96BDBC472719C56700E43708 /* LaunchScreen.storyboard */,
 				96BDBC452719C56700E43708 /* Assets.xcassets */,
@@ -375,6 +378,7 @@
 				96BDBC362719C56300E43708 /* Frameworks */,
 				96BDBC372719C56300E43708 /* Resources */,
 				AFDDB3C066D62171E5548431 /* [CP] Embed Pods Frameworks */,
+				96BDBD33272163E700E43708 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -428,12 +432,32 @@
 				96BDBC492719C56700E43708 /* LaunchScreen.storyboard in Resources */,
 				96BDBCA22719C6B600E43708 /* Localizable.strings in Resources */,
 				96BDBC462719C56700E43708 /* Assets.xcassets in Resources */,
+				96BDBD35272165F100E43708 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		96BDBD33272163E700E43708 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		AE71077FAA6B505CAD56B7B2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
