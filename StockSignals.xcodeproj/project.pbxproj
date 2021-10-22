@@ -49,7 +49,6 @@
 		96BDBCC12719D5F900E43708 /* SF-Pro-Display-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBCBA2719CCEA00E43708 /* SF-Pro-Display-Bold.otf */; };
 		96BDBD35272165F100E43708 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBD34272165F100E43708 /* GoogleService-Info.plist */; };
 		96BDBD3827216C2D00E43708 /* WatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD3727216C2D00E43708 /* WatchListViewController.swift */; };
-		96BDBD3A27216C3900E43708 /* WatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD3927216C3900E43708 /* WatchListViewModel.swift */; };
 		96BDBD3C27216C4000E43708 /* WatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD3B27216C4000E43708 /* WatchListView.swift */; };
 		96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD4027217F0D00E43708 /* WatchListSignal.swift */; };
 		96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD4327217FA100E43708 /* GetWatchListSignalsRequest.swift */; };
@@ -62,6 +61,15 @@
 		96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD552722B54D00E43708 /* WatchListSelectModeView.swift */; };
 		96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD572722BB8000E43708 /* WatchListGroupsView.swift */; };
 		96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD592722BB8B00E43708 /* WatchListSignalsView.swift */; };
+		96BDBD5C2722C78100E43708 /* WatchListSignalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD5B2722C78100E43708 /* WatchListSignalsViewModel.swift */; };
+		96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD622722CF0500E43708 /* WatchListSignalsTableView.swift */; };
+		96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD662722D99000E43708 /* WatchListSignalsTableCell.swift */; };
+		96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD692722DD6700E43708 /* WatchListSignalCollectionView.swift */; };
+		96BDBD6C2722DEE800E43708 /* WatchListSignalCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD6B2722DEE800E43708 /* WatchListSignalCollectionElement.swift */; };
+		96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD6F2722DF2300E43708 /* WatchListSignalCollectionHeader.swift */; };
+		96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD712722E31400E43708 /* WatchListSignalCollectionCell.swift */; };
+		96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD732722E43100E43708 /* WatchListSignalCollectionSection.swift */; };
+		96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD752722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift */; };
 		CFCA8DE48D921377EA7168EA /* Pods_StockSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,7 +120,6 @@
 		96BDBCBC2719CCF900E43708 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		96BDBD34272165F100E43708 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		96BDBD3727216C2D00E43708 /* WatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewController.swift; sourceTree = "<group>"; };
-		96BDBD3927216C3900E43708 /* WatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListViewModel.swift; sourceTree = "<group>"; };
 		96BDBD3B27216C4000E43708 /* WatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListView.swift; sourceTree = "<group>"; };
 		96BDBD4027217F0D00E43708 /* WatchListSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignal.swift; sourceTree = "<group>"; };
 		96BDBD4327217FA100E43708 /* GetWatchListSignalsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWatchListSignalsRequest.swift; sourceTree = "<group>"; };
@@ -125,6 +132,15 @@
 		96BDBD552722B54D00E43708 /* WatchListSelectModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSelectModeView.swift; sourceTree = "<group>"; };
 		96BDBD572722BB8000E43708 /* WatchListGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsView.swift; sourceTree = "<group>"; };
 		96BDBD592722BB8B00E43708 /* WatchListSignalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsView.swift; sourceTree = "<group>"; };
+		96BDBD5B2722C78100E43708 /* WatchListSignalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsViewModel.swift; sourceTree = "<group>"; };
+		96BDBD622722CF0500E43708 /* WatchListSignalsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTableView.swift; sourceTree = "<group>"; };
+		96BDBD662722D99000E43708 /* WatchListSignalsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTableCell.swift; sourceTree = "<group>"; };
+		96BDBD692722DD6700E43708 /* WatchListSignalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionView.swift; sourceTree = "<group>"; };
+		96BDBD6B2722DEE800E43708 /* WatchListSignalCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionElement.swift; sourceTree = "<group>"; };
+		96BDBD6F2722DF2300E43708 /* WatchListSignalCollectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionHeader.swift; sourceTree = "<group>"; };
+		96BDBD712722E31400E43708 /* WatchListSignalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionCell.swift; sourceTree = "<group>"; };
+		96BDBD732722E43100E43708 /* WatchListSignalCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionSection.swift; sourceTree = "<group>"; };
+		96BDBD752722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionHeaderView.swift; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -393,7 +409,6 @@
 			children = (
 				96BDBD3D27216C4600E43708 /* Views */,
 				96BDBD3727216C2D00E43708 /* WatchListViewController.swift */,
-				96BDBD3927216C3900E43708 /* WatchListViewModel.swift */,
 				96BDBD3B27216C4000E43708 /* WatchListView.swift */,
 			);
 			path = WatchList;
@@ -459,7 +474,9 @@
 		96BDBD532722B2A900E43708 /* Signals */ = {
 			isa = PBXGroup;
 			children = (
+				96BDBD5D2722C7AD00E43708 /* Views */,
 				96BDBD592722BB8B00E43708 /* WatchListSignalsView.swift */,
+				96BDBD5B2722C78100E43708 /* WatchListSignalsViewModel.swift */,
 			);
 			path = Signals;
 			sourceTree = "<group>";
@@ -470,6 +487,37 @@
 				96BDBD572722BB8000E43708 /* WatchListGroupsView.swift */,
 			);
 			path = Groups;
+			sourceTree = "<group>";
+		};
+		96BDBD5D2722C7AD00E43708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD612722C7CA00E43708 /* Elements */,
+				96BDBD602722C7C500E43708 /* Cells */,
+				96BDBD622722CF0500E43708 /* WatchListSignalsTableView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96BDBD602722C7C500E43708 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD662722D99000E43708 /* WatchListSignalsTableCell.swift */,
+				96BDBD692722DD6700E43708 /* WatchListSignalCollectionView.swift */,
+				96BDBD712722E31400E43708 /* WatchListSignalCollectionCell.swift */,
+				96BDBD752722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96BDBD612722C7CA00E43708 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD6B2722DEE800E43708 /* WatchListSignalCollectionElement.swift */,
+				96BDBD6F2722DF2300E43708 /* WatchListSignalCollectionHeader.swift */,
+				96BDBD732722E43100E43708 /* WatchListSignalCollectionSection.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 		BE0CB3E3FB8869BE07601F03 /* Frameworks */ = {
@@ -618,9 +666,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
 				96BDBD5027218D9A00E43708 /* WatchListMediator.swift in Sources */,
+				96BDBD6C2722DEE800E43708 /* WatchListSignalCollectionElement.swift in Sources */,
+				96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */,
 				96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
@@ -639,21 +690,25 @@
 				96BDBC912719C67E00E43708 /* AppDelegate.swift in Sources */,
 				96BDBD3C27216C4000E43708 /* WatchListView.swift in Sources */,
 				96BDBC842719C67E00E43708 /* Fonts.swift in Sources */,
+				96BDBD5C2722C78100E43708 /* WatchListSignalsViewModel.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96BDBC9E2719C69200E43708 /* SessionManager.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
-				96BDBD3A27216C3900E43708 /* WatchListViewModel.swift in Sources */,
+				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
 				96BDBD3827216C2D00E43708 /* WatchListViewController.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
+				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
+				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
 				96BDBC852719C67E00E43708 /* SignError.swift in Sources */,
 				96BDBCA82719C7B300E43708 /* SplashViewController.swift in Sources */,
 				96BDBC9C2719C69200E43708 /* Session.swift in Sources */,
 				96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */,
 				96BDBD46272180D200E43708 /* GetWatchListSignalsResponse.swift in Sources */,
+				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */,
@@ -664,6 +719,7 @@
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
 				96BDBC902719C67E00E43708 /* GradientView.swift in Sources */,
 				96BDBC7B2719C67E00E43708 /* UITapGestureRecognizerExtension.swift in Sources */,
+				96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */,
 				96BDBC922719C67E00E43708 /* RxActivityIndicator.swift in Sources */,
 				96BDBC7F2719C67E00E43708 /* GlobalDefinitions.swift in Sources */,
 			);

@@ -14,8 +14,6 @@ final class WatchListViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
-    private lazy var viewModel = WatchListViewModel()
-    
     override func loadView() {
         view = mainView
     }
@@ -36,6 +34,8 @@ final class WatchListViewController: UIViewController {
                 self?.mainView.updateVisible()
             })
             .disposed(by: disposeBag)
+        
+        mainView.signalsView.viewDidLoad()
     }
 }
 
