@@ -19,6 +19,24 @@ final class WatchListViewController: UIViewController {
     override func loadView() {
         view = mainView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        Observable
+            .merge(
+                mainView.modeView.signalsButton.rx.tap
+                    .map { WatchListSelectModeView.Mode.signals },
+                
+                mainView.modeView.groupsButton.rx.tap
+                    .map { WatchListSelectModeView.Mode.groups }
+            )
+            .subscribe(onNext: { [weak self] mode in
+                self?.mainView.modeView.mode = mode
+                self?.mainView.updateVisible()
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 // MARK: Make

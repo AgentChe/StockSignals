@@ -59,6 +59,9 @@
 		96BDBD4D27218ACB00E43708 /* WatchListGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD4C27218ACB00E43708 /* WatchListGroup.swift */; };
 		96BDBD5027218D9A00E43708 /* WatchListMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD4F27218D9A00E43708 /* WatchListMediator.swift */; };
 		96BDBD5227218DD400E43708 /* WatchListMediatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD5127218DD400E43708 /* WatchListMediatorDelegate.swift */; };
+		96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD552722B54D00E43708 /* WatchListSelectModeView.swift */; };
+		96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD572722BB8000E43708 /* WatchListGroupsView.swift */; };
+		96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD592722BB8B00E43708 /* WatchListSignalsView.swift */; };
 		CFCA8DE48D921377EA7168EA /* Pods_StockSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +122,9 @@
 		96BDBD4C27218ACB00E43708 /* WatchListGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroup.swift; sourceTree = "<group>"; };
 		96BDBD4F27218D9A00E43708 /* WatchListMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListMediator.swift; sourceTree = "<group>"; };
 		96BDBD5127218DD400E43708 /* WatchListMediatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListMediatorDelegate.swift; sourceTree = "<group>"; };
+		96BDBD552722B54D00E43708 /* WatchListSelectModeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSelectModeView.swift; sourceTree = "<group>"; };
+		96BDBD572722BB8000E43708 /* WatchListGroupsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsView.swift; sourceTree = "<group>"; };
+		96BDBD592722BB8B00E43708 /* WatchListSignalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsView.swift; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -396,6 +402,9 @@
 		96BDBD3D27216C4600E43708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				96BDBD542722B2B200E43708 /* Groups */,
+				96BDBD532722B2A900E43708 /* Signals */,
+				96BDBD552722B54D00E43708 /* WatchListSelectModeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -445,6 +454,22 @@
 				96BDBD5127218DD400E43708 /* WatchListMediatorDelegate.swift */,
 			);
 			path = Mediator;
+			sourceTree = "<group>";
+		};
+		96BDBD532722B2A900E43708 /* Signals */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD592722BB8B00E43708 /* WatchListSignalsView.swift */,
+			);
+			path = Signals;
+			sourceTree = "<group>";
+		};
+		96BDBD542722B2B200E43708 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD572722BB8000E43708 /* WatchListGroupsView.swift */,
+			);
+			path = Groups;
 			sourceTree = "<group>";
 		};
 		BE0CB3E3FB8869BE07601F03 /* Frameworks */ = {
@@ -596,6 +621,8 @@
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
 				96BDBD5027218D9A00E43708 /* WatchListMediator.swift in Sources */,
+				96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */,
+				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
 				96BDBC882719C67E00E43708 /* Toast.swift in Sources */,
@@ -625,6 +652,7 @@
 				96BDBC852719C67E00E43708 /* SignError.swift in Sources */,
 				96BDBCA82719C7B300E43708 /* SplashViewController.swift in Sources */,
 				96BDBC9C2719C69200E43708 /* Session.swift in Sources */,
+				96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */,
 				96BDBD46272180D200E43708 /* GetWatchListSignalsResponse.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,

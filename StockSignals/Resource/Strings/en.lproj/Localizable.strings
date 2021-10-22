@@ -19,3 +19,16 @@
 "Tab.Signals" = "Signals";
 "Tab.Notifications" = "Notifications";
 "Tab.WatchList" = "Watch List";
+
+// MARK: WatchList
+"WatchList.Title" = "Watch List";
+"WatchList.PopularProducts" = "Popular Products";
+"WatchList.MyWatchLists" = "My Watch Lists";
+"WatchList.Symbol" = "Symbol";
+"WatchList.Price" = "Price";
+"WatchList.Change" = "% Change";
+"WatchList.Volume" = "Volume";
+"WatchList.P/E" = "P/E";
+"WatchList.MarketCap" = "Market Cap";
+"WatchList.CreateNewList" = "Create New List";
+"WatchList.WatchListName" = "Watch List Name";
