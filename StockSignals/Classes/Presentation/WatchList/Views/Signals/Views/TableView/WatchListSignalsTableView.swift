@@ -8,6 +8,8 @@
 import UIKit
 
 final class WatchListSignalsTableView: UITableView {
+    weak var scrollDelegate: WatchListSignalsScrollDelegate?
+    
     private lazy var elements = [WatchListSignal]()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -28,6 +30,18 @@ extension WatchListSignalsTableView {
         
         reloadData()
     }
+    
+    func scroll(as scrollView: UIScrollView) {
+        let cells = visibleCells.compactMap { $0 as? WatchListSignalsTableCell }
+        
+        cells.forEach { cell in
+            guard cell.collectionView !== scrollView else {
+                return
+            }
+            
+            cell.collectionView.bounds.origin = scrollView.contentOffset
+        }
+    }
 }
 
 // MARK: UITableViewDataSource
@@ -38,6 +52,7 @@ extension WatchListSignalsTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: String(describing: WatchListSignalsTableCell.self)) as! WatchListSignalsTableCell
+        cell.collectionView.scrollDelegate = scrollDelegate
         cell.setup(signal: elements[indexPath.row])
         return cell
     }

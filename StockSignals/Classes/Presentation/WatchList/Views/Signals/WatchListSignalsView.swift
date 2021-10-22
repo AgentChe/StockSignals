@@ -8,6 +8,10 @@
 import UIKit
 import RxSwift
 
+protocol WatchListSignalsScrollDelegate: AnyObject {
+    func watchListSignalsDidScroll(_ scrollView: UIScrollView)
+}
+
 final class WatchListSignalsView: UIView {
     lazy var titlesView = makeTitlesView()
     lazy var tableView = makeTableView()
@@ -24,6 +28,14 @@ final class WatchListSignalsView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: WatchListSignalsScrollDelegate
+extension WatchListSignalsView: WatchListSignalsScrollDelegate {
+    func watchListSignalsDidScroll(_ scrollView: UIScrollView) {
+        titlesView.scroll(as: scrollView)
+        tableView.scroll(as: scrollView)
     }
 }
 
@@ -68,6 +80,7 @@ private extension WatchListSignalsView {
         layout.sectionHeadersPinToVisibleBounds = true
         
         let view = WatchListSignalsTitlesView(frame: .zero, collectionViewLayout: layout)
+        view.scrollDelegate = self
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -77,6 +90,7 @@ private extension WatchListSignalsView {
     
     func makeTableView() -> WatchListSignalsTableView {
         let view = WatchListSignalsTableView()
+        view.scrollDelegate = self
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false

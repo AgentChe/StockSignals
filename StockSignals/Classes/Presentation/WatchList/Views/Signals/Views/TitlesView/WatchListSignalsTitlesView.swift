@@ -8,6 +8,8 @@
 import UIKit
 
 final class WatchListSignalsTitlesView: UICollectionView {
+    weak var scrollDelegate: WatchListSignalsScrollDelegate?
+    
     private lazy var elements: [WatchListSignalsTitlesElement] = [
         .price, .change, .volume, .peRatio, .marketCap
     ]
@@ -20,6 +22,17 @@ final class WatchListSignalsTitlesView: UICollectionView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension WatchListSignalsTitlesView {
+    func scroll(as scrollView: UIScrollView) {
+        guard scrollView !== self else {
+            return
+        }
+        
+        bounds.origin = scrollView.contentOffset
     }
 }
 
@@ -64,6 +77,10 @@ extension WatchListSignalsTitlesView: UICollectionViewDelegateFlowLayout {
         default:
             fatalError()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.watchListSignalsDidScroll(scrollView)
     }
 }
 

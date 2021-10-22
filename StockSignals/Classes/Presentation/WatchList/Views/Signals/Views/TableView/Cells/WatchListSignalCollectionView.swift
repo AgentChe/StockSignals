@@ -8,6 +8,8 @@
 import UIKit
 
 final class WatchListSignalCollectionView: UICollectionView {
+    weak var scrollDelegate: WatchListSignalsScrollDelegate?
+    
     private lazy var sections = [WatchListSignalCollectionSection]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -54,6 +56,10 @@ extension WatchListSignalCollectionView: UICollectionViewDelegateFlowLayout {
         default:
             fatalError()
         }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        scrollDelegate?.watchListSignalsDidScroll(scrollView)
     }
 }
 
