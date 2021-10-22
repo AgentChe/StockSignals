@@ -12,6 +12,7 @@
 		9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */; };
 		9625D98E2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98D2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift */; };
 		9625D9902722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98F2722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift */; };
+		9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99127231915005A8E31 /* WatchListSignalsSortElement.swift */; };
 		96BDBC462719C56700E43708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBC452719C56700E43708 /* Assets.xcassets */; };
 		96BDBC492719C56700E43708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBC472719C56700E43708 /* LaunchScreen.storyboard */; };
 		96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBC552719C67E00E43708 /* UIColorExtension.swift */; };
@@ -85,6 +86,7 @@
 		9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesCell.swift; sourceTree = "<group>"; };
 		9625D98D2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesWithIconCell.swift; sourceTree = "<group>"; };
 		9625D98F2722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesHeader.swift; sourceTree = "<group>"; };
+		9625D99127231915005A8E31 /* WatchListSignalsSortElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsSortElement.swift; sourceTree = "<group>"; };
 		96BDBC392719C56300E43708 /* StockSignals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockSignals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BDBC452719C56700E43708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96BDBC482719C56700E43708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */,
+				9625D99127231915005A8E31 /* WatchListSignalsSortElement.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -729,6 +732,7 @@
 				96BDBD4D27218ACB00E43708 /* WatchListGroup.swift in Sources */,
 				96BDBC9D2719C69200E43708 /* SessionManagerCore.swift in Sources */,
 				96BDBC892719C67E00E43708 /* NavigationController.swift in Sources */,
+				9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */,
 				96BDBCB62719C7D100E43708 /* TabView.swift in Sources */,
 				96BDBD4B272188FE00E43708 /* WatchListManagerCore.swift in Sources */,
 				96BDBC8E2719C67E00E43708 /* GradientButton.swift in Sources */,

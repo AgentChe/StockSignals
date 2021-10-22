@@ -34,7 +34,7 @@ extension WatchListSignalCollectionCell {
         switch element {
         case .price(let price):
             attrs = attrs.textColor(price > 0 ? UIColor(integralRed: 129, green: 232, blue: 129) : UIColor(integralRed: 235, green: 96, blue: 42))
-            let string = String(price) + "%"
+            let string = String(price)
             label.attributedText = string.attributed(with: attrs)
         case .change(let change):
             attrs = attrs.textColor(change > 0 ? UIColor(integralRed: 129, green: 232, blue: 129) : UIColor(integralRed: 235, green: 96, blue: 42))

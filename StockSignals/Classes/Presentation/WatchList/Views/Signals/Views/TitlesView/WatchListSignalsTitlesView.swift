@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol WatchListSignalsTitlesViewDelegate: AnyObject {
+    func watchListDidSelect(sort: WatchListSignalsSortElement)
+}
+
 final class WatchListSignalsTitlesView: UICollectionView {
     weak var scrollDelegate: WatchListSignalsScrollDelegate?
+    weak var mainDelegate: WatchListSignalsTitlesViewDelegate?
     
     private lazy var elements: [WatchListSignalsTitlesElement] = [
         .price, .change, .volume, .peRatio, .marketCap
@@ -53,7 +58,7 @@ extension WatchListSignalsTitlesView: UICollectionViewDataSource {
             cell.setup(title: "WatchList.Change".localized)
             return cell
         case .volume:
-            let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WatchListSignalsTitlesWithIconCell.self), for: indexPath) as! WatchListSignalsTitlesWithIconCell
+            let cell = dequeueReusableCell(withReuseIdentifier: String(describing: WatchListSignalsTitlesCell.self), for: indexPath) as! WatchListSignalsTitlesCell
             cell.setup(title: "WatchList.Volume".localized)
             return cell
         case .peRatio:
@@ -81,6 +86,19 @@ extension WatchListSignalsTitlesView: UICollectionViewDelegateFlowLayout {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         scrollDelegate?.watchListSignalsDidScroll(scrollView)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch elements[indexPath.row] {
+        case .price:
+            mainDelegate?.watchListDidSelect(sort: .price)
+        case .change:
+            mainDelegate?.watchListDidSelect(sort: .change)
+        case .peRatio:
+            mainDelegate?.watchListDidSelect(sort: .peRatio)
+        default:
+            break
+        }
     }
 }
 

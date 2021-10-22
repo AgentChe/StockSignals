@@ -39,6 +39,13 @@ extension WatchListSignalsView: WatchListSignalsScrollDelegate {
     }
 }
 
+// MARK: WatchListSignalsTitlesViewDelegate
+extension WatchListSignalsView: WatchListSignalsTitlesViewDelegate {
+    func watchListDidSelect(sort: WatchListSignalsSortElement) {
+        viewModel.sort.accept(sort)
+    }
+}
+
 // MARK: Public
 extension WatchListSignalsView {
     func viewDidLoad() {
@@ -81,6 +88,7 @@ private extension WatchListSignalsView {
         
         let view = WatchListSignalsTitlesView(frame: .zero, collectionViewLayout: layout)
         view.scrollDelegate = self
+        view.mainDelegate = self
         view.showsHorizontalScrollIndicator = false
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
