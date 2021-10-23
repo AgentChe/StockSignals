@@ -30,5 +30,6 @@
 "WatchList.Volume" = "Volume";
 "WatchList.P/E" = "P/E";
 "WatchList.MarketCap" = "Market Cap";
-"WatchList.CreateNewList" = "Create New List";
+"WatchList.CreateNewList" = "Create New\nList";
 "WatchList.WatchListName" = "Watch List Name";
+"WatchList.Groups.Count" = "%i favorites";

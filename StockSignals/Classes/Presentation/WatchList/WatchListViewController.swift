@@ -36,6 +36,7 @@ final class WatchListViewController: UIViewController {
             .disposed(by: disposeBag)
         
         mainView.signalsView.viewDidLoad()
+        mainView.groupsView.viewDidLoad()
     }
 }
 
