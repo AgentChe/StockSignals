@@ -18,6 +18,8 @@
 		9625D99B272423B3005A8E31 /* WatchListGroupsCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99A272423B3005A8E31 /* WatchListGroupsCollectionElement.swift */; };
 		9625D99D2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99C2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift */; };
 		9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */; };
+		9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */; };
+		9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */; };
 		96BDBC462719C56700E43708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBC452719C56700E43708 /* Assets.xcassets */; };
 		96BDBC492719C56700E43708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBC472719C56700E43708 /* LaunchScreen.storyboard */; };
 		96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBC552719C67E00E43708 /* UIColorExtension.swift */; };
@@ -97,6 +99,8 @@
 		9625D99A272423B3005A8E31 /* WatchListGroupsCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsCollectionElement.swift; sourceTree = "<group>"; };
 		9625D99C2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsCollectionCreateCell.swift; sourceTree = "<group>"; };
 		9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsCollectionCell.swift; sourceTree = "<group>"; };
+		9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupView.swift; sourceTree = "<group>"; };
+		9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupViewModel.swift; sourceTree = "<group>"; };
 		96BDBC392719C56300E43708 /* StockSignals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockSignals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BDBC452719C56700E43708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96BDBC482719C56700E43708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -230,9 +234,7 @@
 		9625D9952724232B005A8E31 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9625D999272423A4005A8E31 /* Elements */,
-				9625D9982724239D005A8E31 /* Cells */,
-				9625D99627242353005A8E31 /* WatchListGroupsCollectionView.swift */,
+				9625D9A027242C73005A8E31 /* CollectionView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -252,6 +254,25 @@
 				9625D99A272423B3005A8E31 /* WatchListGroupsCollectionElement.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		9625D9A027242C73005A8E31 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9625D9982724239D005A8E31 /* Cells */,
+				9625D999272423A4005A8E31 /* Elements */,
+				9625D99627242353005A8E31 /* WatchListGroupsCollectionView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		9625D9A327246E14005A8E31 /* CreateGroup */ = {
+			isa = PBXGroup;
+			children = (
+				9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */,
+				9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */,
+			);
+			path = CreateGroup;
 			sourceTree = "<group>";
 		};
 		96BDBC302719C56300E43708 = {
@@ -505,6 +526,7 @@
 		96BDBD3D27216C4600E43708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9625D9A327246E14005A8E31 /* CreateGroup */,
 				96BDBD542722B2B200E43708 /* Groups */,
 				96BDBD532722B2A900E43708 /* Signals */,
 				96BDBD552722B54D00E43708 /* WatchListSelectModeView.swift */,
@@ -758,6 +780,7 @@
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
+				9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */,
 				96BDBD5027218D9A00E43708 /* WatchListMediator.swift in Sources */,
 				96BDBD6C2722DEE800E43708 /* WatchListSignalCollectionElement.swift in Sources */,
 				96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */,
@@ -791,6 +814,7 @@
 				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
 				9625D99D2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift in Sources */,
 				96BDBD3827216C2D00E43708 /* WatchListViewController.swift in Sources */,
+				9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
 				9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */,
 				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,

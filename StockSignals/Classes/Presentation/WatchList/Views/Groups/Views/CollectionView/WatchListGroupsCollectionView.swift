@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol WatchListGroupsCollectionViewDelegate: AnyObject {
+    func watchListGroupDidTapped(element: WatchListGroupsCollectionElement)
+}
+
 final class WatchListGroupsCollectionView: UICollectionView {
+    weak var mainDelegate: WatchListGroupsCollectionViewDelegate?
+    
     private lazy var elements = [WatchListGroupsCollectionElement]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -27,6 +33,16 @@ extension WatchListGroupsCollectionView {
         self.elements = elements
         
         reloadData()
+    }
+    
+    func add(group: WatchListGroup) {
+        let element = WatchListGroupsCollectionElement.group(group)
+        
+        elements.insert(element, at: 0)
+        
+        let path = IndexPath(row: 0, section: 0)
+        
+        insertItems(at: [path])
     }
 }
 
@@ -50,7 +66,9 @@ extension WatchListGroupsCollectionView: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension WatchListGroupsCollectionView: UICollectionViewDelegateFlowLayout {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        mainDelegate?.watchListGroupDidTapped(element: elements[indexPath.row])
+    }
 }
 
 // MARK: Private

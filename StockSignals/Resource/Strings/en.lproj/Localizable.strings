@@ -33,3 +33,4 @@
 "WatchList.CreateNewList" = "Create New\nList";
 "WatchList.WatchListName" = "Watch List Name";
 "WatchList.Groups.Count" = "%i favorites";
+"WatchList.Groups.Create" = "Add";

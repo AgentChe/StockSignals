@@ -12,6 +12,7 @@ final class WatchListView: UIView {
     lazy var modeView = makeModeView()
     lazy var signalsView = makeSignalsView()
     lazy var groupsView = makeGroupsView()
+    lazy var createGroupView = makeCreateGroupView()
     
     private lazy var signalsLeadingConstraint = NSLayoutConstraint()
     private lazy var groupsLeadingConstraint = NSLayoutConstraint()
@@ -91,6 +92,13 @@ private extension WatchListView {
             groupsView.topAnchor.constraint(equalTo: modeView.bottomAnchor, constant: 24.scale),
             groupsView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            createGroupView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            createGroupView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            createGroupView.topAnchor.constraint(equalTo: topAnchor),
+            createGroupView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
 
@@ -129,6 +137,15 @@ private extension WatchListView {
     func makeGroupsView() -> WatchListGroupsView {
         let view = WatchListGroupsView()
         view.clipsToBounds = true
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeCreateGroupView() -> CreateWatchListGroupView {
+        let view = CreateWatchListGroupView()
+        view.dismiss()
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
