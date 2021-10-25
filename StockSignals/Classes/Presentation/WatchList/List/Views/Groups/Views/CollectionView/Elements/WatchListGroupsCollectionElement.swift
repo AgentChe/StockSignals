@@ -6,6 +6,6 @@
 //
 
 enum WatchListGroupsCollectionElement {
-    case group(WatchListGroup)
+    case group(WatchListGroupsCollectionGroupElement)
     case create
 }

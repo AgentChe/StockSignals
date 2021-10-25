@@ -8,9 +8,14 @@
 import UIKit
 
 final class WatchListGroupsCollectionCell: UICollectionViewCell {
+    weak var mainDelegate: WatchListGroupsCollectionViewDelegate?
+    
     lazy var container = makeContainer()
     lazy var nameLabel = makeLabel()
     lazy var countLabel = makeLabel()
+    lazy var removeButton = makeRemoveButton()
+    
+    private var element: WatchListGroupsCollectionGroupElement?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,14 +31,18 @@ final class WatchListGroupsCollectionCell: UICollectionViewCell {
 
 // MARK: Public
 extension WatchListGroupsCollectionCell {
-    func setup(element: WatchListGroup) {
-        nameLabel.attributedText = element.name
+    func setup(element: WatchListGroupsCollectionGroupElement) {
+        self.element = element
+        
+        removeButton.isHidden = !element.isEditable
+        
+        nameLabel.attributedText = element.group.name
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        let count = String(format: "WatchList.Groups.Count".localized, element.signals.count)
+        let count = String(format: "WatchList.Groups.Count".localized, element.group.signals.count)
         countLabel.attributedText = count
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.4))
@@ -51,6 +60,15 @@ private extension WatchListGroupsCollectionCell {
         let selectedView = UIView()
         selectedView.backgroundColor = UIColor.clear
         selectedBackgroundView = selectedView
+    }
+    
+    @objc
+    func removeTapped() {
+        guard let element = element else {
+            return
+        }
+        
+        mainDelegate?.watchListGroupDidRemoveTapped(element: element)
     }
 }
 
@@ -75,6 +93,13 @@ private extension WatchListGroupsCollectionCell {
             countLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12.scale),
             countLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -9.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            removeButton.widthAnchor.constraint(equalToConstant: 24.scale),
+            removeButton.heightAnchor.constraint(equalToConstant: 24.scale),
+            removeButton.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            removeButton.topAnchor.constraint(equalTo: container.topAnchor)
+        ])
     }
 }
 
@@ -93,6 +118,17 @@ private extension WatchListGroupsCollectionCell {
         let view = UILabel()
         view.numberOfLines = 0
         view.translatesAutoresizingMaskIntoConstraints = false
+        container.addSubview(view)
+        return view
+    }
+    
+    func makeRemoveButton() -> TapAreaButton {
+        let view = TapAreaButton()
+        view.dx = -10.scale
+        view.dy = -10.scale
+        view.setImage(UIImage(named: "WatchList.Close2"), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(removeTapped), for: .touchUpInside)
         container.addSubview(view)
         return view
     }

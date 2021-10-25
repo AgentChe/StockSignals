@@ -30,6 +30,18 @@ final class WatchListGroupsView: UIView {
             self?.collectionView.setup(elements: elements)
         })
         .disposed(by: disposeBag)
+        
+        viewModel.removed.drive(onNext: { [weak self] group in
+            self?.collectionView.remove(group: group)
+        })
+        .disposed(by: disposeBag)
+    }
+}
+
+// MARK: Public
+extension WatchListGroupsView {
+    func remove(group: WatchListGroup) {
+        viewModel.remove.accept(group)
     }
 }
 
@@ -55,7 +67,7 @@ private extension WatchListGroupsView {
         layout.minimumLineSpacing = 16.scale
         
         let view = WatchListGroupsCollectionView(frame: .zero, collectionViewLayout: layout)
-        view.contentInset = UIEdgeInsets(top: 0, left: 16.scale, bottom: 0, right: 16.scale)
+        view.contentInset = UIEdgeInsets(top: 16.scale, left: 16.scale, bottom: 0, right: 16.scale)
         view.backgroundColor = UIColor.clear
         view.showsHorizontalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false

@@ -14,6 +14,12 @@ final class WatchListViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private lazy var groupsNavItem: WatchListGroupNavItem = {
+        let view = WatchListGroupNavItem(title: "WatchList.Groups.Edit".localized, style: .plain, target: self, action: #selector(groupNavItemTapped))
+        view.tintColor = UIColor(integralRed: 62, green: 89, blue: 223)
+        return view
+    }()
+    
     override func loadView() {
         view = mainView
     }
@@ -32,6 +38,7 @@ final class WatchListViewController: UIViewController {
             .subscribe(onNext: { [weak self] mode in
                 self?.mainView.modeView.mode = mode
                 self?.mainView.updateVisible()
+                self?.changeGroupNavItemVisible()
             })
             .disposed(by: disposeBag)
         
@@ -61,17 +68,23 @@ extension WatchListViewController: WatchListGroupsCollectionViewDelegate {
         switch element {
         case .create:
             mainView.createGroupView.present()
-        case .group(let group):
-            let vc = FavoritesWatchListViewController.make(group: group)
+        case .group(let element):
+            let vc = FavoritesWatchListViewController.make(group: element.group)
             present(vc, animated: true)
         }
+    }
+    
+    func watchListGroupDidRemoveTapped(element: WatchListGroupsCollectionGroupElement) {
+        mainView.groupsView.remove(group: element.group)
     }
 }
 
 // MARK: WatchListGroupsCollectionViewDelegate
 extension WatchListViewController: CreateWatchListGroupViewDelegate {
     func createWatchListDidCreated(group: WatchListGroup) {
-        mainView.groupsView.collectionView.add(group: group)
+        let element = WatchListGroupsCollectionGroupElement(group: group,
+                                                            isEditable: groupsNavItem.state == .edit)
+        mainView.groupsView.collectionView.add(element: .group(element))
     }
 }
 
@@ -86,5 +99,21 @@ private extension WatchListViewController {
             self?.mainView.createGroupView.dismiss()
         })
         .disposed(by: disposeBag)
+    }
+    
+    func changeGroupNavItemVisible() {
+        switch mainView.modeView.mode {
+        case .signals:
+            navigationItem.rightBarButtonItem = nil
+        case .groups:
+            navigationItem.rightBarButtonItem = groupsNavItem
+        }
+    }
+    
+    @objc
+    func groupNavItemTapped() {
+        mainView.groupsView.collectionView.change(isEditable: groupsNavItem.state == .edit)
+        
+        groupsNavItem.inverted()
     }
 }
