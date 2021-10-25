@@ -20,6 +20,9 @@
 		9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */; };
 		9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */; };
 		9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */; };
+		96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */; };
+		96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */; };
+		96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */; };
 		96BDBC462719C56700E43708 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBC452719C56700E43708 /* Assets.xcassets */; };
 		96BDBC492719C56700E43708 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96BDBC472719C56700E43708 /* LaunchScreen.storyboard */; };
 		96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBC552719C67E00E43708 /* UIColorExtension.swift */; };
@@ -101,6 +104,9 @@
 		9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsCollectionCell.swift; sourceTree = "<group>"; };
 		9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupView.swift; sourceTree = "<group>"; };
 		9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupViewModel.swift; sourceTree = "<group>"; };
+		96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewController.swift; sourceTree = "<group>"; };
+		96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewModel.swift; sourceTree = "<group>"; };
+		96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListView.swift; sourceTree = "<group>"; };
 		96BDBC392719C56300E43708 /* StockSignals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StockSignals.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96BDBC452719C56700E43708 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		96BDBC482719C56700E43708 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -273,6 +279,26 @@
 				9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */,
 			);
 			path = CreateGroup;
+			sourceTree = "<group>";
+		};
+		96B4F9AD2726E4A6007507C1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD3D27216C4600E43708 /* Views */,
+				96BDBD3727216C2D00E43708 /* WatchListViewController.swift */,
+				96BDBD3B27216C4000E43708 /* WatchListView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		96B4F9AE2726E4B0007507C1 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */,
+				96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */,
+				96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		96BDBC302719C56300E43708 = {
@@ -516,9 +542,8 @@
 		96BDBD3627216C1600E43708 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
-				96BDBD3D27216C4600E43708 /* Views */,
-				96BDBD3727216C2D00E43708 /* WatchListViewController.swift */,
-				96BDBD3B27216C4000E43708 /* WatchListView.swift */,
+				96B4F9AE2726E4B0007507C1 /* Favorites */,
+				96B4F9AD2726E4A6007507C1 /* List */,
 			);
 			path = WatchList;
 			sourceTree = "<group>";
@@ -777,6 +802,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */,
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
@@ -785,12 +811,14 @@
 				96BDBD6C2722DEE800E43708 /* WatchListSignalCollectionElement.swift in Sources */,
 				96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */,
 				96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */,
+				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
 				9625D9942724221C005A8E31 /* WatchListGroupsViewModel.swift in Sources */,
 				96BDBC882719C67E00E43708 /* Toast.swift in Sources */,
 				96BDBC862719C67E00E43708 /* Weak.swift in Sources */,
+				96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */,
 				96BDBC932719C67E00E43708 /* UIViewRxExtension.swift in Sources */,
 				96BDBD4D27218ACB00E43708 /* WatchListGroup.swift in Sources */,
 				96BDBC9D2719C69200E43708 /* SessionManagerCore.swift in Sources */,

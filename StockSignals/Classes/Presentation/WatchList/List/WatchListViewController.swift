@@ -62,7 +62,8 @@ extension WatchListViewController: WatchListGroupsCollectionViewDelegate {
         case .create:
             mainView.createGroupView.present()
         case .group(let group):
-            break
+            let vc = FavoritesWatchListViewController.make(group: group)
+            present(vc, animated: true)
         }
     }
 }
