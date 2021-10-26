@@ -35,9 +35,13 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: {
-            UIApplication.shared.keyWindow?.rootViewController = TabViewController.make()
+        // TODO: generate step
+        viewModel.step.drive(onNext: { step in
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: { [weak self] in
+                self?.handle(step: step)
+            })
         })
+        .disposed(by: disposeBag)
     }
 }
 
@@ -45,5 +49,17 @@ final class SplashViewController: UIViewController {
 extension SplashViewController {
     static func make(generateStep: Signal<Void>) -> SplashViewController {
         SplashViewController(generateStep: generateStep)
+    }
+}
+
+// MARK: Private
+private extension SplashViewController {
+    func handle(step: SplashViewModel.Step) {
+        switch step {
+        case .onboarding:
+            UIApplication.shared.keyWindow?.rootViewController = OnboardingViewController.make()
+        case .main:
+            UIApplication.shared.keyWindow?.rootViewController = TabViewController.make()
+        }
     }
 }

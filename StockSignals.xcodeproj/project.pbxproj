@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234CF827282AD500619CE2 /* OnboardingViewController.swift */; };
+		96234D3927282AD500619CE2 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D1427282AD500619CE2 /* OSlideView.swift */; };
+		96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D2127282AD500619CE2 /* OnboardingView.swift */; };
+		96234D4727282AD500619CE2 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D2227282AD500619CE2 /* OnboardingViewModel.swift */; };
 		9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */; };
 		9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */; };
 		9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */; };
@@ -93,6 +97,10 @@
 
 /* Begin PBXFileReference section */
 		3FFC82FDCFCC5733EAEF6A3A /* Pods-StockSignals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.release.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.release.xcconfig"; sourceTree = "<group>"; };
+		96234CF827282AD500619CE2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		96234D1427282AD500619CE2 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
+		96234D2127282AD500619CE2 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		96234D2227282AD500619CE2 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesView.swift; sourceTree = "<group>"; };
 		9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesElement.swift; sourceTree = "<group>"; };
 		9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesCell.swift; sourceTree = "<group>"; };
@@ -200,6 +208,41 @@
 				3FFC82FDCFCC5733EAEF6A3A /* Pods-StockSignals.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		96234CF727282AD500619CE2 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				96234CF927282AD500619CE2 /* Views */,
+				96234CF827282AD500619CE2 /* OnboardingViewController.swift */,
+				96234D2227282AD500619CE2 /* OnboardingViewModel.swift */,
+				96234D2127282AD500619CE2 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		96234CF927282AD500619CE2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96234D1027282AD500619CE2 /* Source */,
+				96234CFD27282AD500619CE2 /* Atoms */,
+				96234D1427282AD500619CE2 /* OSlideView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96234CFD27282AD500619CE2 /* Atoms */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Atoms;
+			sourceTree = "<group>";
+		};
+		96234D1027282AD500619CE2 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		9625D9832722FBCB005A8E31 /* TableView */ = {
@@ -360,6 +403,7 @@
 		96BDBC522719C65C00E43708 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96234CF727282AD500619CE2 /* Onboarding */,
 				96BDBD3627216C1600E43708 /* WatchList */,
 				96BDBCAB2719C7D100E43708 /* Tab */,
 				96BDBCA42719C7B300E43708 /* Splash */,
@@ -835,6 +879,7 @@
 				96BDBCB62719C7D100E43708 /* TabView.swift in Sources */,
 				96BDBD4B272188FE00E43708 /* WatchListManagerCore.swift in Sources */,
 				96BDBC8E2719C67E00E43708 /* GradientButton.swift in Sources */,
+				96234D4727282AD500619CE2 /* OnboardingViewModel.swift in Sources */,
 				96BDBCB52719C7D100E43708 /* TabItemView.swift in Sources */,
 				96BDBCA92719C7B300E43708 /* SplashViewModel.swift in Sources */,
 				9625D9902722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift in Sources */,
@@ -845,6 +890,7 @@
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96BDBC9E2719C69200E43708 /* SessionManager.swift in Sources */,
 				9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */,
+				96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */,
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
 				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
@@ -856,6 +902,7 @@
 				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
+				96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
 				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
@@ -866,6 +913,7 @@
 				9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */,
 				96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */,
 				96BDBD46272180D200E43708 /* GetWatchListSignalsResponse.swift in Sources */,
+				96234D3927282AD500619CE2 /* OSlideView.swift in Sources */,
 				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,

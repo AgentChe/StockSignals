@@ -36,3 +36,6 @@
 "WatchList.Groups.Create" = "Add";
 "WatchList.Groups.Edit" = "Edit";
 "WatchList.Groups.Done" = "Done";
+
+// MARK: Onboarding
+"Onboarding.Skip" = "Skip";
