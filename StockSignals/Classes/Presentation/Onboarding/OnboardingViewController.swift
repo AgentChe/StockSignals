@@ -36,6 +36,16 @@ final class OnboardingViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        mainView.skipButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
+                self.mainView.slideViewDidNext(from: self.mainView.step)
+            })
+            .disposed(by: disposeBag)
+        
         mainView.didFinish = { [weak self] in
             guard let this = self else {
                 return
@@ -57,8 +67,10 @@ extension OnboardingViewController {
 
 // MARK: Public
 extension OnboardingViewController {
+    // TODO
     static func wasViewed() -> Bool {
-        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
+        false
+//        UserDefaults.standard.bool(forKey: OnboardingViewController.Constants.wasViewedKey)
     }
 }
 

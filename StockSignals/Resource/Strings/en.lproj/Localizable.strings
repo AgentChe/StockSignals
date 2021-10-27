@@ -55,3 +55,8 @@
 "Onboarding.AssetsSignals.Stocks" = "Stocks";
 "Onboarding.AssetsSignals.Options" = "Options";
 "Onboarding.AssetsSignals.Crypto" = "Crypto";
+"Onboarding.TradingStyle.Title" = "Select your trading\nstyle";
+"Onboarding.TradingStyle.Scalper" = "Scalper";
+"Onboarding.TradingStyle.DayTrader" = "Day trader";
+"Onboarding.TradingStyle.SwingTrader" = "Swing trader";
+"Onboarding.TradingStyle.PositionTrader" = "Position trader";
