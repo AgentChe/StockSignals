@@ -83,8 +83,7 @@ private extension OnboardingViewController {
     func goToNext() {
         switch viewModel.whatNext() {
         case .main:
-//            UIApplication.shared.keyWindow?.rootViewController = TabController.make()
-        break
+            UIApplication.shared.keyWindow?.rootViewController = TabViewController.make()
         }
     }
 }

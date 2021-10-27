@@ -60,3 +60,8 @@
 "Onboarding.TradingStyle.DayTrader" = "Day trader";
 "Onboarding.TradingStyle.SwingTrader" = "Swing trader";
 "Onboarding.TradingStyle.PositionTrader" = "Position trader";
+"Onboarding.Interested.Title" = "What are you\ninterested in?";
+"Onboarding.Interested.ShortTerm" = "SHORT-TERM\nTRADING";
+"Onboarding.Interested.LongTerm" = "LONG-TERM\nINVESTMENTS";
+"Onboarding.Interested.Gain" = "GAIN\nEXPERIENCE";
+"Onboarding.Interested.Cross" = "CROSS\nTRADES";
