@@ -26,6 +26,16 @@ final class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.backButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                guard let self = self else {
+                    return
+                }
+                
+                self.mainView.slideViewMoveToPrevious(from: self.mainView.step)
+            })
+            .disposed(by: disposeBag)
+        
         mainView.didFinish = { [weak self] in
             guard let this = self else {
                 return

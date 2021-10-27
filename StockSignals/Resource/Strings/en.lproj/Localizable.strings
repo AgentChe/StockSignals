@@ -50,3 +50,8 @@
 "Onboarding.Level.Experienced.Descr" = "I have advanced knowledge in\ntrading and I want to improve it";
 "Onboarding.Level.Expert" = "Expert";
 "Onboarding.Level.Expert.Descr" = "I know pretty everything about\ntrading";
+"Onboarding.AssetsSignals.Title" = "Which assets’s\nsignals do you need?";
+"Onboarding.AssetsSignals.SubTitle" = "You can choose several assets";
+"Onboarding.AssetsSignals.Stocks" = "Stocks";
+"Onboarding.AssetsSignals.Options" = "Options";
+"Onboarding.AssetsSignals.Crypto" = "Crypto";

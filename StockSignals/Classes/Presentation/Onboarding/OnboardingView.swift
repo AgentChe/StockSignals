@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case level
+        case level, assetsSignals
     }
     
     var didFinish: (() -> Void)?
@@ -23,13 +23,15 @@ final class OnboardingView: UIView {
     
     lazy var headerImageView = makeHeaderImageView()
     lazy var scrollView = makeScrollView()
+    lazy var backButton = makeBackButton()
     lazy var skipButton = makeSkipButton()
     
     private weak var vc: UIViewController?
     
     private lazy var contentViews: [OSlideView] = {
         [
-            OnbLevelView(step: .level)
+            OnbLevelView(step: .level),
+            OnbAssetsSignalsView(step: .assetsSignals)
         ]
     }()
     
@@ -49,6 +51,19 @@ final class OnboardingView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension OnboardingView {
+    func slideViewMoveToPrevious(from step: Step) {
+        let previousRawValue = step.rawValue - 1
+        
+        guard let previousStep = Step(rawValue: previousRawValue) else {
+            return
+        }
+        
+        self.step = previousStep
     }
 }
 
@@ -104,7 +119,11 @@ private extension OnboardingView {
     }
     
     func headerUpdate() {
+        let hideBackButton: [Step] = [.level]
+        let hideSkipButton: [Step] = []
         
+        backButton.isHidden = hideBackButton.contains(step)
+        skipButton.isHidden = hideSkipButton.contains(step)
     }
     
     @objc
@@ -128,6 +147,13 @@ private extension OnboardingView {
             scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
             scrollView.topAnchor.constraint(equalTo: topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            backButton.widthAnchor.constraint(equalToConstant: 24.scale),
+            backButton.heightAnchor.constraint(equalToConstant: 24.scale),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 24.scale),
+            backButton.centerYAnchor.constraint(equalTo: skipButton.centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -157,6 +183,14 @@ private extension OnboardingView {
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false
         view.contentInsetAdjustmentBehavior = .never
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeBackButton() -> TapAreaButton {
+        let view = TapAreaButton()
+        view.setImage(UIImage(named: "Onboarding.Back"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
