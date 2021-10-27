@@ -29,7 +29,7 @@ final class OnboardingView: UIView {
     
     private lazy var contentViews: [OSlideView] = {
         [
-            
+            OnbLevelView(step: .level)
         ]
     }()
     
@@ -132,7 +132,7 @@ private extension OnboardingView {
         
         NSLayoutConstraint.activate([
             skipButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -24.scale),
-            skipButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 83.scale : 53.scale),
+            skipButton.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 83.scale : 43.scale),
             skipButton.heightAnchor.constraint(equalToConstant: 20.scale)
         ])
     }

@@ -39,3 +39,14 @@
 
 // MARK: Onboarding
 "Onboarding.Skip" = "Skip";
+"Onboarding.Next" = "Next";
+"Onboarding.Level.Title" = "What’s your level?";
+"Onboarding.Level.SubTitle" = "It’s important to know how risky you can\nplay";
+"Onboarding.Level.Novice" = "Novice";
+"Onboarding.Level.Novice.Descr" = "I have no/little experience in trading";
+"Onboarding.Level.Amateur" = "Amateur";
+"Onboarding.Level.Amateur.Descr" = "I understand basic principles of\ntrading";
+"Onboarding.Level.Experienced" = "Experienced";
+"Onboarding.Level.Experienced.Descr" = "I have advanced knowledge in\ntrading and I want to improve it";
+"Onboarding.Level.Expert" = "Expert";
+"Onboarding.Level.Expert.Descr" = "I know pretty everything about\ntrading";
