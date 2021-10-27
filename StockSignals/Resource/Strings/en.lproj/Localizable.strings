@@ -70,3 +70,5 @@
 "Onboarding.Risk.MaxGain" = "Max Gain: ";
 "Onboarding.Risk.Low" = "LOW";
 "Onboarding.Risk.High" = "HIGH";
+"Onboarding.Industries.Title" = "What industries are\nyou focused on?";
+"Onboarding.Industries.SubTitle" = "Select as manu as you like and we’ll build your personalized feed";

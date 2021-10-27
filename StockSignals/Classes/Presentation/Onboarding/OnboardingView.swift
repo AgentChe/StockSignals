@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case level, assetsSignals, tradingStyle, interested, risk
+        case level, assetsSignals, tradingStyle, interested, risk, industries
     }
     
     var didFinish: (() -> Void)?
@@ -34,7 +34,8 @@ final class OnboardingView: UIView {
             OnbAssetsSignalsView(step: .assetsSignals),
             OnbTradingStyleView(step: .tradingStyle),
             OnbInterestedView(step: .interested),
-            OnbRiskView(step: .risk)
+            OnbRiskView(step: .risk),
+            OnbIndustriesView(step: .industries)
         ]
     }()
     
