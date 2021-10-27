@@ -65,3 +65,8 @@
 "Onboarding.Interested.LongTerm" = "LONG-TERM\nINVESTMENTS";
 "Onboarding.Interested.Gain" = "GAIN\nEXPERIENCE";
 "Onboarding.Interested.Cross" = "CROSS\nTRADES";
+"Onboarding.Risk.Title" = "Choose your level of\nrisk";
+"Onboarding.Risk.SubTitle" = "Adjust the risk portion of your portfolio to your personal risk capacity";
+"Onboarding.Risk.MaxGain" = "Max Gain: ";
+"Onboarding.Risk.Low" = "LOW";
+"Onboarding.Risk.High" = "HIGH";
