@@ -221,7 +221,7 @@ private extension OnbLevelView {
         view.maximumValue = 4
         view.minimumTrackTintColor = UIColor(integralRed: 112, green: 226, blue: 248)
         view.maximumTrackTintColor = UIColor(integralRed: 42, green: 46, blue: 57, alpha: 0.7)
-        view.setThumbImage(UIImage(named: "Onboarding.Level.Tumb"), for: .normal)
+        view.setThumbImage(UIImage(named: "Onboarding.Level.Thumb"), for: .normal)
         view.addTarget(self, action: #selector(movedSlider), for: .valueChanged)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)

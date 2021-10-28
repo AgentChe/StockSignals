@@ -173,7 +173,7 @@ private extension OnbRiskView {
         view.maximumValue = 4
         view.minimumTrackTintColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.maximumTrackTintColor = UIColor(integralRed: 24, green: 26, blue: 36)
-        view.setThumbImage(UIImage(named: "Onboarding.Risk.Tumb"), for: .normal)
+        view.setThumbImage(UIImage(named: "Onboarding.Risk.Thumb"), for: .normal)
         view.addTarget(self, action: #selector(movedSlider), for: .valueChanged)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)

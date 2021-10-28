@@ -74,3 +74,8 @@
 "Onboarding.Industries.SubTitle" = "Select as manu as you like and we’ll build your personalized feed";
 "Onboarding.Stocks.Title" = "What stocks are you\ntracking?";
 "Onboarding.Stocks.SubTitle" = "We’ll customize the list for you ";
+"Onboarding.Profit.Title" = "Pick your risk-reward\nratio";
+"Onboarding.Profit.SubTitle" = "It used to access the profit potential of a trade relative to its potential loss";
+"Onboarding.Profit.Profit" = "Profit";
+"Onboarding.Profit.WinRate" = "win rate %@%%";
+"Onboarding.Profit.LoseRate" = "lose rate %@%%";

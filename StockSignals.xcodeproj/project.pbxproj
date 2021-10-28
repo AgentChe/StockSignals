@@ -30,6 +30,10 @@
 		96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DBC272AD09300619CE2 /* OnbStocksCollectionView.swift */; };
 		96234DBF272AD0A200619CE2 /* OnbStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DBE272AD0A200619CE2 /* OnbStocksCollectionCell.swift */; };
 		96234DC1272AD0AE00619CE2 /* OnbStocksCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC0272AD0AE00619CE2 /* OnbStocksCollectionElement.swift */; };
+		96234DC3272ADE9F00619CE2 /* OnbProfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC2272ADE9F00619CE2 /* OnbProfitView.swift */; };
+		96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC4272ADEBC00619CE2 /* ProfitView.swift */; };
+		96234DC8272ADEFD00619CE2 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC7272ADEFD00619CE2 /* RateView.swift */; };
+		96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC9272ADF1200619CE2 /* RateCircleView.swift */; };
 		9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */; };
 		9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */; };
 		9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */; };
@@ -139,6 +143,10 @@
 		96234DBC272AD09300619CE2 /* OnbStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksCollectionView.swift; sourceTree = "<group>"; };
 		96234DBE272AD0A200619CE2 /* OnbStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksCollectionCell.swift; sourceTree = "<group>"; };
 		96234DC0272AD0AE00619CE2 /* OnbStocksCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksCollectionElement.swift; sourceTree = "<group>"; };
+		96234DC2272ADE9F00619CE2 /* OnbProfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbProfitView.swift; sourceTree = "<group>"; };
+		96234DC4272ADEBC00619CE2 /* ProfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitView.swift; sourceTree = "<group>"; };
+		96234DC7272ADEFD00619CE2 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
+		96234DC9272ADF1200619CE2 /* RateCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCircleView.swift; sourceTree = "<group>"; };
 		9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesView.swift; sourceTree = "<group>"; };
 		9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesElement.swift; sourceTree = "<group>"; };
 		9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesCell.swift; sourceTree = "<group>"; };
@@ -272,6 +280,7 @@
 				96234D9F272A02E500619CE2 /* OnbRiskView.swift */,
 				96234DB4272A11E100619CE2 /* OnbIndustriesView.swift */,
 				96234DB8272ACF4300619CE2 /* OnbStocksView.swift */,
+				96234DC2272ADE9F00619CE2 /* OnbProfitView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -279,10 +288,12 @@
 		96234CFD27282AD500619CE2 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				96234DC6272ADEF600619CE2 /* RateView */,
 				96234DBB272AD07600619CE2 /* StocksCollection */,
 				96234DAD272A0D4800619CE2 /* IndustriesCollection */,
 				96234D972729585A00619CE2 /* OnbSelectCell.swift */,
 				96234D9B2729AF0500619CE2 /* OInterestedCell.swift */,
+				96234DC4272ADEBC00619CE2 /* ProfitView.swift */,
 			);
 			path = Atoms;
 			sourceTree = "<group>";
@@ -355,6 +366,15 @@
 				96234DC0272AD0AE00619CE2 /* OnbStocksCollectionElement.swift */,
 			);
 			path = StocksCollection;
+			sourceTree = "<group>";
+		};
+		96234DC6272ADEF600619CE2 /* RateView */ = {
+			isa = PBXGroup;
+			children = (
+				96234DC7272ADEFD00619CE2 /* RateView.swift */,
+				96234DC9272ADF1200619CE2 /* RateCircleView.swift */,
+			);
+			path = RateView;
 			sourceTree = "<group>";
 		};
 		9625D9832722FBCB005A8E31 /* TableView */ = {
@@ -1007,6 +1027,7 @@
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
 				96BDBC9E2719C69200E43708 /* SessionManager.swift in Sources */,
 				9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */,
+				96234DC3272ADE9F00619CE2 /* OnbProfitView.swift in Sources */,
 				96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */,
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
@@ -1020,9 +1041,11 @@
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
 				96234DB1272A0D6B00619CE2 /* IndustriesCollectionCell.swift in Sources */,
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
+				96234DC8272ADEFD00619CE2 /* RateView.swift in Sources */,
 				96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
+				96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */,
 				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
 				96234DA6272A0AFB00619CE2 /* Industry.swift in Sources */,
 				96BDBC852719C67E00E43708 /* SignError.swift in Sources */,
@@ -1038,6 +1061,7 @@
 				96234D3927282AD500619CE2 /* OSlideView.swift in Sources */,
 				96234DAC272A0BCE00619CE2 /* ContentManagerCore.swift in Sources */,
 				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
+				96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */,
