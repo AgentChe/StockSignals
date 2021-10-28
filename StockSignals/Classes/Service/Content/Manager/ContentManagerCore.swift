@@ -30,49 +30,4 @@ extension ContentManagerCore {
             Industry(id: 13, name: "Agencies")
         ])
     }
-    
-    // TODO
-    func obtainStock() -> Single<[ContentStock]> {
-        .just([
-            ContentStock(id: 0,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "Apple",
-                         code: "(AAPL)"),
-            
-            ContentStock(id: 1,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "Tesla",
-                         code: "(TSLA)"),
-            
-            ContentStock(id: 2,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "Amazon",
-                         code: "(AMZN)"),
-            
-            ContentStock(id: 3,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "AMD",
-                         code: "(AMD)"),
-            
-            ContentStock(id: 4,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "Facebook",
-                         code: "(FB)"),
-            
-            ContentStock(id: 5,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "Microsoft",
-                         code: "(MRCF)"),
-            
-            ContentStock(id: 6,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "Google",
-                         code: "(GOOGLE)"),
-            
-            ContentStock(id: 7,
-                         imageUrl: "https://img.etimg.com/thumb/msid-85584610,width-640,resizemode-4,imgsize-29562/4-bitcoin-gold.jpg",
-                         name: "SpaceX",
-                         code: "(SX)"),
-        ])
-    }
 }

@@ -9,5 +9,4 @@ import RxSwift
 
 protocol ContentManager: AnyObject {
     func obtainIndustries() -> Single<[Industry]>
-    func obtainStock() -> Single<[ContentStock]>
 }

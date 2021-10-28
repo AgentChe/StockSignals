@@ -19,7 +19,6 @@
 		96234D9E2729B44A00619CE2 /* OnbInterestedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D9D2729B44A00619CE2 /* OnbInterestedView.swift */; };
 		96234DA0272A02E500619CE2 /* OnbRiskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D9F272A02E500619CE2 /* OnbRiskView.swift */; };
 		96234DA6272A0AFB00619CE2 /* Industry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DA5272A0AFB00619CE2 /* Industry.swift */; };
-		96234DA8272A0B4A00619CE2 /* ContentStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DA7272A0B4A00619CE2 /* ContentStock.swift */; };
 		96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DA9272A0B9A00619CE2 /* ContentManager.swift */; };
 		96234DAC272A0BCE00619CE2 /* ContentManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DAB272A0BCE00619CE2 /* ContentManagerCore.swift */; };
 		96234DAF272A0D5D00619CE2 /* IndustriesCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DAE272A0D5D00619CE2 /* IndustriesCollectionView.swift */; };
@@ -27,6 +26,10 @@
 		96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DB2272A0D7800619CE2 /* IndustriesCollectionElement.swift */; };
 		96234DB5272A11E100619CE2 /* OnbIndustriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DB4272A11E100619CE2 /* OnbIndustriesView.swift */; };
 		96234DB7272A156100619CE2 /* IndustriesCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DB6272A156100619CE2 /* IndustriesCollectionViewLayout.swift */; };
+		96234DB9272ACF4300619CE2 /* OnbStocksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DB8272ACF4300619CE2 /* OnbStocksView.swift */; };
+		96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DBC272AD09300619CE2 /* OnbStocksCollectionView.swift */; };
+		96234DBF272AD0A200619CE2 /* OnbStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DBE272AD0A200619CE2 /* OnbStocksCollectionCell.swift */; };
+		96234DC1272AD0AE00619CE2 /* OnbStocksCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC0272AD0AE00619CE2 /* OnbStocksCollectionElement.swift */; };
 		9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */; };
 		9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */; };
 		9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */; };
@@ -125,7 +128,6 @@
 		96234D9D2729B44A00619CE2 /* OnbInterestedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbInterestedView.swift; sourceTree = "<group>"; };
 		96234D9F272A02E500619CE2 /* OnbRiskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbRiskView.swift; sourceTree = "<group>"; };
 		96234DA5272A0AFB00619CE2 /* Industry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Industry.swift; sourceTree = "<group>"; };
-		96234DA7272A0B4A00619CE2 /* ContentStock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentStock.swift; sourceTree = "<group>"; };
 		96234DA9272A0B9A00619CE2 /* ContentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentManager.swift; sourceTree = "<group>"; };
 		96234DAB272A0BCE00619CE2 /* ContentManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentManagerCore.swift; sourceTree = "<group>"; };
 		96234DAE272A0D5D00619CE2 /* IndustriesCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustriesCollectionView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,10 @@
 		96234DB2272A0D7800619CE2 /* IndustriesCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustriesCollectionElement.swift; sourceTree = "<group>"; };
 		96234DB4272A11E100619CE2 /* OnbIndustriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbIndustriesView.swift; sourceTree = "<group>"; };
 		96234DB6272A156100619CE2 /* IndustriesCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndustriesCollectionViewLayout.swift; sourceTree = "<group>"; };
+		96234DB8272ACF4300619CE2 /* OnbStocksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksView.swift; sourceTree = "<group>"; };
+		96234DBC272AD09300619CE2 /* OnbStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksCollectionView.swift; sourceTree = "<group>"; };
+		96234DBE272AD0A200619CE2 /* OnbStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksCollectionCell.swift; sourceTree = "<group>"; };
+		96234DC0272AD0AE00619CE2 /* OnbStocksCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbStocksCollectionElement.swift; sourceTree = "<group>"; };
 		9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesView.swift; sourceTree = "<group>"; };
 		9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesElement.swift; sourceTree = "<group>"; };
 		9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesCell.swift; sourceTree = "<group>"; };
@@ -265,6 +271,7 @@
 				96234D9D2729B44A00619CE2 /* OnbInterestedView.swift */,
 				96234D9F272A02E500619CE2 /* OnbRiskView.swift */,
 				96234DB4272A11E100619CE2 /* OnbIndustriesView.swift */,
+				96234DB8272ACF4300619CE2 /* OnbStocksView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -272,6 +279,7 @@
 		96234CFD27282AD500619CE2 /* Atoms */ = {
 			isa = PBXGroup;
 			children = (
+				96234DBB272AD07600619CE2 /* StocksCollection */,
 				96234DAD272A0D4800619CE2 /* IndustriesCollection */,
 				96234D972729585A00619CE2 /* OnbSelectCell.swift */,
 				96234D9B2729AF0500619CE2 /* OInterestedCell.swift */,
@@ -300,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				96234DA5272A0AFB00619CE2 /* Industry.swift */,
-				96234DA7272A0B4A00619CE2 /* ContentStock.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -330,6 +337,24 @@
 				96234DB6272A156100619CE2 /* IndustriesCollectionViewLayout.swift */,
 			);
 			path = IndustriesCollection;
+			sourceTree = "<group>";
+		};
+		96234DBA272ACF7F00619CE2 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				96BDBD4227217F9000E43708 /* GetWatchListSignals */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		96234DBB272AD07600619CE2 /* StocksCollection */ = {
+			isa = PBXGroup;
+			children = (
+				96234DBC272AD09300619CE2 /* OnbStocksCollectionView.swift */,
+				96234DBE272AD0A200619CE2 /* OnbStocksCollectionCell.swift */,
+				96234DC0272AD0AE00619CE2 /* OnbStocksCollectionElement.swift */,
+			);
+			path = StocksCollection;
 			sourceTree = "<group>";
 		};
 		9625D9832722FBCB005A8E31 /* TableView */ = {
@@ -700,9 +725,9 @@
 		96BDBD3E27217EF800E43708 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				96234DBA272ACF7F00619CE2 /* Request */,
 				96BDBD4E27218D8800E43708 /* Mediator */,
 				96BDBD472721889000E43708 /* Manager */,
-				96BDBD4227217F9000E43708 /* GetWatchListSignals */,
 				96BDBD3F27217EFF00E43708 /* Model */,
 			);
 			path = WatchList;
@@ -994,7 +1019,6 @@
 				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
 				96234DB1272A0D6B00619CE2 /* IndustriesCollectionCell.swift in Sources */,
-				96234DA8272A0B4A00619CE2 /* ContentStock.swift in Sources */,
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
 				96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
@@ -1017,11 +1041,13 @@
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */,
+				96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
 				96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */,
 				96BDBC8C2719C67E00E43708 /* PaddingLabel.swift in Sources */,
 				96BDBCAA2719C7B300E43708 /* SplashView.swift in Sources */,
 				96BDBD5227218DD400E43708 /* WatchListMediatorDelegate.swift in Sources */,
+				96234DC1272AD0AE00619CE2 /* OnbStocksCollectionElement.swift in Sources */,
 				96BDBCB22719C7D100E43708 /* TabViewController.swift in Sources */,
 				96234D9A272984FC00619CE2 /* OnbTradingStyleView.swift in Sources */,
 				96234DA0272A02E500619CE2 /* OnbRiskView.swift in Sources */,
@@ -1030,6 +1056,8 @@
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
 				96BDBC902719C67E00E43708 /* GradientView.swift in Sources */,
 				96BDBC7B2719C67E00E43708 /* UITapGestureRecognizerExtension.swift in Sources */,
+				96234DBF272AD0A200619CE2 /* OnbStocksCollectionCell.swift in Sources */,
+				96234DB9272ACF4300619CE2 /* OnbStocksView.swift in Sources */,
 				96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */,
 				96BDBC922719C67E00E43708 /* RxActivityIndicator.swift in Sources */,
 				96BDBC7F2719C67E00E43708 /* GlobalDefinitions.swift in Sources */,

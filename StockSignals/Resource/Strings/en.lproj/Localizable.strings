@@ -72,3 +72,5 @@
 "Onboarding.Risk.High" = "HIGH";
 "Onboarding.Industries.Title" = "What industries are\nyou focused on?";
 "Onboarding.Industries.SubTitle" = "Select as manu as you like and we’ll build your personalized feed";
+"Onboarding.Stocks.Title" = "What stocks are you\ntracking?";
+"Onboarding.Stocks.SubTitle" = "We’ll customize the list for you ";
