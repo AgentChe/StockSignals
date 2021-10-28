@@ -9,7 +9,7 @@ import UIKit
 
 final class OnboardingView: UIView {
     enum Step: Int {
-        case level, assetsSignals, tradingStyle, interested, risk, industries, stocks, profit
+        case level, assetsSignals, tradingStyle, interested, risk, industries, stocks, profit, preloader
     }
     
     var didFinish: (() -> Void)?
@@ -37,7 +37,8 @@ final class OnboardingView: UIView {
             OnbRiskView(step: .risk),
             OnbIndustriesView(step: .industries),
             OnbStocksView(step: .stocks),
-            OnbProfitView(step: .profit)
+            OnbProfitView(step: .profit),
+            OnbPreloaderView(step: .preloader)
         ]
     }()
     
@@ -125,9 +126,11 @@ private extension OnboardingView {
     }
     
     func headerUpdate() {
-        let hideBackButton: [Step] = [.level]
-        let hideSkipButton: [Step] = []
+        let hideHeaderImage: [Step] = [.preloader]
+        let hideBackButton: [Step] = [.level, .preloader]
+        let hideSkipButton: [Step] = [.preloader]
         
+        headerImageView.isHidden = hideHeaderImage.contains(step)
         backButton.isHidden = hideBackButton.contains(step)
         skipButton.isHidden = hideSkipButton.contains(step)
     }

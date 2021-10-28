@@ -79,3 +79,8 @@
 "Onboarding.Profit.Profit" = "Profit";
 "Onboarding.Profit.WinRate" = "win rate %@%%";
 "Onboarding.Profit.LoseRate" = "lose rate %@%%";
+"Onboarding.Preloader.Title" = "Callibrating our\nsources";
+"Onboarding.Preloader.SubTitle" = "Based on your responses we are calculating  a recommended list for you ";
+"Onboarding.Preloader.Info1" = "Analyzing your skill level...";
+"Onboarding.Preloader.Info2" = "Analyzing your goals...";
+"Onboarding.Preloader.Info3" = "Processing selected currencies...";

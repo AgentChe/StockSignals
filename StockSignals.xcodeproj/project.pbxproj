@@ -34,6 +34,8 @@
 		96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC4272ADEBC00619CE2 /* ProfitView.swift */; };
 		96234DC8272ADEFD00619CE2 /* RateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC7272ADEFD00619CE2 /* RateView.swift */; };
 		96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC9272ADF1200619CE2 /* RateCircleView.swift */; };
+		96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DCB272AFF6600619CE2 /* OnbPreloaderView.swift */; };
+		96234DCE272B024E00619CE2 /* Onboarding.Preloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 96234DCD272B024E00619CE2 /* Onboarding.Preloader.json */; };
 		9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */; };
 		9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */; };
 		9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */; };
@@ -147,6 +149,8 @@
 		96234DC4272ADEBC00619CE2 /* ProfitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfitView.swift; sourceTree = "<group>"; };
 		96234DC7272ADEFD00619CE2 /* RateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateView.swift; sourceTree = "<group>"; };
 		96234DC9272ADF1200619CE2 /* RateCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCircleView.swift; sourceTree = "<group>"; };
+		96234DCB272AFF6600619CE2 /* OnbPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbPreloaderView.swift; sourceTree = "<group>"; };
+		96234DCD272B024E00619CE2 /* Onboarding.Preloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Preloader.json; sourceTree = "<group>"; };
 		9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesView.swift; sourceTree = "<group>"; };
 		9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesElement.swift; sourceTree = "<group>"; };
 		9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesCell.swift; sourceTree = "<group>"; };
@@ -281,6 +285,7 @@
 				96234DB4272A11E100619CE2 /* OnbIndustriesView.swift */,
 				96234DB8272ACF4300619CE2 /* OnbStocksView.swift */,
 				96234DC2272ADE9F00619CE2 /* OnbProfitView.swift */,
+				96234DCB272AFF6600619CE2 /* OnbPreloaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 		96234D1027282AD500619CE2 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				96234DCD272B024E00619CE2 /* Onboarding.Preloader.json */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -907,6 +913,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96234DCE272B024E00619CE2 /* Onboarding.Preloader.json in Resources */,
 				96BDBCBF2719D5F900E43708 /* SF-Pro-Display-Regular.otf in Resources */,
 				96BDBCC02719D5F900E43708 /* SF-Pro-Display-Semibold.otf in Resources */,
 				96BDBCC12719D5F900E43708 /* SF-Pro-Display-Bold.otf in Resources */,
@@ -1064,6 +1071,7 @@
 				96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
+				96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */,
 				96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */,
 				96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,

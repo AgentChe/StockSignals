@@ -31,12 +31,17 @@ final class OnbProfitView: OSlideView {
     override func layoutSubviews() {
         super.layoutSubviews()
         
+        initialize()
         movedSlider()
     }
 }
 
 // MARK: Private
 private extension OnbProfitView {
+    func initialize() {
+        backgroundColor = UIColor.clear
+    }
+    
     @objc
     func movedSlider() {
         slider.value = round(slider.value)
