@@ -35,13 +35,12 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: generate step
-        viewModel.step.drive(onNext: { step in
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: { [weak self] in
-                self?.handle(step: step)
-            })
+        mainView.delegate = self
+        
+        // TODO: generate step unblock slider
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: { [weak self] in
+            self?.mainView.slider.isHidden = false
         })
-        .disposed(by: disposeBag)
     }
 }
 
@@ -49,6 +48,16 @@ final class SplashViewController: UIViewController {
 extension SplashViewController {
     static func make(generateStep: Signal<Void>) -> SplashViewController {
         SplashViewController(generateStep: generateStep)
+    }
+}
+
+// MARK: SplashViewDelegate
+extension SplashViewController: SplashViewDelegate {
+    func splashViewDidSwipe() {
+        viewModel.step.drive(onNext: { [weak self] step in
+            self?.handle(step: step)
+        })
+        .disposed(by: disposeBag)
     }
 }
 

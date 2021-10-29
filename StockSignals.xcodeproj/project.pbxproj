@@ -52,6 +52,7 @@
 		9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
+		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
 		96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */; };
 		96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */; };
 		96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */; };
@@ -170,6 +171,7 @@
 		9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupViewModel.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
+		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
 		96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewController.swift; sourceTree = "<group>"; };
 		96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewModel.swift; sourceTree = "<group>"; };
 		96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListView.swift; sourceTree = "<group>"; };
@@ -745,6 +747,7 @@
 		96BDBCB92719CCB400E43708 /* SFProDisplay */ = {
 			isa = PBXGroup;
 			children = (
+				96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */,
 				96BDBCBC2719CCF900E43708 /* SF-Pro-Display-Regular.otf */,
 				96BDBCBB2719CCF300E43708 /* SF-Pro-Display-Semibold.otf */,
 				96BDBCBA2719CCEA00E43708 /* SF-Pro-Display-Bold.otf */,
@@ -940,6 +943,7 @@
 			files = (
 				96234DCE272B024E00619CE2 /* Onboarding.Preloader.json in Resources */,
 				96BDBCBF2719D5F900E43708 /* SF-Pro-Display-Regular.otf in Resources */,
+				96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */,
 				96BDBCC02719D5F900E43708 /* SF-Pro-Display-Semibold.otf in Resources */,
 				96BDBCC12719D5F900E43708 /* SF-Pro-Display-Bold.otf in Resources */,
 				96BDBC492719C56700E43708 /* LaunchScreen.storyboard in Resources */,

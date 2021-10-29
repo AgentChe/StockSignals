@@ -21,5 +21,9 @@ struct Fonts {
         static func semiBold(size: CGFloat) -> UIFont {
             UIFont(name: "SFProDisplay-Semibold", size: size)!
         }
+        
+        static func black(size: CGFloat) -> UIFont {
+            UIFont(name: "SFProDisplay-Black", size: size)!
+        }
     }
 }
