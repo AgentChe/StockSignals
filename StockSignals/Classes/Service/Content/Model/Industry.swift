@@ -6,7 +6,6 @@
 //
 
 struct Industry {
-    let id: Int
     let name: String
 }
 

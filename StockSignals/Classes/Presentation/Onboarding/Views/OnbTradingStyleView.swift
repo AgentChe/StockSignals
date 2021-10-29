@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class OnbTradingStyleView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -14,6 +15,10 @@ final class OnbTradingStyleView: OSlideView {
     lazy var swingTraderCell = makeCell(tag: 3, title: "Onboarding.TradingStyle.SwingTrader".localized)
     lazy var positionTraderCell = makeCell(tag: 4, title: "Onboarding.TradingStyle.PositionTrader".localized)
     lazy var button = makeButton()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var contentManager = ContentManagerCore()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -32,6 +37,55 @@ final class OnbTradingStyleView: OSlideView {
 private extension OnbTradingStyleView {
     func initialize() {
         backgroundColor = UIColor.clear
+        
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let cells = [
+                    self.scalperCell,
+                    self.dayTraderCell,
+                    self.swingTraderCell,
+                    self.positionTraderCell
+                ]
+                
+                guard
+                    let tag = cells.first(where: { $0.isSelect })?.tag,
+                    let code = self.code(for: tag)
+                else {
+                    return .never()
+                }
+            
+                return self.contentManager.set(tradingStyle: code)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Error".localized, style: .danger)
+                    return
+                }
+                
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func code(for tag: Int) -> String? {
+        switch tag {
+        case 1:
+            return "scalper"
+        case 2:
+            return "day trader"
+        case 3:
+            return "swing trader"
+        case 4:
+            return "position trader"
+        default:
+            return nil
+        }
     }
     
     @objc
@@ -144,7 +198,6 @@ private extension OnbTradingStyleView {
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

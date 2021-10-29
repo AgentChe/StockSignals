@@ -57,6 +57,30 @@ private extension OnbIndustriesView {
                 self?.industriesCollectionDidChangeSelection()
             })
             .disposed(by: disposeBag)
+        
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let industries = self.collectionView.elements
+                    .filter { $0.isSelected }
+                    .map { $0.industry.name }
+            
+                return self.contentManager.set(industries: industries)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Error".localized, style: .danger)
+                    return
+                }
+                
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -144,7 +168,6 @@ private extension OnbIndustriesView {
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

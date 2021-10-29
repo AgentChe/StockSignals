@@ -36,6 +36,7 @@
 		96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DC9272ADF1200619CE2 /* RateCircleView.swift */; };
 		96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234DCB272AFF6600619CE2 /* OnbPreloaderView.swift */; };
 		96234DCE272B024E00619CE2 /* Onboarding.Preloader.json in Resources */ = {isa = PBXBuildFile; fileRef = 96234DCD272B024E00619CE2 /* Onboarding.Preloader.json */; };
+		962352E3272BD2F400619CE2 /* SetContentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962352E2272BD2F400619CE2 /* SetContentRequest.swift */; };
 		9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */; };
 		9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */; };
 		9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */; };
@@ -49,6 +50,8 @@
 		9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */; };
 		9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */; };
 		9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */; };
+		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
+		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */; };
 		96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */; };
 		96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */; };
@@ -151,6 +154,7 @@
 		96234DC9272ADF1200619CE2 /* RateCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCircleView.swift; sourceTree = "<group>"; };
 		96234DCB272AFF6600619CE2 /* OnbPreloaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnbPreloaderView.swift; sourceTree = "<group>"; };
 		96234DCD272B024E00619CE2 /* Onboarding.Preloader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Onboarding.Preloader.json; sourceTree = "<group>"; };
+		962352E2272BD2F400619CE2 /* SetContentRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetContentRequest.swift; sourceTree = "<group>"; };
 		9625D97F2722F92F005A8E31 /* WatchListSignalsTitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesView.swift; sourceTree = "<group>"; };
 		9625D9892722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesElement.swift; sourceTree = "<group>"; };
 		9625D98B2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalsTitlesCell.swift; sourceTree = "<group>"; };
@@ -164,6 +168,8 @@
 		9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsCollectionCell.swift; sourceTree = "<group>"; };
 		9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupView.swift; sourceTree = "<group>"; };
 		9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupViewModel.swift; sourceTree = "<group>"; };
+		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
+		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewController.swift; sourceTree = "<group>"; };
 		96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewModel.swift; sourceTree = "<group>"; };
 		96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListView.swift; sourceTree = "<group>"; };
@@ -332,6 +338,8 @@
 		96234DA3272A0ADA00619CE2 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				96AD7072272BDE63007BF50C /* GetIndustries */,
+				962352E1272BD2E400619CE2 /* SetContent */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -381,6 +389,14 @@
 				96234DC9272ADF1200619CE2 /* RateCircleView.swift */,
 			);
 			path = RateView;
+			sourceTree = "<group>";
+		};
+		962352E1272BD2E400619CE2 /* SetContent */ = {
+			isa = PBXGroup;
+			children = (
+				962352E2272BD2F400619CE2 /* SetContentRequest.swift */,
+			);
+			path = SetContent;
 			sourceTree = "<group>";
 		};
 		9625D9832722FBCB005A8E31 /* TableView */ = {
@@ -465,6 +481,15 @@
 				9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */,
 			);
 			path = CreateGroup;
+			sourceTree = "<group>";
+		};
+		96AD7072272BDE63007BF50C /* GetIndustries */ = {
+			isa = PBXGroup;
+			children = (
+				96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */,
+				96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */,
+			);
+			path = GetIndustries;
 			sourceTree = "<group>";
 		};
 		96B4F9AD2726E4A6007507C1 /* List */ = {
@@ -1016,6 +1041,7 @@
 				96BDBD4D27218ACB00E43708 /* WatchListGroup.swift in Sources */,
 				96BDBC9D2719C69200E43708 /* SessionManagerCore.swift in Sources */,
 				96BDBC892719C67E00E43708 /* NavigationController.swift in Sources */,
+				96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */,
 				96B4F9B82726F0A2007507C1 /* WatchListGroupNavItem.swift in Sources */,
 				9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */,
 				96BDBCB62719C7D100E43708 /* TabView.swift in Sources */,
@@ -1029,6 +1055,7 @@
 				96234DB7272A156100619CE2 /* IndustriesCollectionViewLayout.swift in Sources */,
 				96BDBD3C27216C4000E43708 /* WatchListView.swift in Sources */,
 				96BDBC842719C67E00E43708 /* Fonts.swift in Sources */,
+				962352E3272BD2F400619CE2 /* SetContentRequest.swift in Sources */,
 				96BDBD5C2722C78100E43708 /* WatchListSignalsViewModel.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
@@ -1092,6 +1119,7 @@
 				96234DB9272ACF4300619CE2 /* OnbStocksView.swift in Sources */,
 				96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */,
 				96BDBC922719C67E00E43708 /* RxActivityIndicator.swift in Sources */,
+				96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */,
 				96BDBC7F2719C67E00E43708 /* GlobalDefinitions.swift in Sources */,
 				96234D942729440A00619CE2 /* OnbLevelView.swift in Sources */,
 			);

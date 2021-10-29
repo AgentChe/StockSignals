@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class OnbInterestedView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -14,6 +15,10 @@ final class OnbInterestedView: OSlideView {
     lazy var gainCell = makeGainCell()
     lazy var grossCell = makeCrossCell()
     lazy var button = makeButton()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var contentManager = ContentManagerCore()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -32,6 +37,55 @@ final class OnbInterestedView: OSlideView {
 private extension OnbInterestedView {
     func initialize() {
         backgroundColor = UIColor.clear
+        
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let cells = [
+                    self.shortTermCell,
+                    self.longTermCell,
+                    self.gainCell,
+                    self.grossCell
+                ]
+                
+                guard
+                    let tag = cells.first(where: { $0.isSelect })?.tag,
+                    let code = self.code(for: tag)
+                else {
+                    return .never()
+                }
+            
+                return self.contentManager.set(interested: code)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Error".localized, style: .danger)
+                    return
+                }
+                
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func code(for tag: Int) -> String? {
+        switch tag {
+        case 1:
+            return "short-term trading"
+        case 2:
+            return "long-term investments"
+        case 3:
+            return "gain experience"
+        case 4:
+            return "cross trades"
+        default:
+            return nil
+        }
     }
     
     @objc
@@ -183,7 +237,6 @@ private extension OnbInterestedView {
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

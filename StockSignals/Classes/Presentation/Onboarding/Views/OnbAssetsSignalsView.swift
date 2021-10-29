@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class OnbAssetsSignalsView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -14,6 +15,10 @@ final class OnbAssetsSignalsView: OSlideView {
     lazy var optionsCell = makeCell(tag: 2, title: "Onboarding.AssetsSignals.Options".localized)
     lazy var cryptoCell = makeCell(tag: 3, title: "Onboarding.AssetsSignals.Crypto".localized)
     lazy var button = makeButton()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var contentManager = ContentManagerCore()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -32,6 +37,44 @@ final class OnbAssetsSignalsView: OSlideView {
 private extension OnbAssetsSignalsView {
     func initialize() {
         backgroundColor = UIColor.clear
+        
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let cells = [self.stocksCell, self.optionsCell, self.cryptoCell]
+                let codes = cells
+                    .filter { $0.isSelect }
+                    .compactMap { self.code(for: $0.tag) }
+                
+                return self.contentManager.set(assetsSignals: codes)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Error".localized, style: .danger)
+                    return
+                }
+                
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func code(for tag: Int) -> String? {
+        switch tag {
+        case 1:
+            return "stocks"
+        case 2:
+            return "options"
+        case 3:
+            return "crypto"
+        default:
+            return nil
+        }
     }
     
     @objc
@@ -146,7 +189,6 @@ private extension OnbAssetsSignalsView {
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

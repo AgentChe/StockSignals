@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class OnbRiskView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -15,6 +16,10 @@ final class OnbRiskView: OSlideView {
     lazy var slider = makeSlider()
     lazy var gainLabel = makeGainLabel()
     lazy var button = makeButton()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var contentManager = ContentManagerCore()
     
     override init(step: OnboardingView.Step) {
         super.init(step: step)
@@ -33,6 +38,45 @@ final class OnbRiskView: OSlideView {
 private extension OnbRiskView {
     func initialize() {
         backgroundColor = UIColor.clear
+        
+        button.rx.tap
+            .flatMapLatest { [weak self] _ -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let value = Int(self.slider.value)
+                
+                guard let code = self.code(for: value) else {
+                    return .never()
+                }
+                
+                return self.contentManager.set(risk: code)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Error".localized, style: .danger)
+                    return
+                }
+                
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func code(for value: Int) -> String? {
+        switch value {
+        case 1:
+            return "low"
+        case 2:
+            return "medium"
+        case 3:
+            return "high"
+        default:
+            return nil
+        }
     }
     
     @objc
@@ -170,7 +214,7 @@ private extension OnbRiskView {
     func makeSlider() -> UISlider {
         let view = UISlider()
         view.minimumValue = 1
-        view.maximumValue = 4
+        view.maximumValue = 3
         view.minimumTrackTintColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.maximumTrackTintColor = UIColor(integralRed: 24, green: 26, blue: 36)
         view.setThumbImage(UIImage(named: "Onboarding.Risk.Thumb"), for: .normal)
@@ -196,7 +240,6 @@ private extension OnbRiskView {
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

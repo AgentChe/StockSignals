@@ -9,6 +9,7 @@
 // MARK: General
 "Cancel" = "Cancel";
 "Continue" = "Continue";
+"Error" = "Failure to operation";
 
 // MARK: ImagePicker
 "ImagePicker.TakePhoto" = "Take photo";
