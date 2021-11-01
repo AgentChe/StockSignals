@@ -86,7 +86,17 @@
 "Onboarding.Preloader.Info2" = "Analyzing your goals...";
 "Onboarding.Preloader.Info3" = "Processing selected currencies...";
 
+// MARK: Splash
 "Splash.Title" = "TRADE SMART\nWITH STOCK\nSIGNALS";
 "Splash.SubTitle" = "More than 100 accurate stock signals on every trading day";
 "Splash.Swipe" = "Swipe to get started";
 "Splash.Welcome" = "Welcome";
+
+// MARK: Notifications
+"Notifications.Title" = "Notifications";
+"Notifications.Today" = "Today";
+"Notifications.Yesterday" = "Yesterday";
+"Notifications.Older" = "Older";
+"Notifications.Stock" = "Stock";
+"Notifications.Option" = "Option";
+"Notifications.Crypto" = "Crypto";
