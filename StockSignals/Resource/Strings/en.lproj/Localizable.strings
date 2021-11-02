@@ -100,3 +100,5 @@
 "Notifications.Stock" = "Stock";
 "Notifications.Option" = "Option";
 "Notifications.Crypto" = "Crypto";
+"Notifications.Push.Button" = "Enable";
+"Notifications.Push.Text" = "Enable Notification to\nreceive Signals every day";

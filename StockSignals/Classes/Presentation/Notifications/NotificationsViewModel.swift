@@ -18,6 +18,16 @@ final class NotificationsViewModel {
     private lazy var notifications = makeNotifications()
     
     private lazy var notificationManager = NotificationManagerCore()
+    private lazy var profileManager = ProfileManagerCore()
+}
+
+// MARK: Public
+extension NotificationsViewModel {
+    func send(pushToken: String) -> Single<Void> {
+        profileManager
+            .set(pushToken: pushToken)
+            .catchAndReturn(Void())
+    }
 }
 
 // MARK: Private

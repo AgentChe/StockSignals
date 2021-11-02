@@ -6,8 +6,8 @@
 //
 
 final class GlobalDefinitions {
-    static let domainUrl = ""
-    static let apiKey = ""
+    static let domainUrl = "178.57.217.106"
+    static let apiKey = "r5NHRpp$$rQ+9{q_Sal3+CCpS[e9AE[5HE^"
 
     static let sdkDomainUrl = "https://analytics.korrekted.com"
     static let sdkApiKey = ""

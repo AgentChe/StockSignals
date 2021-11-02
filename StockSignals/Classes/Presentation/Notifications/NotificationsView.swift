@@ -11,6 +11,7 @@ final class NotificationsView: UIView {
     lazy var titleLabel = makeTitleLabel()
     lazy var filterView = makeFilterView()
     lazy var tableView = makeTableView()
+    lazy var pushView = makePushView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -52,6 +53,12 @@ private extension NotificationsView {
             tableView.topAnchor.constraint(equalTo: filterView.bottomAnchor, constant: 8.scale),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            pushView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            pushView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            pushView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -4.scale)
+        ])
     }
 }
 
@@ -85,6 +92,16 @@ private extension NotificationsView {
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePushView() -> NotificationsPushView {
+        let view = NotificationsPushView()
+        view.isHidden = true
+        view.layer.cornerRadius = 12.scale
+        view.backgroundColor = UIColor(integralRed: 238, green: 142, blue: 72)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

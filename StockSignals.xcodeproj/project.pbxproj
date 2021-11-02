@@ -68,6 +68,10 @@
 		96AD70B5272FDE96007BF50C /* NotificationTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD70B4272FDE96007BF50C /* NotificationTableCell.swift */; };
 		96AD70B7272FFBA0007BF50C /* NotificationTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD70B6272FFBA0007BF50C /* NotificationTableHeaderView.swift */; };
 		96AD70B9273006E9007BF50C /* NotificationsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD70B8273006E9007BF50C /* NotificationsFilterView.swift */; };
+		96AD785E273129FD007BF50C /* NotificationsPushView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD785D273129FD007BF50C /* NotificationsPushView.swift */; };
+		96AD786227312F27007BF50C /* SetPushTokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD786127312F27007BF50C /* SetPushTokenRequest.swift */; };
+		96AD786527313074007BF50C /* ProfileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD786427313074007BF50C /* ProfileManager.swift */; };
+		96AD786727313091007BF50C /* ProfileManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD786627313091007BF50C /* ProfileManagerCore.swift */; };
 		96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */; };
 		96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */; };
 		96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */; };
@@ -202,6 +206,10 @@
 		96AD70B4272FDE96007BF50C /* NotificationTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableCell.swift; sourceTree = "<group>"; };
 		96AD70B6272FFBA0007BF50C /* NotificationTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableHeaderView.swift; sourceTree = "<group>"; };
 		96AD70B8273006E9007BF50C /* NotificationsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsFilterView.swift; sourceTree = "<group>"; };
+		96AD785D273129FD007BF50C /* NotificationsPushView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsPushView.swift; sourceTree = "<group>"; };
+		96AD786127312F27007BF50C /* SetPushTokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPushTokenRequest.swift; sourceTree = "<group>"; };
+		96AD786427313074007BF50C /* ProfileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManager.swift; sourceTree = "<group>"; };
+		96AD786627313091007BF50C /* ProfileManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileManagerCore.swift; sourceTree = "<group>"; };
 		96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewController.swift; sourceTree = "<group>"; };
 		96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewModel.swift; sourceTree = "<group>"; };
 		96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListView.swift; sourceTree = "<group>"; };
@@ -585,6 +593,7 @@
 			children = (
 				96AD7095272C4179007BF50C /* TableView */,
 				96AD70B8273006E9007BF50C /* NotificationsFilterView.swift */,
+				96AD785D273129FD007BF50C /* NotificationsPushView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -615,6 +624,32 @@
 				96AD70B6272FFBA0007BF50C /* NotificationTableHeaderView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		96AD785F27312F0D007BF50C /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				96AD786327313069007BF50C /* Manager */,
+				96AD786027312F14007BF50C /* Request */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		96AD786027312F14007BF50C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				96AD786127312F27007BF50C /* SetPushTokenRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		96AD786327313069007BF50C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96AD786427313074007BF50C /* ProfileManager.swift */,
+				96AD786627313091007BF50C /* ProfileManagerCore.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		96B4F9AD2726E4A6007507C1 /* List */ = {
@@ -789,6 +824,7 @@
 		96BDBC952719C68100E43708 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				96AD785F27312F0D007BF50C /* Profile */,
 				96AD707C272C35C3007BF50C /* Notification */,
 				96234DA1272A0ACF00619CE2 /* Content */,
 				96BDBD3E27217EF800E43708 /* WatchList */,
@@ -1156,6 +1192,7 @@
 				96BDBD5027218D9A00E43708 /* WatchListMediator.swift in Sources */,
 				96BDBD6C2722DEE800E43708 /* WatchListSignalCollectionElement.swift in Sources */,
 				96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */,
+				96AD786227312F27007BF50C /* SetPushTokenRequest.swift in Sources */,
 				96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */,
 				96AD707F272C35DA007BF50C /* Notification.swift in Sources */,
 				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
@@ -1205,6 +1242,7 @@
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
 				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
 				9625D99D2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift in Sources */,
+				96AD786727313091007BF50C /* ProfileManagerCore.swift in Sources */,
 				96BDBD3827216C2D00E43708 /* WatchListViewController.swift in Sources */,
 				9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
@@ -1241,9 +1279,11 @@
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */,
 				96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */,
+				96AD785E273129FD007BF50C /* NotificationsPushView.swift in Sources */,
 				96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
 				96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */,
+				96AD786527313074007BF50C /* ProfileManager.swift in Sources */,
 				96BDBC8C2719C67E00E43708 /* PaddingLabel.swift in Sources */,
 				96BDBCAA2719C7B300E43708 /* SplashView.swift in Sources */,
 				96AD708A272C397A007BF50C /* NotificationManager.swift in Sources */,

@@ -35,12 +35,12 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainView.delegate = self
-        
-        // TODO: generate step unblock slider
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: { [weak self] in
+        generateStep.emit(onNext: { [weak self] in
             self?.mainView.slider.isHidden = false
         })
+        .disposed(by: disposeBag)
+        
+        mainView.delegate = self
     }
 }
 
