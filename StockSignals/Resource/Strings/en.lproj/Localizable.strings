@@ -102,3 +102,18 @@
 "Notifications.Crypto" = "Crypto";
 "Notifications.Push.Button" = "Enable";
 "Notifications.Push.Text" = "Enable Notification to\nreceive Signals every day";
+
+// MARK: Signals
+"Signals.Title" = "Signals";
+"Signals.OpenSignals" = "Open Signals";
+"Signals.LongTermSignals" = "Long-Term Signals";
+"Signals.ClosedSignals" = "Closed Signals";
+"Signals.Stock" = "Stock";
+"Signals.Option" = "Option";
+"Signals.Crypto" = "Crypto";
+"Signals.All" = "All";
+"Signals.MaxGain" = "Max Gain";
+"Signals.BuyTarget" = "Buy target";
+"Signals.StopLoss" = "Stop loss";
+"Signals.SellTarget" = "Sell target";
+"Signals.Risk" = "Risk";

@@ -10,7 +10,7 @@ import UIKit
 final class TabViewCoordinator {
     weak var parentVC: TabViewController?
     
-    lazy var signalsVC = NavigationController(rootViewController: UIViewController())
+    lazy var signalsVC = NavigationController(rootViewController: SignalsViewController.make())
     lazy var notificationsVC = NavigationController(rootViewController: NotificationsViewController.make())
     lazy var watchListVC = NavigationController(rootViewController: WatchListViewController.make())
     

@@ -5,6 +5,7 @@
 //  Created by Andrey Chernyshev on 21.10.2021.
 //
 
+// TODO: изменилась модель
 struct WatchListSignal {
     let imageUrl: String
     let symbol: String
