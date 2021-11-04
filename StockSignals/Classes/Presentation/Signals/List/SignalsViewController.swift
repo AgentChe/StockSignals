@@ -27,6 +27,14 @@ final class SignalsViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        viewModel.selectedAllSignals.drive(onNext: { [weak self] bundle in
+            let vc = AllSignalsViewController.make(type: bundle.type,
+                                                   stockSignals: bundle.stockSignals,
+                                                   optionCryptoSignals: bundle.optionCryptoSignals)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        })
+        .disposed(by: disposeBag)
+        
         addFilterActions()
         mainView.tableView.mainDelegate = self
     }
@@ -46,7 +54,7 @@ extension SignalsViewController: SignalsTableViewDelegate {
     func signalsTableViewDidSelect(element: SignalsTableElement) {
         switch element {
         case .type(let type):
-            break
+            viewModel.didSelectAllSignals.accept(type.type)
         case .stock(let signal):
             break
         case .optionCrypto(let signal):

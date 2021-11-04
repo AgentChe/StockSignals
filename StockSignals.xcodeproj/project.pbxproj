@@ -94,6 +94,10 @@
 		96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F02733E32B007BF50C /* AllSignalsViewController.swift */; };
 		96AD78F32733E357007BF50C /* AllSignalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F22733E357007BF50C /* AllSignalsViewModel.swift */; };
 		96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F42733E361007BF50C /* AllSignalsView.swift */; };
+		96AD78F72733F7EE007BF50C /* SelectedAllSignals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F62733F7EE007BF50C /* SelectedAllSignals.swift */; };
+		96AD78FA2733FE35007BF50C /* AllSignalsSortButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F92733FE35007BF50C /* AllSignalsSortButton.swift */; };
+		96AD78FD27340521007BF50C /* AllSignalsSortView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78FC27340521007BF50C /* AllSignalsSortView.swift */; };
+		96AD790027340554007BF50C /* AllSiignalsSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78FF27340554007BF50C /* AllSiignalsSort.swift */; };
 		96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */; };
 		96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */; };
 		96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */; };
@@ -254,6 +258,10 @@
 		96AD78F02733E32B007BF50C /* AllSignalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsViewController.swift; sourceTree = "<group>"; };
 		96AD78F22733E357007BF50C /* AllSignalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsViewModel.swift; sourceTree = "<group>"; };
 		96AD78F42733E361007BF50C /* AllSignalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsView.swift; sourceTree = "<group>"; };
+		96AD78F62733F7EE007BF50C /* SelectedAllSignals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedAllSignals.swift; sourceTree = "<group>"; };
+		96AD78F92733FE35007BF50C /* AllSignalsSortButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsSortButton.swift; sourceTree = "<group>"; };
+		96AD78FC27340521007BF50C /* AllSignalsSortView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsSortView.swift; sourceTree = "<group>"; };
+		96AD78FF27340554007BF50C /* AllSiignalsSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSiignalsSort.swift; sourceTree = "<group>"; };
 		96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewController.swift; sourceTree = "<group>"; };
 		96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewModel.swift; sourceTree = "<group>"; };
 		96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListView.swift; sourceTree = "<group>"; };
@@ -802,6 +810,7 @@
 			isa = PBXGroup;
 			children = (
 				96AD78E62732EFE0007BF50C /* SignalsTableGroup.swift */,
+				96AD78F62733F7EE007BF50C /* SelectedAllSignals.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -821,11 +830,30 @@
 		96AD78EF2733E31B007BF50C /* All */ = {
 			isa = PBXGroup;
 			children = (
+				96AD78FE27340547007BF50C /* Utils */,
+				96AD78F82733FE24007BF50C /* Views */,
 				96AD78F02733E32B007BF50C /* AllSignalsViewController.swift */,
 				96AD78F22733E357007BF50C /* AllSignalsViewModel.swift */,
 				96AD78F42733E361007BF50C /* AllSignalsView.swift */,
 			);
 			path = All;
+			sourceTree = "<group>";
+		};
+		96AD78F82733FE24007BF50C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96AD78F92733FE35007BF50C /* AllSignalsSortButton.swift */,
+				96AD78FC27340521007BF50C /* AllSignalsSortView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96AD78FE27340547007BF50C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				96AD78FF27340554007BF50C /* AllSiignalsSort.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		96B4F9AD2726E4A6007507C1 /* List */ = {
@@ -1409,11 +1437,13 @@
 				96AD7097272C418E007BF50C /* NotificationTableView.swift in Sources */,
 				96BDBCA92719C7B300E43708 /* SplashViewModel.swift in Sources */,
 				9625D9902722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift in Sources */,
+				96AD78F72733F7EE007BF50C /* SelectedAllSignals.swift in Sources */,
 				96BDBC912719C67E00E43708 /* AppDelegate.swift in Sources */,
 				96234DB7272A156100619CE2 /* IndustriesCollectionViewLayout.swift in Sources */,
 				96BDBD3C27216C4000E43708 /* WatchListView.swift in Sources */,
 				96BDBC842719C67E00E43708 /* Fonts.swift in Sources */,
 				962352E3272BD2F400619CE2 /* SetContentRequest.swift in Sources */,
+				96AD78FA2733FE35007BF50C /* AllSignalsSortButton.swift in Sources */,
 				96BDBD5C2722C78100E43708 /* WatchListSignalsViewModel.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
@@ -1451,6 +1481,7 @@
 				96BDBC852719C67E00E43708 /* SignError.swift in Sources */,
 				96AD78DC2732E7B1007BF50C /* SignalsFilterView.swift in Sources */,
 				96BDBCA82719C7B300E43708 /* SplashViewController.swift in Sources */,
+				96AD790027340554007BF50C /* AllSiignalsSort.swift in Sources */,
 				9625D99B272423B3005A8E31 /* WatchListGroupsCollectionElement.swift in Sources */,
 				96BDBC9C2719C69200E43708 /* Session.swift in Sources */,
 				9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */,
@@ -1487,6 +1518,7 @@
 				96AD78DA2732E271007BF50C /* SignalsTableOptionCryptoCell.swift in Sources */,
 				96234DA0272A02E500619CE2 /* OnbRiskView.swift in Sources */,
 				9625D99727242353005A8E31 /* WatchListGroupsCollectionView.swift in Sources */,
+				96AD78FD27340521007BF50C /* AllSignalsSortView.swift in Sources */,
 				96AD70B5272FDE96007BF50C /* NotificationTableCell.swift in Sources */,
 				9625D98E2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift in Sources */,
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,

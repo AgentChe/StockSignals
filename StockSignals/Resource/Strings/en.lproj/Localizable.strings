@@ -120,3 +120,8 @@
 "Signals.1stTarget" = "1st Target";
 "Signals.2ndTarget" = "2nd Target";
 "Signals.3rdTarget" = "3rd Target";
+"Signals.Sort.SortBy" = "Sort by";
+"Signals.Sort.OpenDate" = "Open Date";
+"Signals.Sort.MaxGain" = "Max Gain";
+"Signals.Sort.Name" = "Name";
+"Signals.Sort.Apply" = "Apply";

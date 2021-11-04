@@ -62,7 +62,7 @@ extension SignalManagerCore {
     static func stockMocks() -> [StockSignal] {
         [
             StockSignal(imageUrl: "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/amazon-512.png",
-                        symbol: "AMZ",
+                        symbol: "Mic",
                         company: "Amazon",
                         maxGain: 3.02,
                         created: 87984769879,
@@ -82,9 +82,9 @@ extension SignalManagerCore {
                         note: nil),
             
             StockSignal(imageUrl: "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/amazon-512.png",
-                        symbol: "AMZ",
+                        symbol: "GHR",
                         company: "Amazon",
-                        maxGain: 3.02,
+                        maxGain: 1,
                         created: 87984769879,
                         type: .working,
                         risk: "low",

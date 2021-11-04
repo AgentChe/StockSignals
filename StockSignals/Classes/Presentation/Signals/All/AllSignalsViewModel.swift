@@ -9,6 +9,7 @@ import RxSwift
 import RxCocoa
 
 final class AllSignalsViewModel {
+    lazy var sort = BehaviorRelay<AllSignalsSort>(value: .maxGain)
     lazy var stockSignals = BehaviorRelay<[StockSignal]?>(value: nil)
     lazy var optionCryptoSignals = BehaviorRelay<[OptionCryptoSignal]?>(value: nil)
     
@@ -16,6 +17,9 @@ final class AllSignalsViewModel {
     
     private lazy var stockElements = makeStockElements()
     private lazy var optionCryptoElements = makeOptionCryptoElements()
+    
+    private lazy var stockSortedSignals = makeSortedStockSignals()
+    private lazy var optionCryptoSortedSignals = makeSortedOptionCryptoSignals()
 }
 
 // MARK: Private
@@ -26,8 +30,7 @@ private extension AllSignalsViewModel {
     }
     
     func makeStockElements() -> Driver<[SignalsTableElement]> {
-        stockSignals
-            .map { $0 ?? [] }
+        stockSortedSignals
             .map { signals -> [SignalsTableElement] in
                 var result = [SignalsTableElement]()
                 
@@ -45,8 +48,7 @@ private extension AllSignalsViewModel {
     }
     
     func makeOptionCryptoElements() -> Driver<[SignalsTableElement]> {
-        optionCryptoSignals
-            .map { $0 ?? [] }
+        optionCryptoSortedSignals
             .map { signals -> [SignalsTableElement] in
                 var result = [SignalsTableElement]()
                 
@@ -61,5 +63,45 @@ private extension AllSignalsViewModel {
                 return result
             }
             .asDriver(onErrorJustReturn: [])
+    }
+    
+    func makeSortedStockSignals() -> Driver<[StockSignal]> {
+        let signals = stockSignals.map { $0 ?? [] }.asDriver(onErrorJustReturn: [])
+        let sort = sort.asDriver()
+        
+        return Driver.combineLatest(signals, sort) { signals, sort -> [StockSignal] in
+            signals.sorted(by: { first, second -> Bool in
+                switch sort {
+                case .createdDown:
+                    return first.created > second.created
+                case .createdUp:
+                    return first.created < second.created
+                case .maxGain:
+                    return first.maxGain < second.maxGain
+                case .name:
+                    return first.symbol.lowercased() < second.symbol.lowercased()
+                }
+            })
+        }
+    }
+    
+    func makeSortedOptionCryptoSignals() -> Driver<[OptionCryptoSignal]> {
+        let signals = optionCryptoSignals.map { $0 ?? [] }.asDriver(onErrorJustReturn: [])
+        let sort = sort.asDriver()
+        
+        return Driver.combineLatest(signals, sort) { signals, sort -> [OptionCryptoSignal] in
+            signals.sorted(by: { first, second -> Bool in
+                switch sort {
+                case .createdDown:
+                    return first.created > second.created
+                case .createdUp:
+                    return first.created < second.created
+                case .maxGain:
+                    return first.maxGain < second.maxGain
+                case .name:
+                    return first.symbol.lowercased() < second.symbol.lowercased()
+                }
+            })
+        }
     }
 }

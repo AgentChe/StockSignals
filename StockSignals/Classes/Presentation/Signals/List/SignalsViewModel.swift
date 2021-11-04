@@ -10,8 +10,10 @@ import RxCocoa
 
 final class SignalsViewModel {
     lazy var filter = PublishRelay<SignalsFilter>()
+    lazy var didSelectAllSignals = PublishRelay<SignalType>()
     
     lazy var elements = makeElements()
+    lazy var selectedAllSignals = makeAllSignals()
     
     private lazy var signalManager = SignalManagerCore()
     
@@ -29,6 +31,38 @@ final class SignalsViewModel {
 
 // MARK: Private
 private extension SignalsViewModel {
+    func makeAllSignals() -> Driver<SelectedAllSignals> {
+        didSelectAllSignals
+            .withLatestFrom(filter) { ($0, $1) }
+            .flatMapLatest { [weak self] type, filter -> Driver<SelectedAllSignals> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                switch filter {
+                case .stock:
+                    return self.stockSignals
+                        .map { signals -> [StockSignal] in
+                            signals.filter { $0.type == type }
+                        }
+                        .map { SelectedAllSignals(type: type, stockSignals: $0, optionCryptoSignals: nil) }
+                case .option:
+                    return self.optionSignals
+                        .map { signals -> [OptionCryptoSignal] in
+                            signals.filter { $0.type == type }
+                        }
+                        .map { SelectedAllSignals(type: type, stockSignals: nil, optionCryptoSignals: $0) }
+                case .crypto:
+                    return self.cryptoSignals
+                        .map { signals -> [OptionCryptoSignal] in
+                            signals.filter { $0.type == type }
+                        }
+                        .map { SelectedAllSignals(type: type, stockSignals: nil, optionCryptoSignals: $0) }
+                }
+            }
+            .asDriver(onErrorDriveWith: .never())
+    }
+    
     func makeElements() -> Driver<[SignalsTableElement]> {
         selectedGroup.map { $0.elements }
     }

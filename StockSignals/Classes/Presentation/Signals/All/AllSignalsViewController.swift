@@ -26,6 +26,20 @@ final class AllSignalsViewController: UIViewController {
             self?.mainView.tableView.setup(elements: elements)
         })
         .disposed(by: disposeBag)
+        
+        mainView.sortButton.rx.tap
+            .withLatestFrom(viewModel.sort)
+            .subscribe(onNext: { [weak self] sort in
+                guard let self = self else {
+                    return
+                }
+            
+                self.mainView.sortView.show(selectedSort: sort)
+            })
+            .disposed(by: disposeBag)
+        
+        mainView.sortButton.sort = .maxGain
+        mainView.sortView.delegate = self
     }
 }
 
@@ -50,5 +64,13 @@ extension AllSignalsViewController {
         vc.viewModel.optionCryptoSignals.accept(optionCryptoSignals)
         
         return vc
+    }
+}
+
+// MARK: AllSignalsSortViewDelegate
+extension AllSignalsViewController: AllSignalsSortViewDelegate {
+    func allSignalsDidChange(sort: AllSignalsSort) {
+        mainView.sortButton.sort = sort
+        viewModel.sort.accept(sort)
     }
 }
