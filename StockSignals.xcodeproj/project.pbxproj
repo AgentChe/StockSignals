@@ -79,7 +79,6 @@
 		96AD787527317F45007BF50C /* GetSignalsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD787427317F45007BF50C /* GetSignalsResponse.swift */; };
 		96AD787827318347007BF50C /* SignalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD787727318347007BF50C /* SignalManager.swift */; };
 		96AD787A2731838B007BF50C /* SignalManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78792731838B007BF50C /* SignalManagerCore.swift */; };
-		96AD78C42732DA66007BF50C /* SignalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78C32732DA66007BF50C /* SignalsViewController.swift */; };
 		96AD78C62732DA76007BF50C /* SignalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78C52732DA76007BF50C /* SignalsViewModel.swift */; };
 		96AD78C82732DA7F007BF50C /* SignalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78C72732DA7F007BF50C /* SignalsView.swift */; };
 		96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78CB2732DA99007BF50C /* SignalsTableView.swift */; };
@@ -91,6 +90,10 @@
 		96AD78DC2732E7B1007BF50C /* SignalsFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78DB2732E7B1007BF50C /* SignalsFilterView.swift */; };
 		96AD78DF2732E89F007BF50C /* SignalsFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78DE2732E89F007BF50C /* SignalsFilter.swift */; };
 		96AD78E72732EFE0007BF50C /* SignalsTableGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78E62732EFE0007BF50C /* SignalsTableGroup.swift */; };
+		96AD78ED2733E2F9007BF50C /* SignalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78EC2733E2F9007BF50C /* SignalsViewController.swift */; };
+		96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F02733E32B007BF50C /* AllSignalsViewController.swift */; };
+		96AD78F32733E357007BF50C /* AllSignalsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F22733E357007BF50C /* AllSignalsViewModel.swift */; };
+		96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78F42733E361007BF50C /* AllSignalsView.swift */; };
 		96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */; };
 		96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */; };
 		96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */; };
@@ -236,7 +239,6 @@
 		96AD787427317F45007BF50C /* GetSignalsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSignalsResponse.swift; sourceTree = "<group>"; };
 		96AD787727318347007BF50C /* SignalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalManager.swift; sourceTree = "<group>"; };
 		96AD78792731838B007BF50C /* SignalManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalManagerCore.swift; sourceTree = "<group>"; };
-		96AD78C32732DA66007BF50C /* SignalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SignalsViewController.swift; path = ../../../../../../../SignalsViewController.swift; sourceTree = "<group>"; };
 		96AD78C52732DA76007BF50C /* SignalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsViewModel.swift; sourceTree = "<group>"; };
 		96AD78C72732DA7F007BF50C /* SignalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsView.swift; sourceTree = "<group>"; };
 		96AD78CB2732DA99007BF50C /* SignalsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableView.swift; sourceTree = "<group>"; };
@@ -248,6 +250,10 @@
 		96AD78DB2732E7B1007BF50C /* SignalsFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsFilterView.swift; sourceTree = "<group>"; };
 		96AD78DE2732E89F007BF50C /* SignalsFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsFilter.swift; sourceTree = "<group>"; };
 		96AD78E62732EFE0007BF50C /* SignalsTableGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableGroup.swift; sourceTree = "<group>"; };
+		96AD78EC2733E2F9007BF50C /* SignalsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalsViewController.swift; sourceTree = "<group>"; };
+		96AD78F02733E32B007BF50C /* AllSignalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsViewController.swift; sourceTree = "<group>"; };
+		96AD78F22733E357007BF50C /* AllSignalsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsViewModel.swift; sourceTree = "<group>"; };
+		96AD78F42733E361007BF50C /* AllSignalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsView.swift; sourceTree = "<group>"; };
 		96B4F9AF2726E4CB007507C1 /* FavoritesWatchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewController.swift; sourceTree = "<group>"; };
 		96B4F9B12726E4E2007507C1 /* FavoritesWatchListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListViewModel.swift; sourceTree = "<group>"; };
 		96B4F9B32726E4EC007507C1 /* FavoritesWatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesWatchListView.swift; sourceTree = "<group>"; };
@@ -739,11 +745,8 @@
 		96AD78C22732DA54007BF50C /* Signals */ = {
 			isa = PBXGroup;
 			children = (
-				96AD78E52732EFD3007BF50C /* Utils */,
-				96AD78C92732DA84007BF50C /* Views */,
-				96AD78C32732DA66007BF50C /* SignalsViewController.swift */,
-				96AD78C52732DA76007BF50C /* SignalsViewModel.swift */,
-				96AD78C72732DA7F007BF50C /* SignalsView.swift */,
+				96AD78EF2733E31B007BF50C /* All */,
+				96AD78EE2733E30D007BF50C /* List */,
 			);
 			path = Signals;
 			sourceTree = "<group>";
@@ -801,6 +804,28 @@
 				96AD78E62732EFE0007BF50C /* SignalsTableGroup.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		96AD78EE2733E30D007BF50C /* List */ = {
+			isa = PBXGroup;
+			children = (
+				96AD78C92732DA84007BF50C /* Views */,
+				96AD78E52732EFD3007BF50C /* Utils */,
+				96AD78EC2733E2F9007BF50C /* SignalsViewController.swift */,
+				96AD78C52732DA76007BF50C /* SignalsViewModel.swift */,
+				96AD78C72732DA7F007BF50C /* SignalsView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		96AD78EF2733E31B007BF50C /* All */ = {
+			isa = PBXGroup;
+			children = (
+				96AD78F02733E32B007BF50C /* AllSignalsViewController.swift */,
+				96AD78F22733E357007BF50C /* AllSignalsViewModel.swift */,
+				96AD78F42733E361007BF50C /* AllSignalsView.swift */,
+			);
+			path = All;
 			sourceTree = "<group>";
 		};
 		96B4F9AD2726E4A6007507C1 /* List */ = {
@@ -1337,6 +1362,7 @@
 			files = (
 				96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */,
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
+				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96234D962729552800619CE2 /* OnbAssetsSignalsView.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
@@ -1357,7 +1383,6 @@
 				96AD7099272C420E007BF50C /* NotificationTableSection.swift in Sources */,
 				9625D9942724221C005A8E31 /* WatchListGroupsViewModel.swift in Sources */,
 				96234DAF272A0D5D00619CE2 /* IndustriesCollectionView.swift in Sources */,
-				96AD78C42732DA66007BF50C /* SignalsViewController.swift in Sources */,
 				96BDBC882719C67E00E43708 /* Toast.swift in Sources */,
 				96BDBC862719C67E00E43708 /* Weak.swift in Sources */,
 				96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */,
@@ -1369,6 +1394,7 @@
 				96AD78D02732E0E5007BF50C /* SignalsTableElement.swift in Sources */,
 				96AD7091272C3D94007BF50C /* NotificationsViewModel.swift in Sources */,
 				96AD70B9273006E9007BF50C /* NotificationsFilterView.swift in Sources */,
+				96AD78ED2733E2F9007BF50C /* SignalsViewController.swift in Sources */,
 				96BDBC9D2719C69200E43708 /* SessionManagerCore.swift in Sources */,
 				96BDBC892719C67E00E43708 /* NavigationController.swift in Sources */,
 				96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */,
@@ -1416,6 +1442,7 @@
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
 				96AD7085272C36B4007BF50C /* GetNotificationsRequest.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
+				96AD78F32733E357007BF50C /* AllSignalsViewModel.swift in Sources */,
 				96AD787327317E6D007BF50C /* GetSignalsRequest.swift in Sources */,
 				96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */,
 				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
@@ -1465,6 +1492,7 @@
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
 				96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */,
 				96AD70B2272FDDEA007BF50C /* NotificationTableGroup.swift in Sources */,
+				96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */,
 				96BDBC902719C67E00E43708 /* GradientView.swift in Sources */,
 				96BDBC7B2719C67E00E43708 /* UITapGestureRecognizerExtension.swift in Sources */,
 				96AD78D62732E231007BF50C /* SignalsTableTypeCell.swift in Sources */,
