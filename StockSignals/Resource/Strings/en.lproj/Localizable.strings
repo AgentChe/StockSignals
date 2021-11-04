@@ -117,3 +117,6 @@
 "Signals.StopLoss" = "Stop loss";
 "Signals.SellTarget" = "Sell target";
 "Signals.Risk" = "Risk";
+"Signals.1stTarget" = "1st Target";
+"Signals.2ndTarget" = "2nd Target";
+"Signals.3rdTarget" = "3rd Target";

@@ -26,13 +26,13 @@ final class GetSignalsResponse {
                 let targetJSON = element["target"] as? [String: Any],
                 let targetBuy = targetJSON["buy"] as? Double,
                 let targetSell = targetJSON["sell"] as? Double,
-                let targetStop = targetJSON["stop"] as? Double,
-                let note = element["note"] as? String
+                let targetStop = targetJSON["stop"] as? Double
             else {
                 return nil
             }
             
             let risk = element["risk"] as? String
+            let note = element["note"] as? String
             
             return StockSignal(imageUrl: imageUrl,
                                symbol: symbol,
@@ -68,11 +68,12 @@ final class GetSignalsResponse {
                 let targetJSON = element["target"] as? [String: Any],
                 let targetBuy = targetJSON["buy"] as? Double,
                 let targetStop = targetJSON["stop"] as? Double,
-                let targetSell = targetJSON["sell"] as? [Double],
-                let note = element["note"] as? String
+                let targetSell = targetJSON["sell"] as? [Double]
             else {
                 return nil
             }
+            
+            let note = element["note"] as? String
             
             return OptionCryptoSignal(imageUrl: imageUrl,
                                       symbol: symbol,

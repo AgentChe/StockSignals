@@ -16,7 +16,7 @@ struct StockSignal {
     let targetBuy: Double
     let targetSell: Double
     let targetStop: Double
-    let note: String
+    let note: String?
 }
 
 // MARK: Codable

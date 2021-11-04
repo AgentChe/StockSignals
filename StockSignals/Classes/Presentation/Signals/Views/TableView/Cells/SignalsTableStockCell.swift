@@ -107,11 +107,10 @@ extension SignalsTableStockCell {
                             .lineHeight(20.4.scale))
         riskEmptyPlaceholder.isHidden = element.risk != nil
         
-        noteLabel.attributedText = element.note
+        noteLabel.attributedText = element.note?
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.4))
-                            .font(Fonts.SFProDisplay.regular(size: 13.scale))
-                            .lineHeight(18.2.scale))
+                            .font(Fonts.SFProDisplay.regular(size: 13.scale)))
     }
 }
 
@@ -217,7 +216,7 @@ private extension SignalsTableStockCell {
         NSLayoutConstraint.activate([
             noteLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             noteLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
-            noteLabel.topAnchor.constraint(equalTo: companyLabel.bottomAnchor, constant: 126.scale),
+            noteLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 183.scale),
             noteLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
         ])
     }

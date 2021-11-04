@@ -67,9 +67,9 @@ extension SignalManagerCore {
                         maxGain: 3.02,
                         created: 87984769879,
                         type: .working,
-                        risk: "low",
+                        risk: nil,
                         targetBuy: 127, targetSell: 178, targetStop: 110,
-                        note: "Scale out when above 25% profit, ideal buy zone within 10% of recommended Buy Target"),
+                        note: nil),
             
             StockSignal(imageUrl: "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/amazon-512.png",
                         symbol: "AMZ",
@@ -79,7 +79,7 @@ extension SignalManagerCore {
                         type: .working,
                         risk: "low",
                         targetBuy: 127, targetSell: 178, targetStop: 110,
-                        note: "Scale out when above 25% profit, ideal buy zone within 10% of recommended Buy Target"),
+                        note: nil),
             
             StockSignal(imageUrl: "https://cdn3.iconfinder.com/data/icons/popular-services-brands/512/amazon-512.png",
                         symbol: "AMZ",

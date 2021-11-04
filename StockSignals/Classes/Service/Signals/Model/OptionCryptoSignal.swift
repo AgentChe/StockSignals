@@ -15,7 +15,7 @@ struct OptionCryptoSignal {
     let targetBuy: Double
     let targetStop: Double
     let targetSell: [Double] // от 1 до 3 значений
-    let note: String
+    let note: String?
 }
 
 // MARK: Codable
