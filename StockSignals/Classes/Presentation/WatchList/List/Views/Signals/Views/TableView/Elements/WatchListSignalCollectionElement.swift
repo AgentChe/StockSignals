@@ -9,6 +9,6 @@ enum WatchListSignalCollectionElement {
     case price(Double)
     case change(Double)
     case volume(String)
-    case peRatio(Double)
-    case marketCap(String)
+    case peRatio(Double?)
+    case marketCap(String?)
 }

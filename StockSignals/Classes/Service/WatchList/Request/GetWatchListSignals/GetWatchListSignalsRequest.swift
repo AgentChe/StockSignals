@@ -20,8 +20,8 @@ struct GetWatchListSignalsRequest: APIRequestBody {
     
     var parameters: Parameters? {
         [
-            "key": GlobalDefinitions.apiKey,
-            "user_token": userToken
+            "_api_key": GlobalDefinitions.apiKey,
+            "_user_token": userToken
         ]
     }
 }

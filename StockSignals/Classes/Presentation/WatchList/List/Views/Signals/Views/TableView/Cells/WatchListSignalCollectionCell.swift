@@ -43,10 +43,21 @@ extension WatchListSignalCollectionCell {
         case .volume(let volume):
             label.attributedText = volume.attributed(with: attrs)
         case .peRatio(let peRatio):
-            let string = String(peRatio) + "%"
+            let string: String
+            if let peRatio = peRatio {
+                string = String(peRatio) + "%"
+            } else {
+                string = "-"
+            }
             label.attributedText = string.attributed(with: attrs)
         case .marketCap(let marketCap):
-            label.attributedText = marketCap.attributed(with: attrs)
+            let string: String
+            if let marketCap = marketCap {
+                string = marketCap
+            } else {
+                string = "-"
+            }
+            label.attributedText = string.attributed(with: attrs)
         }
     }
 }

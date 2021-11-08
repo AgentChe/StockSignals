@@ -34,7 +34,7 @@ private extension WatchListSignalsViewModel {
             case .change:
                 return signals.sorted(by: { $0.change > $1.change })
             case .peRatio:
-                return signals.sorted(by: { $0.peRatio > $1.peRatio })
+                return signals.sorted(by: { ($0.peRatio ?? 0) > ($1.peRatio ?? 0) })
             }
         }
     }

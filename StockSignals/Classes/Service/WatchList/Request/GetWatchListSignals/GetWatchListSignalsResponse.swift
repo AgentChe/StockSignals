@@ -16,17 +16,18 @@ final class GetWatchListSignalsResponse {
         
         return body.compactMap { signalJSON -> WatchListSignal? in
             guard
-                let imageUrl = signalJSON["image"] as? String,
                 let symbol = signalJSON["symbol"] as? String,
                 let company = signalJSON["company"] as? String,
                 let price = signalJSON["price"] as? Double,
                 let change = signalJSON["change"] as? Double,
-                let volume = signalJSON["volume"] as? String,
-                let peRatio = signalJSON["pe_ratio"] as? Double,
-                let marketCap = signalJSON["market_cap"] as? String
+                let volume = signalJSON["volume"] as? String
             else {
                 return nil
             }
+            
+            let imageUrl = signalJSON["image"] as? String
+            let peRatio = signalJSON["pe_ratio"] as? Double
+            let marketCap = signalJSON["market_cap"] as? String
             
             return WatchListSignal(imageUrl: imageUrl,
                                    symbol: symbol,

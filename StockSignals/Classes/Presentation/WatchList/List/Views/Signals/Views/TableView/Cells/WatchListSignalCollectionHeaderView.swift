@@ -31,7 +31,7 @@ extension WatchListSignalCollectionHeaderView {
         imageView.kf.cancelDownloadTask()
         imageView.image = nil
         
-        if let url = URL(string: header.imageUrl) {
+        if let path = header.imageUrl, let url = URL(string: path) {
             imageView.kf.setImage(with: url)
         }
         

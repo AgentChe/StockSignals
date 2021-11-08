@@ -28,7 +28,7 @@ extension OnbStocksCollectionCell {
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
         
-        if let url = URL(string: element.signal.imageUrl) {
+        if let path = element.signal.imageUrl, let url = URL(string: path) {
             iconView.kf.setImage(with: url)
         }
         

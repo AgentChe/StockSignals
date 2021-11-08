@@ -6,7 +6,7 @@
 //
 
 struct WatchListSignalCollectionHeader {
-    let imageUrl: String
+    let imageUrl: String?
     let symbol: String
     let company: String
 }
