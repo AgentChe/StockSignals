@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		961D41D227396B4900711BCD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41D127396B4900711BCD /* SettingsViewController.swift */; };
+		961D41D427396B5400711BCD /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41D327396B5400711BCD /* SettingsViewModel.swift */; };
+		961D41D627396B5E00711BCD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41D527396B5E00711BCD /* SettingsView.swift */; };
+		961D41DB273977DF00711BCD /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41DA273977DF00711BCD /* SettingsTableView.swift */; };
+		961D41DD273977EB00711BCD /* SettingsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41DC273977EB00711BCD /* SettingsTableElement.swift */; };
+		961D41E0273977FE00711BCD /* SettingsTableNotificationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41DF273977FE00711BCD /* SettingsTableNotificationsCell.swift */; };
+		961D41E22739780C00711BCD /* SettingsTableRateAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E12739780C00711BCD /* SettingsTableRateAppCell.swift */; };
+		961D41E42739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E32739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift */; };
+		961D41E62739782B00711BCD /* SettingsTableTermsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E52739782B00711BCD /* SettingsTableTermsCell.swift */; };
+		961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E72739812800711BCD /* SettingsTableContactUsCell.swift */; };
 		96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234CF827282AD500619CE2 /* OnboardingViewController.swift */; };
 		96234D3927282AD500619CE2 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D1427282AD500619CE2 /* OSlideView.swift */; };
 		96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D2127282AD500619CE2 /* OnboardingView.swift */; };
@@ -171,6 +181,16 @@
 
 /* Begin PBXFileReference section */
 		3FFC82FDCFCC5733EAEF6A3A /* Pods-StockSignals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.release.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.release.xcconfig"; sourceTree = "<group>"; };
+		961D41D127396B4900711BCD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		961D41D327396B5400711BCD /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		961D41D527396B5E00711BCD /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		961D41DA273977DF00711BCD /* SettingsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		961D41DC273977EB00711BCD /* SettingsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableElement.swift; sourceTree = "<group>"; };
+		961D41DF273977FE00711BCD /* SettingsTableNotificationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableNotificationsCell.swift; sourceTree = "<group>"; };
+		961D41E12739780C00711BCD /* SettingsTableRateAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableRateAppCell.swift; sourceTree = "<group>"; };
+		961D41E32739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTablePrivacyPolicyCell.swift; sourceTree = "<group>"; };
+		961D41E52739782B00711BCD /* SettingsTableTermsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTermsCell.swift; sourceTree = "<group>"; };
+		961D41E72739812800711BCD /* SettingsTableContactUsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableContactUsCell.swift; sourceTree = "<group>"; };
 		96234CF827282AD500619CE2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		96234D1427282AD500619CE2 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		96234D2127282AD500619CE2 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -356,6 +376,55 @@
 				3FFC82FDCFCC5733EAEF6A3A /* Pods-StockSignals.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		961D41D027396B3C00711BCD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				961D41D727396B6300711BCD /* Views */,
+				961D41D127396B4900711BCD /* SettingsViewController.swift */,
+				961D41D327396B5400711BCD /* SettingsViewModel.swift */,
+				961D41D527396B5E00711BCD /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		961D41D727396B6300711BCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				961D41D827396BB600711BCD /* Views */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		961D41D827396BB600711BCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				961D41D9273977D000711BCD /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		961D41D9273977D000711BCD /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				961D41DE273977F200711BCD /* Cells */,
+				961D41DA273977DF00711BCD /* SettingsTableView.swift */,
+				961D41DC273977EB00711BCD /* SettingsTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		961D41DE273977F200711BCD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				961D41DF273977FE00711BCD /* SettingsTableNotificationsCell.swift */,
+				961D41E12739780C00711BCD /* SettingsTableRateAppCell.swift */,
+				961D41E32739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift */,
+				961D41E52739782B00711BCD /* SettingsTableTermsCell.swift */,
+				961D41E72739812800711BCD /* SettingsTableContactUsCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		96234CF727282AD500619CE2 /* Onboarding */ = {
@@ -930,6 +999,7 @@
 		96BDBC522719C65C00E43708 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				961D41D027396B3C00711BCD /* Settings */,
 				96AD78C22732DA54007BF50C /* Signals */,
 				96AD708D272C3D5E007BF50C /* Notifications */,
 				96234CF727282AD500619CE2 /* Onboarding */,
@@ -1388,6 +1458,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961D41DB273977DF00711BCD /* SettingsTableView.swift in Sources */,
 				96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */,
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
@@ -1404,6 +1475,7 @@
 				96AD786B27314E02007BF50C /* StockSignal.swift in Sources */,
 				96AD707F272C35DA007BF50C /* Notification.swift in Sources */,
 				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
+				961D41DD273977EB00711BCD /* SettingsTableElement.swift in Sources */,
 				96B4F9BA2726F445007507C1 /* WatchListGroupsCollectionGroupElement.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
@@ -1412,6 +1484,7 @@
 				9625D9942724221C005A8E31 /* WatchListGroupsViewModel.swift in Sources */,
 				96234DAF272A0D5D00619CE2 /* IndustriesCollectionView.swift in Sources */,
 				96BDBC882719C67E00E43708 /* Toast.swift in Sources */,
+				961D41E0273977FE00711BCD /* SettingsTableNotificationsCell.swift in Sources */,
 				96BDBC862719C67E00E43708 /* Weak.swift in Sources */,
 				96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */,
 				96AD78C82732DA7F007BF50C /* SignalsView.swift in Sources */,
@@ -1422,10 +1495,12 @@
 				96AD78D02732E0E5007BF50C /* SignalsTableElement.swift in Sources */,
 				96AD7091272C3D94007BF50C /* NotificationsViewModel.swift in Sources */,
 				96AD70B9273006E9007BF50C /* NotificationsFilterView.swift in Sources */,
+				961D41D227396B4900711BCD /* SettingsViewController.swift in Sources */,
 				96AD78ED2733E2F9007BF50C /* SignalsViewController.swift in Sources */,
 				96BDBC9D2719C69200E43708 /* SessionManagerCore.swift in Sources */,
 				96BDBC892719C67E00E43708 /* NavigationController.swift in Sources */,
 				96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */,
+				961D41D627396B5E00711BCD /* SettingsView.swift in Sources */,
 				96B4F9B82726F0A2007507C1 /* WatchListGroupNavItem.swift in Sources */,
 				9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */,
 				96BDBCB62719C7D100E43708 /* TabView.swift in Sources */,
@@ -1434,6 +1509,7 @@
 				96AD78E72732EFE0007BF50C /* SignalsTableGroup.swift in Sources */,
 				96234D4727282AD500619CE2 /* OnboardingViewModel.swift in Sources */,
 				96BDBCB52719C7D100E43708 /* TabItemView.swift in Sources */,
+				961D41E62739782B00711BCD /* SettingsTableTermsCell.swift in Sources */,
 				96AD7097272C418E007BF50C /* NotificationTableView.swift in Sources */,
 				96BDBCA92719C7B300E43708 /* SplashViewModel.swift in Sources */,
 				9625D9902722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift in Sources */,
@@ -1462,6 +1538,7 @@
 				9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
 				9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */,
+				961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */,
 				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
 				96234DB1272A0D6B00619CE2 /* IndustriesCollectionCell.swift in Sources */,
@@ -1497,6 +1574,7 @@
 				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
 				96AD78D82732E25D007BF50C /* SignalsTableStockCell.swift in Sources */,
 				96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */,
+				961D41E22739780C00711BCD /* SettingsTableRateAppCell.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */,
@@ -1506,6 +1584,7 @@
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
 				96AD787827318347007BF50C /* SignalManager.swift in Sources */,
 				96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */,
+				961D41D427396B5400711BCD /* SettingsViewModel.swift in Sources */,
 				96AD786527313074007BF50C /* ProfileManager.swift in Sources */,
 				96BDBC8C2719C67E00E43708 /* PaddingLabel.swift in Sources */,
 				96BDBCAA2719C7B300E43708 /* SplashView.swift in Sources */,
@@ -1531,6 +1610,7 @@
 				96234DBF272AD0A200619CE2 /* OnbStocksCollectionCell.swift in Sources */,
 				96AD78C62732DA76007BF50C /* SignalsViewModel.swift in Sources */,
 				96234DB9272ACF4300619CE2 /* OnbStocksView.swift in Sources */,
+				961D41E42739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift in Sources */,
 				96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */,
 				96BDBC922719C67E00E43708 /* RxActivityIndicator.swift in Sources */,
 				96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */,

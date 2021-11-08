@@ -125,3 +125,11 @@
 "Signals.Sort.MaxGain" = "Max Gain";
 "Signals.Sort.Name" = "Name";
 "Signals.Sort.Apply" = "Apply";
+
+// MARK: Settings
+"Settings.Title" = "Settings";
+"Settings.Notifications" = "Notifications";
+"Settings.RateApp" = "Rate App ";
+"Settings.PrivacyPolicy" = "Privacy Policy";
+"Settings.Terms" = "Terms";
+"Settings.ContactUs" = "Contact Us";

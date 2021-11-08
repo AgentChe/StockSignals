@@ -36,6 +36,7 @@ final class SignalsViewController: UIViewController {
         .disposed(by: disposeBag)
         
         addFilterActions()
+        addSettingsItem()
         mainView.tableView.mainDelegate = self
     }
 }
@@ -88,5 +89,18 @@ private extension SignalsViewController {
                 self?.mainView.filterView.type = filter
             })
             .disposed(by: disposeBag)
+    }
+    
+    func addSettingsItem() {
+        let item = UIBarButtonItem()
+        item.image = UIImage(named: "Signals.Settings")
+        
+        navigationItem.rightBarButtonItem = item
+        
+        item.rx.tap.subscribe(onNext: { [weak self] in
+            let vc = SettingsViewController.make()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        })
+        .disposed(by: disposeBag)
     }
 }

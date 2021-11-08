@@ -19,7 +19,7 @@ final class GlobalDefinitions {
 
     static let appleAppID = "1590833155"
 
-    static let termsOfServiceUrl = ""
-    static let privacyPolicyUrl = ""
-    static let contactUsUrl = ""
+    static let termsOfServiceUrl = "https://signals.awesum-apps.com/terms"
+    static let privacyPolicyUrl = "https://signals.awesum-apps.com/privacy"
+    static let contactUsUrl = "https://signals.awesum-apps.com/contact"
 }
