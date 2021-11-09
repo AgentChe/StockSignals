@@ -74,8 +74,6 @@ extension SignalsTableView: UITableViewDelegate {
             return offset
         case .type:
             return 66.scale
-        case .optionCrypto:
-            return 288.scale
         default:
             return UITableView.automaticDimension
         }

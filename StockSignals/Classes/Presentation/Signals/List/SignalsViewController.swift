@@ -36,7 +36,7 @@ final class SignalsViewController: UIViewController {
         .disposed(by: disposeBag)
         
         addFilterActions()
-        addSettingsItem()
+        addNavBarItems()
         mainView.tableView.mainDelegate = self
     }
 }
@@ -57,8 +57,10 @@ extension SignalsViewController: SignalsTableViewDelegate {
         case .type(let type):
             viewModel.didSelectAllSignals.accept(type.type)
         case .stock(let signal):
+            // TODO
             break
         case .optionCrypto(let signal):
+            // TODO
             break
         default:
             break
@@ -91,15 +93,24 @@ private extension SignalsViewController {
             .disposed(by: disposeBag)
     }
     
-    func addSettingsItem() {
-        let item = UIBarButtonItem()
-        item.image = UIImage(named: "Signals.Settings")
+    func addNavBarItems() {
+        let settingstem = UIBarButtonItem()
+        settingstem.image = UIImage(named: "Signals.Settings")
         
-        navigationItem.rightBarButtonItem = item
+        let searchtem = UIBarButtonItem()
+        searchtem.image = UIImage(named: "Signals.Search")
         
-        item.rx.tap.subscribe(onNext: { [weak self] in
+        navigationItem.rightBarButtonItems = [settingstem, searchtem]
+        
+        settingstem.rx.tap.subscribe(onNext: { [weak self] in
             let vc = SettingsViewController.make()
             self?.navigationController?.pushViewController(vc, animated: true)
+        })
+        .disposed(by: disposeBag)
+        
+        searchtem.rx.tap.subscribe(onNext: { [weak self] in
+            let vc = SearchViewController.make()
+            self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
     }

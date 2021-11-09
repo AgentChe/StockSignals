@@ -133,3 +133,12 @@
 "Settings.PrivacyPolicy" = "Privacy Policy";
 "Settings.Terms" = "Terms";
 "Settings.ContactUs" = "Contact Us";
+
+// MARK: Search
+"Search.SearchPlaceholder" = "Symbol/Name";
+"Search.StockSignals" = "Stock Signals";
+"Search.OptionSignals" = "Option Signals";
+"Search.CryptoSignals" = "Crypto Signals";
+"Search.StockQuotations" = "Stock";
+"Search.OptionQuotations" = "Option";
+"Search.CryptoQuotations" = "Crypto";

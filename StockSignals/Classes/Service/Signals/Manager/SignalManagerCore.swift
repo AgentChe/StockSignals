@@ -55,6 +55,19 @@ extension SignalManagerCore {
 //            .callServerApi(requestBody: request)
 //            .map { GetSignalsResponse.optionCryptoSignals(response: $0) }
     }
+    
+    func search(name: String) -> Single<SearchResult?> {
+        guard let userToken = SessionManagerCore().getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = SearchRequest(userToken: userToken, name: name)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { SearchResponse.map(from: $0) }
+    }
 }
 
 // TODO

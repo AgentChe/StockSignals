@@ -17,6 +17,21 @@
 		961D41E42739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E32739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift */; };
 		961D41E62739782B00711BCD /* SettingsTableTermsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E52739782B00711BCD /* SettingsTableTermsCell.swift */; };
 		961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41E72739812800711BCD /* SettingsTableContactUsCell.swift */; };
+		961D41FD273A8FEF00711BCD /* Quotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41FC273A8FEF00711BCD /* Quotation.swift */; };
+		961D41FF273A910000711BCD /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D41FE273A910000711BCD /* SearchResult.swift */; };
+		961D4202273A920800711BCD /* SearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4201273A920800711BCD /* SearchRequest.swift */; };
+		961D4204273A937500711BCD /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4203273A937500711BCD /* SearchResponse.swift */; };
+		961D4207273AAC7900711BCD /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4206273AAC7900711BCD /* SearchViewController.swift */; };
+		961D4209273AAC8C00711BCD /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4208273AAC8C00711BCD /* SearchViewModel.swift */; };
+		961D420B273AAC9500711BCD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D420A273AAC9500711BCD /* SearchView.swift */; };
+		961D420E273AB38800711BCD /* PaddingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D420D273AB38800711BCD /* PaddingTextField.swift */; };
+		961D4211273ABD7C00711BCD /* SearchTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4210273ABD7C00711BCD /* SearchTableView.swift */; };
+		961D4215273ABDA100711BCD /* SearchTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4214273ABDA100711BCD /* SearchTableElement.swift */; };
+		961D4217273ABDEC00711BCD /* SearchTableTypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4216273ABDEC00711BCD /* SearchTableTypeElement.swift */; };
+		961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4218273ACCB200711BCD /* SearchTableTypeCell.swift */; };
+		961D421B273ACD6900711BCD /* SearchTableQuotationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D421A273ACD6900711BCD /* SearchTableQuotationCell.swift */; };
+		961D421F273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D421E273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift */; };
+		961D4221273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4220273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift */; };
 		96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234CF827282AD500619CE2 /* OnboardingViewController.swift */; };
 		96234D3927282AD500619CE2 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D1427282AD500619CE2 /* OSlideView.swift */; };
 		96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D2127282AD500619CE2 /* OnboardingView.swift */; };
@@ -191,6 +206,21 @@
 		961D41E32739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTablePrivacyPolicyCell.swift; sourceTree = "<group>"; };
 		961D41E52739782B00711BCD /* SettingsTableTermsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableTermsCell.swift; sourceTree = "<group>"; };
 		961D41E72739812800711BCD /* SettingsTableContactUsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableContactUsCell.swift; sourceTree = "<group>"; };
+		961D41FC273A8FEF00711BCD /* Quotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quotation.swift; sourceTree = "<group>"; };
+		961D41FE273A910000711BCD /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		961D4201273A920800711BCD /* SearchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRequest.swift; sourceTree = "<group>"; };
+		961D4203273A937500711BCD /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		961D4206273AAC7900711BCD /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		961D4208273AAC8C00711BCD /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		961D420A273AAC9500711BCD /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		961D420D273AB38800711BCD /* PaddingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingTextField.swift; sourceTree = "<group>"; };
+		961D4210273ABD7C00711BCD /* SearchTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableView.swift; sourceTree = "<group>"; };
+		961D4214273ABDA100711BCD /* SearchTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableElement.swift; sourceTree = "<group>"; };
+		961D4216273ABDEC00711BCD /* SearchTableTypeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableTypeElement.swift; sourceTree = "<group>"; };
+		961D4218273ACCB200711BCD /* SearchTableTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableTypeCell.swift; sourceTree = "<group>"; };
+		961D421A273ACD6900711BCD /* SearchTableQuotationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableQuotationCell.swift; sourceTree = "<group>"; };
+		961D421E273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableQuotationCollectionView.swift; sourceTree = "<group>"; };
+		961D4220273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableQuotationCollectionCell.swift; sourceTree = "<group>"; };
 		96234CF827282AD500619CE2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		96234D1427282AD500619CE2 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		96234D2127282AD500619CE2 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -425,6 +455,80 @@
 				961D41E72739812800711BCD /* SettingsTableContactUsCell.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		961D4200273A91FB00711BCD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				961D4201273A920800711BCD /* SearchRequest.swift */,
+				961D4203273A937500711BCD /* SearchResponse.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		961D4205273AAC6E00711BCD /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				961D420C273AAC9A00711BCD /* Views */,
+				961D4206273AAC7900711BCD /* SearchViewController.swift */,
+				961D4208273AAC8C00711BCD /* SearchViewModel.swift */,
+				961D420A273AAC9500711BCD /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		961D420C273AAC9A00711BCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				961D420F273ABD3800711BCD /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		961D420F273ABD3800711BCD /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				961D4213273ABD9500711BCD /* Elements */,
+				961D4212273ABD8700711BCD /* Cells */,
+				961D4210273ABD7C00711BCD /* SearchTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		961D4212273ABD8700711BCD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				961D421C273B03B400711BCD /* Quotation */,
+				961D4218273ACCB200711BCD /* SearchTableTypeCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		961D4213273ABD9500711BCD /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				961D4214273ABDA100711BCD /* SearchTableElement.swift */,
+				961D4216273ABDEC00711BCD /* SearchTableTypeElement.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		961D421C273B03B400711BCD /* Quotation */ = {
+			isa = PBXGroup;
+			children = (
+				961D421D273B0A2A00711BCD /* Collection */,
+				961D421A273ACD6900711BCD /* SearchTableQuotationCell.swift */,
+			);
+			path = Quotation;
+			sourceTree = "<group>";
+		};
+		961D421D273B0A2A00711BCD /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				961D421E273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift */,
+				961D4220273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift */,
+			);
+			path = Collection;
 			sourceTree = "<group>";
 		};
 		96234CF727282AD500619CE2 /* Onboarding */ = {
@@ -789,6 +893,8 @@
 				96AD786A27314E02007BF50C /* StockSignal.swift */,
 				96AD786C27314F10007BF50C /* SignalType.swift */,
 				96AD786E27317D5D007BF50C /* OptionCryptoSignal.swift */,
+				961D41FC273A8FEF00711BCD /* Quotation.swift */,
+				961D41FE273A910000711BCD /* SearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -796,6 +902,7 @@
 		96AD787027317E54007BF50C /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				961D4200273A91FB00711BCD /* Search */,
 				96AD787127317E5B007BF50C /* GetSignals */,
 			);
 			path = Request;
@@ -822,6 +929,7 @@
 		96AD78C22732DA54007BF50C /* Signals */ = {
 			isa = PBXGroup;
 			children = (
+				961D4205273AAC6E00711BCD /* Search */,
 				96AD78EF2733E31B007BF50C /* All */,
 				96AD78EE2733E30D007BF50C /* List */,
 			);
@@ -1074,6 +1182,7 @@
 				96BDBC702719C67E00E43708 /* GradientButton.swift */,
 				96BDBC712719C67E00E43708 /* CircleView.swift */,
 				96BDBC722719C67E00E43708 /* GradientView.swift */,
+				961D420D273AB38800711BCD /* PaddingTextField.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -1458,12 +1567,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				961D4202273A920800711BCD /* SearchRequest.swift in Sources */,
 				961D41DB273977DF00711BCD /* SettingsTableView.swift in Sources */,
 				96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */,
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
+				961D4209273AAC8C00711BCD /* SearchViewModel.swift in Sources */,
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96234D962729552800619CE2 /* OnbAssetsSignalsView.swift in Sources */,
+				961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
 				96AD7093272C3D9F007BF50C /* NotificationsView.swift in Sources */,
 				9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */,
@@ -1477,6 +1589,7 @@
 				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
 				961D41DD273977EB00711BCD /* SettingsTableElement.swift in Sources */,
 				96B4F9BA2726F445007507C1 /* WatchListGroupsCollectionGroupElement.swift in Sources */,
+				961D4215273ABDA100711BCD /* SearchTableElement.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
@@ -1514,6 +1627,7 @@
 				96BDBCA92719C7B300E43708 /* SplashViewModel.swift in Sources */,
 				9625D9902722FE13005A8E31 /* WatchListSignalsTitlesHeader.swift in Sources */,
 				96AD78F72733F7EE007BF50C /* SelectedAllSignals.swift in Sources */,
+				961D41FD273A8FEF00711BCD /* Quotation.swift in Sources */,
 				96BDBC912719C67E00E43708 /* AppDelegate.swift in Sources */,
 				96234DB7272A156100619CE2 /* IndustriesCollectionViewLayout.swift in Sources */,
 				96BDBD3C27216C4000E43708 /* WatchListView.swift in Sources */,
@@ -1521,6 +1635,7 @@
 				962352E3272BD2F400619CE2 /* SetContentRequest.swift in Sources */,
 				96AD78FA2733FE35007BF50C /* AllSignalsSortButton.swift in Sources */,
 				96BDBD5C2722C78100E43708 /* WatchListSignalsViewModel.swift in Sources */,
+				961D41FF273A910000711BCD /* SearchResult.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
 				96AD7081272C35F4007BF50C /* NotificationType.swift in Sources */,
@@ -1543,10 +1658,12 @@
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
 				96234DB1272A0D6B00619CE2 /* IndustriesCollectionCell.swift in Sources */,
 				96AD70B7272FFBA0007BF50C /* NotificationTableHeaderView.swift in Sources */,
+				961D4204273A937500711BCD /* SearchResponse.swift in Sources */,
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
 				96234DC8272ADEFD00619CE2 /* RateView.swift in Sources */,
 				96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
+				961D421F273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift in Sources */,
 				96AD7085272C36B4007BF50C /* GetNotificationsRequest.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
 				96AD78F32733E357007BF50C /* AllSignalsViewModel.swift in Sources */,
@@ -1574,11 +1691,14 @@
 				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
 				96AD78D82732E25D007BF50C /* SignalsTableStockCell.swift in Sources */,
 				96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */,
+				961D420E273AB38800711BCD /* PaddingTextField.swift in Sources */,
+				961D420B273AAC9500711BCD /* SearchView.swift in Sources */,
 				961D41E22739780C00711BCD /* SettingsTableRateAppCell.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */,
 				96BDBD4127217F0D00E43708 /* WatchListSignal.swift in Sources */,
+				961D4207273AAC7900711BCD /* SearchViewController.swift in Sources */,
 				96AD785E273129FD007BF50C /* NotificationsPushView.swift in Sources */,
 				96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
@@ -1591,6 +1711,7 @@
 				96AD708A272C397A007BF50C /* NotificationManager.swift in Sources */,
 				96BDBD5227218DD400E43708 /* WatchListMediatorDelegate.swift in Sources */,
 				96AD786D27314F10007BF50C /* SignalType.swift in Sources */,
+				961D4217273ABDEC00711BCD /* SearchTableTypeElement.swift in Sources */,
 				96234DC1272AD0AE00619CE2 /* OnbStocksCollectionElement.swift in Sources */,
 				96BDBCB22719C7D100E43708 /* TabViewController.swift in Sources */,
 				96234D9A272984FC00619CE2 /* OnbTradingStyleView.swift in Sources */,
@@ -1605,7 +1726,9 @@
 				96AD70B2272FDDEA007BF50C /* NotificationTableGroup.swift in Sources */,
 				96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */,
 				96BDBC902719C67E00E43708 /* GradientView.swift in Sources */,
+				961D4211273ABD7C00711BCD /* SearchTableView.swift in Sources */,
 				96BDBC7B2719C67E00E43708 /* UITapGestureRecognizerExtension.swift in Sources */,
+				961D421B273ACD6900711BCD /* SearchTableQuotationCell.swift in Sources */,
 				96AD78D62732E231007BF50C /* SignalsTableTypeCell.swift in Sources */,
 				96234DBF272AD0A200619CE2 /* OnbStocksCollectionCell.swift in Sources */,
 				96AD78C62732DA76007BF50C /* SignalsViewModel.swift in Sources */,
@@ -1617,6 +1740,7 @@
 				96AD786F27317D5D007BF50C /* OptionCryptoSignal.swift in Sources */,
 				96AD78DF2732E89F007BF50C /* SignalsFilter.swift in Sources */,
 				96BDBC7F2719C67E00E43708 /* GlobalDefinitions.swift in Sources */,
+				961D4221273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift in Sources */,
 				96234D942729440A00619CE2 /* OnbLevelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
