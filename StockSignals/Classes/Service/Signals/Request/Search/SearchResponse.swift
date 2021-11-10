@@ -24,10 +24,9 @@ final class SearchResponse {
         let optionQuotations = map(quotationsArray:  body["options"] as? [[String: Any]] ?? [])
         let cryptoQuotations = map(quotationsArray: body["crypto"] as? [[String: Any]] ?? [])
         
-        // TODO
-        return SearchResult(stockSignals: SignalManagerCore.stockMocks(),
-                            optionSignals: SignalManagerCore.optionMocks(),
-                            cryptoSignals: SignalManagerCore.cryptoMocks(),
+        return SearchResult(stockSignals: stocksSignals,
+                            optionSignals: optionSignals,
+                            cryptoSignals: cryptoSignals,
                             stockQuotations: stocksQuotations,
                             optionQuotations: optionQuotations,
                             cryptoQuotations: cryptoQuotations)
