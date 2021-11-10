@@ -18,7 +18,7 @@ final class WatchListSignalsViewModel {
 
 // MARK: Private
 private extension WatchListSignalsViewModel {
-    func makeElements() -> Driver<[WatchListSignal]> {
+    func makeElements() -> Driver<[Quotation]> {
         let signals = watchListManager
             .obtainWatchListSignals()
             .asDriver(onErrorJustReturn: [])
@@ -27,7 +27,7 @@ private extension WatchListSignalsViewModel {
             .startWith(.price)
             .asDriver(onErrorJustReturn: .price)
         
-        return Driver.combineLatest(signals, sortBy) { signals, sort -> [WatchListSignal] in
+        return Driver.combineLatest(signals, sortBy) { signals, sort -> [Quotation] in
             switch sort {
             case .price:
                 return signals.sorted(by: { $0.price > $1.price })

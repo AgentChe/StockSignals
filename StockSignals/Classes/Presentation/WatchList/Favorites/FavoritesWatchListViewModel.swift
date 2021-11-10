@@ -17,7 +17,7 @@ final class FavoritesWatchListViewModel {
 
 // MARK: Private
 private extension FavoritesWatchListViewModel {
-    func makeElements() -> Driver<[WatchListSignal]> {
+    func makeElements() -> Driver<[Quotation]> {
         let signals = group
             .compactMap { $0?.signals }
             .asDriver(onErrorDriveWith: .never())
@@ -26,7 +26,7 @@ private extension FavoritesWatchListViewModel {
             .startWith(.price)
             .asDriver(onErrorJustReturn: .price)
         
-        return Driver.combineLatest(signals, sortBy) { signals, sort -> [WatchListSignal] in
+        return Driver.combineLatest(signals, sortBy) { signals, sort -> [Quotation] in
             switch sort {
             case .price:
                 return signals.sorted(by: { $0.price > $1.price })

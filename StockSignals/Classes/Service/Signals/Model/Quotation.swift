@@ -13,7 +13,7 @@ struct Quotation {
     let change: Double
     let volume: String
     let peRatio: Double?
-    let marketCap: String
+    let marketCap: String?
 }
 
 // MARK: Codable

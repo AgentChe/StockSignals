@@ -10,7 +10,7 @@ import UIKit
 final class WatchListSignalsTableView: UITableView {
     weak var scrollDelegate: WatchListSignalsScrollDelegate?
     
-    private lazy var elements = [WatchListSignal]()
+    private lazy var elements = [Quotation]()
     
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
@@ -25,7 +25,7 @@ final class WatchListSignalsTableView: UITableView {
 
 // MARK: Public
 extension WatchListSignalsTableView {
-    func setup(elements: [WatchListSignal]) {
+    func setup(elements: [Quotation]) {
         self.elements = elements
         
         reloadData()

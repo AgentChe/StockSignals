@@ -6,7 +6,7 @@
 //
 
 final class GetWatchListSignalsResponse {
-    static func map(from response: Any) -> [WatchListSignal] {
+    static func map(from response: Any) -> [Quotation] {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [[String: Any]]
@@ -14,7 +14,7 @@ final class GetWatchListSignalsResponse {
             return []
         }
         
-        return body.compactMap { signalJSON -> WatchListSignal? in
+        return body.compactMap { signalJSON -> Quotation? in
             guard
                 let symbol = signalJSON["symbol"] as? String,
                 let company = signalJSON["company"] as? String,
@@ -29,14 +29,14 @@ final class GetWatchListSignalsResponse {
             let peRatio = signalJSON["pe_ratio"] as? Double
             let marketCap = signalJSON["market_cap"] as? String
             
-            return WatchListSignal(imageUrl: imageUrl,
-                                   symbol: symbol,
-                                   company: company,
-                                   price: price,
-                                   change: change,
-                                   volume: volume,
-                                   peRatio: peRatio,
-                                   marketCap: marketCap)
+            return Quotation(imageUrl: imageUrl,
+                             symbol: symbol,
+                             company: company,
+                             price: price,
+                             change: change,
+                             volume: volume,
+                             peRatio: peRatio,
+                             marketCap: marketCap)
         }
     }
 }

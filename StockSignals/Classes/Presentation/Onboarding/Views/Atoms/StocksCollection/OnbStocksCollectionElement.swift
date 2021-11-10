@@ -6,10 +6,10 @@
 //
 
 final class OnbStocksCollectionElement {
-    let signal: WatchListSignal
+    let signal: Quotation
     var isSelected: Bool
     
-    init(signal: WatchListSignal, isSelected: Bool) {
+    init(signal: Quotation, isSelected: Bool) {
         self.signal = signal
         self.isSelected = isSelected
     }

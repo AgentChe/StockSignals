@@ -24,7 +24,7 @@ final class WatchListSignalsTableCell: UITableViewCell {
 
 // MARK: Public
 extension WatchListSignalsTableCell {
-    func setup(signal: WatchListSignal) {
+    func setup(signal: Quotation) {
         let header = WatchListSignalCollectionHeader(imageUrl: signal.imageUrl,
                                                      symbol: signal.symbol,
                                                      company: signal.company)

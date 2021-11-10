@@ -15,7 +15,7 @@ final class WatchListManagerCore: WatchListManager {
 
 // MARK: Public
 extension WatchListManagerCore {
-    func obtainWatchListSignals() -> Single<[WatchListSignal]> {
+    func obtainWatchListSignals() -> Single<[Quotation]> {
         guard let userToken = SessionManagerCore().getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
@@ -40,7 +40,7 @@ extension WatchListManagerCore {
         .observe(on: MainScheduler.asyncInstance)
     }
     
-    func createGroup(name: String, signals: [WatchListSignal]) -> Single<WatchListGroup> {
+    func createGroup(name: String, signals: [Quotation]) -> Single<WatchListGroup> {
         Single<WatchListGroup>.create { event in
             let group = WatchListGroup(id: UUID().uuidString, name: name, signals: signals)
             var groups = WatchListManagerCore.getGroups()
@@ -60,7 +60,7 @@ extension WatchListManagerCore {
         })
     }
     
-    func add(signal: WatchListSignal, in group: WatchListGroup) -> Single<WatchListGroup> {
+    func add(signal: Quotation, in group: WatchListGroup) -> Single<WatchListGroup> {
         Single<WatchListGroup>.create { event in
             var signals = group.signals
             signals.append(signal)
@@ -85,7 +85,7 @@ extension WatchListManagerCore {
         })
     }
     
-    func remove(signal: WatchListSignal, from group: WatchListGroup) -> Single<WatchListGroup> {
+    func remove(signal: Quotation, from group: WatchListGroup) -> Single<WatchListGroup> {
         Single<WatchListGroup>.create { event in
             var signals = group.signals
             signals.removeAll(where: { $0 == signal })

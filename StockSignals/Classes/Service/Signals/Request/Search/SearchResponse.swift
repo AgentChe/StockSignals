@@ -111,14 +111,14 @@ private extension SearchResponse {
                 let company = element["company"] as? String,
                 let price = element["price"] as? Double,
                 let change = element["change"] as? Double,
-                let volume = element["volume"] as? String,
-                let marketCap = element["market_cap"] as? String
+                let volume = element["volume"] as? String
             else {
                 return nil
             }
             
             let imageUrl = element["image"] as? String
             let peRatio = element["pe_ratio"] as? Double
+            let marketCap = element["market_cap"] as? String
             
             return Quotation(imageUrl: imageUrl,
                              symbol: symbol,
