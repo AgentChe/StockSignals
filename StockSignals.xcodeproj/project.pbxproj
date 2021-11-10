@@ -32,6 +32,9 @@
 		961D421B273ACD6900711BCD /* SearchTableQuotationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D421A273ACD6900711BCD /* SearchTableQuotationCell.swift */; };
 		961D421F273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D421E273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift */; };
 		961D4221273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4220273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift */; };
+		961D4237273BEB7600711BCD /* AllQuotationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4236273BEB7600711BCD /* AllQuotationsViewController.swift */; };
+		961D4239273BEB8000711BCD /* AllQuotationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D4238273BEB8000711BCD /* AllQuotationsViewModel.swift */; };
+		961D423B273BEB8900711BCD /* AllQuotationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961D423A273BEB8900711BCD /* AllQuotationsView.swift */; };
 		96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234CF827282AD500619CE2 /* OnboardingViewController.swift */; };
 		96234D3927282AD500619CE2 /* OSlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D1427282AD500619CE2 /* OSlideView.swift */; };
 		96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96234D2127282AD500619CE2 /* OnboardingView.swift */; };
@@ -220,6 +223,9 @@
 		961D421A273ACD6900711BCD /* SearchTableQuotationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableQuotationCell.swift; sourceTree = "<group>"; };
 		961D421E273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableQuotationCollectionView.swift; sourceTree = "<group>"; };
 		961D4220273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableQuotationCollectionCell.swift; sourceTree = "<group>"; };
+		961D4236273BEB7600711BCD /* AllQuotationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotationsViewController.swift; sourceTree = "<group>"; };
+		961D4238273BEB8000711BCD /* AllQuotationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotationsViewModel.swift; sourceTree = "<group>"; };
+		961D423A273BEB8900711BCD /* AllQuotationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllQuotationsView.swift; sourceTree = "<group>"; };
 		96234CF827282AD500619CE2 /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		96234D1427282AD500619CE2 /* OSlideView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSlideView.swift; sourceTree = "<group>"; };
 		96234D2127282AD500619CE2 /* OnboardingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -527,6 +533,16 @@
 				961D4220273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		961D4235273BEB6900711BCD /* AllQuotations */ = {
+			isa = PBXGroup;
+			children = (
+				961D4236273BEB7600711BCD /* AllQuotationsViewController.swift */,
+				961D4238273BEB8000711BCD /* AllQuotationsViewModel.swift */,
+				961D423A273BEB8900711BCD /* AllQuotationsView.swift */,
+			);
+			path = AllQuotations;
 			sourceTree = "<group>";
 		};
 		96234CF727282AD500619CE2 /* Onboarding */ = {
@@ -927,6 +943,7 @@
 		96AD78C22732DA54007BF50C /* Signals */ = {
 			isa = PBXGroup;
 			children = (
+				961D4235273BEB6900711BCD /* AllQuotations */,
 				961D4205273AAC6E00711BCD /* Search */,
 				96AD78EF2733E31B007BF50C /* All */,
 				96AD78EE2733E30D007BF50C /* List */,
@@ -1567,6 +1584,7 @@
 				961D4202273A920800711BCD /* SearchRequest.swift in Sources */,
 				961D41DB273977DF00711BCD /* SettingsTableView.swift in Sources */,
 				96B4F9B02726E4CB007507C1 /* FavoritesWatchListViewController.swift in Sources */,
+				961D4239273BEB8000711BCD /* AllQuotationsViewModel.swift in Sources */,
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				961D4209273AAC8C00711BCD /* SearchViewModel.swift in Sources */,
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
@@ -1607,6 +1625,7 @@
 				96AD70B9273006E9007BF50C /* NotificationsFilterView.swift in Sources */,
 				961D41D227396B4900711BCD /* SettingsViewController.swift in Sources */,
 				96AD78ED2733E2F9007BF50C /* SignalsViewController.swift in Sources */,
+				961D423B273BEB8900711BCD /* AllQuotationsView.swift in Sources */,
 				96BDBC9D2719C69200E43708 /* SessionManagerCore.swift in Sources */,
 				96BDBC892719C67E00E43708 /* NavigationController.swift in Sources */,
 				96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */,
@@ -1653,6 +1672,7 @@
 				961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */,
 				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
+				961D4237273BEB7600711BCD /* AllQuotationsViewController.swift in Sources */,
 				96234DB1272A0D6B00619CE2 /* IndustriesCollectionCell.swift in Sources */,
 				96AD70B7272FFBA0007BF50C /* NotificationTableHeaderView.swift in Sources */,
 				961D4204273A937500711BCD /* SearchResponse.swift in Sources */,

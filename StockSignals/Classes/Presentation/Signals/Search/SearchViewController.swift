@@ -59,7 +59,8 @@ final class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         
         viewModel.selectedStockQuotations.drive(onNext: { [weak self] quotations in
-            
+            let vc = AllQuotationsViewController.make(title: "Search.StockQuotations".localized, quotations: quotations)
+            self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
         
@@ -72,7 +73,8 @@ final class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         
         viewModel.selectedOptionQuotations.drive(onNext: { [weak self] quotations in
-            
+            let vc = AllQuotationsViewController.make(title: "Search.OptionQuotations".localized, quotations: quotations)
+            self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
         
@@ -85,7 +87,8 @@ final class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         
         viewModel.selectedCryptoQuotations.drive(onNext: { [weak self] quotations in
-            
+            let vc = AllQuotationsViewController.make(title: "Search.CryptoQuotations".localized, quotations: quotations)
+            self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
         
