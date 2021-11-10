@@ -8,6 +8,8 @@
 import UIKit
 
 final class SearchTableQuotationCollectionView: UICollectionView {
+    weak var mainDelegate: SearchTableViewDelegate?
+    
     private lazy var elements = [Quotation]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -47,6 +49,11 @@ extension SearchTableQuotationCollectionView: UICollectionViewDataSource {
 extension SearchTableQuotationCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 148.scale, height: 146.scale)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let symbol = elements[indexPath.row].symbol
+        mainDelegate?.searchTableViewDidTapped(symbol: symbol)
     }
 }
 

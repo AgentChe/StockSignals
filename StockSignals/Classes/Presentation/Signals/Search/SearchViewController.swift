@@ -50,7 +50,47 @@ final class SearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.selectedStockSignals.drive(onNext: { [weak self] signals in
+            let vc = AllSignalsViewController.make(title: "Search.StockSignals".localized,
+                                                   stockSignals: signals,
+                                                   optionCryptoSignals: nil)
+            
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.selectedStockQuotations.drive(onNext: { [weak self] quotations in
+            
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.selectedOptionSignals.drive(onNext: { [weak self] signals in
+            let vc = AllSignalsViewController.make(title: "Search.OptionSignals".localized,
+                                                   stockSignals: nil,
+                                                   optionCryptoSignals: signals)
+            
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.selectedOptionQuotations.drive(onNext: { [weak self] quotations in
+            
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.selectedCryptoSignals.drive(onNext: { [weak self] signals in
+            let vc = AllSignalsViewController.make(title: "Search.CryptoSignals".localized,
+                                                   stockSignals: nil,
+                                                   optionCryptoSignals: signals)
+            
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.selectedCryptoQuotations.drive(onNext: { [weak self] quotations in
+            
+        })
+        .disposed(by: disposeBag)
+        
         addHideKeyboardAction()
+        mainView.tableView.mainDelegate = self
     }
 }
 
@@ -63,18 +103,29 @@ extension SearchViewController {
     }
 }
 
+// MARK: SearchTableViewDelegate
+extension SearchViewController: SearchTableViewDelegate {
+    func searchTableViewDidTapped(symbol: String) {
+        // TODO: open detail
+    }
+    
+    func searchTableViewDidTapped(type: SearchTableTypeElement) {
+        viewModel.select.accept(type)
+    }
+}
+
 // MARK: Private
 private extension SearchViewController {
     func addHideKeyboardAction() {
         let gesture = UITapGestureRecognizer()
-        view.addGestureRecognizer(gesture)
-        view.isUserInteractionEnabled = true
-        
+        gesture.cancelsTouchesInView = false
+        mainView.tableView.addGestureRecognizer(gesture)
+        mainView.tableView.isUserInteractionEnabled = true
+
         gesture.rx.event
             .subscribe(onNext: { [weak self] _ in
                 self?.view.endEditing(true)
             })
             .disposed(by: disposeBag)
     }
-
 }

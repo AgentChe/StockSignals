@@ -45,19 +45,9 @@ final class AllSignalsViewController: UIViewController {
 
 // MARK: Make
 extension AllSignalsViewController {
-    static func make(type: SignalType, stockSignals: [StockSignal]?, optionCryptoSignals: [OptionCryptoSignal]?) -> AllSignalsViewController {
+    static func make(title: String, stockSignals: [StockSignal]?, optionCryptoSignals: [OptionCryptoSignal]?) -> AllSignalsViewController {
         let vc = AllSignalsViewController()
         vc.navigationItem.backButtonTitle = " "
-        
-        let title: String
-        switch type {
-        case .working:
-            title = "Signals.OpenSignals".localized
-        case .longTerm:
-            title = "Signals.LongTermSignals".localized
-        case .closed:
-            title = "Signals.ClosedSignals".localized
-        }
         vc.navigationItem.title = title
         
         vc.viewModel.stockSignals.accept(stockSignals)

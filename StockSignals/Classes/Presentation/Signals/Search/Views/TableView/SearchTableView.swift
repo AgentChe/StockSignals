@@ -7,7 +7,14 @@
 
 import UIKit
 
+protocol SearchTableViewDelegate: AnyObject {
+    func searchTableViewDidTapped(type: SearchTableTypeElement)
+    func searchTableViewDidTapped(symbol: String)
+}
+
 final class SearchTableView: UITableView {
+    weak var mainDelegate: SearchTableViewDelegate?
+    
     private lazy var elements = [SearchTableElement]()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -58,6 +65,7 @@ extension SearchTableView: UITableViewDataSource {
             return cell
         case .quotations(let quotations):
             let cell = dequeueReusableCell(withIdentifier: String(describing: SearchTableQuotationCell.self)) as! SearchTableQuotationCell
+            cell.collectionView.mainDelegate = mainDelegate
             cell.setup(element: quotations)
             return cell
         }
@@ -76,6 +84,19 @@ extension SearchTableView: UITableViewDelegate {
             return 146.scale
         default:
             return UITableView.automaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch elements[indexPath.row] {
+        case .type(let type):
+            mainDelegate?.searchTableViewDidTapped(type: type)
+        case .stockSignal(let signal):
+            mainDelegate?.searchTableViewDidTapped(symbol: signal.symbol)
+        case .optionCryptoSignal(let signal):
+            mainDelegate?.searchTableViewDidTapped(symbol: signal.symbol)
+        default:
+            return
         }
     }
 }

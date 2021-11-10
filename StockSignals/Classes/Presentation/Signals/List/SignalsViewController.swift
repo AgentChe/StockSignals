@@ -28,10 +28,14 @@ final class SignalsViewController: UIViewController {
         .disposed(by: disposeBag)
         
         viewModel.selectedAllSignals.drive(onNext: { [weak self] bundle in
-            let vc = AllSignalsViewController.make(type: bundle.type,
+            guard let self = self else {
+                return
+            }
+            
+            let vc = AllSignalsViewController.make(title: self.title(at: bundle.type),
                                                    stockSignals: bundle.stockSignals,
                                                    optionCryptoSignals: bundle.optionCryptoSignals)
-            self?.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: true)
         })
         .disposed(by: disposeBag)
         
@@ -70,6 +74,17 @@ extension SignalsViewController: SignalsTableViewDelegate {
 
 // MARK: Private
 private extension SignalsViewController {
+    func title(at type: SignalType) -> String {
+        switch type {
+        case .working:
+            return "Signals.OpenSignals".localized
+        case .longTerm:
+            return "Signals.LongTermSignals".localized
+        case .closed:
+            return "Signals.ClosedSignals".localized
+        }
+    }
+    
     func addFilterActions() {
         Observable
             .merge(
