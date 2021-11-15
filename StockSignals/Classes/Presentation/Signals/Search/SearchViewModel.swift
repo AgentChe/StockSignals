@@ -35,37 +35,34 @@ private extension SearchViewModel {
             
             var result = [SearchTableElement]()
             
-            if let signal = searchResult.stockSignals.first {
+            if !searchResult.stockSignals.isEmpty {
                 result.append(.type(.stockSignals))
-                result.append(.stockSignal(signal))
+                result.append(.stockSignals(searchResult.stockSignals))
             }
             
-            if let signal = searchResult.optionSignals.first {
+            if !searchResult.optionSignals.isEmpty {
                 result.append(.type(.optionSignals))
-                result.append(.optionCryptoSignal(signal))
+                result.append(.optionCryptoSignals(searchResult.optionSignals))
             }
             
-            if let signal = searchResult.cryptoSignals.first {
+            if !searchResult.cryptoSignals.isEmpty {
                 result.append(.type(.cryptoSignals))
-                result.append(.optionCryptoSignal(signal))
+                result.append(.optionCryptoSignals(searchResult.cryptoSignals))
             }
             
-            let stockQuotations = searchResult.stockQuotations.prefix(3)
-            if !stockQuotations.isEmpty {
+            if !searchResult.stockQuotations.isEmpty {
                 result.append(.type(.stockQuotations))
-                result.append(.quotations(Array(stockQuotations)))
+                result.append(.quotations(searchResult.stockQuotations))
             }
             
-            let optionQuotations = searchResult.optionQuotations.prefix(3)
-            if !optionQuotations.isEmpty {
+            if !searchResult.optionQuotations.isEmpty {
                 result.append(.type(.optionQuotations))
-                result.append(.quotations(Array(optionQuotations)))
+                result.append(.quotations(searchResult.optionQuotations))
             }
             
-            let cryptoQuotations = searchResult.cryptoQuotations.prefix(3)
-            if !cryptoQuotations.isEmpty {
+            if !searchResult.cryptoQuotations.isEmpty {
                 result.append(.type(.cryptoQuotations))
-                result.append(.quotations(Array(cryptoQuotations)))
+                result.append(.quotations(searchResult.cryptoQuotations))
             }
             
             return result

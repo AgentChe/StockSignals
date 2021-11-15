@@ -111,10 +111,10 @@ extension SearchViewController: SearchTableViewDelegate {
     func searchTableViewDidTapped(symbol: String) {
         // TODO: open detail
     }
-    
-    func searchTableViewDidTapped(type: SearchTableTypeElement) {
-        viewModel.select.accept(type)
-    }
+
+//    func searchTableViewDidTapped(type: SearchTableTypeElement) {
+//        viewModel.select.accept(type)
+//    }
 }
 
 // MARK: Private

@@ -6,9 +6,8 @@
 //
 
 enum SearchTableElement {
-    case offset(CGFloat)
     case type(SearchTableTypeElement)
-    case stockSignal(StockSignal)
-    case optionCryptoSignal(OptionCryptoSignal)
+    case stockSignals([StockSignal])
+    case optionCryptoSignals([OptionCryptoSignal])
     case quotations([Quotation])
 }
