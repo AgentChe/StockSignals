@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class SignalsTableOptionCryptoCell: UITableViewCell {
+final class SignalsOptionCryptoCollectionCell: UICollectionViewCell {
     lazy var container = makeContainer()
     lazy var iconView = makeIconView()
     lazy var symbolLabel = makeValueLabel()
@@ -32,8 +32,8 @@ final class SignalsTableOptionCryptoCell: UITableViewCell {
     lazy var target3rdEmptyPlaceholder = makeEmptyPlaceholder()
     lazy var noteLabel = makeValueLabel()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         makeConstraints()
         initialize()
@@ -45,7 +45,7 @@ final class SignalsTableOptionCryptoCell: UITableViewCell {
 }
 
 // MARK: Public
-extension SignalsTableOptionCryptoCell {
+extension SignalsOptionCryptoCollectionCell {
     func setup(element: OptionCryptoSignal) {
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
@@ -149,35 +149,26 @@ extension SignalsTableOptionCryptoCell {
 }
 
 // MARK: Private
-private extension SignalsTableOptionCryptoCell {
+private extension SignalsOptionCryptoCollectionCell {
     func initialize() {
         contentView.backgroundColor = UIColor.clear
         backgroundColor = UIColor.clear
         
-        selectionStyle = .none
-    }
-    
-    func target1st(from: OptionCryptoSignal) -> Double? {
-        nil
-    }
-    
-    func target2nd(from: OptionCryptoSignal) -> Double? {
-        nil
-    }
-    
-    func target3rd(from: OptionCryptoSignal) -> Double? {
-        nil
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor.clear
+        selectedBackgroundView = selectedView
+        
+        noteLabel.numberOfLines = 2
     }
 }
 
 // MARK: Make constraints
-private extension SignalsTableOptionCryptoCell {
+private extension SignalsOptionCryptoCollectionCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
-            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
-            container.topAnchor.constraint(equalTo: contentView.topAnchor),
-            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            container.topAnchor.constraint(equalTo: contentView.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -300,7 +291,7 @@ private extension SignalsTableOptionCryptoCell {
 }
 
 // MARK: Lazy initialization
-private extension SignalsTableOptionCryptoCell {
+private extension SignalsOptionCryptoCollectionCell {
     func makeContainer() -> UIView {
         let view = UIView()
         view.layer.cornerRadius = 20.scale

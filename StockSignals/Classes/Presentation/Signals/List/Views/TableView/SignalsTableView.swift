@@ -8,7 +8,9 @@
 import UIKit
 
 protocol SignalsTableViewDelegate: AnyObject {
-    func signalsTableViewDidSelect(element: SignalsTableElement)
+    func signalsTableDidSelect(type: SignalType)
+    func signalsTableDidSelect(stockSignal: StockSignal)
+    func signalsTableDidSelect(optionCryptoSignal: OptionCryptoSignal)
 }
 
 final class SignalsTableView: UITableView {
@@ -44,23 +46,19 @@ extension SignalsTableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch elements[indexPath.row] {
-        case .offset:
-            let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
-            cell.backgroundColor = UIColor.clear
-            cell.contentView.backgroundColor = UIColor.clear
-            cell.selectionStyle = .none
-            return cell
         case .type(let type):
             let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableTypeCell.self)) as! SignalsTableTypeCell
             cell.setup(element: type)
             return cell
-        case .stock(let signal):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableStockCell.self)) as! SignalsTableStockCell
-            cell.setup(element: signal)
+        case .stocksCollection(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableStocksCollectionCell.self)) as! SignalsTableStocksCollectionCell
+            cell.collectionView.mainDelegate = mainDelegate
+            cell.setup(elements: elements)
             return cell
-        case .optionCrypto(let signal):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableOptionCryptoCell.self)) as! SignalsTableOptionCryptoCell
-            cell.setup(element: signal)
+        case .optionsCryptoCollection(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableOptionCryptoCollectionCell.self)) as! SignalsTableOptionCryptoCollectionCell
+            cell.collectionView.mainDelegate = mainDelegate
+            cell.setup(elements: elements)
             return cell
         }
     }
@@ -70,28 +68,30 @@ extension SignalsTableView: UITableViewDataSource {
 extension SignalsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         switch elements[indexPath.row] {
-        case .offset(let offset):
-            return offset
         case .type:
             return 66.scale
-        default:
-            return UITableView.automaticDimension
+        case .stocksCollection:
+            return 235.scale
+        case .optionsCryptoCollection:
+            return 288.scale
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let element = elements[indexPath.row]
-        mainDelegate?.signalsTableViewDidSelect(element: element)
+        guard case let .type(type) = elements[indexPath.row] else {
+            return
+        }
+        
+        mainDelegate?.signalsTableDidSelect(type: type)
     }
 }
 
 // MARK: Private
 private extension SignalsTableView {
     func initialize() {
-        register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         register(SignalsTableTypeCell.self, forCellReuseIdentifier: String(describing: SignalsTableTypeCell.self))
-        register(SignalsTableStockCell.self, forCellReuseIdentifier: String(describing: SignalsTableStockCell.self))
-        register(SignalsTableOptionCryptoCell.self, forCellReuseIdentifier: String(describing: SignalsTableOptionCryptoCell.self))
+        register(SignalsTableStocksCollectionCell.self, forCellReuseIdentifier: String(describing: SignalsTableStocksCollectionCell.self))
+        register(SignalsTableOptionCryptoCollectionCell.self, forCellReuseIdentifier: String(describing: SignalsTableOptionCryptoCollectionCell.self))
         
         dataSource = self
         delegate = self

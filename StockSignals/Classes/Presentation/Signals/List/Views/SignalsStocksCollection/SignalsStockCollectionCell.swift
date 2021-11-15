@@ -1,5 +1,5 @@
 //
-//  SignalsTableStockCell.swift
+//  SignalsStockCollectionCell.swift
 //  StockSignals
 //
 //  Created by Andrey Chernyshev on 03.11.2021.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-final class SignalsTableStockCell: UITableViewCell {
+final class SignalsStockCollectionCell: UICollectionViewCell {
     lazy var container = makeContainer()
     lazy var iconView = makeIconView()
     lazy var symbolLabel = makeSymbolLabel()
@@ -28,8 +28,8 @@ final class SignalsTableStockCell: UITableViewCell {
     lazy var noteLabel = makeNoteLabel()
     lazy var riskEmptyPlaceholder = makeEmptyPlaceholder()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         makeConstraints()
         initialize()
@@ -41,7 +41,7 @@ final class SignalsTableStockCell: UITableViewCell {
 }
 
 // MARK: Public
-extension SignalsTableStockCell {
+extension SignalsStockCollectionCell {
     func setup(element: StockSignal) {
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
@@ -121,23 +121,26 @@ extension SignalsTableStockCell {
 }
 
 // MARK: Private
-private extension SignalsTableStockCell {
+private extension SignalsStockCollectionCell {
     func initialize() {
         contentView.backgroundColor = UIColor.clear
         backgroundColor = UIColor.clear
         
-        selectionStyle = .none
+        let selectedView = UIView()
+        selectedView.backgroundColor = UIColor.clear
+        selectedBackgroundView = selectedView
+        
+        noteLabel.numberOfLines = 2
     }
 }
 
 // MARK: Make constraints
-private extension SignalsTableStockCell {
+private extension SignalsStockCollectionCell {
     func makeConstraints() {
         NSLayoutConstraint.activate([
-            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
-            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
-            container.topAnchor.constraint(equalTo: contentView.topAnchor),
-            container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            container.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            container.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            container.topAnchor.constraint(equalTo: contentView.topAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -236,7 +239,7 @@ private extension SignalsTableStockCell {
 }
 
 // MARK: Lazy initialization
-private extension SignalsTableStockCell {
+private extension SignalsStockCollectionCell {
     func makeContainer() -> UIView {
         let view = UIView()
         view.layer.cornerRadius = 20.scale

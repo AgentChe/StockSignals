@@ -56,19 +56,18 @@ extension SignalsViewController {
 
 // MARK: SignalsTableViewDelegate
 extension SignalsViewController: SignalsTableViewDelegate {
-    func signalsTableViewDidSelect(element: SignalsTableElement) {
-        switch element {
-        case .type(let type):
-            viewModel.didSelectAllSignals.accept(type)
-        case .stock(let signal):
-            // TODO
-            break
-        case .optionCrypto(let signal):
-            // TODO
-            break
-        default:
-            break
-        }
+    func signalsTableDidSelect(type: SignalType) {
+        viewModel.didSelectAllSignals.accept(type)
+    }
+    
+    func signalsTableDidSelect(stockSignal: StockSignal) {
+        // TODO
+        print(stockSignal)
+    }
+    
+    func signalsTableDidSelect(optionCryptoSignal: OptionCryptoSignal) {
+        // TODO
+        print(optionCryptoSignal)
     }
 }
 

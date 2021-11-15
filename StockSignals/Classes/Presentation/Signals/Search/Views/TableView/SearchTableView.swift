@@ -44,31 +44,32 @@ extension SearchTableView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch elements[indexPath.row] {
-        case .offset:
-            let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
-            cell.backgroundColor = UIColor.clear
-            cell.contentView.backgroundColor = UIColor.clear
-            cell.selectionStyle = .none
-            return cell
-        case .type(let type):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: SearchTableTypeCell.self)) as! SearchTableTypeCell
-            cell.setup(element: type)
-            return cell
-        case .stockSignal(let signal):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableStockCell.self)) as! SignalsTableStockCell
-            cell.setup(element: signal)
-            return cell
-        case .optionCryptoSignal(let signal):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableOptionCryptoCell.self)) as! SignalsTableOptionCryptoCell
-            cell.setup(element: signal)
-            return cell
-        case .quotations(let quotations):
-            let cell = dequeueReusableCell(withIdentifier: String(describing: SearchTableQuotationCell.self)) as! SearchTableQuotationCell
-            cell.collectionView.mainDelegate = mainDelegate
-            cell.setup(element: quotations)
-            return cell
-        }
+        UITableViewCell()
+//        switch elements[indexPath.row] {
+//        case .offset:
+//            let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
+//            cell.backgroundColor = UIColor.clear
+//            cell.contentView.backgroundColor = UIColor.clear
+//            cell.selectionStyle = .none
+//            return cell
+//        case .type(let type):
+//            let cell = dequeueReusableCell(withIdentifier: String(describing: SearchTableTypeCell.self)) as! SearchTableTypeCell
+//            cell.setup(element: type)
+//            return cell
+//        case .stockSignal(let signal):
+//            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableStockCell.self)) as! SignalsTableStockCell
+//            cell.setup(element: signal)
+//            return cell
+//        case .optionCryptoSignal(let signal):
+//            let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableOptionCryptoCell.self)) as! SignalsTableOptionCryptoCell
+//            cell.setup(element: signal)
+//            return cell
+//        case .quotations(let quotations):
+//            let cell = dequeueReusableCell(withIdentifier: String(describing: SearchTableQuotationCell.self)) as! SearchTableQuotationCell
+//            cell.collectionView.mainDelegate = mainDelegate
+//            cell.setup(element: quotations)
+//            return cell
+//        }
     }
 }
 
@@ -106,8 +107,8 @@ private extension SearchTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         register(SearchTableTypeCell.self, forCellReuseIdentifier: String(describing: SearchTableTypeCell.self))
-        register(SignalsTableStockCell.self, forCellReuseIdentifier: String(describing: SignalsTableStockCell.self))
-        register(SignalsTableOptionCryptoCell.self, forCellReuseIdentifier: String(describing: SignalsTableOptionCryptoCell.self))
+//        register(SignalsTableStockCell.self, forCellReuseIdentifier: String(describing: SignalsTableStockCell.self))
+//        register(SignalsTableOptionCryptoCell.self, forCellReuseIdentifier: String(describing: SignalsTableOptionCryptoCell.self))
         register(SearchTableQuotationCell.self, forCellReuseIdentifier: String(describing: SearchTableQuotationCell.self))
         
         dataSource = self

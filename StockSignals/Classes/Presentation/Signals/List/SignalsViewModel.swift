@@ -87,21 +87,21 @@ private extension SignalsViewModel {
             var elements = [SignalsTableElement]()
             
             let workingSignals = signals.filter { $0.type == .working }
-            if !workingSignals.isEmpty, let signal = workingSignals.first {
+            if !workingSignals.isEmpty {
                 elements.append(.type(.working))
-                elements.append(.stock(signal))
+                elements.append(.stocksCollection(workingSignals))
             }
             
             let longTermSignals = signals.filter { $0.type == .longTerm }
-            if !longTermSignals.isEmpty, let signal = longTermSignals.first {
+            if !longTermSignals.isEmpty {
                 elements.append(.type(.longTerm))
-                elements.append(.stock(signal))
+                elements.append(.stocksCollection(longTermSignals))
             }
             
             let closedSignals = signals.filter { $0.type == .closed }
-            if !closedSignals.isEmpty, let signal = closedSignals.first {
+            if !closedSignals.isEmpty {
                 elements.append(.type(.closed))
-                elements.append(.stock(signal))
+                elements.append(.stocksCollection(closedSignals))
             }
             
             return SignalsTableGroup(filter: .stock,
@@ -114,21 +114,21 @@ private extension SignalsViewModel {
             var elements = [SignalsTableElement]()
             
             let workingSignals = signals.filter { $0.type == .working }
-            if !workingSignals.isEmpty, let signal = workingSignals.first {
+            if !workingSignals.isEmpty {
                 elements.append(.type(.working))
-                elements.append(.optionCrypto(signal))
+                elements.append(.optionsCryptoCollection(workingSignals))
             }
             
             let longTermSignals = signals.filter { $0.type == .longTerm }
-            if !longTermSignals.isEmpty, let signal = longTermSignals.first {
+            if !longTermSignals.isEmpty {
                 elements.append(.type(.longTerm))
-                elements.append(.optionCrypto(signal))
+                elements.append(.optionsCryptoCollection(longTermSignals))
             }
             
             let closedSignals = signals.filter { $0.type == .closed }
-            if !closedSignals.isEmpty, let signal = closedSignals.first {
+            if !closedSignals.isEmpty {
                 elements.append(.type(.closed))
-                elements.append(.optionCrypto(signal))
+                elements.append(.optionsCryptoCollection(closedSignals))
             }
             
             return SignalsTableGroup(filter: .option,
@@ -141,21 +141,21 @@ private extension SignalsViewModel {
             var elements = [SignalsTableElement]()
             
             let workingSignals = signals.filter { $0.type == .working }
-            if !workingSignals.isEmpty, let signal = workingSignals.first {
+            if !workingSignals.isEmpty {
                 elements.append(.type(.working))
-                elements.append(.optionCrypto(signal))
+                elements.append(.optionsCryptoCollection(workingSignals))
             }
             
             let longTermSignals = signals.filter { $0.type == .longTerm }
-            if !longTermSignals.isEmpty, let signal = longTermSignals.first {
+            if !longTermSignals.isEmpty {
                 elements.append(.type(.longTerm))
-                elements.append(.optionCrypto(signal))
+                elements.append(.optionsCryptoCollection(longTermSignals))
             }
             
             let closedSignals = signals.filter { $0.type == .closed }
-            if !closedSignals.isEmpty, let signal = closedSignals.first {
+            if !closedSignals.isEmpty {
                 elements.append(.type(.closed))
-                elements.append(.optionCrypto(signal))
+                elements.append(.optionsCryptoCollection(closedSignals))
             }
             
             return SignalsTableGroup(filter: .crypto,

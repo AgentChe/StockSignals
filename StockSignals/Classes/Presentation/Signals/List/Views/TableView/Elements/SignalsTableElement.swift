@@ -6,8 +6,7 @@
 //
 
 enum SignalsTableElement {
-    case offset(CGFloat)
     case type(SignalType)
-    case stock(StockSignal)
-    case optionCrypto(OptionCryptoSignal)
+    case stocksCollection([StockSignal])
+    case optionsCryptoCollection([OptionCryptoSignal])
 }
