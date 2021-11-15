@@ -44,6 +44,11 @@ final class DetailsViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        viewModel.elements.drive(onNext: { [weak self] elements in
+            self?.mainView.tableView.setup(elements: elements)
+        })
+        .disposed(by: disposeBag)
+        
         addFilterAction()
     }
 }

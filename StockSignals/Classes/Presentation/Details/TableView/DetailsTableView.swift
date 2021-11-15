@@ -44,6 +44,10 @@ extension DetailsTableView: UITableViewDataSource {
             cell.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
             return cell
+        case .aboutCompany(let text):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableAboutCell.self)) as! DetailsTableAboutCell
+            cell.setup(text: text)
+            return cell
         }
     }
 }
@@ -54,6 +58,8 @@ extension DetailsTableView: UITableViewDelegate {
         switch elements[indexPath.row] {
         case .offset(let offset):
             return offset
+        default:
+            return UITableView.automaticDimension
         }
     }
 }
@@ -62,6 +68,7 @@ extension DetailsTableView: UITableViewDelegate {
 private extension DetailsTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(DetailsTableAboutCell.self, forCellReuseIdentifier: String(describing: DetailsTableAboutCell.self))
         
         dataSource = self
         delegate = self

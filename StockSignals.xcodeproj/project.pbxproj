@@ -97,6 +97,7 @@
 		9695B1952742FBDE00D6DEC5 /* DetailsSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1942742FBDE00D6DEC5 /* DetailsSummary.swift */; };
 		9695B1972742FD4700D6DEC5 /* GetDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1962742FD4700D6DEC5 /* GetDetailsRequest.swift */; };
 		9695B1992742FDA100D6DEC5 /* GetDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1982742FDA100D6DEC5 /* GetDetailsResponse.swift */; };
+		9695B19B274302B800D6DEC5 /* DetailsTableAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -305,6 +306,7 @@
 		9695B1942742FBDE00D6DEC5 /* DetailsSummary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSummary.swift; sourceTree = "<group>"; };
 		9695B1962742FD4700D6DEC5 /* GetDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailsRequest.swift; sourceTree = "<group>"; };
 		9695B1982742FDA100D6DEC5 /* GetDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailsResponse.swift; sourceTree = "<group>"; };
+		9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableAboutCell.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -876,6 +878,7 @@
 		9695B18B2742EE4200D6DEC5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1820,6 +1823,7 @@
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
 				96234DC8272ADEFD00619CE2 /* RateView.swift in Sources */,
 				96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */,
+				9695B19B274302B800D6DEC5 /* DetailsTableAboutCell.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
 				961D421F273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift in Sources */,
 				96AD7085272C36B4007BF50C /* GetNotificationsRequest.swift in Sources */,

@@ -9,4 +9,5 @@ import Foundation
 
 enum DetailsTableElement {
     case offset(CGFloat)
+    case aboutCompany(String)
 }
