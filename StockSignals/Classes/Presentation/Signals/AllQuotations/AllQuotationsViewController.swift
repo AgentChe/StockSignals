@@ -52,9 +52,8 @@ final class AllQuotationsViewController: UIViewController {
 
 // MARK: Make
 extension AllQuotationsViewController {
-    static func make(title: String, quotations: [Quotation]) -> AllQuotationsViewController {
+    static func make(title: String) -> AllQuotationsViewController {
         let vc = AllQuotationsViewController(title: title)
-        vc.viewModel.quotations.accept(quotations)
         vc.modalPresentationStyle = .fullScreen
         return vc
     }

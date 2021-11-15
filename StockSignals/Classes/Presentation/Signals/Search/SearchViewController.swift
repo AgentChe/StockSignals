@@ -50,48 +50,6 @@ final class SearchViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
-        viewModel.selectedStockSignals.drive(onNext: { [weak self] signals in
-            let vc = AllSignalsViewController.make(title: "Search.StockSignals".localized,
-                                                   stockSignals: signals,
-                                                   optionCryptoSignals: nil)
-            self?.present(vc, animated: true)
-        })
-        .disposed(by: disposeBag)
-        
-        viewModel.selectedStockQuotations.drive(onNext: { [weak self] quotations in
-            let vc = AllQuotationsViewController.make(title: "Search.StockQuotations".localized, quotations: quotations)
-            self?.present(vc, animated: true)
-        })
-        .disposed(by: disposeBag)
-        
-        viewModel.selectedOptionSignals.drive(onNext: { [weak self] signals in
-            let vc = AllSignalsViewController.make(title: "Search.OptionSignals".localized,
-                                                   stockSignals: nil,
-                                                   optionCryptoSignals: signals)
-            self?.present(vc, animated: true)
-        })
-        .disposed(by: disposeBag)
-        
-        viewModel.selectedOptionQuotations.drive(onNext: { [weak self] quotations in
-            let vc = AllQuotationsViewController.make(title: "Search.OptionQuotations".localized, quotations: quotations)
-            self?.present(vc, animated: true)
-        })
-        .disposed(by: disposeBag)
-        
-        viewModel.selectedCryptoSignals.drive(onNext: { [weak self] signals in
-            let vc = AllSignalsViewController.make(title: "Search.CryptoSignals".localized,
-                                                   stockSignals: nil,
-                                                   optionCryptoSignals: signals)
-            self?.present(vc, animated: true)
-        })
-        .disposed(by: disposeBag)
-        
-        viewModel.selectedCryptoQuotations.drive(onNext: { [weak self] quotations in
-            let vc = AllQuotationsViewController.make(title: "Search.CryptoQuotations".localized, quotations: quotations)
-            self?.present(vc, animated: true)
-        })
-        .disposed(by: disposeBag)
-        
         addHideKeyboardAction()
         mainView.tableView.listDelegate = self
         mainView.tableView.searchDelegate = self
@@ -114,7 +72,24 @@ extension SearchViewController: SearchTableViewDelegate & SignalsTableViewDelega
     }
     
     func searchTableViewDidTapped(type: SearchTableTypeElement) {
-        viewModel.select.accept(type)
+        let vc: UIViewController
+        
+        switch type {
+        case .stockSignals:
+            vc = AllSignalsViewController.make(title: "Search.StockSignals".localized, filter: .stock)
+        case .optionSignals:
+            vc = AllSignalsViewController.make(title: "Search.OptionSignals".localized, filter: .option)
+        case .cryptoSignals:
+            vc = AllSignalsViewController.make(title: "Search.CryptoSignals".localized, filter: .crypto)
+        case .stockQuotations:
+            vc = AllQuotationsViewController.make(title: "Search.StockQuotations".localized)
+        case .optionQuotations:
+            vc = AllQuotationsViewController.make(title: "Search.OptionQuotations".localized)
+        case .cryptoQuotations:
+            vc = AllQuotationsViewController.make(title: "Search.CryptoQuotations".localized)
+        }
+        
+        present(vc, animated: true)
     }
     
     func signalsTableDidSelect(stockSignal: StockSignal) {

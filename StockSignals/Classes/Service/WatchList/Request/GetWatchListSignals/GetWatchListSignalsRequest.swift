@@ -8,7 +8,13 @@
 import Alamofire
 
 struct GetWatchListSignalsRequest: APIRequestBody {
-    let userToken: String
+    private let userToken: String
+    private let symbols: String?
+    
+    init(userToken: String, symbols: String? = nil) {
+        self.userToken = userToken
+        self.symbols = symbols
+    }
     
     var url: String {
         GlobalDefinitions.domainUrl + "/api/v1/watch"
@@ -19,9 +25,15 @@ struct GetWatchListSignalsRequest: APIRequestBody {
     }
     
     var parameters: Parameters? {
-        [
+        var params = [
             "_api_key": GlobalDefinitions.apiKey,
             "_user_token": userToken
         ]
+        
+        if let symbols = symbols {
+            params["symbols"] = symbols
+        }
+        
+        return params
     }
 }

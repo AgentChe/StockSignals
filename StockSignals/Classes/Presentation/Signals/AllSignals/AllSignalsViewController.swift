@@ -57,18 +57,17 @@ final class AllSignalsViewController: UIViewController {
         
         mainView.sortButton.sort = .maxGain
         mainView.sortView.delegate = self
+        mainView.tableView.mainDelegate = self
     }
 }
 
 // MARK: Make
 extension AllSignalsViewController {
-    static func make(title: String, stockSignals: [StockSignal]?, optionCryptoSignals: [OptionCryptoSignal]?) -> AllSignalsViewController {
+    static func make(title: String, filter: SignalsFilter, type: SignalType? = nil) -> AllSignalsViewController {
         let vc = AllSignalsViewController(title: title)
+        vc.viewModel.type.accept(filter)
+        vc.viewModel.activity.accept(type)
         vc.modalPresentationStyle = .fullScreen
-        
-        vc.viewModel.stockSignals.accept(stockSignals)
-        vc.viewModel.optionCryptoSignals.accept(optionCryptoSignals)
-        
         return vc
     }
 }
@@ -78,5 +77,12 @@ extension AllSignalsViewController: AllSignalsSortViewDelegate {
     func allSignalsDidChange(sort: AllSignalsSort) {
         mainView.sortButton.sort = sort
         viewModel.sort.accept(sort)
+    }
+}
+
+// MARK: AllSignalsTableViewDelegate
+extension AllSignalsViewController: AllSignalsTableViewDelegate {
+    func allSignalsTableDidSelect(symbol: String) {
+        // TODO: open details
     }
 }

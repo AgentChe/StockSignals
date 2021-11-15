@@ -9,16 +9,19 @@ import RxSwift
 import RxCocoa
 
 final class AllQuotationsViewModel {
-    lazy var quotations = BehaviorRelay<[Quotation]>(value: [])
     lazy var sort = PublishRelay<WatchListSignalsSortElement>()
     
     lazy var elements = makeElements()
+    
+    private lazy var watchListManager = WatchListManagerCore()
 }
 
 // MARK: Private
 private extension AllQuotationsViewModel {
     func makeElements() -> Driver<[Quotation]> {
-        let quotations = quotations.asDriver()
+        let quotations = watchListManager
+            .obtainWatchListSignals()
+            .asDriver(onErrorJustReturn: [])
         
         let sortBy = sort
             .startWith(.price)

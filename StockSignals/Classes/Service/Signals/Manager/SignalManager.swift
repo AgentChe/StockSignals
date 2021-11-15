@@ -8,8 +8,8 @@
 import RxSwift
 
 protocol SignalManager {
-    func obtainStockSignals() -> Single<[StockSignal]>
-    func obtainOptionSignals() -> Single<[OptionCryptoSignal]>
-    func obtainCryptoSignals() -> Single<[OptionCryptoSignal]>
+    func obtainStockSignals(activity: Int?) -> Single<[StockSignal]>
+    func obtainOptionSignals(activity: Int?) -> Single<[OptionCryptoSignal]>
+    func obtainCryptoSignals(activity: Int?) -> Single<[OptionCryptoSignal]>
     func search(name: String) -> Single<SearchResult?>
 }

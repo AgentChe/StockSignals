@@ -11,12 +11,14 @@ final class SignalManagerCore: SignalManager {}
 
 // MARK: Public
 extension SignalManagerCore {
-    func obtainStockSignals() -> Single<[StockSignal]> {
+    func obtainStockSignals(activity: Int? = nil) -> Single<[StockSignal]> {
         guard let userToken = SessionManagerCore().getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
 
-        let request = GetSignalsRequest(userToken: userToken, type: "stocks")
+        let request = GetSignalsRequest(userToken: userToken,
+                                        type: "stocks",
+                                        activity: activity)
 
         return SDKStorage.shared
             .restApiTransport
@@ -24,12 +26,14 @@ extension SignalManagerCore {
             .map { GetSignalsResponse.stockSignals(response: $0) }
     }
     
-    func obtainOptionSignals() -> Single<[OptionCryptoSignal]> {
+    func obtainOptionSignals(activity: Int? = nil) -> Single<[OptionCryptoSignal]> {
         guard let userToken = SessionManagerCore().getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
 
-        let request = GetSignalsRequest(userToken: userToken, type: "options")
+        let request = GetSignalsRequest(userToken: userToken,
+                                        type: "options",
+                                        activity: activity)
 
         return SDKStorage.shared
             .restApiTransport
@@ -37,12 +41,14 @@ extension SignalManagerCore {
             .map { GetSignalsResponse.optionCryptoSignals(response: $0) }
     }
     
-    func obtainCryptoSignals() -> Single<[OptionCryptoSignal]> {
+    func obtainCryptoSignals(activity: Int? = nil) -> Single<[OptionCryptoSignal]> {
         guard let userToken = SessionManagerCore().getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
 
-        let request = GetSignalsRequest(userToken: userToken, type: "crypto")
+        let request = GetSignalsRequest(userToken: userToken,
+                                        type: "crypto",
+                                        activity: activity)
 
         return SDKStorage.shared
             .restApiTransport

@@ -107,8 +107,8 @@ private extension AllSignalsView {
         return view
     }
     
-    func makeTableView() -> SignalsTableView {
-        let view = SignalsTableView()
+    func makeTableView() -> AllSignalsTableView {
+        let view = AllSignalsTableView()
         view.contentInset = UIEdgeInsets(top: 16.scale, left: 0, bottom: 16.scale, right: 0)
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
