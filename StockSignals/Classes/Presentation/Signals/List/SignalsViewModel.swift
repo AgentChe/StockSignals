@@ -88,25 +88,19 @@ private extension SignalsViewModel {
             
             let workingSignals = signals.filter { $0.type == .working }
             if !workingSignals.isEmpty, let signal = workingSignals.first {
-                let type = SignalsTableTypeElement(type: .working,
-                                                   title: "Signals.OpenSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.working))
                 elements.append(.stock(signal))
             }
             
             let longTermSignals = signals.filter { $0.type == .longTerm }
             if !longTermSignals.isEmpty, let signal = longTermSignals.first {
-                let type = SignalsTableTypeElement(type: .longTerm,
-                                                   title: "Signals.LongTermSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.longTerm))
                 elements.append(.stock(signal))
             }
             
             let closedSignals = signals.filter { $0.type == .closed }
             if !closedSignals.isEmpty, let signal = closedSignals.first {
-                let type = SignalsTableTypeElement(type: .closed,
-                                                   title: "Signals.ClosedSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.closed))
                 elements.append(.stock(signal))
             }
             
@@ -121,25 +115,19 @@ private extension SignalsViewModel {
             
             let workingSignals = signals.filter { $0.type == .working }
             if !workingSignals.isEmpty, let signal = workingSignals.first {
-                let type = SignalsTableTypeElement(type: .working,
-                                                   title: "Signals.OpenSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.working))
                 elements.append(.optionCrypto(signal))
             }
             
             let longTermSignals = signals.filter { $0.type == .longTerm }
             if !longTermSignals.isEmpty, let signal = longTermSignals.first {
-                let type = SignalsTableTypeElement(type: .longTerm,
-                                                   title: "Signals.LongTermSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.longTerm))
                 elements.append(.optionCrypto(signal))
             }
             
             let closedSignals = signals.filter { $0.type == .closed }
             if !closedSignals.isEmpty, let signal = closedSignals.first {
-                let type = SignalsTableTypeElement(type: .closed,
-                                                   title: "Signals.ClosedSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.closed))
                 elements.append(.optionCrypto(signal))
             }
             
@@ -154,25 +142,19 @@ private extension SignalsViewModel {
             
             let workingSignals = signals.filter { $0.type == .working }
             if !workingSignals.isEmpty, let signal = workingSignals.first {
-                let type = SignalsTableTypeElement(type: .working,
-                                                   title: "Signals.OpenSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.working))
                 elements.append(.optionCrypto(signal))
             }
             
             let longTermSignals = signals.filter { $0.type == .longTerm }
             if !longTermSignals.isEmpty, let signal = longTermSignals.first {
-                let type = SignalsTableTypeElement(type: .longTerm,
-                                                   title: "Signals.LongTermSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.longTerm))
                 elements.append(.optionCrypto(signal))
             }
             
             let closedSignals = signals.filter { $0.type == .closed }
             if !closedSignals.isEmpty, let signal = closedSignals.first {
-                let type = SignalsTableTypeElement(type: .closed,
-                                                   title: "Signals.ClosedSignals".localized)
-                elements.append(.type(type))
+                elements.append(.type(.closed))
                 elements.append(.optionCrypto(signal))
             }
             

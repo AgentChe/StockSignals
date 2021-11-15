@@ -59,7 +59,7 @@ extension SignalsViewController: SignalsTableViewDelegate {
     func signalsTableViewDidSelect(element: SignalsTableElement) {
         switch element {
         case .type(let type):
-            viewModel.didSelectAllSignals.accept(type.type)
+            viewModel.didSelectAllSignals.accept(type)
         case .stock(let signal):
             // TODO
             break

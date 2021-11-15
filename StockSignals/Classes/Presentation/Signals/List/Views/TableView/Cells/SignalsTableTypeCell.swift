@@ -26,12 +26,12 @@ final class SignalsTableTypeCell: UITableViewCell {
 
 // MARK: Public
 extension SignalsTableTypeCell {
-    func setup(element: SignalsTableTypeElement) {
+    func setup(element: SignalType) {
         let attrs = TextAttributes()
             .textColor(UIColor.white)
             .font(Fonts.SFProDisplay.bold(size: 19.scale))
             .lineHeight(22.8.scale)
-        titleLabel.attributedText = element.title.attributed(with: attrs)
+        titleLabel.attributedText = title(at: element).attributed(with: attrs)
     }
 }
 
@@ -42,6 +42,17 @@ private extension SignalsTableTypeCell {
         backgroundColor = UIColor.clear
         
         selectionStyle = .none
+    }
+    
+    func title(at type: SignalType) -> String {
+        switch type {
+        case .closed:
+            return "Signals.ClosedSignals".localized
+        case .longTerm:
+            return "Signals.LongTermSignals".localized
+        case .working:
+            return "Signals.OpenSignals".localized
+        }
     }
 }
 

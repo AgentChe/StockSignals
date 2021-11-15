@@ -111,7 +111,6 @@
 		96AD78C82732DA7F007BF50C /* SignalsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78C72732DA7F007BF50C /* SignalsView.swift */; };
 		96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78CB2732DA99007BF50C /* SignalsTableView.swift */; };
 		96AD78D02732E0E5007BF50C /* SignalsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78CF2732E0E5007BF50C /* SignalsTableElement.swift */; };
-		96AD78D42732E1D8007BF50C /* SignalsTableTypeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78D32732E1D8007BF50C /* SignalsTableTypeElement.swift */; };
 		96AD78D62732E231007BF50C /* SignalsTableTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78D52732E231007BF50C /* SignalsTableTypeCell.swift */; };
 		96AD78D82732E25D007BF50C /* SignalsTableStockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78D72732E25D007BF50C /* SignalsTableStockCell.swift */; };
 		96AD78DA2732E271007BF50C /* SignalsTableOptionCryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD78D92732E271007BF50C /* SignalsTableOptionCryptoCell.swift */; };
@@ -302,7 +301,6 @@
 		96AD78C72732DA7F007BF50C /* SignalsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsView.swift; sourceTree = "<group>"; };
 		96AD78CB2732DA99007BF50C /* SignalsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableView.swift; sourceTree = "<group>"; };
 		96AD78CF2732E0E5007BF50C /* SignalsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableElement.swift; sourceTree = "<group>"; };
-		96AD78D32732E1D8007BF50C /* SignalsTableTypeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableTypeElement.swift; sourceTree = "<group>"; };
 		96AD78D52732E231007BF50C /* SignalsTableTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableTypeCell.swift; sourceTree = "<group>"; };
 		96AD78D72732E25D007BF50C /* SignalsTableStockCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStockCell.swift; sourceTree = "<group>"; };
 		96AD78D92732E271007BF50C /* SignalsTableOptionCryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCell.swift; sourceTree = "<group>"; };
@@ -984,7 +982,6 @@
 			isa = PBXGroup;
 			children = (
 				96AD78CF2732E0E5007BF50C /* SignalsTableElement.swift */,
-				96AD78D32732E1D8007BF50C /* SignalsTableTypeElement.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -1688,7 +1685,6 @@
 				96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */,
 				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
 				96234DA6272A0AFB00619CE2 /* Industry.swift in Sources */,
-				96AD78D42732E1D8007BF50C /* SignalsTableTypeElement.swift in Sources */,
 				96BDBC852719C67E00E43708 /* SignError.swift in Sources */,
 				96AD78DC2732E7B1007BF50C /* SignalsFilterView.swift in Sources */,
 				96BDBCA82719C7B300E43708 /* SplashViewController.swift in Sources */,
