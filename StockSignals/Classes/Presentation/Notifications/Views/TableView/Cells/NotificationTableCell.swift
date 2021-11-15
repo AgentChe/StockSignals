@@ -33,7 +33,7 @@ extension NotificationTableCell {
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
         
-        if let url = URL(string: element.imageUrl) {
+        if let path = element.imageUrl, let url = URL(string: path) {
             iconView.kf.setImage(with: url)
         }
         
@@ -53,7 +53,8 @@ extension NotificationTableCell {
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.5))
                             .font(Fonts.SFProDisplay.regular(size: 15.scale))
-                            .lineHeight(20.scale))
+                            .lineHeight(20.scale)
+                            .textAlignment(.right))
     }
 }
 

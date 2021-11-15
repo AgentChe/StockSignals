@@ -18,21 +18,24 @@ final class GetNotificationsResponse {
             guard
                 let typeRawValue = element["type"] as? String,
                 let type = type(at: typeRawValue),
-                let created = element["created"] as? TimeInterval,
+                let created = element["create"] as? TimeInterval,
                 let title = element["title"] as? String,
                 let description = element["description"] as? String,
                 let isClosed = element["is_closed"] as? Bool,
-                let imageUrl = element["url"] as? String
+                let symbol = element["symbol"] as? String
             else {
                 return nil
             }
+            
+            let imageUrl = element["image"] as? String
             
             return Notification(type: type,
                                 created: created,
                                 title: title,
                                 description: description,
                                 imageUrl: imageUrl,
-                                isClosed: isClosed)
+                                isClosed: isClosed,
+                                symbol: symbol)
         }
     }
 }
@@ -41,9 +44,9 @@ final class GetNotificationsResponse {
 private extension GetNotificationsResponse {
     static func type(at rawValue: String) -> NotificationType? {
         switch rawValue {
-        case "stock":
+        case "stocks":
             return .stock
-        case "option":
+        case "options":
             return .option
         case "crypto":
             return .crypto

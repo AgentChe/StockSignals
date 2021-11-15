@@ -10,6 +10,7 @@ struct Notification {
     let created: TimeInterval
     let title: String
     let description: String
-    let imageUrl: String
+    let imageUrl: String?
     let isClosed: Bool
+    let symbol: String
 }
