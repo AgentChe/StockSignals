@@ -51,9 +51,9 @@ final class SearchViewController: UIViewController {
             .disposed(by: disposeBag)
         
         viewModel.selectedStockSignals.drive(onNext: { [weak self] signals in
-            let vc = SearchAllSignalsViewController.make(title: "Search.StockSignals".localized,
-                                                         stockSignals: signals,
-                                                         optionCryptoSignals: nil)
+            let vc = AllSignalsViewController.make(title: "Search.StockSignals".localized,
+                                                   stockSignals: signals,
+                                                   optionCryptoSignals: nil)
             self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
@@ -65,9 +65,9 @@ final class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         
         viewModel.selectedOptionSignals.drive(onNext: { [weak self] signals in
-            let vc = SearchAllSignalsViewController.make(title: "Search.OptionSignals".localized,
-                                                         stockSignals: nil,
-                                                         optionCryptoSignals: signals)
+            let vc = AllSignalsViewController.make(title: "Search.OptionSignals".localized,
+                                                   stockSignals: nil,
+                                                   optionCryptoSignals: signals)
             self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
@@ -79,9 +79,9 @@ final class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         
         viewModel.selectedCryptoSignals.drive(onNext: { [weak self] signals in
-            let vc = SearchAllSignalsViewController.make(title: "Search.CryptoSignals".localized,
-                                                         stockSignals: nil,
-                                                         optionCryptoSignals: signals)
+            let vc = AllSignalsViewController.make(title: "Search.CryptoSignals".localized,
+                                                   stockSignals: nil,
+                                                   optionCryptoSignals: signals)
             self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)

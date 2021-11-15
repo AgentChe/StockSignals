@@ -9,11 +9,23 @@ import UIKit
 import RxSwift
 
 final class AllSignalsViewController: UIViewController {
-    lazy var mainView = AllSignalsView()
+    lazy var mainView = AllSignalsView(title: viewTitle)
     
     private lazy var disposeBag = DisposeBag()
     
     private lazy var viewModel = AllSignalsViewModel()
+    
+    private let viewTitle: String
+    
+    private init(title: String) {
+        self.viewTitle = title
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = mainView
@@ -24,6 +36,11 @@ final class AllSignalsViewController: UIViewController {
         
         viewModel.elements.drive(onNext: { [weak self] elements in
             self?.mainView.tableView.setup(elements: elements)
+        })
+        .disposed(by: disposeBag)
+        
+        mainView.backButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
         })
         .disposed(by: disposeBag)
         
@@ -46,9 +63,8 @@ final class AllSignalsViewController: UIViewController {
 // MARK: Make
 extension AllSignalsViewController {
     static func make(title: String, stockSignals: [StockSignal]?, optionCryptoSignals: [OptionCryptoSignal]?) -> AllSignalsViewController {
-        let vc = AllSignalsViewController()
-        vc.navigationItem.backButtonTitle = " "
-        vc.navigationItem.title = title
+        let vc = AllSignalsViewController(title: title)
+        vc.modalPresentationStyle = .fullScreen
         
         vc.viewModel.stockSignals.accept(stockSignals)
         vc.viewModel.optionCryptoSignals.accept(optionCryptoSignals)

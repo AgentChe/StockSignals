@@ -35,7 +35,7 @@ final class SignalsViewController: UIViewController {
             let vc = AllSignalsViewController.make(title: self.title(at: bundle.type),
                                                    stockSignals: bundle.stockSignals,
                                                    optionCryptoSignals: bundle.optionCryptoSignals)
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
         

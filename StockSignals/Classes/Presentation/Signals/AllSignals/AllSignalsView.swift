@@ -8,12 +8,18 @@
 import UIKit
 
 final class AllSignalsView: UIView {
+    lazy var backButton = makeBackButton()
+    lazy var titleLabel = makeTitleLabel()
     lazy var sortButton = makeSortButton()
     lazy var tableView = makeTableView()
     lazy var sortView = makeSortView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    private let title: String
+    
+    init(title: String) {
+        self.title = title
+        
+        super.init(frame: .zero)
         
         makeConstraints()
         initialize()
@@ -35,8 +41,20 @@ private extension AllSignalsView {
 private extension AllSignalsView {
     func makeConstraints() {
         NSLayoutConstraint.activate([
+            backButton.widthAnchor.constraint(equalToConstant: 36.scale),
+            backButton.heightAnchor.constraint(equalToConstant: 36.scale),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            backButton.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            titleLabel.topAnchor.constraint(equalTo: topAnchor, constant: ScreenSize.isIphoneXFamily ? 55.scale : 35.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             sortButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            sortButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 16.scale),
+            sortButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 27.scale),
             sortButton.heightAnchor.constraint(equalToConstant: 40.scale)
         ])
         
@@ -58,6 +76,28 @@ private extension AllSignalsView {
 
 // MARK: Lazy initialization
 private extension AllSignalsView {
+    func makeBackButton() -> UIButton {
+        let view = UIButton()
+        view.setImage(UIImage(named: "AllQuotations.Back"), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeTitleLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.SFProDisplay.bold(size: 19.scale))
+            .lineHeight(22.scale)
+            .textAlignment(.center)
+        
+        let view = UILabel()
+        view.attributedText = title.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeSortButton() -> AllSignalsSortButton {
         let view = AllSignalsSortButton()
         view.backgroundColor = UIColor(integralRed: 42, green: 46, blue: 57, alpha: 0.7)

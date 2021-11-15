@@ -94,9 +94,9 @@ private extension GetSignalsResponse {
     static func type(at rawValue: Int) -> SignalType? {
         switch rawValue {
         case 0:
-            return .working
-        case 1:
             return .closed
+        case 1:
+            return .working
         case 2:
             return .longTerm
         default:

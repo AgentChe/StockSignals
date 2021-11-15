@@ -41,19 +41,19 @@ private extension SearchResponse {
                 let imageUrl = element["image"] as? String,
                 let symbol = element["symbol"] as? String,
                 let company = element["company"] as? String,
-                let maxGain = element["max_gain"] as? Double,
-                let created = element["created"] as? TimeInterval,
-                let typeRawValue = element["type"] as? Int,
+                let maxGain = element["gain"] as? Double,
+                let created = element["create"] as? TimeInterval,
+                let typeRawValue = element["activity"] as? Int,
                 let type = type(at: typeRawValue),
                 let targetJSON = element["target"] as? [String: Any],
                 let targetBuy = targetJSON["buy"] as? Double,
-                let targetSell = targetJSON["sell"] as? Double,
-                let targetStop = targetJSON["stop"] as? Double
+                let targetSell = targetJSON["sell"] as? Double
             else {
                 return nil
             }
             
             let risk = element["risk"] as? String
+            let targetStop = targetJSON["stop"] as? Double
             let note = element["note"] as? String
             
             return StockSignal(imageUrl: imageUrl,
@@ -76,18 +76,18 @@ private extension SearchResponse {
                 let imageUrl = element["image"] as? String,
                 let symbol = element["symbol"] as? String,
                 let description = element["description"] as? String,
-                let created = element["created"] as? TimeInterval,
-                let typeRawValue = element["type"] as? Int,
+                let created = element["create"] as? TimeInterval,
+                let typeRawValue = element["activity"] as? Int,
                 let type = type(at: typeRawValue),
-                let maxGain = element["max_gain"] as? Double,
+                let maxGain = element["gain"] as? Double,
                 let targetJSON = element["target"] as? [String: Any],
                 let targetBuy = targetJSON["buy"] as? Double,
-                let targetStop = targetJSON["stop"] as? Double,
                 let targetSell = targetJSON["sell"] as? [Double]
             else {
                 return nil
             }
             
+            let targetStop = targetJSON["stop"] as? Double
             let note = element["note"] as? String
             
             return OptionCryptoSignal(imageUrl: imageUrl,
@@ -133,9 +133,9 @@ private extension SearchResponse {
     static func type(at rawValue: Int) -> SignalType? {
         switch rawValue {
         case 0:
-            return .working
-        case 1:
             return .closed
+        case 1:
+            return .working
         case 2:
             return .longTerm
         default:
