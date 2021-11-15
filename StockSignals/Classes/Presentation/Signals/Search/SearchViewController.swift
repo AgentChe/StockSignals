@@ -93,7 +93,8 @@ final class SearchViewController: UIViewController {
         .disposed(by: disposeBag)
         
         addHideKeyboardAction()
-        mainView.tableView.mainDelegate = self
+        mainView.tableView.listDelegate = self
+        mainView.tableView.searchDelegate = self
     }
 }
 
@@ -106,15 +107,26 @@ extension SearchViewController {
     }
 }
 
-// MARK: SearchTableViewDelegate
-extension SearchViewController: SearchTableViewDelegate {
+// MARK: SearchTableViewDelegate & SignalsTableViewDelegate
+extension SearchViewController: SearchTableViewDelegate & SignalsTableViewDelegate {
     func searchTableViewDidTapped(symbol: String) {
         // TODO: open detail
     }
-
-//    func searchTableViewDidTapped(type: SearchTableTypeElement) {
-//        viewModel.select.accept(type)
-//    }
+    
+    func searchTableViewDidTapped(type: SearchTableTypeElement) {
+        viewModel.select.accept(type)
+    }
+    
+    func signalsTableDidSelect(stockSignal: StockSignal) {
+        // TODO: open detail
+    }
+    
+    func signalsTableDidSelect(optionCryptoSignal: OptionCryptoSignal) {
+        // TODO: open detail
+    }
+    
+    // Используется на экране SignalsViewController
+    func signalsTableDidSelect(type: SignalType) {}
 }
 
 // MARK: Private

@@ -8,11 +8,13 @@
 import UIKit
 
 protocol SearchTableViewDelegate: AnyObject {
+    func searchTableViewDidTapped(type: SearchTableTypeElement)
     func searchTableViewDidTapped(symbol: String)
 }
 
 final class SearchTableView: UITableView {
-    weak var mainDelegate: SearchTableViewDelegate?
+    weak var searchDelegate: SearchTableViewDelegate?
+    weak var listDelegate: SignalsTableViewDelegate?
     
     private lazy var elements = [SearchTableElement]()
     
@@ -50,15 +52,17 @@ extension SearchTableView: UITableViewDataSource {
             return cell
         case .stockSignals(let elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableStocksCollectionCell.self)) as! SignalsTableStocksCollectionCell
+            cell.collectionView.mainDelegate = listDelegate
             cell.setup(elements: elements)
             return cell
         case .optionCryptoSignals(let elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: SignalsTableOptionCryptoCollectionCell.self)) as! SignalsTableOptionCryptoCollectionCell
+            cell.collectionView.mainDelegate = listDelegate
             cell.setup(elements: elements)
             return cell
         case .quotations(let quotations):
             let cell = dequeueReusableCell(withIdentifier: String(describing: SearchTableQuotationCell.self)) as! SearchTableQuotationCell
-            cell.collectionView.mainDelegate = mainDelegate
+            cell.collectionView.mainDelegate = searchDelegate
             cell.setup(element: quotations)
             return cell
         }
@@ -78,6 +82,14 @@ extension SearchTableView: UITableViewDelegate {
         case .quotations:
             return 146.scale
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard case let .type(type) = elements[indexPath.row] else {
+            return
+        }
+        
+        searchDelegate?.searchTableViewDidTapped(type: type)
     }
 }
 
