@@ -68,7 +68,8 @@ extension SearchViewController {
 // MARK: SearchTableViewDelegate & SignalsTableViewDelegate
 extension SearchViewController: SearchTableViewDelegate & SignalsTableViewDelegate {
     func searchTableViewDidTapped(symbol: String) {
-        // TODO: open detail
+        let vc = DetailsViewController.make(symbol: symbol)
+        present(vc, animated: true)
     }
     
     func searchTableViewDidTapped(type: SearchTableTypeElement) {
@@ -93,11 +94,13 @@ extension SearchViewController: SearchTableViewDelegate & SignalsTableViewDelega
     }
     
     func signalsTableDidSelect(stockSignal: StockSignal) {
-        // TODO: open detail
+        let vc = DetailsViewController.make(symbol: stockSignal.symbol)
+        present(vc, animated: true)
     }
     
     func signalsTableDidSelect(optionCryptoSignal: OptionCryptoSignal) {
-        // TODO: open detail
+        let vc = DetailsViewController.make(symbol: optionCryptoSignal.symbol)
+        present(vc, animated: true)
     }
     
     // Используется на экране SignalsViewController

@@ -142,3 +142,8 @@
 "Search.StockQuotations" = "Stock";
 "Search.OptionQuotations" = "Option";
 "Search.CryptoQuotations" = "Crypto";
+
+// MARK: Details
+"Details.Overview" = "Overview";
+"Details.Summary" = "Summary";
+"Details.AboutCompany" = "About company";

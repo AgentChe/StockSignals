@@ -83,6 +83,7 @@ extension AllSignalsViewController: AllSignalsSortViewDelegate {
 // MARK: AllSignalsTableViewDelegate
 extension AllSignalsViewController: AllSignalsTableViewDelegate {
     func allSignalsTableDidSelect(symbol: String) {
-        // TODO: open details
+        let vc = DetailsViewController.make(symbol: symbol)
+        present(vc, animated: true)
     }
 }

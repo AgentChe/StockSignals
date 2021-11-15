@@ -68,4 +68,17 @@ extension SignalManagerCore {
             .callServerApi(requestBody: request)
             .map { SearchResponse.map(from: $0) }
     }
+    
+    func obtainDetails(by symbol: String) -> Single<Details?> {
+        guard let userToken = SessionManagerCore().getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetDetailsRequest(userToken: userToken, symbol: symbol)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetDetailsResponse.map(from: $0) }
+    }
 }

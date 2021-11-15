@@ -52,11 +52,13 @@ extension SignalsViewController: SignalsTableViewDelegate {
     }
     
     func signalsTableDidSelect(stockSignal: StockSignal) {
-        // TODO
+        let vc = DetailsViewController.make(symbol: stockSignal.symbol)
+        present(vc, animated: true)
     }
     
     func signalsTableDidSelect(optionCryptoSignal: OptionCryptoSignal) {
-        // TODO
+        let vc = DetailsViewController.make(symbol: optionCryptoSignal.symbol)
+        present(vc, animated: true)
     }
 }
 
