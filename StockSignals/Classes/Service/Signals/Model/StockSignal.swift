@@ -15,7 +15,7 @@ struct StockSignal {
     let risk: String?
     let targetBuy: Double
     let targetSell: Double
-    let targetStop: Double
+    let targetStop: Double?
     let note: String?
 }
 

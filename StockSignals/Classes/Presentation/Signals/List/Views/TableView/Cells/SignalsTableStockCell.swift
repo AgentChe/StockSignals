@@ -20,6 +20,7 @@ final class SignalsTableStockCell: UITableViewCell {
     lazy var buyTargetLabel = makeValueLabel()
     lazy var stopLossTitleLabel = makeTitleLabel(title: "Signals.StopLoss".localized)
     lazy var stopLossLabel = makeValueLabel()
+    lazy var stopLossEmptyPlaceholder = makeEmptyPlaceholder()
     lazy var sellTargetTitleLabel = makeTitleLabel(title: "Signals.SellTarget".localized)
     lazy var sellTargetLabel = makeValueLabel()
     lazy var riskTitleLabel = makeTitleLabel(title: "Signals.Risk".localized)
@@ -86,12 +87,17 @@ extension SignalsTableStockCell {
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        let stopLoss = "$" + String(element.targetStop)
-        stopLossLabel.attributedText = stopLoss
+        
+        var stopLoss: String?
+        if let value = element.targetStop {
+            stopLoss = "$" + String(value)
+        }
+        stopLossLabel.attributedText = stopLoss?
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
+        stopLossEmptyPlaceholder.isHidden = element.targetStop != nil
         
         let sellTarget = "$" + String(element.targetSell)
         sellTargetLabel.attributedText = sellTarget
@@ -187,6 +193,13 @@ private extension SignalsTableStockCell {
         ])
         
         NSLayoutConstraint.activate([
+            stopLossEmptyPlaceholder.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 173.scale),
+            stopLossEmptyPlaceholder.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -16.scale),
+            stopLossEmptyPlaceholder.topAnchor.constraint(equalTo: stopLossTitleLabel.bottomAnchor, constant: 4.scale),
+            stopLossEmptyPlaceholder.heightAnchor.constraint(equalToConstant: 21.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
             sellTargetTitleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             sellTargetTitleLabel.topAnchor.constraint(equalTo: buyTargetLabel.bottomAnchor, constant: 12.scale)
         ])
@@ -198,7 +211,7 @@ private extension SignalsTableStockCell {
         
         NSLayoutConstraint.activate([
             riskTitleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 173.scale),
-            riskTitleLabel.topAnchor.constraint(equalTo: stopLossLabel.bottomAnchor, constant: 16.scale)
+            riskTitleLabel.topAnchor.constraint(equalTo: stopLossTitleLabel.bottomAnchor, constant: 37.scale)
         ])
         
         NSLayoutConstraint.activate([

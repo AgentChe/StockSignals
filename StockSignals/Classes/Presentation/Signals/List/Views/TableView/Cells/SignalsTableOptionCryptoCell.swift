@@ -18,6 +18,7 @@ final class SignalsTableOptionCryptoCell: UITableViewCell {
     lazy var buyTargetLabel = makeValueLabel()
     lazy var stopLossTitleLabel = makeTitleLabel(title: "Signals.StopLoss".localized)
     lazy var stopLossLabel = makeValueLabel()
+    lazy var stopLossEmptyPlaceholder = makeEmptyPlaceholder()
     lazy var maxGainTitleLabel = makeTitleLabel(title: "Signals.MaxGain".localized)
     lazy var maxGainLabel = makeValueLabel()
     lazy var target1stTitleLabel = makeTitleLabel(title: "Signals.1stTarget")
@@ -86,12 +87,16 @@ extension SignalsTableOptionCryptoCell {
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        let stopLoss = "$" + String(element.targetStop)
-        stopLossLabel.attributedText = stopLoss
+        var stopLoss: String?
+        if let value = element.targetStop {
+            stopLoss = "$" + String(value)
+        }
+        stopLossLabel.attributedText = stopLoss?
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
+        stopLossEmptyPlaceholder.isHidden = element.targetStop != nil
         
         let maxGain = String(element.maxGain) + "%"
         maxGainLabel.attributedText = maxGain
@@ -232,6 +237,13 @@ private extension SignalsTableOptionCryptoCell {
         NSLayoutConstraint.activate([
             stopLossLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
             stopLossLabel.topAnchor.constraint(equalTo: stopLossTitleLabel.bottomAnchor, constant: 4.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            stopLossEmptyPlaceholder.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 16.scale),
+            stopLossEmptyPlaceholder.widthAnchor.constraint(equalToConstant: 142.scale),
+            stopLossEmptyPlaceholder.topAnchor.constraint(equalTo: stopLossTitleLabel.bottomAnchor, constant: 4.scale),
+            stopLossEmptyPlaceholder.heightAnchor.constraint(equalToConstant: 21.scale)
         ])
         
         NSLayoutConstraint.activate([

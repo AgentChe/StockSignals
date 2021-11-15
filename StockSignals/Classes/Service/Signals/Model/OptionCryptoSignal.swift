@@ -13,7 +13,7 @@ struct OptionCryptoSignal {
     let type: SignalType
     let maxGain: Double
     let targetBuy: Double
-    let targetStop: Double
+    let targetStop: Double?
     let targetSell: [Double] // от 1 до 3 значений
     let note: String?
 }
