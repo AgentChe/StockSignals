@@ -44,6 +44,10 @@ extension DetailsTableView: UITableViewDataSource {
             cell.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
             return cell
+        case .summary(let title, let value):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableSummaryCell.self)) as! DetailsTableSummaryCell
+            cell.setup(title: title, value: value)
+            return cell
         case .aboutCompany(let text):
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableAboutCell.self)) as! DetailsTableAboutCell
             cell.setup(text: text)
@@ -68,6 +72,7 @@ extension DetailsTableView: UITableViewDelegate {
 private extension DetailsTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(DetailsTableSummaryCell.self, forCellReuseIdentifier: String(describing: DetailsTableSummaryCell.self))
         register(DetailsTableAboutCell.self, forCellReuseIdentifier: String(describing: DetailsTableAboutCell.self))
         
         dataSource = self

@@ -98,6 +98,7 @@
 		9695B1972742FD4700D6DEC5 /* GetDetailsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1962742FD4700D6DEC5 /* GetDetailsRequest.swift */; };
 		9695B1992742FDA100D6DEC5 /* GetDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1982742FDA100D6DEC5 /* GetDetailsResponse.swift */; };
 		9695B19B274302B800D6DEC5 /* DetailsTableAboutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */; };
+		9695B19D2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B19C2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -307,6 +308,7 @@
 		9695B1962742FD4700D6DEC5 /* GetDetailsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailsRequest.swift; sourceTree = "<group>"; };
 		9695B1982742FDA100D6DEC5 /* GetDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetDetailsResponse.swift; sourceTree = "<group>"; };
 		9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableAboutCell.swift; sourceTree = "<group>"; };
+		9695B19C2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableSummaryCell.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -879,6 +881,7 @@
 			isa = PBXGroup;
 			children = (
 				9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */,
+				9695B19C2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1771,6 +1774,7 @@
 				9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */,
 				9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */,
 				96BDBCB62719C7D100E43708 /* TabView.swift in Sources */,
+				9695B19D2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift in Sources */,
 				96BDBD4B272188FE00E43708 /* WatchListManagerCore.swift in Sources */,
 				96BDBC8E2719C67E00E43708 /* GradientButton.swift in Sources */,
 				9695B16F2742884D00D6DEC5 /* SignalsOptionCryptoCollectionView.swift in Sources */,

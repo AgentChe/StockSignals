@@ -16,6 +16,7 @@ final class DetailsViewModel {
     
     private lazy var signalsManager = SignalManagerCore()
     
+    private lazy var summaryElements = makeSummaryElements()
     private lazy var aboutCompanyElements = makeAboutCompanyElements()
     
     private lazy var details = makeDetails()
@@ -33,17 +34,163 @@ private extension DetailsViewModel {
         Driver
             .combineLatest(
                 filter.asDriver(onErrorDriveWith: .never()),
+                summaryElements,
                 aboutCompanyElements
-            ) { filter, aboutCompanyElements -> [DetailsTableElement] in
+            ) { filter, summaryElements, aboutCompanyElements -> [DetailsTableElement] in
                 switch filter {
                 case .overview:
                     return []
                 case .summary:
-                    return []
+                    return summaryElements
                 case .aboutCompany:
                     return aboutCompanyElements
                 }
             }
+    }
+    
+    func makeSummaryElements() -> Driver<[DetailsTableElement]> {
+        details.map { details -> [DetailsTableElement] in
+            let summary = details.summary
+            
+            var result = [DetailsTableElement]()
+            
+            if let sector = summary.sector {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Sector".localized,
+                                                          value: sector)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let industry = summary.industry {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Industry".localized,
+                                                          value: industry)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let previousClose = summary.previousClose {
+                let element = DetailsTableElement.summary(title: "Details.Summary.PreviousClose".localized,
+                                                          value: previousClose)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let open = summary.open {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Open".localized,
+                                                          value: open)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let marketCap = summary.marketCap {
+                let element = DetailsTableElement.summary(title: "Details.Summary.MarketCap".localized,
+                                                          value: marketCap)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let beta = summary.beta {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Beta".localized,
+                                                          value: beta)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let exDividendDate = summary.exDividendDate {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Ex-DividendDate".localized,
+                                                          value: exDividendDate)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let dividend = summary.dividend {
+                let element = DetailsTableElement.summary(title: "Details.Summary.AnnualizedDividend".localized,
+                                                          value: dividend)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let yield = summary.yield {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Yield".localized,
+                                                          value: yield)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let targetEst = summary.targetEst {
+                let element = DetailsTableElement.summary(title: "Details.Summary.1yTargetEst".localized,
+                                                          value: targetEst)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let peRatio = summary.peRatio {
+                let element = DetailsTableElement.summary(title: "Details.Summary.PERatio(TTM)".localized,
+                                                          value: peRatio)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let peForward = summary.peForward {
+                let element = DetailsTableElement.summary(title: "Details.Summary.ForwardPE1Yr".localized,
+                                                          value: peForward)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let volume = summary.volume {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Volume".localized,
+                                                          value: volume)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let averageVolume = summary.averageVolume {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Avg.Volume".localized,
+                                                          value: averageVolume)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let dayRangeLow = summary.dayRangeLow, let dayRangeHigh = summary.dayRangeHigh {
+                let value = String(format: "Details.Summary.Day's Range.Value".localized, dayRangeLow, dayRangeHigh)
+                let element = DetailsTableElement.summary(title: "Details.Summary.Day's Range.Title".localized,
+                                                          value: value)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let week52RangeLow = summary.week52RangeLow, let week52RangeHigh = summary.week52RangeHigh {
+                let value = String(format: "Details.Summary.52 Week Range.Value".localized, week52RangeLow, week52RangeHigh)
+                let element = DetailsTableElement.summary(title: "Details.Summary.52 Week Range.Title".localized,
+                                                          value: value)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let eps = summary.eps {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Earnings Per Share (EPS)".localized,
+                                                          value: eps)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let bid = summary.bid {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Bid".localized,
+                                                          value: bid)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            if let ask = summary.ask {
+                let element = DetailsTableElement.summary(title: "Details.Summary.Ask".localized,
+                                                          value: ask)
+                result.append(element)
+                result.append(.offset(24.scale))
+            }
+            
+            return result
+        }
     }
     
     func makeAboutCompanyElements() -> Driver<[DetailsTableElement]> {
