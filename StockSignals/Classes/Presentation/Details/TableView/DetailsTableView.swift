@@ -44,6 +44,14 @@ extension DetailsTableView: UITableViewDataSource {
             cell.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
             return cell
+        case .title(let title):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableOverviewTitleCell.self)) as! DetailsTableOverviewTitleCell
+            cell.setup(title: title)
+            return cell
+        case .signals(let signals):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableSignalsCell.self)) as! DetailsTableSignalsCell
+            cell.setup(elements: signals)
+            return cell
         case .summary(let title, let value):
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableSummaryCell.self)) as! DetailsTableSummaryCell
             cell.setup(title: title, value: value)
@@ -62,6 +70,8 @@ extension DetailsTableView: UITableViewDelegate {
         switch elements[indexPath.row] {
         case .offset(let offset):
             return offset
+        case .signals:
+            return 235.scale
         default:
             return UITableView.automaticDimension
         }
@@ -72,6 +82,8 @@ extension DetailsTableView: UITableViewDelegate {
 private extension DetailsTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(DetailsTableSignalsCell.self, forCellReuseIdentifier: String(describing: DetailsTableSignalsCell.self))
+        register(DetailsTableOverviewTitleCell.self, forCellReuseIdentifier: String(describing: DetailsTableOverviewTitleCell.self))
         register(DetailsTableSummaryCell.self, forCellReuseIdentifier: String(describing: DetailsTableSummaryCell.self))
         register(DetailsTableAboutCell.self, forCellReuseIdentifier: String(describing: DetailsTableAboutCell.self))
         

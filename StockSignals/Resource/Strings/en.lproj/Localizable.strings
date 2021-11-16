@@ -168,3 +168,9 @@
 "Details.Summary.Earnings Per Share (EPS)" = "Earnings Per Share (EPS)";
 "Details.Summary.Bid" = "Bid";
 "Details.Summary.Ask" = "Ask";
+"Details.Signals.Open" = "Open Signals";
+"Details.Signals.Closed" = "Closed Signals";
+"Details.Signals.MaxGain" = "Max Gain";
+"Details.Signals.BuyTarget" = "Buy target";
+"Details.Signals.StopLoss" = "Stop loss";
+"Details.Signals.SellTarget" = "Sell target";

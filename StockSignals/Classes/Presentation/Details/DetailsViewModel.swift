@@ -16,6 +16,7 @@ final class DetailsViewModel {
     
     private lazy var signalsManager = SignalManagerCore()
     
+    private lazy var overviewElements = makeOverviewElements()
     private lazy var summaryElements = makeSummaryElements()
     private lazy var aboutCompanyElements = makeAboutCompanyElements()
     
@@ -34,18 +35,68 @@ private extension DetailsViewModel {
         Driver
             .combineLatest(
                 filter.asDriver(onErrorDriveWith: .never()),
+                overviewElements,
                 summaryElements,
                 aboutCompanyElements
-            ) { filter, summaryElements, aboutCompanyElements -> [DetailsTableElement] in
+            ) { filter, overviewElements, summaryElements, aboutCompanyElements -> [DetailsTableElement] in
                 switch filter {
                 case .overview:
-                    return []
+                    return overviewElements
                 case .summary:
                     return summaryElements
                 case .aboutCompany:
                     return aboutCompanyElements
                 }
             }
+    }
+    
+    func makeOverviewElements() -> Driver<[DetailsTableElement]> {
+        details.map { [weak self] details -> [DetailsTableElement] in
+            guard let self = self else {
+                return []
+            }
+            
+            var result = [DetailsTableElement]()
+            
+            let signals = self.makeSignalsElements(details: details)
+            result.append(contentsOf: signals)
+            
+            return result
+        }
+    }
+    
+    func makeSignalsElements(details: Details) -> [DetailsTableElement] {
+        let stocksElements = details.stockSignals.map { DetailsTableSignal(stockSignal: $0) }
+        let optionCryptoElements = details.optionSignals.map { DetailsTableSignal(optionCryptoSignal: $0) }
+        
+        let signalsElements = stocksElements + optionCryptoElements
+        
+        let openSignals = signalsElements.filter { $0.type == .working }
+        let closedSignals = signalsElements.filter { $0.type == .closed }
+        
+        var result = [DetailsTableElement]()
+        
+        if !openSignals.isEmpty {
+            result.append(.title("Details.Signals.Open".localized))
+            result.append(.offset(12.scale))
+            
+            let element = DetailsTableElement.signals(openSignals)
+            result.append(element)
+            
+            result.append(.offset(24.scale))
+        }
+        
+        if !closedSignals.isEmpty {
+            result.append(.title("Details.Signals.Closed".localized))
+            result.append(.offset(12.scale))
+            
+            let element = DetailsTableElement.signals(closedSignals)
+            result.append(element)
+            
+            result.append(.offset(24.scale))
+        }
+        
+        return result
     }
     
     func makeSummaryElements() -> Driver<[DetailsTableElement]> {

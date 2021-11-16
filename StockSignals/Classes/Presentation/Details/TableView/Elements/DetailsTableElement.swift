@@ -9,6 +9,8 @@ import Foundation
 
 enum DetailsTableElement {
     case offset(CGFloat)
+    case title(String)
+    case signals([DetailsTableSignal])
     case summary(title: String, value: String)
     case aboutCompany(String)
 }
