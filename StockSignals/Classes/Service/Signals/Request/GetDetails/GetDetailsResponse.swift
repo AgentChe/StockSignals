@@ -20,6 +20,9 @@ final class GetDetailsResponse {
         
         let imageUrl = body["image"] as? String
         
+        let primaryJSON = body["primary"] as? [String: Any] ?? [:]
+        let primary = map(preMarket: primaryJSON)
+        
         let preMarketJSON = body["pre_market"] as? [String: Any] ?? [:]
         let preMarket = map(preMarket: preMarketJSON)
         
@@ -35,6 +38,7 @@ final class GetDetailsResponse {
                        symbol: symbol,
                        company: company,
                        about: about,
+                       primary: primary,
                        preMarket: preMarket,
                        analytics: analytics,
                        stockSignals: signals.0,

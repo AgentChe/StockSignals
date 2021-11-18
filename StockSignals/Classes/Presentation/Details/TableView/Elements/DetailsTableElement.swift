@@ -10,6 +10,7 @@ import Foundation
 enum DetailsTableElement {
     case offset(CGFloat)
     case title(String)
+    case primary(DetailsPreMarket)
     case preMarket(DetailsPreMarket)
     case analytics(DetailsAnalytics)
     case signals([DetailsTableSignal])

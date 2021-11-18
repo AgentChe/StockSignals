@@ -59,16 +59,29 @@ private extension DetailsViewModel {
             
             var result = [DetailsTableElement]()
             
+            let primary = self.makePrimaryElements(details: details)
             let preMarket = self.makePreMarketElements(details: details, marketState: marketState)
             let analytics = self.makeAnalyticsElements(details: details)
             let signals = self.makeSignalsElements(details: details)
             
+            result.append(contentsOf: primary)
             result.append(contentsOf: preMarket)
             result.append(contentsOf: analytics)
             result.append(contentsOf: signals)
             
             return result
         }
+    }
+    
+    func makePrimaryElements(details: Details) -> [DetailsTableElement] {
+        guard let primary = details.primary else {
+            return []
+        }
+        
+        let element = DetailsTableElement.primary(primary)
+        let offset = DetailsTableElement.offset(12.scale)
+        
+        return [element, offset]
     }
     
     func makePreMarketElements(details: Details, marketState: Bool) -> [DetailsTableElement] {

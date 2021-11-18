@@ -112,6 +112,7 @@
 		9695B1CA27469F5000D6DEC5 /* GetMarketStateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1C927469F5000D6DEC5 /* GetMarketStateRequest.swift */; };
 		9695B1CC27469F7900D6DEC5 /* GetMarketStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1CB27469F7900D6DEC5 /* GetMarketStateResponse.swift */; };
 		9695B1CE2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1CD2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift */; };
+		9695B1D02746B25000D6DEC5 /* DetailsTablePrimaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1CF2746B24F00D6DEC5 /* DetailsTablePrimaryCell.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -335,6 +336,7 @@
 		9695B1C927469F5000D6DEC5 /* GetMarketStateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMarketStateRequest.swift; sourceTree = "<group>"; };
 		9695B1CB27469F7900D6DEC5 /* GetMarketStateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMarketStateResponse.swift; sourceTree = "<group>"; };
 		9695B1CD2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTablePreMarketCell.swift; sourceTree = "<group>"; };
+		9695B1CF2746B24F00D6DEC5 /* DetailsTablePrimaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTablePrimaryCell.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -913,6 +915,7 @@
 				9695B19C2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift */,
 				9695B1A02743F40A00D6DEC5 /* DetailsTableOverviewTitleCell.swift */,
 				9695B1CD2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift */,
+				9695B1CF2746B24F00D6DEC5 /* DetailsTablePrimaryCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1977,6 +1980,7 @@
 				9625D98E2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift in Sources */,
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
 				96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */,
+				9695B1D02746B25000D6DEC5 /* DetailsTablePrimaryCell.swift in Sources */,
 				9695B1932742F8AF00D6DEC5 /* Details.swift in Sources */,
 				96AD70B2272FDDEA007BF50C /* NotificationTableGroup.swift in Sources */,
 				96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */,
