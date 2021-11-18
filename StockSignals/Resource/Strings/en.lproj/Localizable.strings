@@ -147,6 +147,7 @@
 "Details.Overview" = "Overview";
 "Details.Summary" = "Summary";
 "Details.AboutCompany" = "About company";
+"Details.PreMarket" = "Pre Market: ";
 "Details.Analytics" = "Technical Analysis";
 "Details.Signals.Open" = "Open Signals";
 "Details.Signals.Closed" = "Closed Signals";

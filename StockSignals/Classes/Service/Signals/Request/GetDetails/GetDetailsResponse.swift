@@ -20,6 +20,9 @@ final class GetDetailsResponse {
         
         let imageUrl = body["image"] as? String
         
+        let preMarketJSON = body["pre_market"] as? [String: Any] ?? [:]
+        let preMarket = map(preMarket: preMarketJSON)
+        
         let analyticsJSON = body["analysis"] as? [String: Any] ?? [:]
         let analytics = map(analytics: analyticsJSON)
         
@@ -32,6 +35,7 @@ final class GetDetailsResponse {
                        symbol: symbol,
                        company: company,
                        about: about,
+                       preMarket: preMarket,
                        analytics: analytics,
                        stockSignals: signals.0,
                        optionSignals: signals.1,
@@ -39,8 +43,34 @@ final class GetDetailsResponse {
     }
 }
 
-// MARK: Private(Signals)
+// MARK: Private(Overview)
 private extension GetDetailsResponse {
+    static func map(preMarket: [String: Any]) -> DetailsPreMarket? {
+        guard
+            let price = preMarket["price"] as? Double,
+            let netChange = preMarket["net_change"] as? Double,
+            let percentChange = preMarket["percent_change"] as? String
+        else {
+            return nil
+        }
+        
+        let deltaIndicatorRawValue = preMarket["delta_indicator"] as? String
+        let deltaIndicator: DetailsPreMarket.DeltaIndicator?
+        switch deltaIndicatorRawValue {
+        case "up":
+            deltaIndicator = .up
+        case "down":
+            deltaIndicator = .down
+        default:
+            deltaIndicator = nil
+        }
+        
+        return DetailsPreMarket(price: price,
+                                netChange: netChange,
+                                percentChange: percentChange,
+                                deltaIndicator: deltaIndicator)
+    }
+    
     static func map(analytics: [String: Any]) -> DetailsAnalytics? {
         guard
             let rating = analytics["average_analyst_rating"] as? Double,
@@ -66,7 +96,10 @@ private extension GetDetailsResponse {
                                 possibleRatings: possibleRatings,
                                 description: description)
     }
-    
+}
+
+// MARK: Private(Signals)
+private extension GetDetailsResponse {
     static func map(signals: [String: Any]) -> ([StockSignal], [OptionCryptoSignal]) {
         let openJSON = signals["open"] as? [[String: Any]] ?? []
         let closeJSON = signals["close"] as? [[String: Any]] ?? []

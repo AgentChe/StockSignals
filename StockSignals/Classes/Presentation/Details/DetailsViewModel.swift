@@ -21,6 +21,7 @@ final class DetailsViewModel {
     private lazy var aboutCompanyElements = makeAboutCompanyElements()
     
     private lazy var details = makeDetails()
+    private lazy var marketState = makeMarketState()
     
     private let symbol: BehaviorRelay<String>
     
@@ -51,21 +52,34 @@ private extension DetailsViewModel {
     }
     
     func makeOverviewElements() -> Driver<[DetailsTableElement]> {
-        details.map { [weak self] details -> [DetailsTableElement] in
+        Driver.combineLatest(details, marketState) { [weak self] details, marketState -> [DetailsTableElement] in
             guard let self = self else {
                 return []
             }
             
             var result = [DetailsTableElement]()
             
+            let preMarket = self.makePreMarketElements(details: details, marketState: marketState)
             let analytics = self.makeAnalyticsElements(details: details)
             let signals = self.makeSignalsElements(details: details)
             
+            result.append(contentsOf: preMarket)
             result.append(contentsOf: analytics)
             result.append(contentsOf: signals)
             
             return result
         }
+    }
+    
+    func makePreMarketElements(details: Details, marketState: Bool) -> [DetailsTableElement] {
+        guard let preMarket = details.preMarket, !marketState else {
+            return []
+        }
+        
+        let element = DetailsTableElement.preMarket(preMarket)
+        let offset = DetailsTableElement.offset(24.scale)
+        
+        return [element, offset]
     }
     
     func makeAnalyticsElements(details: Details) -> [DetailsTableElement] {
@@ -279,5 +293,11 @@ private extension DetailsViewModel {
         }
         .compactMap { $0 }
         .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func makeMarketState() -> Driver<Bool> {
+        signalsManager
+            .obtainMarketState()
+            .asDriver(onErrorJustReturn: false)
     }
 }

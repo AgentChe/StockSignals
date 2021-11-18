@@ -13,4 +13,5 @@ protocol SignalManager {
     func obtainCryptoSignals(activity: Int?) -> Single<[OptionCryptoSignal]>
     func search(name: String) -> Single<SearchResult?>
     func obtainDetails(by symbol: String) -> Single<Details?>
+    func obtainMarketState() -> Single<Bool>
 }

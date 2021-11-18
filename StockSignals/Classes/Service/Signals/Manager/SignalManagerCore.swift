@@ -81,4 +81,17 @@ extension SignalManagerCore {
             .callServerApi(requestBody: request)
             .map { GetDetailsResponse.map(from: $0) }
     }
+    
+    func obtainMarketState() -> Single<Bool> {
+        guard let userToken = SessionManagerCore().getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetMarketStateRequest(userToken: userToken)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetMarketStateResponse.map(from: $0) }
+    }
 }
