@@ -10,6 +10,7 @@ struct Details {
     let symbol: String
     let company: String
     let about: String
+    let analytics: DetailsAnalytics?
     let stockSignals: [StockSignal]
     let optionSignals: [OptionCryptoSignal]
     let summary: DetailsSummary

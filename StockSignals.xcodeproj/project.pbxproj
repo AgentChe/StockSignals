@@ -104,6 +104,10 @@
 		9695B1A327444A4100D6DEC5 /* DetailsTableSignalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1A227444A4100D6DEC5 /* DetailsTableSignalsCell.swift */; };
 		9695B1A727444D1E00D6DEC5 /* DetailsTableSignalsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1A627444D1E00D6DEC5 /* DetailsTableSignalsCollectionView.swift */; };
 		9695B1A927444D2C00D6DEC5 /* DetailsTableSignalsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1A827444D2C00D6DEC5 /* DetailsTableSignalsCollectionCell.swift */; };
+		9695B1B42745181E00D6DEC5 /* DetailsAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1B32745181E00D6DEC5 /* DetailsAnalytics.swift */; };
+		9695B1B6274518AC00D6DEC5 /* DetailsAnalyticsRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1B5274518AC00D6DEC5 /* DetailsAnalyticsRating.swift */; };
+		9695B1BA27451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1B927451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift */; };
+		9695B1C52746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1C42746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -319,6 +323,10 @@
 		9695B1A227444A4100D6DEC5 /* DetailsTableSignalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableSignalsCell.swift; sourceTree = "<group>"; };
 		9695B1A627444D1E00D6DEC5 /* DetailsTableSignalsCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableSignalsCollectionView.swift; sourceTree = "<group>"; };
 		9695B1A827444D2C00D6DEC5 /* DetailsTableSignalsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableSignalsCollectionCell.swift; sourceTree = "<group>"; };
+		9695B1B32745181E00D6DEC5 /* DetailsAnalytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAnalytics.swift; sourceTree = "<group>"; };
+		9695B1B5274518AC00D6DEC5 /* DetailsAnalyticsRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsAnalyticsRating.swift; sourceTree = "<group>"; };
+		9695B1B927451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableAnalyticsCell.swift; sourceTree = "<group>"; };
+		9695B1C42746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableAnalyticsGaugeView.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -891,6 +899,7 @@
 		9695B18B2742EE4200D6DEC5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9695B1C32746773A00D6DEC5 /* Analytics */,
 				9695B1A427444CFB00D6DEC5 /* Signals */,
 				9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */,
 				9695B19C2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift */,
@@ -933,6 +942,15 @@
 				9695B1A827444D2C00D6DEC5 /* DetailsTableSignalsCollectionCell.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		9695B1C32746773A00D6DEC5 /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1B927451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift */,
+				9695B1C42746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift */,
+			);
+			path = Analytics;
 			sourceTree = "<group>";
 		};
 		96AD7072272BDE63007BF50C /* GetIndustries */ = {
@@ -1084,6 +1102,8 @@
 				961D41FE273A910000711BCD /* SearchResult.swift */,
 				9695B1922742F8AF00D6DEC5 /* Details.swift */,
 				9695B1942742FBDE00D6DEC5 /* DetailsSummary.swift */,
+				9695B1B32745181E00D6DEC5 /* DetailsAnalytics.swift */,
+				9695B1B5274518AC00D6DEC5 /* DetailsAnalyticsRating.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1757,8 +1777,10 @@
 				9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */,
 				961D4209273AAC8C00711BCD /* SearchViewModel.swift in Sources */,
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
+				9695B1B6274518AC00D6DEC5 /* DetailsAnalyticsRating.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				96234D962729552800619CE2 /* OnbAssetsSignalsView.swift in Sources */,
+				9695B1C52746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift in Sources */,
 				961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
 				9695B18A2742EE3900D6DEC5 /* DetailsTableElement.swift in Sources */,
@@ -1851,6 +1873,7 @@
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
 				9695B1752742BB6C00D6DEC5 /* AllSignalsTableView.swift in Sources */,
 				9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */,
+				9695B1B42745181E00D6DEC5 /* DetailsAnalytics.swift in Sources */,
 				961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */,
 				96BDBD672722D99000E43708 /* WatchListSignalsTableCell.swift in Sources */,
 				96BDBC7C2719C67E00E43708 /* UIDeviceExtension.swift in Sources */,
@@ -1905,6 +1928,7 @@
 				96AD785E273129FD007BF50C /* NotificationsPushView.swift in Sources */,
 				96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
+				9695B1BA27451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift in Sources */,
 				96AD787827318347007BF50C /* SignalManager.swift in Sources */,
 				96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */,
 				961D41D427396B5400711BCD /* SettingsViewModel.swift in Sources */,

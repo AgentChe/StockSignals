@@ -58,11 +58,27 @@ private extension DetailsViewModel {
             
             var result = [DetailsTableElement]()
             
+            let analytics = self.makeAnalyticsElements(details: details)
             let signals = self.makeSignalsElements(details: details)
+            
+            result.append(contentsOf: analytics)
             result.append(contentsOf: signals)
             
             return result
         }
+    }
+    
+    func makeAnalyticsElements(details: Details) -> [DetailsTableElement] {
+        guard let analytics = details.analytics else {
+            return []
+        }
+        
+        let title = DetailsTableElement.title("Details.Analytics".localized)
+        let offset1 = DetailsTableElement.offset(24.scale)
+        let element = DetailsTableElement.analytics(analytics)
+        let offset2 = DetailsTableElement.offset(24.scale)
+        
+        return [title, offset1, element, offset2]
     }
     
     func makeSignalsElements(details: Details) -> [DetailsTableElement] {

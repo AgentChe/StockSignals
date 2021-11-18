@@ -48,6 +48,10 @@ extension DetailsTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableOverviewTitleCell.self)) as! DetailsTableOverviewTitleCell
             cell.setup(title: title)
             return cell
+        case .analytics(let analytics):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableAnalyticsCell.self)) as! DetailsTableAnalyticsCell
+            cell.setup(element: analytics)
+            return cell
         case .signals(let signals):
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableSignalsCell.self)) as! DetailsTableSignalsCell
             cell.setup(elements: signals)
@@ -82,6 +86,7 @@ extension DetailsTableView: UITableViewDelegate {
 private extension DetailsTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(DetailsTableAnalyticsCell.self, forCellReuseIdentifier: String(describing: DetailsTableAnalyticsCell.self))
         register(DetailsTableSignalsCell.self, forCellReuseIdentifier: String(describing: DetailsTableSignalsCell.self))
         register(DetailsTableOverviewTitleCell.self, forCellReuseIdentifier: String(describing: DetailsTableOverviewTitleCell.self))
         register(DetailsTableSummaryCell.self, forCellReuseIdentifier: String(describing: DetailsTableSummaryCell.self))

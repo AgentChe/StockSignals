@@ -20,6 +20,9 @@ final class GetDetailsResponse {
         
         let imageUrl = body["image"] as? String
         
+        let analyticsJSON = body["analysis"] as? [String: Any] ?? [:]
+        let analytics = map(analytics: analyticsJSON)
+        
         let signalsJSON = body["signals"] as? [String: Any] ?? [:]
         let signals = map(signals: signalsJSON)
         
@@ -29,6 +32,7 @@ final class GetDetailsResponse {
                        symbol: symbol,
                        company: company,
                        about: about,
+                       analytics: analytics,
                        stockSignals: signals.0,
                        optionSignals: signals.1,
                        summary: summary)
@@ -37,6 +41,32 @@ final class GetDetailsResponse {
 
 // MARK: Private(Signals)
 private extension GetDetailsResponse {
+    static func map(analytics: [String: Any]) -> DetailsAnalytics? {
+        guard
+            let rating = analytics["average_analyst_rating"] as? Double,
+            let values = analytics["average_ratings"] as? [[String: Any]]
+        else {
+            return nil
+        }
+        
+        let possibleRatings = values.compactMap { json -> DetailsAnalyticsRating? in
+            guard
+                let value = json["value"] as? Int,
+                let title = json["name"] as? String
+            else {
+                return nil
+            }
+            
+            return DetailsAnalyticsRating(value: value, title: title)
+        }
+        
+        let description = analytics["description"] as? String
+        
+        return DetailsAnalytics(averageRating: rating,
+                                possibleRatings: possibleRatings,
+                                description: description)
+    }
+    
     static func map(signals: [String: Any]) -> ([StockSignal], [OptionCryptoSignal]) {
         let openJSON = signals["open"] as? [[String: Any]] ?? []
         let closeJSON = signals["close"] as? [[String: Any]] ?? []

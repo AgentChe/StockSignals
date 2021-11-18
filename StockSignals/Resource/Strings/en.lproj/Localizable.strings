@@ -147,6 +147,13 @@
 "Details.Overview" = "Overview";
 "Details.Summary" = "Summary";
 "Details.AboutCompany" = "About company";
+"Details.Analytics" = "Technical Analysis";
+"Details.Signals.Open" = "Open Signals";
+"Details.Signals.Closed" = "Closed Signals";
+"Details.Signals.MaxGain" = "Max Gain";
+"Details.Signals.BuyTarget" = "Buy target";
+"Details.Signals.StopLoss" = "Stop loss";
+"Details.Signals.SellTarget" = "Sell target";
 "Details.Summary.Sector" = "Sector";
 "Details.Summary.Industry" = "Industry";
 "Details.Summary.PreviousClose" = "Previos Close";
@@ -168,9 +175,3 @@
 "Details.Summary.Earnings Per Share (EPS)" = "Earnings Per Share (EPS)";
 "Details.Summary.Bid" = "Bid";
 "Details.Summary.Ask" = "Ask";
-"Details.Signals.Open" = "Open Signals";
-"Details.Signals.Closed" = "Closed Signals";
-"Details.Signals.MaxGain" = "Max Gain";
-"Details.Signals.BuyTarget" = "Buy target";
-"Details.Signals.StopLoss" = "Stop loss";
-"Details.Signals.SellTarget" = "Sell target";
