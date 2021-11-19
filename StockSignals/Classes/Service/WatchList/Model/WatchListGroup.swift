@@ -8,7 +8,7 @@
 struct WatchListGroup {
     let id: String
     let name: String
-    let signals: [Quotation]
+    let symbols: [String]
 }
 
 // MARK: Codable

@@ -41,9 +41,9 @@ extension WatchListManagerCore {
         .observe(on: MainScheduler.asyncInstance)
     }
     
-    func createGroup(name: String, signals: [Quotation]) -> Single<WatchListGroup> {
+    func createGroup(name: String, symbols: [String]) -> Single<WatchListGroup> {
         Single<WatchListGroup>.create { event in
-            let group = WatchListGroup(id: UUID().uuidString, name: name, signals: signals)
+            let group = WatchListGroup(id: UUID().uuidString, name: name, symbols: symbols)
             var groups = WatchListManagerCore.getGroups()
             
             groups.append(group)
@@ -61,14 +61,14 @@ extension WatchListManagerCore {
         })
     }
     
-    func add(signal: Quotation, in group: WatchListGroup) -> Single<WatchListGroup> {
+    func add(symbol: String, in group: WatchListGroup) -> Single<WatchListGroup> {
         Single<WatchListGroup>.create { event in
-            var signals = group.signals
-            signals.append(signal)
+            var symbols = group.symbols
+            symbols.append(symbol)
             
             let updatedGroup = WatchListGroup(id: group.id,
                                               name: group.name,
-                                              signals: signals)
+                                              symbols: symbols)
             
             let groups = WatchListManagerCore.getGroups()
             let replacedGroups = WatchListManagerCore.replace(group: updatedGroup, in: groups)
@@ -86,14 +86,14 @@ extension WatchListManagerCore {
         })
     }
     
-    func remove(signal: Quotation, from group: WatchListGroup) -> Single<WatchListGroup> {
+    func remove(symbol: String, from group: WatchListGroup) -> Single<WatchListGroup> {
         Single<WatchListGroup>.create { event in
-            var signals = group.signals
-            signals.removeAll(where: { $0 == signal })
+            var symbols = group.symbols
+            symbols.removeAll(where: { $0 == symbol })
             
             let updatedGroup = WatchListGroup(id: group.id,
                                               name: group.name,
-                                              signals: signals)
+                                              symbols: symbols)
             
             let groups = WatchListManagerCore.getGroups()
             let replacedGroups = WatchListManagerCore.replace(group: updatedGroup, in: groups)

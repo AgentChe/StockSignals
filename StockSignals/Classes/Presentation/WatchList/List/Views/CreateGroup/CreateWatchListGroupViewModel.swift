@@ -24,7 +24,7 @@ private extension CreateWatchListGroupViewModel {
                 return .never()
             }
             
-            return self.watchListManager.createGroup(name: name, signals: [])
+            return self.watchListManager.createGroup(name: name, symbols: [])
         }
         .asDriver(onErrorDriveWith: .never())
     }

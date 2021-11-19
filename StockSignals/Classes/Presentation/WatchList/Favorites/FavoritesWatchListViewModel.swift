@@ -13,14 +13,26 @@ final class FavoritesWatchListViewModel {
     lazy var sort = PublishRelay<WatchListSignalsSortElement>()
     
     lazy var elements = makeElements()
+    
+    private lazy var watchListManager = WatchListManagerCore()
 }
 
 // MARK: Private
 private extension FavoritesWatchListViewModel {
     func makeElements() -> Driver<[Quotation]> {
         let signals = group
-            .compactMap { $0?.signals }
-            .asDriver(onErrorDriveWith: .never())
+            .compactMap { $0?.symbols }
+            .flatMapLatest { [weak self] symbols -> Single<[Quotation]> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                let string = symbols.joined(separator: ",")
+                
+                return self.watchListManager
+                    .obtainWatchListSignals(symbols: string)
+            }
+            .asDriver(onErrorJustReturn: [])
         
         let sortBy = sort
             .startWith(.price)

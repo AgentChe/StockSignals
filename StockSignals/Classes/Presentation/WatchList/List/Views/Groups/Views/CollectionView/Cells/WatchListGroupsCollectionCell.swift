@@ -42,7 +42,7 @@ extension WatchListGroupsCollectionCell {
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        let count = String(format: "WatchList.Groups.Count".localized, element.group.signals.count)
+        let count = String(format: "WatchList.Groups.Count".localized, element.group.symbols.count)
         countLabel.attributedText = count
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.4))
