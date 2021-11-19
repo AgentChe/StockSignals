@@ -42,6 +42,7 @@ final class WatchListViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        mainView.signalsView.tableView.mainDelegate = self
         mainView.groupsView.collectionView.mainDelegate = self
         mainView.createGroupView.vc = self
         mainView.createGroupView.delegate = self
@@ -62,6 +63,14 @@ extension WatchListViewController {
     }
 }
 
+// MARK: WatchListSignalsTableViewDelegate
+extension WatchListViewController: WatchListSignalsTableViewDelegate {
+    func watchListSignalsDidSelect(quotation: Quotation) {
+        let vc = DetailsViewController.make(symbol: quotation.symbol)
+        present(vc, animated: true)
+    }
+}
+
 // MARK: WatchListGroupsCollectionViewDelegate
 extension WatchListViewController: WatchListGroupsCollectionViewDelegate {
     func watchListGroupDidTapped(element: WatchListGroupsCollectionElement) {
@@ -79,7 +88,7 @@ extension WatchListViewController: WatchListGroupsCollectionViewDelegate {
     }
 }
 
-// MARK: WatchListGroupsCollectionViewDelegate
+// MARK: CreateWatchListGroupViewDelegate
 extension WatchListViewController: CreateWatchListGroupViewDelegate {
     func createWatchListDidCreated(group: WatchListGroup) {
         let element = WatchListGroupsCollectionGroupElement(group: group,

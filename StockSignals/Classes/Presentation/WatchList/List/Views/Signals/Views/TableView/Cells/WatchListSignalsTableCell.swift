@@ -8,7 +8,11 @@
 import UIKit
 
 final class WatchListSignalsTableCell: UITableViewCell {
+    weak var mainDelegate: WatchListSignalsTableViewDelegate?
+    
     lazy var collectionView = makeCollectionView()
+    
+    private var quotation: Quotation?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,6 +29,8 @@ final class WatchListSignalsTableCell: UITableViewCell {
 // MARK: Public
 extension WatchListSignalsTableCell {
     func setup(signal: Quotation) {
+        quotation = signal
+        
         let header = WatchListSignalCollectionHeader(imageUrl: signal.imageUrl,
                                                      symbol: signal.symbol,
                                                      company: signal.company)
@@ -49,6 +55,19 @@ private extension WatchListSignalsTableCell {
         contentView.backgroundColor = UIColor.clear
         
         selectionStyle = .none
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        contentView.addGestureRecognizer(tapGesture)
+        contentView.isUserInteractionEnabled = true
+    }
+    
+    @objc
+    func tapped() {
+        guard let quotation = quotation else {
+            return
+        }
+        
+        mainDelegate?.watchListSignalsDidSelect(quotation: quotation)
     }
 }
 

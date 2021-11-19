@@ -7,7 +7,12 @@
 
 import UIKit
 
+protocol WatchListSignalsTableViewDelegate: AnyObject {
+    func watchListSignalsDidSelect(quotation: Quotation)
+}
+
 final class WatchListSignalsTableView: UITableView {
+    weak var mainDelegate: WatchListSignalsTableViewDelegate?
     weak var scrollDelegate: WatchListSignalsScrollDelegate?
     
     private lazy var elements = [Quotation]()
@@ -53,6 +58,7 @@ extension WatchListSignalsTableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = dequeueReusableCell(withIdentifier: String(describing: WatchListSignalsTableCell.self)) as! WatchListSignalsTableCell
         cell.collectionView.scrollDelegate = scrollDelegate
+        cell.mainDelegate = mainDelegate
         cell.setup(signal: elements[indexPath.row])
         return cell
     }

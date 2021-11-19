@@ -23,7 +23,7 @@ private extension FavoritesWatchListViewModel {
         let signals = group
             .compactMap { $0?.symbols }
             .flatMapLatest { [weak self] symbols -> Single<[Quotation]> in
-                guard let self = self else {
+                guard let self = self, !symbols.isEmpty else {
                     return .never()
                 }
                 

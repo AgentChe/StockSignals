@@ -126,7 +126,7 @@ private extension DetailsView {
     
     func makeFavoriteButton() -> UIButton {
         let view = UIButton()
-        view.setImage(UIImage(named: "Details.Favorite"), for: .normal)
+        view.setImage(UIImage(named: "Details.Favorite.Deselected"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view
