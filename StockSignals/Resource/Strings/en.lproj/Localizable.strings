@@ -176,3 +176,6 @@
 "Details.Summary.Earnings Per Share (EPS)" = "Earnings Per Share (EPS)";
 "Details.Summary.Bid" = "Bid";
 "Details.Summary.Ask" = "Ask";
+
+// MARK: Add To Favorite
+"AddToFavorite.Title" = "Choose Watch List";

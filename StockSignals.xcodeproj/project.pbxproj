@@ -113,6 +113,12 @@
 		9695B1CC27469F7900D6DEC5 /* GetMarketStateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1CB27469F7900D6DEC5 /* GetMarketStateResponse.swift */; };
 		9695B1CE2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1CD2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift */; };
 		9695B1D02746B25000D6DEC5 /* DetailsTablePrimaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1CF2746B24F00D6DEC5 /* DetailsTablePrimaryCell.swift */; };
+		9695B1D3274798F200D6DEC5 /* AddToFavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1D2274798F200D6DEC5 /* AddToFavoriteViewController.swift */; };
+		9695B1D5274798FE00D6DEC5 /* AddToFavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1D4274798FE00D6DEC5 /* AddToFavoriteViewModel.swift */; };
+		9695B1D72747990700D6DEC5 /* AddToFavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1D62747990700D6DEC5 /* AddToFavoriteView.swift */; };
+		9695B1DB2747992700D6DEC5 /* AddToFavoriteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1DA2747992700D6DEC5 /* AddToFavoriteTableView.swift */; };
+		9695B1DD2747993300D6DEC5 /* AddToFavoriteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1DC2747993300D6DEC5 /* AddToFavoriteTableCell.swift */; };
+		9695B1DF2747994300D6DEC5 /* AddToFavoriteTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1DE2747994300D6DEC5 /* AddToFavoriteTableElement.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -337,6 +343,12 @@
 		9695B1CB27469F7900D6DEC5 /* GetMarketStateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMarketStateResponse.swift; sourceTree = "<group>"; };
 		9695B1CD2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTablePreMarketCell.swift; sourceTree = "<group>"; };
 		9695B1CF2746B24F00D6DEC5 /* DetailsTablePrimaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTablePrimaryCell.swift; sourceTree = "<group>"; };
+		9695B1D2274798F200D6DEC5 /* AddToFavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteViewController.swift; sourceTree = "<group>"; };
+		9695B1D4274798FE00D6DEC5 /* AddToFavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteViewModel.swift; sourceTree = "<group>"; };
+		9695B1D62747990700D6DEC5 /* AddToFavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteView.swift; sourceTree = "<group>"; };
+		9695B1DA2747992700D6DEC5 /* AddToFavoriteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteTableView.swift; sourceTree = "<group>"; };
+		9695B1DC2747993300D6DEC5 /* AddToFavoriteTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteTableCell.swift; sourceTree = "<group>"; };
+		9695B1DE2747994300D6DEC5 /* AddToFavoriteTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteTableElement.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -974,6 +986,35 @@
 			path = GetMarketState;
 			sourceTree = "<group>";
 		};
+		9695B1D1274798DE00D6DEC5 /* AddToFavorite */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1D82747990E00D6DEC5 /* Views */,
+				9695B1D2274798F200D6DEC5 /* AddToFavoriteViewController.swift */,
+				9695B1D4274798FE00D6DEC5 /* AddToFavoriteViewModel.swift */,
+				9695B1D62747990700D6DEC5 /* AddToFavoriteView.swift */,
+			);
+			path = AddToFavorite;
+			sourceTree = "<group>";
+		};
+		9695B1D82747990E00D6DEC5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1D92747991800D6DEC5 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9695B1D92747991800D6DEC5 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1DA2747992700D6DEC5 /* AddToFavoriteTableView.swift */,
+				9695B1DC2747993300D6DEC5 /* AddToFavoriteTableCell.swift */,
+				9695B1DE2747994300D6DEC5 /* AddToFavoriteTableElement.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
 		96AD7072272BDE63007BF50C /* GetIndustries */ = {
 			isa = PBXGroup;
 			children = (
@@ -1530,6 +1571,7 @@
 		96BDBD3627216C1600E43708 /* WatchList */ = {
 			isa = PBXGroup;
 			children = (
+				9695B1D1274798DE00D6DEC5 /* AddToFavorite */,
 				96B4F9AE2726E4B0007507C1 /* Favorites */,
 				96B4F9AD2726E4A6007507C1 /* List */,
 			);
@@ -1805,8 +1847,10 @@
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
 				9695B1CC27469F7900D6DEC5 /* GetMarketStateResponse.swift in Sources */,
 				96234D962729552800619CE2 /* OnbAssetsSignalsView.swift in Sources */,
+				9695B1DD2747993300D6DEC5 /* AddToFavoriteTableCell.swift in Sources */,
 				9695B1C52746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift in Sources */,
 				9695B1C7274698E300D6DEC5 /* DetailsPreMarket.swift in Sources */,
+				9695B1D5274798FE00D6DEC5 /* AddToFavoriteViewModel.swift in Sources */,
 				961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
 				9695B18A2742EE3900D6DEC5 /* DetailsTableElement.swift in Sources */,
@@ -1825,6 +1869,7 @@
 				961D4215273ABDA100711BCD /* SearchTableElement.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
+				9695B1D72747990700D6DEC5 /* AddToFavoriteView.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
 				96AD7099272C420E007BF50C /* NotificationTableSection.swift in Sources */,
 				9625D9942724221C005A8E31 /* WatchListGroupsViewModel.swift in Sources */,
@@ -1858,8 +1903,10 @@
 				9695B19D2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift in Sources */,
 				96BDBD4B272188FE00E43708 /* WatchListManagerCore.swift in Sources */,
 				96BDBC8E2719C67E00E43708 /* GradientButton.swift in Sources */,
+				9695B1D3274798F200D6DEC5 /* AddToFavoriteViewController.swift in Sources */,
 				9695B16F2742884D00D6DEC5 /* SignalsOptionCryptoCollectionView.swift in Sources */,
 				9695B1792742BB9700D6DEC5 /* AllSignalsTableStockCell.swift in Sources */,
+				9695B1DF2747994300D6DEC5 /* AddToFavoriteTableElement.swift in Sources */,
 				96AD78E72732EFE0007BF50C /* SignalsTableGroup.swift in Sources */,
 				96234D4727282AD500619CE2 /* OnboardingViewModel.swift in Sources */,
 				9695B18E2742F49600D6DEC5 /* DetailsFilterView.swift in Sources */,
@@ -1909,6 +1956,7 @@
 				961D4204273A937500711BCD /* SearchResponse.swift in Sources */,
 				96BDBD4427217FA100E43708 /* GetWatchListSignalsRequest.swift in Sources */,
 				96234DC8272ADEFD00619CE2 /* RateView.swift in Sources */,
+				9695B1DB2747992700D6DEC5 /* AddToFavoriteTableView.swift in Sources */,
 				96234D4627282AD500619CE2 /* OnboardingView.swift in Sources */,
 				9695B19B274302B800D6DEC5 /* DetailsTableAboutCell.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,

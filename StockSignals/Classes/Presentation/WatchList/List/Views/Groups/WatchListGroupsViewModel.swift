@@ -20,19 +20,29 @@ final class WatchListGroupsViewModel {
 // MARK: Private
 private extension WatchListGroupsViewModel {
     func makeElements() -> Driver<[WatchListGroupsCollectionElement]> {
-        watchListManager
-            .obtainGroups()
-            .map { groups -> [WatchListGroupsCollectionElement] in
-                let array = groups.map { group -> WatchListGroupsCollectionElement in
-                    let element = WatchListGroupsCollectionGroupElement(group: group,
-                                                                        isEditable: false)
-                    return .group(element)
-                }
-                
-                
-                return array + [.create]
+        let triggers = WatchListMediator.shared.changed
+            .map { _ in Void() }
+            .startWith(Void())
+        
+        return triggers.flatMapLatest { [weak self] in
+            guard let self = self else {
+                return .never()
             }
-            .asDriver(onErrorJustReturn: [])
+            
+            return self.watchListManager
+                .obtainGroups()
+                .map { groups -> [WatchListGroupsCollectionElement] in
+                    let array = groups.map { group -> WatchListGroupsCollectionElement in
+                        let element = WatchListGroupsCollectionGroupElement(group: group,
+                                                                            isEditable: false)
+                        return .group(element)
+                    }
+                    
+                    
+                    return array + [.create]
+                }
+                .asDriver(onErrorJustReturn: [])
+        }
     }
     
     func makeRemoved() -> Driver<WatchListGroup> {

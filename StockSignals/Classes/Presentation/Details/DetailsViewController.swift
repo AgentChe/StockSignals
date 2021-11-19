@@ -49,6 +49,16 @@ final class DetailsViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        mainView.favoriteButton.rx.tap.subscribe(onNext: { [weak self] in
+            guard let self = self else {
+                return
+            }
+            
+            let vc = AddToFavoriteViewController.make(symbol: self.symbol)
+            self.present(vc, animated: true)
+        })
+        .disposed(by: disposeBag)
+        
         addFilterAction()
     }
 }
