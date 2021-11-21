@@ -12,6 +12,7 @@ struct Details {
     let about: String
     let primary: DetailsPreMarket?
     let preMarket: DetailsPreMarket?
+    let chart: Chart?
     let analytics: DetailsAnalytics?
     let stockSignals: [StockSignal]
     let optionSignals: [OptionCryptoSignal]

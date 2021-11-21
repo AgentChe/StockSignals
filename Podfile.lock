@@ -146,6 +146,7 @@ PODS:
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
   - SnapKit (5.0.1)
+  - SwiftCharts (0.6.5)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
@@ -153,6 +154,7 @@ DEPENDENCIES:
   - lottie-ios
   - NotificationBannerSwift
   - RushSDK (from `https://github.com/AgentChe/RushSDK.git`)
+  - SwiftCharts (~> 0.6.5)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -183,6 +185,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - SwiftCharts
     - SwiftyStoreKit
 
 EXTERNAL SOURCES:
@@ -223,8 +226,9 @@ SPEC CHECKSUMS:
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftCharts: 2e755ea292f0b87d3e4b2c1eb5afc080a20cdc15
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 98c4749807e948c0570444ea53051c06e3eb2eab
+PODFILE CHECKSUM: 4ce46ba506bfa291233234214eeb5a3e8b9542bf
 
 COCOAPODS: 1.11.2

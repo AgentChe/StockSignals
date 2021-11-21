@@ -94,4 +94,19 @@ extension SignalManagerCore {
             .callServerApi(requestBody: request)
             .map { GetMarketStateResponse.map(from: $0) }
     }
+    
+    func obtainChart(by symbol: String, range: String) -> Single<Chart?> {
+        guard let userToken = SessionManagerCore().getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetChartRequest(userToken: userToken,
+                                      symbol: symbol,
+                                      range: range)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetChartResponse.map(from: $0) }
+    }
 }

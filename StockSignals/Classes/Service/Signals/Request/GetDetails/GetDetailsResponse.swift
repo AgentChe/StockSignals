@@ -26,6 +26,9 @@ final class GetDetailsResponse {
         let preMarketJSON = body["pre_market"] as? [String: Any] ?? [:]
         let preMarket = map(preMarket: preMarketJSON)
         
+        let chartJSON = body["chart"] as? [String: Any] ?? [:]
+        let chart = map(chart: chartJSON)
+        
         let analyticsJSON = body["analysis"] as? [String: Any] ?? [:]
         let analytics = map(analytics: analyticsJSON)
         
@@ -40,6 +43,7 @@ final class GetDetailsResponse {
                        about: about,
                        primary: primary,
                        preMarket: preMarket,
+                       chart: chart,
                        analytics: analytics,
                        stockSignals: signals.0,
                        optionSignals: signals.1,
@@ -73,6 +77,26 @@ private extension GetDetailsResponse {
                                 netChange: netChange,
                                 percentChange: percentChange,
                                 deltaIndicator: deltaIndicator)
+    }
+    
+    static func map(chart: [String: Any]) -> Chart? {
+        guard
+            let timestamp = chart["timestamp"] as? [Int],
+            let open = chart["open"] as? [Double],
+            let close = chart["close"] as? [Double],
+            let low = chart["low"] as? [Double],
+            let high = chart["high"] as? [Double],
+            let volume = chart["volume"] as? [Int]
+        else {
+            return nil
+        }
+        
+        return Chart(timestamp: timestamp,
+                     open: open,
+                     close: close,
+                     low: low,
+                     high: high,
+                     volume: volume)
     }
     
     static func map(analytics: [String: Any]) -> DetailsAnalytics? {

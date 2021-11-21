@@ -148,6 +148,13 @@
 "Details.Summary" = "Summary";
 "Details.AboutCompany" = "About company";
 "Details.PreMarket" = "Pre Market: ";
+"Details.Chart.1D" = "1D";
+"Details.Chart.5D" = "5D";
+"Details.Chart.1M" = "1M";
+"Details.Chart.3M" = "3M";
+"Details.Chart.1Y" = "1Y";
+"Details.Chart.5Y" = "5Y";
+"Details.Chart.MAX" = "MAX";
 "Details.Analytics" = "Technical Analysis";
 "Details.Signals.Open" = "Open Signals";
 "Details.Signals.Closed" = "Closed Signals";

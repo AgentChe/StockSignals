@@ -119,6 +119,12 @@
 		9695B1DB2747992700D6DEC5 /* AddToFavoriteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1DA2747992700D6DEC5 /* AddToFavoriteTableView.swift */; };
 		9695B1DD2747993300D6DEC5 /* AddToFavoriteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1DC2747993300D6DEC5 /* AddToFavoriteTableCell.swift */; };
 		9695B1DF2747994300D6DEC5 /* AddToFavoriteTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1DE2747994300D6DEC5 /* AddToFavoriteTableElement.swift */; };
+		9695B1E12749200400D6DEC5 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1E02749200400D6DEC5 /* Chart.swift */; };
+		9695B1E42749257300D6DEC5 /* GetChartRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1E32749257300D6DEC5 /* GetChartRequest.swift */; };
+		9695B1E62749272900D6DEC5 /* GetChartResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1E52749272900D6DEC5 /* GetChartResponse.swift */; };
+		9695B1EB27492D0A00D6DEC5 /* DetailsTableChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EA27492D0A00D6DEC5 /* DetailsTableChartCell.swift */; };
+		9695B1ED274933D500D6DEC5 /* DetailsTableChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EC274933D500D6DEC5 /* DetailsTableChartView.swift */; };
+		9695B1EF2749343100D6DEC5 /* DetailsTableChartRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -349,6 +355,12 @@
 		9695B1DA2747992700D6DEC5 /* AddToFavoriteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteTableView.swift; sourceTree = "<group>"; };
 		9695B1DC2747993300D6DEC5 /* AddToFavoriteTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteTableCell.swift; sourceTree = "<group>"; };
 		9695B1DE2747994300D6DEC5 /* AddToFavoriteTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToFavoriteTableElement.swift; sourceTree = "<group>"; };
+		9695B1E02749200400D6DEC5 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		9695B1E32749257300D6DEC5 /* GetChartRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChartRequest.swift; sourceTree = "<group>"; };
+		9695B1E52749272900D6DEC5 /* GetChartResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChartResponse.swift; sourceTree = "<group>"; };
+		9695B1EA27492D0A00D6DEC5 /* DetailsTableChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartCell.swift; sourceTree = "<group>"; };
+		9695B1EC274933D500D6DEC5 /* DetailsTableChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartView.swift; sourceTree = "<group>"; };
+		9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartRangeView.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -921,6 +933,7 @@
 		9695B18B2742EE4200D6DEC5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9695B1E927492CF700D6DEC5 /* Chart */,
 				9695B1C32746773A00D6DEC5 /* Analytics */,
 				9695B1A427444CFB00D6DEC5 /* Signals */,
 				9695B19A274302B800D6DEC5 /* DetailsTableAboutCell.swift */,
@@ -1013,6 +1026,25 @@
 				9695B1DE2747994300D6DEC5 /* AddToFavoriteTableElement.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		9695B1E22749256100D6DEC5 /* GetChart */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1E32749257300D6DEC5 /* GetChartRequest.swift */,
+				9695B1E52749272900D6DEC5 /* GetChartResponse.swift */,
+			);
+			path = GetChart;
+			sourceTree = "<group>";
+		};
+		9695B1E927492CF700D6DEC5 /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1EA27492D0A00D6DEC5 /* DetailsTableChartCell.swift */,
+				9695B1EC274933D500D6DEC5 /* DetailsTableChartView.swift */,
+				9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */,
+			);
+			path = Chart;
 			sourceTree = "<group>";
 		};
 		96AD7072272BDE63007BF50C /* GetIndustries */ = {
@@ -1167,6 +1199,7 @@
 				9695B1B32745181E00D6DEC5 /* DetailsAnalytics.swift */,
 				9695B1B5274518AC00D6DEC5 /* DetailsAnalyticsRating.swift */,
 				9695B1C6274698E300D6DEC5 /* DetailsPreMarket.swift */,
+				9695B1E02749200400D6DEC5 /* Chart.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1174,6 +1207,7 @@
 		96AD787027317E54007BF50C /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				9695B1E22749256100D6DEC5 /* GetChart */,
 				9695B1C827469F3D00D6DEC5 /* GetMarketState */,
 				9695B1912742F8A000D6DEC5 /* GetDetails */,
 				961D4200273A91FB00711BCD /* Search */,
@@ -1842,6 +1876,7 @@
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */,
 				961D4209273AAC8C00711BCD /* SearchViewModel.swift in Sources */,
+				9695B1ED274933D500D6DEC5 /* DetailsTableChartView.swift in Sources */,
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
 				9695B1B6274518AC00D6DEC5 /* DetailsAnalyticsRating.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
@@ -1905,6 +1940,7 @@
 				96BDBC8E2719C67E00E43708 /* GradientButton.swift in Sources */,
 				9695B1D3274798F200D6DEC5 /* AddToFavoriteViewController.swift in Sources */,
 				9695B16F2742884D00D6DEC5 /* SignalsOptionCryptoCollectionView.swift in Sources */,
+				9695B1E12749200400D6DEC5 /* Chart.swift in Sources */,
 				9695B1792742BB9700D6DEC5 /* AllSignalsTableStockCell.swift in Sources */,
 				9695B1DF2747994300D6DEC5 /* AddToFavoriteTableElement.swift in Sources */,
 				96AD78E72732EFE0007BF50C /* SignalsTableGroup.swift in Sources */,
@@ -1935,6 +1971,7 @@
 				9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */,
 				96AD708F272C3D86007BF50C /* NotificationsViewController.swift in Sources */,
 				96234DC3272ADE9F00619CE2 /* OnbProfitView.swift in Sources */,
+				9695B1EB27492D0A00D6DEC5 /* DetailsTableChartCell.swift in Sources */,
 				96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */,
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
@@ -1964,6 +2001,7 @@
 				96AD7085272C36B4007BF50C /* GetNotificationsRequest.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
 				96AD78F32733E357007BF50C /* AllSignalsViewModel.swift in Sources */,
+				9695B1E42749257300D6DEC5 /* GetChartRequest.swift in Sources */,
 				96AD787327317E6D007BF50C /* GetSignalsRequest.swift in Sources */,
 				96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */,
 				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
@@ -2022,9 +2060,11 @@
 				96234D9A272984FC00619CE2 /* OnbTradingStyleView.swift in Sources */,
 				96AD78DA2732E271007BF50C /* SignalsOptionCryptoCollectionCell.swift in Sources */,
 				96234DA0272A02E500619CE2 /* OnbRiskView.swift in Sources */,
+				9695B1EF2749343100D6DEC5 /* DetailsTableChartRangeView.swift in Sources */,
 				9625D99727242353005A8E31 /* WatchListGroupsCollectionView.swift in Sources */,
 				96AD78FD27340521007BF50C /* AllSignalsSortView.swift in Sources */,
 				96AD70B5272FDE96007BF50C /* NotificationTableCell.swift in Sources */,
+				9695B1E62749272900D6DEC5 /* GetChartResponse.swift in Sources */,
 				9625D98E2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift in Sources */,
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
 				96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */,

@@ -14,4 +14,5 @@ protocol SignalManager {
     func search(name: String) -> Single<SearchResult?>
     func obtainDetails(by symbol: String) -> Single<Details?>
     func obtainMarketState() -> Single<Bool>
+    func obtainChart(by symbol: String, range: String) -> Single<Chart?>
 }

@@ -56,6 +56,8 @@ extension DetailsTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTablePreMarketCell.self)) as! DetailsTablePreMarketCell
             cell.setup(element: preMarket)
             return cell
+        case .chart(let cell):
+            return cell
         case .analytics(let analytics):
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableAnalyticsCell.self)) as! DetailsTableAnalyticsCell
             cell.setup(element: analytics)

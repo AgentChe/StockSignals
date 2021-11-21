@@ -25,6 +25,8 @@ final class DetailsViewModel {
     
     private let symbol: BehaviorRelay<String>
     
+    private lazy var chartCell = DetailsTableChartCell(symbol: symbol.value)
+    
     init(symbol: String) {
         self.symbol = BehaviorRelay(value: symbol)
     }
@@ -61,11 +63,13 @@ private extension DetailsViewModel {
             
             let primary = self.makePrimaryElements(details: details)
             let preMarket = self.makePreMarketElements(details: details, marketState: marketState)
+            let chart = self.makeChartElements()
             let analytics = self.makeAnalyticsElements(details: details)
             let signals = self.makeSignalsElements(details: details)
             
             result.append(contentsOf: primary)
             result.append(contentsOf: preMarket)
+            result.append(contentsOf: chart)
             result.append(contentsOf: analytics)
             result.append(contentsOf: signals)
             
@@ -90,6 +94,13 @@ private extension DetailsViewModel {
         }
         
         let element = DetailsTableElement.preMarket(preMarket)
+        let offset = DetailsTableElement.offset(24.scale)
+        
+        return [element, offset]
+    }
+    
+    func makeChartElements() -> [DetailsTableElement] {
+        let element = DetailsTableElement.chart(chartCell)
         let offset = DetailsTableElement.offset(24.scale)
         
         return [element, offset]

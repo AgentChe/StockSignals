@@ -12,6 +12,7 @@ enum DetailsTableElement {
     case title(String)
     case primary(DetailsPreMarket)
     case preMarket(DetailsPreMarket)
+    case chart(DetailsTableChartCell)
     case analytics(DetailsAnalytics)
     case signals([DetailsTableSignal])
     case summary(title: String, value: String)
