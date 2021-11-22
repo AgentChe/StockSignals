@@ -10,21 +10,25 @@ final class GetChartResponse {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any],
-            let timestamp = body["timestamp"] as? [Int],
+            let timestamp = body["timestamp"] as? [Double],
             let open = body["open"] as? [Double],
             let close = body["close"] as? [Double],
             let low = body["low"] as? [Double],
             let high = body["high"] as? [Double],
-            let volume = body["volume"] as? [Int]
+            let volume = body["volume"] as? [Double]
         else {
             return nil
         }
         
-        return Chart(timestamp: timestamp,
+        let count = min(timestamp.count, high.count)
+        let timestampPrefix = Array(timestamp.prefix(count))
+        let highPrefix = Array(high.prefix(count))
+        
+        return Chart(timestamp: timestampPrefix,
                      open: open,
                      close: close,
                      low: low,
-                     high: high,
+                     high: highPrefix,
                      volume: volume)
     }
 }

@@ -6,12 +6,12 @@
 //
 
 struct Chart {
-    let timestamp: [Int]
+    let timestamp: [Double]
     let open: [Double]
     let close: [Double]
     let low: [Double]
     let high: [Double]
-    let volume: [Int]
+    let volume: [Double]
 }
 
 // MARK: Codable

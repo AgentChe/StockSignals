@@ -81,21 +81,25 @@ private extension GetDetailsResponse {
     
     static func map(chart: [String: Any]) -> Chart? {
         guard
-            let timestamp = chart["timestamp"] as? [Int],
+            let timestamp = chart["timestamp"] as? [Double],
             let open = chart["open"] as? [Double],
             let close = chart["close"] as? [Double],
             let low = chart["low"] as? [Double],
             let high = chart["high"] as? [Double],
-            let volume = chart["volume"] as? [Int]
+            let volume = chart["volume"] as? [Double]
         else {
             return nil
         }
         
-        return Chart(timestamp: timestamp,
+        let count = min(timestamp.count, high.count)
+        let timestampPrefix = Array(timestamp.prefix(count))
+        let highPrefix = Array(high.prefix(count))
+        
+        return Chart(timestamp: timestampPrefix,
                      open: open,
                      close: close,
                      low: low,
-                     high: high,
+                     high: highPrefix,
                      volume: volume)
     }
     

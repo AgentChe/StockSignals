@@ -8,7 +8,7 @@ target 'StockSignals' do
   pod 'NotificationBannerSwift'
   pod 'lottie-ios'
   pod 'Kingfisher'
-  pod 'SwiftCharts', '~> 0.6.5'
+  pod 'Charts'
   
   pod 'RushSDK', :git => "https://github.com/AgentChe/RushSDK.git"
 end
