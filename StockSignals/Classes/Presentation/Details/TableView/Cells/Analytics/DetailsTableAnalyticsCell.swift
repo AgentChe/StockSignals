@@ -33,7 +33,7 @@ final class DetailsTableAnalyticsCell: UITableViewCell {
 // MARK: Public
 extension DetailsTableAnalyticsCell {
     func setup(element: DetailsAnalytics) {
-//        ratingView.needleValue = 50
+        ratingView.needleValue = percent(value: element.averageRating)
         
         titleLabel.attributedText = title(at: element)?
             .attributed(with: TextAttributes()
@@ -60,6 +60,17 @@ private extension DetailsTableAnalyticsCell {
         contentView.backgroundColor = UIColor.clear
         
         selectionStyle = .none
+    }
+    
+    func percent(value: Double) -> Double {
+        guard value > 0 else {
+            return 0
+        }
+        
+        let coef = Double(5) / value
+        let percent = Double(100) / coef
+        
+        return percent
     }
     
     func title(at: DetailsAnalytics) -> String? {
@@ -141,7 +152,7 @@ private extension DetailsTableAnalyticsCell {
 private extension DetailsTableAnalyticsCell {
     func makeRatingView() -> DetailsTableAnalyticsGaugeView {
         let view = DetailsTableAnalyticsGaugeView()
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(view)
         return view

@@ -47,7 +47,7 @@ private extension DetailsTableChartView {
         
         for i in 0 ..< chart.timestamp.count {
             let value = ChartDataEntry(x: chart.timestamp[i],
-                                       y: chart.high[i])
+                                       y: chart.close[i])
             
             lineChartEntry.append(value)
         }

@@ -20,15 +20,15 @@ final class GetChartResponse {
             return nil
         }
         
-        let count = min(timestamp.count, high.count)
+        let count = min(timestamp.count, close.count)
         let timestampPrefix = Array(timestamp.prefix(count))
-        let highPrefix = Array(high.prefix(count))
+        let closePrefix = Array(close.prefix(count))
         
         return Chart(timestamp: timestampPrefix,
                      open: open,
-                     close: close,
+                     close: closePrefix,
                      low: low,
-                     high: highPrefix,
+                     high: high,
                      volume: volume)
     }
 }
