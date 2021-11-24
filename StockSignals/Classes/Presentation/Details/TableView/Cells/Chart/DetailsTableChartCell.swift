@@ -19,6 +19,8 @@ final class DetailsTableChartCell: UITableViewCell {
     
     private lazy var disposeBag = DisposeBag()
     
+    private var timer: Timer?
+    
     private let symbol: String
     
     init(symbol: String) {
@@ -30,6 +32,7 @@ final class DetailsTableChartCell: UITableViewCell {
         initialize()
         addRangeActions()
         addLoadChartAction()
+        refreshTimerForUpdate()
     }
     
     required init?(coder: NSCoder) {
@@ -60,6 +63,8 @@ private extension DetailsTableChartCell {
             .subscribe(onNext: { [weak self] range in
                 self?.rangeView.range = range
                 self?.range.accept(range)
+                
+                self?.refreshTimerForUpdate()
             })
             .disposed(by: disposeBag)
     }
@@ -81,6 +86,20 @@ private extension DetailsTableChartCell {
             self?.chartView.chart = chart
         })
         .disposed(by: disposeBag)
+    }
+    
+    func refreshTimerForUpdate() {
+        timer?.invalidate()
+        timer = nil
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 120, repeats: true) { [weak self] _ in
+            guard let self = self else {
+                return
+            }
+            
+            let range = self.rangeView.range
+            self.range.accept(range)
+        }
     }
     
     func rangeToString(_ range: DetailsTableChartRangeView.Range) -> String {
