@@ -125,6 +125,8 @@
 		9695B1EB27492D0A00D6DEC5 /* DetailsTableChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EA27492D0A00D6DEC5 /* DetailsTableChartCell.swift */; };
 		9695B1ED274933D500D6DEC5 /* DetailsTableChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EC274933D500D6DEC5 /* DetailsTableChartView.swift */; };
 		9695B1EF2749343100D6DEC5 /* DetailsTableChartRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */; };
+		96AD3515274E8D7D0098D472 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD3514274E8D7D0098D472 /* DictionaryExtension.swift */; };
+		96AD351A274F798F0098D472 /* DetailsSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD3519274F798F0098D472 /* DetailsSocketManager.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -361,6 +363,8 @@
 		9695B1EA27492D0A00D6DEC5 /* DetailsTableChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartCell.swift; sourceTree = "<group>"; };
 		9695B1EC274933D500D6DEC5 /* DetailsTableChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartView.swift; sourceTree = "<group>"; };
 		9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartRangeView.swift; sourceTree = "<group>"; };
+		96AD3514274E8D7D0098D472 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
+		96AD3519274F798F0098D472 /* DetailsSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSocketManager.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -902,6 +906,7 @@
 		9695B17C2742EC3800D6DEC5 /* Details */ = {
 			isa = PBXGroup;
 			children = (
+				96AD3518274F797E0098D472 /* Utils */,
 				9695B18C2742F47600D6DEC5 /* Filter */,
 				9695B1852742EE0E00D6DEC5 /* TableView */,
 				9695B17D2742EC4900D6DEC5 /* DetailsViewController.swift */,
@@ -1045,6 +1050,14 @@
 				9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */,
 			);
 			path = Chart;
+			sourceTree = "<group>";
+		};
+		96AD3518274F797E0098D472 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				96AD3519274F798F0098D472 /* DetailsSocketManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		96AD7072272BDE63007BF50C /* GetIndustries */ = {
@@ -1440,6 +1453,7 @@
 				96BDBC582719C67E00E43708 /* UITapGestureRecognizerExtension.swift */,
 				96BDBC592719C67E00E43708 /* UIDeviceExtension.swift */,
 				96BDBC5B2719C67E00E43708 /* StringExtension.swift */,
+				96AD3514274E8D7D0098D472 /* DictionaryExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1976,6 +1990,7 @@
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
 				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
+				96AD351A274F798F0098D472 /* DetailsSocketManager.swift in Sources */,
 				9625D99D2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift in Sources */,
 				96AD786727313091007BF50C /* ProfileManagerCore.swift in Sources */,
 				96BDBD3827216C2D00E43708 /* WatchListViewController.swift in Sources */,
@@ -2044,6 +2059,7 @@
 				96AD787827318347007BF50C /* SignalManager.swift in Sources */,
 				96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */,
 				961D41D427396B5400711BCD /* SettingsViewModel.swift in Sources */,
+				96AD3515274E8D7D0098D472 /* DictionaryExtension.swift in Sources */,
 				96AD786527313074007BF50C /* ProfileManager.swift in Sources */,
 				96BDBC8C2719C67E00E43708 /* PaddingLabel.swift in Sources */,
 				9695B1A327444A4100D6DEC5 /* DetailsTableSignalsCell.swift in Sources */,

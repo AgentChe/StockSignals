@@ -16,12 +16,15 @@ final class DetailsViewModel {
     
     private lazy var signalsManager = SignalManagerCore()
     
+    private lazy var socketManager = DetailsSocketManager(symbol: symbol.value)
+    
     private lazy var overviewElements = makeOverviewElements()
     private lazy var summaryElements = makeSummaryElements()
     private lazy var aboutCompanyElements = makeAboutCompanyElements()
     
     private lazy var details = makeDetails()
     private lazy var marketState = makeMarketState()
+    private lazy var socketBundle = makeSocketBundle()
     
     private let symbol: BehaviorRelay<String>
     
@@ -54,15 +57,28 @@ private extension DetailsViewModel {
     }
     
     func makeOverviewElements() -> Driver<[DetailsTableElement]> {
-        Driver.combineLatest(details, marketState) { [weak self] details, marketState -> [DetailsTableElement] in
+        let preMarket = Driver
+            .merge(
+                details.map { $0.preMarket },
+                socketBundle.map {  $0.preMarket }
+            )
+        
+        let primary = Driver
+            .merge(
+                details.map { $0.primary },
+                socketBundle.map { $0.primary }
+            )
+        
+        
+        return Driver.combineLatest(details, marketState, preMarket, primary) { [weak self] details, marketState, preMarket, primary -> [DetailsTableElement] in
             guard let self = self else {
                 return []
             }
             
             var result = [DetailsTableElement]()
             
-            let primary = self.makePrimaryElements(details: details)
-            let preMarket = self.makePreMarketElements(details: details, marketState: marketState)
+            let primary = self.makePrimaryElements(primary: primary)
+            let preMarket = self.makePreMarketElements(preMarket: preMarket, marketState: marketState)
             let chart = self.makeChartElements()
             let analytics = self.makeAnalyticsElements(details: details)
             let signals = self.makeSignalsElements(details: details)
@@ -77,8 +93,8 @@ private extension DetailsViewModel {
         }
     }
     
-    func makePrimaryElements(details: Details) -> [DetailsTableElement] {
-        guard let primary = details.primary else {
+    func makePrimaryElements(primary: DetailsPreMarket?) -> [DetailsTableElement] {
+        guard let primary = primary else {
             return []
         }
         
@@ -88,8 +104,8 @@ private extension DetailsViewModel {
         return [element, offset]
     }
     
-    func makePreMarketElements(details: Details, marketState: Bool) -> [DetailsTableElement] {
-        guard let preMarket = details.preMarket, !marketState else {
+    func makePreMarketElements(preMarket: DetailsPreMarket?, marketState: Bool) -> [DetailsTableElement] {
+        guard let preMarket = preMarket, !marketState else {
             return []
         }
         
@@ -323,5 +339,11 @@ private extension DetailsViewModel {
         signalsManager
             .obtainMarketState()
             .asDriver(onErrorJustReturn: false)
+    }
+    
+    func makeSocketBundle() -> Driver<DetailsSocketManager.Bundle> {
+        socketManager
+            .bundle
+            .asDriver(onErrorDriveWith: .never())
     }
 }

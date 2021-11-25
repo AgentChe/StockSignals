@@ -149,6 +149,7 @@ PODS:
     - RxSwift (= 6.2.0)
   - RxSwift (6.2.0)
   - SnapKit (5.0.1)
+  - Starscream (4.0.4)
   - SwiftyStoreKit (0.16.1)
 
 DEPENDENCIES:
@@ -157,6 +158,7 @@ DEPENDENCIES:
   - lottie-ios
   - NotificationBannerSwift
   - RushSDK (from `https://github.com/AgentChe/RushSDK.git`)
+  - Starscream
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -188,6 +190,7 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - SnapKit
+    - Starscream
     - SwiftyStoreKit
 
 EXTERNAL SOURCES:
@@ -229,8 +232,9 @@ SPEC CHECKSUMS:
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
 
-PODFILE CHECKSUM: 9a8eabbc7d1bf9769bf9dd7f5bd569fc43b65093
+PODFILE CHECKSUM: 78e20ee357cd03f1576f2d961c3c6c1048c6604b
 
 COCOAPODS: 1.11.2

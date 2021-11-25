@@ -51,8 +51,8 @@ final class GetDetailsResponse {
     }
 }
 
-// MARK: Private(Overview)
-private extension GetDetailsResponse {
+// MARK: (Overview)
+extension GetDetailsResponse {
     static func map(preMarket: [String: Any]) -> DetailsPreMarket? {
         guard
             let price = preMarket["price"] as? Double,
@@ -130,7 +130,7 @@ private extension GetDetailsResponse {
     }
 }
 
-// MARK: Private(Signals)
+// MARK: (Signals)
 private extension GetDetailsResponse {
     static func map(signals: [String: Any]) -> ([StockSignal], [OptionCryptoSignal]) {
         let openJSON = signals["open"] as? [[String: Any]] ?? []
@@ -236,7 +236,7 @@ private extension GetDetailsResponse {
     }
 }
 
-// MARK: Private(Summary)
+// MARK: (Summary)
 private extension GetDetailsResponse {
     static func map(summary: [String: Any]) -> DetailsSummary {
         let dayRangeJSON = summary["day_range"] as? [String: Any] ?? [:]

@@ -9,6 +9,7 @@ target 'StockSignals' do
   pod 'lottie-ios'
   pod 'Kingfisher'
   pod 'Charts'
+  pod 'Starscream'
   
   pod 'RushSDK', :git => "https://github.com/AgentChe/RushSDK.git"
 end
