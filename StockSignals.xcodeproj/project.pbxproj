@@ -127,6 +127,18 @@
 		9695B1EF2749343100D6DEC5 /* DetailsTableChartRangeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */; };
 		96AD3515274E8D7D0098D472 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD3514274E8D7D0098D472 /* DictionaryExtension.swift */; };
 		96AD351A274F798F0098D472 /* DetailsSocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD3519274F798F0098D472 /* DetailsSocketManager.swift */; };
+		96AD35412750FB600098D472 /* Mover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35402750FB600098D472 /* Mover.swift */; };
+		96AD35432750FCB90098D472 /* Screener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35422750FCB90098D472 /* Screener.swift */; };
+		96AD35452750FD2D0098D472 /* ScreenersBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35442750FD2D0098D472 /* ScreenersBundle.swift */; };
+		96AD35482750FD7A0098D472 /* GetScreenersBundleRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35472750FD7A0098D472 /* GetScreenersBundleRequest.swift */; };
+		96AD354C2754B7B30098D472 /* GetScreenersBundleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD354B2754B7B30098D472 /* GetScreenersBundleResponse.swift */; };
+		96AD354E2754BC100098D472 /* ScreenersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD354D2754BC100098D472 /* ScreenersManager.swift */; };
+		96AD35502754BC370098D472 /* ScreenersManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD354F2754BC370098D472 /* ScreenersManagerCore.swift */; };
+		96AD35532754BD6A0098D472 /* MarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35522754BD6A0098D472 /* MarketViewController.swift */; };
+		96AD35552754BD740098D472 /* MarketViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35542754BD740098D472 /* MarketViewModel.swift */; };
+		96AD35572754BD7E0098D472 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35562754BD7E0098D472 /* MarketView.swift */; };
+		96AD355B2754BD9E0098D472 /* MarketTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD355A2754BD9E0098D472 /* MarketTableView.swift */; };
+		96AD355F2754BDBC0098D472 /* MarketTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD355E2754BDBC0098D472 /* MarketTableElement.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -365,6 +377,18 @@
 		9695B1EE2749343100D6DEC5 /* DetailsTableChartRangeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableChartRangeView.swift; sourceTree = "<group>"; };
 		96AD3514274E8D7D0098D472 /* DictionaryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		96AD3519274F798F0098D472 /* DetailsSocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSocketManager.swift; sourceTree = "<group>"; };
+		96AD35402750FB600098D472 /* Mover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mover.swift; sourceTree = "<group>"; };
+		96AD35422750FCB90098D472 /* Screener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screener.swift; sourceTree = "<group>"; };
+		96AD35442750FD2D0098D472 /* ScreenersBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersBundle.swift; sourceTree = "<group>"; };
+		96AD35472750FD7A0098D472 /* GetScreenersBundleRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScreenersBundleRequest.swift; sourceTree = "<group>"; };
+		96AD354B2754B7B30098D472 /* GetScreenersBundleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetScreenersBundleResponse.swift; sourceTree = "<group>"; };
+		96AD354D2754BC100098D472 /* ScreenersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersManager.swift; sourceTree = "<group>"; };
+		96AD354F2754BC370098D472 /* ScreenersManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersManagerCore.swift; sourceTree = "<group>"; };
+		96AD35522754BD6A0098D472 /* MarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewController.swift; sourceTree = "<group>"; };
+		96AD35542754BD740098D472 /* MarketViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketViewModel.swift; sourceTree = "<group>"; };
+		96AD35562754BD7E0098D472 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
+		96AD355A2754BD9E0098D472 /* MarketTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableView.swift; sourceTree = "<group>"; };
+		96AD355E2754BDBC0098D472 /* MarketTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableElement.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -1060,6 +1084,96 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		96AD353B2750F9D60098D472 /* Screeners */ = {
+			isa = PBXGroup;
+			children = (
+				96AD353E2750F9F70098D472 /* Request */,
+				96AD353D2750F9E50098D472 /* Model */,
+				96AD353C2750F9E10098D472 /* Manager */,
+			);
+			path = Screeners;
+			sourceTree = "<group>";
+		};
+		96AD353C2750F9E10098D472 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96AD354D2754BC100098D472 /* ScreenersManager.swift */,
+				96AD354F2754BC370098D472 /* ScreenersManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		96AD353D2750F9E50098D472 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35402750FB600098D472 /* Mover.swift */,
+				96AD35422750FCB90098D472 /* Screener.swift */,
+				96AD35442750FD2D0098D472 /* ScreenersBundle.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96AD353E2750F9F70098D472 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35462750FD650098D472 /* GetScreenersBundle */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		96AD35462750FD650098D472 /* GetScreenersBundle */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35472750FD7A0098D472 /* GetScreenersBundleRequest.swift */,
+				96AD354B2754B7B30098D472 /* GetScreenersBundleResponse.swift */,
+			);
+			path = GetScreenersBundle;
+			sourceTree = "<group>";
+		};
+		96AD35512754BD550098D472 /* Market */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35582754BD830098D472 /* Views */,
+				96AD35522754BD6A0098D472 /* MarketViewController.swift */,
+				96AD35542754BD740098D472 /* MarketViewModel.swift */,
+				96AD35562754BD7E0098D472 /* MarketView.swift */,
+			);
+			path = Market;
+			sourceTree = "<group>";
+		};
+		96AD35582754BD830098D472 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35592754BD910098D472 /* TableView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		96AD35592754BD910098D472 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				96AD355D2754BDAB0098D472 /* Elements */,
+				96AD355C2754BDA60098D472 /* Cells */,
+				96AD355A2754BD9E0098D472 /* MarketTableView.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		96AD355C2754BDA60098D472 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		96AD355D2754BDAB0098D472 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				96AD355E2754BDBC0098D472 /* MarketTableElement.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 		96AD7072272BDE63007BF50C /* GetIndustries */ = {
 			isa = PBXGroup;
 			children = (
@@ -1420,6 +1534,7 @@
 		96BDBC522719C65C00E43708 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96AD35512754BD550098D472 /* Market */,
 				9695B17C2742EC3800D6DEC5 /* Details */,
 				961D41D027396B3C00711BCD /* Settings */,
 				96AD78C22732DA54007BF50C /* Signals */,
@@ -1523,6 +1638,7 @@
 		96BDBC952719C68100E43708 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				96AD353B2750F9D60098D472 /* Screeners */,
 				96AD786827314DE0007BF50C /* Signals */,
 				96AD785F27312F0D007BF50C /* Profile */,
 				96AD707C272C35C3007BF50C /* Notification */,
@@ -1902,6 +2018,7 @@
 				9695B1D5274798FE00D6DEC5 /* AddToFavoriteViewModel.swift in Sources */,
 				961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
+				96AD35572754BD7E0098D472 /* MarketView.swift in Sources */,
 				9695B18A2742EE3900D6DEC5 /* DetailsTableElement.swift in Sources */,
 				96AD7093272C3D9F007BF50C /* NotificationsView.swift in Sources */,
 				9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */,
@@ -1918,6 +2035,7 @@
 				961D4215273ABDA100711BCD /* SearchTableElement.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
+				96AD354E2754BC100098D472 /* ScreenersManager.swift in Sources */,
 				9695B1D72747990700D6DEC5 /* AddToFavoriteView.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
 				96AD7099272C420E007BF50C /* NotificationTableSection.swift in Sources */,
@@ -1949,6 +2067,7 @@
 				9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */,
 				9695B1A727444D1E00D6DEC5 /* DetailsTableSignalsCollectionView.swift in Sources */,
 				96BDBCB62719C7D100E43708 /* TabView.swift in Sources */,
+				96AD35502754BC370098D472 /* ScreenersManagerCore.swift in Sources */,
 				9695B19D2743C6F400D6DEC5 /* DetailsTableSummaryCell.swift in Sources */,
 				96BDBD4B272188FE00E43708 /* WatchListManagerCore.swift in Sources */,
 				96BDBC8E2719C67E00E43708 /* GradientButton.swift in Sources */,
@@ -1980,6 +2099,7 @@
 				961D41FF273A910000711BCD /* SearchResult.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
+				96AD35432750FCB90098D472 /* Screener.swift in Sources */,
 				96AD7081272C35F4007BF50C /* NotificationType.swift in Sources */,
 				96BDBC9E2719C69200E43708 /* SessionManager.swift in Sources */,
 				9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */,
@@ -1990,6 +2110,7 @@
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
 				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
+				96AD35552754BD740098D472 /* MarketViewModel.swift in Sources */,
 				96AD351A274F798F0098D472 /* DetailsSocketManager.swift in Sources */,
 				9625D99D2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift in Sources */,
 				96AD786727313091007BF50C /* ProfileManagerCore.swift in Sources */,
@@ -2013,6 +2134,7 @@
 				9695B19B274302B800D6DEC5 /* DetailsTableAboutCell.swift in Sources */,
 				96BDBCB32719C7D100E43708 /* TabMainView.swift in Sources */,
 				961D421F273B0A3B00711BCD /* SearchTableQuotationCollectionView.swift in Sources */,
+				96AD354C2754B7B30098D472 /* GetScreenersBundleResponse.swift in Sources */,
 				96AD7085272C36B4007BF50C /* GetNotificationsRequest.swift in Sources */,
 				96BDBC782719C67E00E43708 /* UIColorExtension.swift in Sources */,
 				96AD78F32733E357007BF50C /* AllSignalsViewModel.swift in Sources */,
@@ -2032,8 +2154,10 @@
 				9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */,
 				96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */,
 				96234D982729585A00619CE2 /* OnbSelectCell.swift in Sources */,
+				96AD35482750FD7A0098D472 /* GetScreenersBundleRequest.swift in Sources */,
 				96BDBD46272180D200E43708 /* GetWatchListSignalsResponse.swift in Sources */,
 				96234D9E2729B44A00619CE2 /* OnbInterestedView.swift in Sources */,
+				96AD35412750FB600098D472 /* Mover.swift in Sources */,
 				96234DB5272A11E100619CE2 /* OnbIndustriesView.swift in Sources */,
 				96AD708C272C39A3007BF50C /* NotificationManagerCore.swift in Sources */,
 				96234D3927282AD500619CE2 /* OSlideView.swift in Sources */,
@@ -2044,6 +2168,7 @@
 				9695B1822742EC6000D6DEC5 /* DetailsView.swift in Sources */,
 				96AD78D82732E25D007BF50C /* SignalsStockCollectionCell.swift in Sources */,
 				96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */,
+				96AD35452750FD2D0098D472 /* ScreenersBundle.swift in Sources */,
 				961D420E273AB38800711BCD /* PaddingTextField.swift in Sources */,
 				961D420B273AAC9500711BCD /* SearchView.swift in Sources */,
 				961D41E22739780C00711BCD /* SettingsTableRateAppCell.swift in Sources */,
@@ -2054,6 +2179,7 @@
 				9695B17E2742EC4900D6DEC5 /* DetailsViewController.swift in Sources */,
 				96AD785E273129FD007BF50C /* NotificationsPushView.swift in Sources */,
 				96234DBD272AD09300619CE2 /* OnbStocksCollectionView.swift in Sources */,
+				96AD355F2754BDBC0098D472 /* MarketTableElement.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
 				9695B1BA27451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift in Sources */,
 				96AD787827318347007BF50C /* SignalManager.swift in Sources */,
@@ -2083,6 +2209,7 @@
 				9695B1E62749272900D6DEC5 /* GetChartResponse.swift in Sources */,
 				9625D98E2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift in Sources */,
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
+				96AD35532754BD6A0098D472 /* MarketViewController.swift in Sources */,
 				96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */,
 				9695B1D02746B25000D6DEC5 /* DetailsTablePrimaryCell.swift in Sources */,
 				9695B1932742F8AF00D6DEC5 /* Details.swift in Sources */,
@@ -2093,6 +2220,7 @@
 				96BDBC7B2719C67E00E43708 /* UITapGestureRecognizerExtension.swift in Sources */,
 				961D421B273ACD6900711BCD /* SearchTableQuotationCell.swift in Sources */,
 				96AD78D62732E231007BF50C /* SignalsTableTypeCell.swift in Sources */,
+				96AD355B2754BD9E0098D472 /* MarketTableView.swift in Sources */,
 				96234DBF272AD0A200619CE2 /* OnbStocksCollectionCell.swift in Sources */,
 				96AD78C62732DA76007BF50C /* SignalsViewModel.swift in Sources */,
 				96234DB9272ACF4300619CE2 /* OnbStocksView.swift in Sources */,

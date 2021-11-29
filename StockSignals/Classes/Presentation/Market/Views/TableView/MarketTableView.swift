@@ -1,0 +1,69 @@
+//
+//  MarketTableView.swift
+//  StockSignals
+//
+//  Created by Andrey Chernyshev on 29.11.2021.
+//
+
+import UIKit
+
+final class MarketTableView: UITableView {
+    private lazy var elements = [MarketTableElement]()
+    
+    override init(frame: CGRect, style: UITableView.Style) {
+        super.init(frame: frame, style: style)
+        
+        initialize()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+// MARK: Public
+extension MarketTableView {
+    func setup(elements: [MarketTableElement]) {
+        self.elements = elements
+        
+        reloadData()
+    }
+}
+
+// MARK: UITableViewDataSource
+extension MarketTableView: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        elements.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch elements[indexPath.row] {
+        case .offset:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
+            cell.backgroundColor = UIColor.clear
+            cell.contentView.backgroundColor = UIColor.clear
+            cell.selectionStyle = .none
+            return cell
+        }
+    }
+}
+
+// MARK: UITableViewDelegate
+extension MarketTableView: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch elements[indexPath.row] {
+        case .offset(let offset):
+            return offset
+        }
+    }
+}
+
+// MARK: Private
+private extension MarketTableView {
+    func initialize() {
+        register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        
+        dataSource = self
+        delegate = self
+    }
+}

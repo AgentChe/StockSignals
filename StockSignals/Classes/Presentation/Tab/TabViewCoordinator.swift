@@ -12,6 +12,7 @@ final class TabViewCoordinator {
     
     lazy var signalsVC = NavigationController(rootViewController: SignalsViewController.make())
     lazy var notificationsVC = NavigationController(rootViewController: NotificationsViewController.make())
+    lazy var marketVC = NavigationController(rootViewController: MarketViewController.make())
     lazy var watchListVC = NavigationController(rootViewController: WatchListViewController.make())
     
     private var previousVC: UIViewController?
@@ -28,6 +29,8 @@ final class TabViewCoordinator {
             changeVC(on: signalsVC)
         case .notifications:
             changeVC(on: notificationsVC)
+        case .market:
+            changeVC(on: marketVC)
         case .watchList:
             changeVC(on: watchListVC)
         }

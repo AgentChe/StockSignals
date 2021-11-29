@@ -9,11 +9,12 @@ import UIKit
 
 final class TabView: UIView {
     enum Tab {
-        case signals, notifications, watchList
+        case signals, notifications, market, watchList
     }
     
     lazy var signalsItem = makeItem(image: "Tab.Signals", title: "Tab.Signals")
     lazy var notificationsItem = makeItem(image: "Tab.Notifications", title: "Tab.Notifications")
+    lazy var marketItem = makeItem(image: "Tab.Market", title: "Tab.Market")
     lazy var watchListItem = makeItem(image: "Tab.WatchList", title: "Tab.WatchList")
     
     var selectedTab = Tab.signals {
@@ -39,6 +40,7 @@ private extension TabView {
         [
             signalsItem,
             notificationsItem,
+            marketItem,
             watchListItem
         ]
         .forEach {
@@ -50,6 +52,8 @@ private extension TabView {
             signalsItem.state = .selected
         case .notifications:
             notificationsItem.state = .selected
+        case .market:
+            marketItem.state = .selected
         case .watchList:
             watchListItem.state = .selected
         }
@@ -70,11 +74,18 @@ private extension TabView {
             notificationsItem.leadingAnchor.constraint(equalTo: signalsItem.trailingAnchor),
             notificationsItem.bottomAnchor.constraint(equalTo: bottomAnchor),
             notificationsItem.topAnchor.constraint(equalTo: topAnchor),
-            notificationsItem.widthAnchor.constraint(equalTo: watchListItem.widthAnchor)
+            notificationsItem.widthAnchor.constraint(equalTo: marketItem.widthAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            watchListItem.leadingAnchor.constraint(equalTo: notificationsItem.trailingAnchor),
+            marketItem.leadingAnchor.constraint(equalTo: notificationsItem.trailingAnchor),
+            marketItem.bottomAnchor.constraint(equalTo: bottomAnchor),
+            marketItem.topAnchor.constraint(equalTo: topAnchor),
+            marketItem.widthAnchor.constraint(equalTo: watchListItem.widthAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            watchListItem.leadingAnchor.constraint(equalTo: marketItem.trailingAnchor),
             watchListItem.bottomAnchor.constraint(equalTo: bottomAnchor),
             watchListItem.topAnchor.constraint(equalTo: topAnchor),
             watchListItem.trailingAnchor.constraint(equalTo: trailingAnchor)

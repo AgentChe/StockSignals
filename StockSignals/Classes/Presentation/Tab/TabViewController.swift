@@ -55,6 +55,10 @@ private extension TabViewController {
         mainView.tabView.notificationsItem.isUserInteractionEnabled = true
         mainView.tabView.notificationsItem.addGestureRecognizer(notificationsGesture)
         
+        let marketGesture = UITapGestureRecognizer()
+        mainView.tabView.marketItem.isUserInteractionEnabled = true
+        mainView.tabView.marketItem.addGestureRecognizer(marketGesture)
+        
         let watchListGesture = UITapGestureRecognizer()
         mainView.tabView.watchListItem.isUserInteractionEnabled = true
         mainView.tabView.watchListItem.addGestureRecognizer(watchListGesture)
@@ -63,6 +67,7 @@ private extension TabViewController {
             .merge([
                 signalsGesture.rx.event.map { _ in TabView.Tab.signals },
                 notificationsGesture.rx.event.map { _ in TabView.Tab.notifications },
+                marketGesture.rx.event.map { _ in TabView.Tab.market },
                 watchListGesture.rx.event.map { _ in TabView.Tab.watchList }
             ])
             .subscribe(onNext: { [weak self] tab in

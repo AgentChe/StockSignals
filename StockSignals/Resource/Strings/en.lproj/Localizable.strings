@@ -19,6 +19,7 @@
 // MARK: Tab
 "Tab.Signals" = "Signals";
 "Tab.Notifications" = "Notifications";
+"Tab.Market" = "Market";
 "Tab.WatchList" = "Watch List";
 
 // MARK: WatchList
@@ -186,3 +187,6 @@
 
 // MARK: Add To Favorite
 "AddToFavorite.Title" = "Choose Watch List";
+
+// MARK: Market
+"Market.Title" = "Market";
