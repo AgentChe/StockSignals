@@ -10,4 +10,5 @@ import UIKit
 enum MarketTableElement {
     case offset(CGFloat)
     case movers([MarketMoversCollectionElement])
+    case allScreeners
 }

@@ -48,6 +48,8 @@ extension MarketTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableMoversCell.self)) as! MarketTableMoversCell
             cell.setup(elements: elements)
             return cell
+        case .allScreeners:
+            return dequeueReusableCell(withIdentifier: String(describing: MarketTableAllScreenersCell.self))!
         }
     }
 }
@@ -60,6 +62,8 @@ extension MarketTableView: UITableViewDelegate {
             return offset
         case .movers:
             return 231.scale
+        case .allScreeners:
+            return 79.scale
         }
     }
 }
@@ -69,6 +73,7 @@ private extension MarketTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         register(MarketTableMoversCell.self, forCellReuseIdentifier: String(describing: MarketTableMoversCell.self))
+        register(MarketTableAllScreenersCell.self, forCellReuseIdentifier: String(describing: MarketTableAllScreenersCell.self))
         
         dataSource = self
         delegate = self

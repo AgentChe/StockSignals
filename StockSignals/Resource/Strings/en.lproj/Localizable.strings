@@ -191,3 +191,5 @@
 // MARK: Market
 "Market.Title" = "Market";
 "Market.Movers" = "Movers";
+"Market.Screeners" = "Screeners";
+"Market.All" = "All";

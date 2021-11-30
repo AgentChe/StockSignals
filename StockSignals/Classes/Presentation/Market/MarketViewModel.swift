@@ -32,6 +32,8 @@ private extension MarketViewModel {
                 result.append(element)
             }
             
+            result.append(.allScreeners)
+            
             return result
         }
         .asDriver(onErrorJustReturn: [])
