@@ -8,6 +8,7 @@
 struct Mover {
     let title: String
     let symbol: String
+    let key: String
     let change: Double
 }
 

@@ -9,7 +9,6 @@ import UIKit
 
 final class MarketView: UIView {
     lazy var titleLabel = makeTitleLabel()
-    lazy var filterView = makeFilterView()
     lazy var tableView = makeTableView()
     
     override init(frame: CGRect) {
@@ -40,16 +39,9 @@ private extension MarketView {
         ])
         
         NSLayoutConstraint.activate([
-            filterView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
-            filterView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
-            filterView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15.scale),
-            filterView.heightAnchor.constraint(equalToConstant: 44.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: filterView.bottomAnchor, constant: 8.scale),
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15.scale),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
@@ -65,16 +57,6 @@ private extension MarketView {
         
         let view = UILabel()
         view.attributedText = "Market.Title".localized.attributed(with: attrs)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
-        return view
-    }
-    
-    func makeFilterView() -> NotificationsFilterView {
-        let view = NotificationsFilterView()
-        view.layer.cornerRadius = 12.scale
-        view.layer.masksToBounds = true
-        view.backgroundColor = UIColor(integralRed: 118, green: 118, blue: 124, alpha: 0.24)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

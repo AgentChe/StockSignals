@@ -44,6 +44,10 @@ extension MarketTableView: UITableViewDataSource {
             cell.contentView.backgroundColor = UIColor.clear
             cell.selectionStyle = .none
             return cell
+        case .movers(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableMoversCell.self)) as! MarketTableMoversCell
+            cell.setup(elements: elements)
+            return cell
         }
     }
 }
@@ -54,6 +58,8 @@ extension MarketTableView: UITableViewDelegate {
         switch elements[indexPath.row] {
         case .offset(let offset):
             return offset
+        case .movers:
+            return 231.scale
         }
     }
 }
@@ -62,6 +68,7 @@ extension MarketTableView: UITableViewDelegate {
 private extension MarketTableView {
     func initialize() {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
+        register(MarketTableMoversCell.self, forCellReuseIdentifier: String(describing: MarketTableMoversCell.self))
         
         dataSource = self
         delegate = self

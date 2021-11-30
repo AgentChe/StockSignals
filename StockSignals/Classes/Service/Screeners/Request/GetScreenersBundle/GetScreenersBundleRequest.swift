@@ -9,10 +9,9 @@ import Alamofire
 
 struct GetScreenersBundleRequest: APIRequestBody {
     let userToken: String
-    let type: String
     
     var url: String {
-        GlobalDefinitions.domainUrl + "/api/v1/symbol"
+        GlobalDefinitions.domainUrl + "/api/v1/market"
     }
     
     var method: HTTPMethod {
@@ -22,8 +21,7 @@ struct GetScreenersBundleRequest: APIRequestBody {
     var parameters: Parameters? {
         [
             "_api_key": GlobalDefinitions.apiKey,
-            "_user_token": userToken,
-            "type": type
+            "_user_token": userToken
         ]
     }
 }

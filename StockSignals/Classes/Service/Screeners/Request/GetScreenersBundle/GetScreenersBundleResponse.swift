@@ -30,8 +30,9 @@ private extension GetScreenersBundleResponse {
     static func map(moversJSON: [[String: Any]]) -> [Mover] {
         moversJSON.compactMap { json -> Mover? in
             guard
-                let title = json["title"] as? String,
+                let title = json["value"] as? String,
                 let symbol = json["symbol"] as? String,
+                let key = json["key"] as? String,
                 let change = json["change"] as? Double
             else {
                 return nil
@@ -39,6 +40,7 @@ private extension GetScreenersBundleResponse {
             
             return Mover(title: title,
                          symbol: symbol,
+                         key: key,
                          change: change)
         }
     }
@@ -53,98 +55,34 @@ private extension GetScreenersBundleResponse {
             }
             
             let data = json["data"] as? [[String: Any]] ?? []
-            var stockSignals = [StockSignal]()
-            var optionCryptoSignals = [OptionCryptoSignal]()
-            
-            data.forEach { element in
-                if let stockSignal = map(stockSignalJSON: element) {
-                    stockSignals.append(stockSignal)
-                } else if let optionCryptoSignal = map(optionCryptoSignalJSON: element) {
-                    optionCryptoSignals.append(optionCryptoSignal)
+            let quotations = data.compactMap { element -> Quotation? in
+                guard
+                    let symbol = element["symbol"] as? String,
+                    let company = element["company"] as? String,
+                    let price = element["price"] as? Double,
+                    let change = element["change"] as? Double,
+                    let volume = element["volume"] as? String
+                else {
+                    return nil
                 }
+                
+                let imageUrl = element["image"] as? String
+                let peRatio = element["pe_ratio"] as? Double
+                let marketCap = element["market_cap"] as? String
+                
+                return Quotation(imageUrl: imageUrl,
+                                 symbol: symbol,
+                                 company: company,
+                                 price: price,
+                                 change: change,
+                                 volume: volume,
+                                 peRatio: peRatio,
+                                 marketCap: marketCap)
             }
             
             return Screener(key: key,
                             value: value,
-                            optionCryptoSignals: optionCryptoSignals,
-                            stockSignals: stockSignals)
-        }
-    }
-    
-    static func map(stockSignalJSON: [String: Any]) -> StockSignal? {
-        guard
-            let imageUrl = stockSignalJSON["image"] as? String,
-            let symbol = stockSignalJSON["symbol"] as? String,
-            let company = stockSignalJSON["company"] as? String,
-            let maxGain = stockSignalJSON["gain"] as? Double,
-            let created = stockSignalJSON["create"] as? TimeInterval,
-            let typeRawValue = stockSignalJSON["activity"] as? Int,
-            let type = type(at: typeRawValue),
-            let targetJSON = stockSignalJSON["target"] as? [String: Any],
-            let targetBuy = targetJSON["buy"] as? Double,
-            let targetSell = targetJSON["sell"] as? Double
-        else {
-            return nil
-        }
-        
-        let risk = stockSignalJSON["risk"] as? String
-        let targetStop = targetJSON["stop"] as? Double
-        let note = stockSignalJSON["note"] as? String
-        
-        return StockSignal(imageUrl: imageUrl,
-                           symbol: symbol,
-                           company: company,
-                           maxGain: maxGain,
-                           created: created,
-                           type: type,
-                           risk: risk,
-                           targetBuy: targetBuy,
-                           targetSell: targetSell,
-                           targetStop: targetStop,
-                           note: note)
-    }
-    
-    static func map(optionCryptoSignalJSON: [String: Any]) -> OptionCryptoSignal? {
-        guard
-            let imageUrl = optionCryptoSignalJSON["image"] as? String,
-            let symbol = optionCryptoSignalJSON["symbol"] as? String,
-            let description = optionCryptoSignalJSON["description"] as? String,
-            let created = optionCryptoSignalJSON["create"] as? TimeInterval,
-            let typeRawValue = optionCryptoSignalJSON["activity"] as? Int,
-            let type = type(at: typeRawValue),
-            let maxGain = optionCryptoSignalJSON["gain"] as? Double,
-            let targetJSON = optionCryptoSignalJSON["target"] as? [String: Any],
-            let targetBuy = targetJSON["buy"] as? Double,
-            let targetSell = targetJSON["sell"] as? [Double]
-        else {
-            return nil
-        }
-        
-        let targetStop = targetJSON["stop"] as? Double
-        let note = optionCryptoSignalJSON["note"] as? String
-        
-        return OptionCryptoSignal(imageUrl: imageUrl,
-                                  symbol: symbol,
-                                  description: description,
-                                  created: created,
-                                  type: type,
-                                  maxGain: maxGain,
-                                  targetBuy: targetBuy,
-                                  targetStop: targetStop,
-                                  targetSell: targetSell,
-                                  note: note)
-    }
-    
-    static func type(at rawValue: Int) -> SignalType? {
-        switch rawValue {
-        case 0:
-            return .closed
-        case 1:
-            return .working
-        case 2:
-            return .longTerm
-        default:
-            return nil
+                            quotations: quotations)
         }
     }
 }

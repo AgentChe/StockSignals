@@ -9,8 +9,6 @@ import RxSwift
 import RxCocoa
 
 final class MarketViewModel {
-    lazy var filter = PublishRelay<NotificationType>()
-    
     lazy var elements = makeElements()
     
     private lazy var screenersManager = ScreenersManagerCore()
@@ -19,31 +17,23 @@ final class MarketViewModel {
 // MARK: Private
 private extension MarketViewModel {
     func makeElements() -> Driver<[MarketTableElement]> {
-        filter.flatMapLatest { [weak self] filter -> Single<ScreenersBundle?> in
-            guard let self = self else {
-                return .never()
+        screenersManager
+        .obtainBundle()
+        .map { bundle -> [MarketTableElement] in
+            guard let bundle = bundle else {
+                return []
             }
             
-            let converted = self.convert(filter: filter)
+            var result = [MarketTableElement]()
             
-            return self.screenersManager
-                .obtainBundle(type: converted)
-                .catchAndReturn(nil)
-        }
-        .map { bundle -> [MarketTableElement] in
-            return []
+            if !bundle.movers.isEmpty {
+                let elements = bundle.movers.map { MarketMoversCollectionElement(mover: $0) }
+                let element = MarketTableElement.movers(elements)
+                result.append(element)
+            }
+            
+            return result
         }
         .asDriver(onErrorJustReturn: [])
-    }
-    
-    func convert(filter: NotificationType) -> String {
-        switch filter {
-        case .stock:
-            return "stocks"
-        case .option:
-            return "options"
-        case .crypto:
-            return "crypto"
-        }
     }
 }

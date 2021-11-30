@@ -8,8 +8,7 @@
 struct Screener {
     let key: String
     let value: String
-    let optionCryptoSignals: [OptionCryptoSignal]
-    let stockSignals: [StockSignal]
+    let quotations: [Quotation]
 }
 
 // MARK: Codable

@@ -78,6 +78,8 @@
 		9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */; };
 		9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */; };
 		9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */; };
+		9642EB5C275696E40046D034 /* MarketMoversCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB5B275696E40046D034 /* MarketMoversCollectionLayout.swift */; };
+		9642EB5E2756A14D0046D034 /* MarketMoversCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB5D2756A14D0046D034 /* MarketMoversCollectionElement.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -139,6 +141,9 @@
 		96AD35572754BD7E0098D472 /* MarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35562754BD7E0098D472 /* MarketView.swift */; };
 		96AD355B2754BD9E0098D472 /* MarketTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD355A2754BD9E0098D472 /* MarketTableView.swift */; };
 		96AD355F2754BDBC0098D472 /* MarketTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD355E2754BDBC0098D472 /* MarketTableElement.swift */; };
+		96AD35632754F4B70098D472 /* MarketTableMoversCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35622754F4B70098D472 /* MarketTableMoversCell.swift */; };
+		96AD35662754F67D0098D472 /* MarketMoversCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD35652754F67D0098D472 /* MarketMoversCollectionView.swift */; };
+		96AD356827553CBE0098D472 /* MarketMoversCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD356727553CBE0098D472 /* MarketMoversCollectionCell.swift */; };
 		96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */; };
 		96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */; };
 		96AD7079272C05E5007BF50C /* SF-Pro-Display-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */; };
@@ -328,6 +333,8 @@
 		9625D99E272425F0005A8E31 /* WatchListGroupsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListGroupsCollectionCell.swift; sourceTree = "<group>"; };
 		9625D9A127242CB6005A8E31 /* CreateWatchListGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupView.swift; sourceTree = "<group>"; };
 		9625D9A4272558AE005A8E31 /* CreateWatchListGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWatchListGroupViewModel.swift; sourceTree = "<group>"; };
+		9642EB5B275696E40046D034 /* MarketMoversCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketMoversCollectionLayout.swift; sourceTree = "<group>"; };
+		9642EB5D2756A14D0046D034 /* MarketMoversCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketMoversCollectionElement.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -389,6 +396,9 @@
 		96AD35562754BD7E0098D472 /* MarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketView.swift; sourceTree = "<group>"; };
 		96AD355A2754BD9E0098D472 /* MarketTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableView.swift; sourceTree = "<group>"; };
 		96AD355E2754BDBC0098D472 /* MarketTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableElement.swift; sourceTree = "<group>"; };
+		96AD35622754F4B70098D472 /* MarketTableMoversCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableMoversCell.swift; sourceTree = "<group>"; };
+		96AD35652754F67D0098D472 /* MarketMoversCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketMoversCollectionView.swift; sourceTree = "<group>"; };
+		96AD356727553CBE0098D472 /* MarketMoversCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketMoversCollectionCell.swift; sourceTree = "<group>"; };
 		96AD7073272BDE76007BF50C /* GetIndustriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesRequest.swift; sourceTree = "<group>"; };
 		96AD7075272BDEF6007BF50C /* GetIndustriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetIndustriesResponse.swift; sourceTree = "<group>"; };
 		96AD7078272C05E5007BF50C /* SF-Pro-Display-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Black.otf"; sourceTree = "<group>"; };
@@ -1162,6 +1172,7 @@
 		96AD355C2754BDA60098D472 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				96AD35612754F4A80098D472 /* MoversCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -1172,6 +1183,26 @@
 				96AD355E2754BDBC0098D472 /* MarketTableElement.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		96AD35612754F4A80098D472 /* MoversCell */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35642754F5730098D472 /* CollectionView */,
+				96AD35622754F4B70098D472 /* MarketTableMoversCell.swift */,
+			);
+			path = MoversCell;
+			sourceTree = "<group>";
+		};
+		96AD35642754F5730098D472 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				96AD35652754F67D0098D472 /* MarketMoversCollectionView.swift */,
+				96AD356727553CBE0098D472 /* MarketMoversCollectionCell.swift */,
+				9642EB5B275696E40046D034 /* MarketMoversCollectionLayout.swift */,
+				9642EB5D2756A14D0046D034 /* MarketMoversCollectionElement.swift */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		96AD7072272BDE63007BF50C /* GetIndustries */ = {
@@ -2006,6 +2037,7 @@
 				96BDBD6A2722DD6700E43708 /* WatchListSignalCollectionView.swift in Sources */,
 				9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */,
 				961D4209273AAC8C00711BCD /* SearchViewModel.swift in Sources */,
+				96AD35632754F4B70098D472 /* MarketTableMoversCell.swift in Sources */,
 				9695B1ED274933D500D6DEC5 /* DetailsTableChartView.swift in Sources */,
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
 				9695B1B6274518AC00D6DEC5 /* DetailsAnalyticsRating.swift in Sources */,
@@ -2039,6 +2071,7 @@
 				9695B1D72747990700D6DEC5 /* AddToFavoriteView.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
 				96AD7099272C420E007BF50C /* NotificationTableSection.swift in Sources */,
+				96AD35662754F67D0098D472 /* MarketMoversCollectionView.swift in Sources */,
 				9625D9942724221C005A8E31 /* WatchListGroupsViewModel.swift in Sources */,
 				96234DAF272A0D5D00619CE2 /* IndustriesCollectionView.swift in Sources */,
 				96BDBC882719C67E00E43708 /* Toast.swift in Sources */,
@@ -2143,10 +2176,12 @@
 				96234DCA272ADF1200619CE2 /* RateCircleView.swift in Sources */,
 				96BDBD702722DF2300E43708 /* WatchListSignalCollectionHeader.swift in Sources */,
 				96234DA6272A0AFB00619CE2 /* Industry.swift in Sources */,
+				9642EB5C275696E40046D034 /* MarketMoversCollectionLayout.swift in Sources */,
 				9695B1772742BB8000D6DEC5 /* AllSignalsTableElement.swift in Sources */,
 				96BDBC852719C67E00E43708 /* SignError.swift in Sources */,
 				96AD78DC2732E7B1007BF50C /* SignalsFilterView.swift in Sources */,
 				96BDBCA82719C7B300E43708 /* SplashViewController.swift in Sources */,
+				9642EB5E2756A14D0046D034 /* MarketMoversCollectionElement.swift in Sources */,
 				96AD790027340554007BF50C /* AllSiignalsSort.swift in Sources */,
 				9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */,
 				9625D99B272423B3005A8E31 /* WatchListGroupsCollectionElement.swift in Sources */,
@@ -2211,6 +2246,7 @@
 				96BDBC872719C67E00E43708 /* ImagePicker.swift in Sources */,
 				96AD35532754BD6A0098D472 /* MarketViewController.swift in Sources */,
 				96AD78CC2732DA99007BF50C /* SignalsTableView.swift in Sources */,
+				96AD356827553CBE0098D472 /* MarketMoversCollectionCell.swift in Sources */,
 				9695B1D02746B25000D6DEC5 /* DetailsTablePrimaryCell.swift in Sources */,
 				9695B1932742F8AF00D6DEC5 /* Details.swift in Sources */,
 				96AD70B2272FDDEA007BF50C /* NotificationTableGroup.swift in Sources */,
