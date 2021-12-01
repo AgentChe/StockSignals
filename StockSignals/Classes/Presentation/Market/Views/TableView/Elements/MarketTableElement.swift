@@ -11,4 +11,5 @@ enum MarketTableElement {
     case offset(CGFloat)
     case movers([MarketMoversCollectionElement])
     case allScreeners
+    case quotations([MarketTableQuotationsElement])
 }

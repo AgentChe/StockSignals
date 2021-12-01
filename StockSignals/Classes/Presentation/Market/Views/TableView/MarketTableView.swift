@@ -50,6 +50,10 @@ extension MarketTableView: UITableViewDataSource {
             return cell
         case .allScreeners:
             return dequeueReusableCell(withIdentifier: String(describing: MarketTableAllScreenersCell.self))!
+        case .quotations(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableQuotationsCell.self)) as! MarketTableQuotationsCell
+            cell.setup(elements: elements)
+            return cell
         }
     }
 }
@@ -64,6 +68,8 @@ extension MarketTableView: UITableViewDelegate {
             return 231.scale
         case .allScreeners:
             return 79.scale
+        case .quotations:
+            return 200.scale
         }
     }
 }
@@ -74,6 +80,7 @@ private extension MarketTableView {
         register(UITableViewCell.self, forCellReuseIdentifier: String(describing: UITableViewCell.self))
         register(MarketTableMoversCell.self, forCellReuseIdentifier: String(describing: MarketTableMoversCell.self))
         register(MarketTableAllScreenersCell.self, forCellReuseIdentifier: String(describing: MarketTableAllScreenersCell.self))
+        register(MarketTableQuotationsCell.self, forCellReuseIdentifier: String(describing: MarketTableQuotationsCell.self))
         
         dataSource = self
         delegate = self

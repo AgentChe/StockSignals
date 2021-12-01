@@ -34,6 +34,18 @@ private extension MarketViewModel {
             
             result.append(.allScreeners)
             
+            if !bundle.screeners.isEmpty {
+                let elements = bundle.screeners.enumerated().map { index, screener -> MarketTableQuotationsElement in
+                    let key = MarketQuotationsKeysCollectionElement(title: screener.value,
+                                                                    key: screener.key,
+                                                                    isSelected: index == 0)
+                    return MarketTableQuotationsElement(key: key,
+                                                        quotations: screener.quotations)
+                }
+                let element = MarketTableElement.quotations(elements)
+                result.append(element)
+            }
+            
             return result
         }
         .asDriver(onErrorJustReturn: [])
