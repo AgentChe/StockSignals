@@ -8,6 +8,8 @@
 import UIKit
 
 final class MarketMoversCollectionView: UICollectionView {
+    weak var mainDelegate: MarketTableViewDelegate?
+    
     private lazy var elements = [MarketMoversCollectionElement]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -45,7 +47,10 @@ extension MarketMoversCollectionView: UICollectionViewDataSource {
 
 // MARK: UICollectionViewDelegateFlowLayout
 extension MarketMoversCollectionView: UICollectionViewDelegateFlowLayout {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let mover = elements[indexPath.row].mover
+        mainDelegate?.marketTableDidSelect(mover: mover)
+    }
 }
 
 // MARK: Private

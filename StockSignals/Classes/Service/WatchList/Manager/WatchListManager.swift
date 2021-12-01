@@ -8,7 +8,7 @@
 import RxSwift
 
 protocol WatchListManager {
-    func obtainWatchListSignals(symbols: String?) -> Single<[Quotation]>
+    func obtainWatchListSignals(symbols: String?, keys: [String]?) -> Single<[Quotation]>
     
     func obtainGroups() -> Single<[WatchListGroup]>
     func createGroup(name: String, symbols: [String]) -> Single<WatchListGroup>

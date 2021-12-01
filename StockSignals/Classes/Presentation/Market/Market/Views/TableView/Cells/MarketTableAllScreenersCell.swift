@@ -8,6 +8,8 @@
 import UIKit
 
 final class MarketTableAllScreenersCell: UITableViewCell {
+    weak var mainDelegate: MarketTableViewDelegate?
+    
     lazy var titleLabel = makeTitleLabel()
     lazy var allLabel = makeAllLabel()
     lazy var arrowView = makeArrowView()
@@ -17,6 +19,7 @@ final class MarketTableAllScreenersCell: UITableViewCell {
         
         makeConstraints()
         initialize()
+        addTapAction()
     }
     
     required init?(coder: NSCoder) {
@@ -31,6 +34,17 @@ private extension MarketTableAllScreenersCell {
         backgroundColor = UIColor.clear
         
         selectionStyle = .none
+    }
+    
+    func addTapAction() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapped))
+        contentView.isUserInteractionEnabled = true
+        contentView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc
+    func didTapped() {
+        mainDelegate?.marketTableDidSelectAllScreeners()
     }
 }
 

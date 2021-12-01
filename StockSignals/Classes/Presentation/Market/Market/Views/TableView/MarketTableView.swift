@@ -7,7 +7,15 @@
 
 import UIKit
 
+protocol MarketTableViewDelegate: AnyObject {
+    func marketTableDidSelectAllScreeners()
+    func marketTableDidSelect(mover: Mover)
+    func marketTableDidSelect(symbol: String)
+}
+
 final class MarketTableView: UITableView {
+    weak var mainDelegate: MarketTableViewDelegate?
+    
     private lazy var elements = [MarketTableElement]()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -46,12 +54,16 @@ extension MarketTableView: UITableViewDataSource {
             return cell
         case .movers(let elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableMoversCell.self)) as! MarketTableMoversCell
+            cell.collectionView.mainDelegate = mainDelegate
             cell.setup(elements: elements)
             return cell
         case .allScreeners:
-            return dequeueReusableCell(withIdentifier: String(describing: MarketTableAllScreenersCell.self))!
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableAllScreenersCell.self)) as! MarketTableAllScreenersCell
+            cell.mainDelegate = mainDelegate
+            return cell
         case .quotations(let elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableQuotationsCell.self)) as! MarketTableQuotationsCell
+            cell.quotationsCollectionView.mainDelegate = mainDelegate
             cell.setup(elements: elements)
             return cell
         }

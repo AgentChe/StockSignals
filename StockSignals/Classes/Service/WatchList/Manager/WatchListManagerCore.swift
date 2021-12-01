@@ -15,13 +15,14 @@ final class WatchListManagerCore: WatchListManager {
 
 // MARK: Public
 extension WatchListManagerCore {
-    func obtainWatchListSignals(symbols: String? = nil) -> Single<[Quotation]> {
+    func obtainWatchListSignals(symbols: String? = nil, keys: [String]? = nil) -> Single<[Quotation]> {
         guard let userToken = SessionManagerCore().getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
 
         let request = GetWatchListSignalsRequest(userToken: userToken,
-                                                 symbols: symbols)
+                                                 symbols: symbols,
+                                                 keys: keys)
 
         return SDKStorage.shared
             .restApiTransport
