@@ -23,4 +23,17 @@ extension ScreenersManagerCore {
             .callServerApi(requestBody: request)
             .map { GetScreenersBundleResponse.map(from: $0) }
     }
+    
+    func obtainFilters() -> Single<Filters?> {
+        guard let userToken = SessionManagerCore().getSession()?.userToken else {
+            return .error(SignError.tokenNotFound)
+        }
+        
+        let request = GetFiltersRequest(userToken: userToken)
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetFiltersResponse.map(from: $0) }
+    }
 }

@@ -9,4 +9,6 @@ import RxSwift
 
 protocol ScreenersManager {
     func obtainBundle() -> Single<ScreenersBundle?>
+    
+    func obtainFilters() -> Single<Filters?>
 }

@@ -1,0 +1,31 @@
+//
+//  CreateScreenerViewController.swift
+//  StockSignals
+//
+//  Created by Andrey Chernyshev on 02.12.2021.
+//
+
+import UIKit
+import RxSwift
+
+final class CreateScreenerViewController: UIViewController {
+    lazy var mainView = CreateScreenerView()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var viewModel = CreateScreenerViewModel()
+    
+    override func loadView() {
+        view = mainView
+    }
+}
+
+// MARK: Make
+extension CreateScreenerViewController {
+    static func make() -> CreateScreenerViewController {
+        let vc = CreateScreenerViewController()
+        vc.navigationItem.backButtonTitle = " "
+        vc.title = "CreateScreener.Title".localized
+        return vc
+    }
+}

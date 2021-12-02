@@ -193,6 +193,10 @@
 "Market.Movers" = "Movers";
 "Market.Screeners" = "Screeners";
 "Market.All" = "All";
+"Market.CreateScreener" = "+ Create New Screeener";
 
 // MARK: Quotations Screeners
 "QuotationsScreeners.Title" = "Screeners";
+
+// MARK: Create Screener
+"CreateScreener.Title" = "New Screener";

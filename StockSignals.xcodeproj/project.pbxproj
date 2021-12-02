@@ -91,6 +91,14 @@
 		9642EB752757BFA70046D034 /* QuotationsScreenersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB742757BFA70046D034 /* QuotationsScreenersViewController.swift */; };
 		9642EB772757BFB40046D034 /* QuotationsScreenersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB762757BFB40046D034 /* QuotationsScreenersViewModel.swift */; };
 		9642EB792757BFC20046D034 /* QuotationsScreenersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB782757BFC20046D034 /* QuotationsScreenersView.swift */; };
+		9642EB832758D1DC0046D034 /* CreateScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB822758D1DC0046D034 /* CreateScreenerViewController.swift */; };
+		9642EB852758D1F70046D034 /* CreateScreenerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB842758D1F70046D034 /* CreateScreenerViewModel.swift */; };
+		9642EB872758D2030046D034 /* CreateScreenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB862758D2030046D034 /* CreateScreenerView.swift */; };
+		9642EB8A2758EC4E0046D034 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB892758EC4E0046D034 /* Filter.swift */; };
+		9642EB8C2758F29C0046D034 /* FilterGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB8B2758F29C0046D034 /* FilterGroup.swift */; };
+		9642EB8F2758F2CD0046D034 /* GetFiltersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB8E2758F2CD0046D034 /* GetFiltersRequest.swift */; };
+		9642EB912758F3500046D034 /* GetFiltersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB902758F3500046D034 /* GetFiltersResponse.swift */; };
+		9642EB95275900CF0046D034 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB94275900CF0046D034 /* Filters.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -357,6 +365,14 @@
 		9642EB742757BFA70046D034 /* QuotationsScreenersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsScreenersViewController.swift; sourceTree = "<group>"; };
 		9642EB762757BFB40046D034 /* QuotationsScreenersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsScreenersViewModel.swift; sourceTree = "<group>"; };
 		9642EB782757BFC20046D034 /* QuotationsScreenersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuotationsScreenersView.swift; sourceTree = "<group>"; };
+		9642EB822758D1DC0046D034 /* CreateScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenerViewController.swift; sourceTree = "<group>"; };
+		9642EB842758D1F70046D034 /* CreateScreenerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenerViewModel.swift; sourceTree = "<group>"; };
+		9642EB862758D2030046D034 /* CreateScreenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateScreenerView.swift; sourceTree = "<group>"; };
+		9642EB892758EC4E0046D034 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		9642EB8B2758F29C0046D034 /* FilterGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterGroup.swift; sourceTree = "<group>"; };
+		9642EB8E2758F2CD0046D034 /* GetFiltersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiltersRequest.swift; sourceTree = "<group>"; };
+		9642EB902758F3500046D034 /* GetFiltersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiltersResponse.swift; sourceTree = "<group>"; };
+		9642EB94275900CF0046D034 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -971,6 +987,41 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		9642EB802758D1B40046D034 /* Screeners */ = {
+			isa = PBXGroup;
+			children = (
+				9642EB812758D1C50046D034 /* Create */,
+			);
+			path = Screeners;
+			sourceTree = "<group>";
+		};
+		9642EB812758D1C50046D034 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				9642EB882758DB1A0046D034 /* Views */,
+				9642EB822758D1DC0046D034 /* CreateScreenerViewController.swift */,
+				9642EB842758D1F70046D034 /* CreateScreenerViewModel.swift */,
+				9642EB862758D2030046D034 /* CreateScreenerView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		9642EB882758DB1A0046D034 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9642EB8D2758F2BE0046D034 /* GetFilters */ = {
+			isa = PBXGroup;
+			children = (
+				9642EB8E2758F2CD0046D034 /* GetFiltersRequest.swift */,
+				9642EB902758F3500046D034 /* GetFiltersResponse.swift */,
+			);
+			path = GetFilters;
+			sourceTree = "<group>";
+		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1200,6 +1251,9 @@
 				96AD35402750FB600098D472 /* Mover.swift */,
 				96AD35422750FCB90098D472 /* Screener.swift */,
 				96AD35442750FD2D0098D472 /* ScreenersBundle.swift */,
+				9642EB892758EC4E0046D034 /* Filter.swift */,
+				9642EB8B2758F29C0046D034 /* FilterGroup.swift */,
+				9642EB94275900CF0046D034 /* Filters.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1207,6 +1261,7 @@
 		96AD353E2750F9F70098D472 /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				9642EB8D2758F2BE0046D034 /* GetFilters */,
 				96AD35462750FD650098D472 /* GetScreenersBundle */,
 			);
 			path = Request;
@@ -1646,6 +1701,7 @@
 		96BDBC522719C65C00E43708 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9642EB802758D1B40046D034 /* Screeners */,
 				96AD35512754BD550098D472 /* Market */,
 				9695B17C2742EC3800D6DEC5 /* Details */,
 				961D41D027396B3C00711BCD /* Settings */,
@@ -2146,9 +2202,11 @@
 				96AD707F272C35DA007BF50C /* Notification.swift in Sources */,
 				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
 				9642EB772757BFB40046D034 /* QuotationsScreenersViewModel.swift in Sources */,
+				9642EB912758F3500046D034 /* GetFiltersResponse.swift in Sources */,
 				961D41DD273977EB00711BCD /* SettingsTableElement.swift in Sources */,
 				96B4F9BA2726F445007507C1 /* WatchListGroupsCollectionGroupElement.swift in Sources */,
 				961D4215273ABDA100711BCD /* SearchTableElement.swift in Sources */,
+				9642EB832758D1DC0046D034 /* CreateScreenerViewController.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
 				96AD354E2754BC100098D472 /* ScreenersManager.swift in Sources */,
@@ -2213,6 +2271,7 @@
 				96BDBD5C2722C78100E43708 /* WatchListSignalsViewModel.swift in Sources */,
 				9695B1992742FDA100D6DEC5 /* GetDetailsResponse.swift in Sources */,
 				9695B1A12743F40A00D6DEC5 /* DetailsTableOverviewTitleCell.swift in Sources */,
+				9642EB95275900CF0046D034 /* Filters.swift in Sources */,
 				961D41FF273A910000711BCD /* SearchResult.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
@@ -2237,6 +2296,7 @@
 				9642EB792757BFC20046D034 /* QuotationsScreenersView.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
 				9695B1752742BB6C00D6DEC5 /* AllSignalsTableView.swift in Sources */,
+				9642EB8F2758F2CD0046D034 /* GetFiltersRequest.swift in Sources */,
 				9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */,
 				9695B1B42745181E00D6DEC5 /* DetailsAnalytics.swift in Sources */,
 				961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */,
@@ -2297,6 +2357,7 @@
 				961D420B273AAC9500711BCD /* SearchView.swift in Sources */,
 				961D41E22739780C00711BCD /* SettingsTableRateAppCell.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
+				9642EB872758D2030046D034 /* CreateScreenerView.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
 				96234DCC272AFF6600619CE2 /* OnbPreloaderView.swift in Sources */,
 				961D4207273AAC7900711BCD /* SearchViewController.swift in Sources */,
@@ -2313,6 +2374,7 @@
 				961D41D427396B5400711BCD /* SettingsViewModel.swift in Sources */,
 				96AD3515274E8D7D0098D472 /* DictionaryExtension.swift in Sources */,
 				96AD786527313074007BF50C /* ProfileManager.swift in Sources */,
+				9642EB8A2758EC4E0046D034 /* Filter.swift in Sources */,
 				96BDBC8C2719C67E00E43708 /* PaddingLabel.swift in Sources */,
 				9695B1A327444A4100D6DEC5 /* DetailsTableSignalsCell.swift in Sources */,
 				96BDBCAA2719C7B300E43708 /* SplashView.swift in Sources */,
@@ -2341,7 +2403,9 @@
 				96AD356827553CBE0098D472 /* MarketMoversCollectionCell.swift in Sources */,
 				9695B1D02746B25000D6DEC5 /* DetailsTablePrimaryCell.swift in Sources */,
 				9695B1932742F8AF00D6DEC5 /* Details.swift in Sources */,
+				9642EB8C2758F29C0046D034 /* FilterGroup.swift in Sources */,
 				96AD70B2272FDDEA007BF50C /* NotificationTableGroup.swift in Sources */,
+				9642EB852758D1F70046D034 /* CreateScreenerViewModel.swift in Sources */,
 				96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */,
 				96BDBC902719C67E00E43708 /* GradientView.swift in Sources */,
 				961D4211273ABD7C00711BCD /* SearchTableView.swift in Sources */,
