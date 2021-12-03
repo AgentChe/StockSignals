@@ -200,3 +200,4 @@
 
 // MARK: Create Screener
 "CreateScreener.Title" = "New Screener";
+"CreateScreener.More" = "More";

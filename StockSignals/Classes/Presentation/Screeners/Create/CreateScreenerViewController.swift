@@ -18,6 +18,15 @@ final class CreateScreenerViewController: UIViewController {
     override func loadView() {
         view = mainView
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.sections.drive(onNext: { [weak self] sections in
+            self?.mainView.collectionView.setup(sections: sections)
+        })
+        .disposed(by: disposeBag)
+    }
 }
 
 // MARK: Make

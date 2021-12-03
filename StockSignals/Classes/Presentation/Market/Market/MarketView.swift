@@ -42,8 +42,8 @@ private extension MarketView {
         NSLayoutConstraint.activate([
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 15.scale),
-            tableView.bottomAnchor.constraint(equalTo: createButton.topAnchor, constant: -24.scale)
+            tableView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 2.scale),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -72,6 +72,7 @@ private extension MarketView {
     
     func makeTableView() -> MarketTableView {
         let view = MarketTableView()
+        view.contentInset = UIEdgeInsets(top: 24.scale, left: 0, bottom: 90.scale, right: 0)
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false

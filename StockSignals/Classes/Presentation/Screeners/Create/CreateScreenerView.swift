@@ -8,6 +8,8 @@
 import UIKit
 
 final class CreateScreenerView: UIView {
+    lazy var collectionView = makeCollectionView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,11 +32,26 @@ private extension CreateScreenerView {
 // MARK: Make constraints
 private extension CreateScreenerView {
     func makeConstraints() {
-        
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }
 
 // MARK: Lazy initialization
 private extension CreateScreenerView {
-    
+    func makeCollectionView() -> CSFiltersCollectionView {
+        let layout = CSFiltersCollectionLayout()
+        layout.scrollDirection = .vertical
+        
+        let view = CSFiltersCollectionView(frame: .zero, collectionViewLayout: layout)
+        view.backgroundColor = UIColor.clear
+        view.contentInset = UIEdgeInsets(top: 0, left: 16.scale, bottom: 0, right: 16.scale)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
 }

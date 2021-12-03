@@ -99,6 +99,14 @@
 		9642EB8F2758F2CD0046D034 /* GetFiltersRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB8E2758F2CD0046D034 /* GetFiltersRequest.swift */; };
 		9642EB912758F3500046D034 /* GetFiltersResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB902758F3500046D034 /* GetFiltersResponse.swift */; };
 		9642EB95275900CF0046D034 /* Filters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB94275900CF0046D034 /* Filters.swift */; };
+		9642EB982759EC230046D034 /* CSFiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB972759EC230046D034 /* CSFiltersCollectionView.swift */; };
+		9642EB9B2759EF070046D034 /* CSFiltersCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB9A2759EF070046D034 /* CSFiltersCollectionSection.swift */; };
+		9642EB9D2759F7C90046D034 /* CSFiltersCollectionElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB9C2759F7C90046D034 /* CSFiltersCollectionElement.swift */; };
+		9642EBA0275A0A650046D034 /* CSFiltersCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EB9F275A0A650046D034 /* CSFiltersCollectionHeaderView.swift */; };
+		9642EBA2275A12200046D034 /* CSFiltersCollectionSignalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBA1275A12200046D034 /* CSFiltersCollectionSignalCell.swift */; };
+		9642EBA4275A1C830046D034 /* CSFiltersCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBA3275A1C830046D034 /* CSFiltersCollectionLayout.swift */; };
+		9642EBA6275A2A770046D034 /* CSFiltersCollectionMoreCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBA5275A2A770046D034 /* CSFiltersCollectionMoreCell.swift */; };
+		9642EBA8275A645C0046D034 /* CSFiltersCollectionFilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBA7275A645C0046D034 /* CSFiltersCollectionFilterCell.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -373,6 +381,14 @@
 		9642EB8E2758F2CD0046D034 /* GetFiltersRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiltersRequest.swift; sourceTree = "<group>"; };
 		9642EB902758F3500046D034 /* GetFiltersResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFiltersResponse.swift; sourceTree = "<group>"; };
 		9642EB94275900CF0046D034 /* Filters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filters.swift; sourceTree = "<group>"; };
+		9642EB972759EC230046D034 /* CSFiltersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionView.swift; sourceTree = "<group>"; };
+		9642EB9A2759EF070046D034 /* CSFiltersCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionSection.swift; sourceTree = "<group>"; };
+		9642EB9C2759F7C90046D034 /* CSFiltersCollectionElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionElement.swift; sourceTree = "<group>"; };
+		9642EB9F275A0A650046D034 /* CSFiltersCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionHeaderView.swift; sourceTree = "<group>"; };
+		9642EBA1275A12200046D034 /* CSFiltersCollectionSignalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionSignalCell.swift; sourceTree = "<group>"; };
+		9642EBA3275A1C830046D034 /* CSFiltersCollectionLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionLayout.swift; sourceTree = "<group>"; };
+		9642EBA5275A2A770046D034 /* CSFiltersCollectionMoreCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionMoreCell.swift; sourceTree = "<group>"; };
+		9642EBA7275A645C0046D034 /* CSFiltersCollectionFilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSFiltersCollectionFilterCell.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1009,6 +1025,7 @@
 		9642EB882758DB1A0046D034 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9642EB962759EC040046D034 /* CollectionView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1020,6 +1037,37 @@
 				9642EB902758F3500046D034 /* GetFiltersResponse.swift */,
 			);
 			path = GetFilters;
+			sourceTree = "<group>";
+		};
+		9642EB962759EC040046D034 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9642EB9E275A070B0046D034 /* Cells */,
+				9642EB992759EC3C0046D034 /* Elements */,
+				9642EB972759EC230046D034 /* CSFiltersCollectionView.swift */,
+				9642EBA3275A1C830046D034 /* CSFiltersCollectionLayout.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		9642EB992759EC3C0046D034 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9642EB9A2759EF070046D034 /* CSFiltersCollectionSection.swift */,
+				9642EB9C2759F7C90046D034 /* CSFiltersCollectionElement.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		9642EB9E275A070B0046D034 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9642EB9F275A0A650046D034 /* CSFiltersCollectionHeaderView.swift */,
+				9642EBA1275A12200046D034 /* CSFiltersCollectionSignalCell.swift */,
+				9642EBA5275A2A770046D034 /* CSFiltersCollectionMoreCell.swift */,
+				9642EBA7275A645C0046D034 /* CSFiltersCollectionFilterCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
@@ -2180,6 +2228,8 @@
 				96AD78F52733E361007BF50C /* AllSignalsView.swift in Sources */,
 				9695B1B6274518AC00D6DEC5 /* DetailsAnalyticsRating.swift in Sources */,
 				96BDBCB42719C7D100E43708 /* TabViewCoordinator.swift in Sources */,
+				9642EB9B2759EF070046D034 /* CSFiltersCollectionSection.swift in Sources */,
+				9642EBA8275A645C0046D034 /* CSFiltersCollectionFilterCell.swift in Sources */,
 				9695B1CC27469F7900D6DEC5 /* GetMarketStateResponse.swift in Sources */,
 				96234D962729552800619CE2 /* OnbAssetsSignalsView.swift in Sources */,
 				9695B1DD2747993300D6DEC5 /* AddToFavoriteTableCell.swift in Sources */,
@@ -2286,6 +2336,7 @@
 				96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */,
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
+				9642EBA6275A2A770046D034 /* CSFiltersCollectionMoreCell.swift in Sources */,
 				96BDBD632722CF0500E43708 /* WatchListSignalsTableView.swift in Sources */,
 				96AD35552754BD740098D472 /* MarketViewModel.swift in Sources */,
 				96AD351A274F798F0098D472 /* DetailsSocketManager.swift in Sources */,
@@ -2297,6 +2348,7 @@
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
 				9695B1752742BB6C00D6DEC5 /* AllSignalsTableView.swift in Sources */,
 				9642EB8F2758F2CD0046D034 /* GetFiltersRequest.swift in Sources */,
+				9642EB9D2759F7C90046D034 /* CSFiltersCollectionElement.swift in Sources */,
 				9625D98C2722FDEA005A8E31 /* WatchListSignalsTitlesCell.swift in Sources */,
 				9695B1B42745181E00D6DEC5 /* DetailsAnalytics.swift in Sources */,
 				961D41E82739812800711BCD /* SettingsTableContactUsCell.swift in Sources */,
@@ -2337,8 +2389,10 @@
 				96BDBC9C2719C69200E43708 /* Session.swift in Sources */,
 				9625D9802722F92F005A8E31 /* WatchListSignalsTitlesView.swift in Sources */,
 				96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */,
+				9642EBA0275A0A650046D034 /* CSFiltersCollectionHeaderView.swift in Sources */,
 				96234D982729585A00619CE2 /* OnbSelectCell.swift in Sources */,
 				96AD35482750FD7A0098D472 /* GetScreenersBundleRequest.swift in Sources */,
+				9642EB982759EC230046D034 /* CSFiltersCollectionView.swift in Sources */,
 				96BDBD46272180D200E43708 /* GetWatchListSignalsResponse.swift in Sources */,
 				96234D9E2729B44A00619CE2 /* OnbInterestedView.swift in Sources */,
 				96AD35412750FB600098D472 /* Mover.swift in Sources */,
@@ -2373,6 +2427,7 @@
 				96234DB3272A0D7800619CE2 /* IndustriesCollectionElement.swift in Sources */,
 				961D41D427396B5400711BCD /* SettingsViewModel.swift in Sources */,
 				96AD3515274E8D7D0098D472 /* DictionaryExtension.swift in Sources */,
+				9642EBA4275A1C830046D034 /* CSFiltersCollectionLayout.swift in Sources */,
 				96AD786527313074007BF50C /* ProfileManager.swift in Sources */,
 				9642EB8A2758EC4E0046D034 /* Filter.swift in Sources */,
 				96BDBC8C2719C67E00E43708 /* PaddingLabel.swift in Sources */,
@@ -2405,6 +2460,7 @@
 				9695B1932742F8AF00D6DEC5 /* Details.swift in Sources */,
 				9642EB8C2758F29C0046D034 /* FilterGroup.swift in Sources */,
 				96AD70B2272FDDEA007BF50C /* NotificationTableGroup.swift in Sources */,
+				9642EBA2275A12200046D034 /* CSFiltersCollectionSignalCell.swift in Sources */,
 				9642EB852758D1F70046D034 /* CreateScreenerViewModel.swift in Sources */,
 				96AD78F12733E32B007BF50C /* AllSignalsViewController.swift in Sources */,
 				96BDBC902719C67E00E43708 /* GradientView.swift in Sources */,
