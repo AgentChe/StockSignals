@@ -7,8 +7,13 @@
 
 import UIKit
 
+protocol CSFiltersCollectionViewDelegate: AnyObject {
+    func csFiltersCollectionDidChange()
+}
+
 final class CSFiltersCollectionView: UICollectionView {
     weak var vc: UIViewController?
+    weak var mainDelegate: CSFiltersCollectionViewDelegate?
     
     lazy var sections = [CSFiltersCollectionSection]()
     
@@ -189,6 +194,8 @@ private extension CSFiltersCollectionView {
         paths.append(indexPath)
         
         reloadItems(at: paths)
+        
+        mainDelegate?.csFiltersCollectionDidChange()
     }
     
     func filterTapped(indexPath: IndexPath, element: CSFiltersCollectionFilterElement) {
@@ -200,6 +207,8 @@ private extension CSFiltersCollectionView {
             element.selectedItem = selectedItem
             
             self.reloadItems(at: [indexPath])
+            
+            self.mainDelegate?.csFiltersCollectionDidChange()
         }
         self.vc?.present(vc, animated: true)
     }
@@ -208,6 +217,8 @@ private extension CSFiltersCollectionView {
         element.selectedItem = nil
         
         reloadItems(at: [indexPath])
+        
+        mainDelegate?.csFiltersCollectionDidChange()
     }
     
     func moreTapped(indexPath: IndexPath) {

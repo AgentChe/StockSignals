@@ -9,6 +9,7 @@ import UIKit
 
 final class CreateScreenerView: UIView {
     lazy var collectionView = makeCollectionView()
+    lazy var button = makeButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +39,13 @@ private extension CreateScreenerView {
             collectionView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: centerXAnchor),
+            button.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -24.scale),
+            button.heightAnchor.constraint(equalToConstant: 55.scale),
+            button.widthAnchor.constraint(equalToConstant: 207.scale)
+        ])
     }
 }
 
@@ -49,7 +57,22 @@ private extension CreateScreenerView {
         
         let view = CSFiltersCollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.clear
-        view.contentInset = UIEdgeInsets(top: 0, left: 16.scale, bottom: 0, right: 16.scale)
+        view.contentInset = UIEdgeInsets(top: 0, left: 16.scale, bottom: 90.scale, right: 16.scale)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.SFProDisplay.bold(size: 19.scale))
+        
+        let view = UIButton()
+        view.isHidden = true
+        view.setAttributedTitle("CreateScreener.ViewResults".localized.attributed(with: attrs), for: .normal)
+        view.layer.cornerRadius = 16.scale
+        view.backgroundColor = UIColor(integralRed: 238, green: 142, blue: 72)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

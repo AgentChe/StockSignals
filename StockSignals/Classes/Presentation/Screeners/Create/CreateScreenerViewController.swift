@@ -28,6 +28,9 @@ final class CreateScreenerViewController: UIViewController {
         .disposed(by: disposeBag)
         
         mainView.collectionView.vc = self
+        mainView.collectionView.mainDelegate = self
+        
+        csFiltersCollectionDidChange()
     }
 }
 
@@ -38,5 +41,25 @@ extension CreateScreenerViewController {
         vc.navigationItem.backButtonTitle = " "
         vc.title = "CreateScreener.Title".localized
         return vc
+    }
+}
+
+// MARK: CSFiltersCollectionViewDelegate
+extension CreateScreenerViewController: CSFiltersCollectionViewDelegate {
+    func csFiltersCollectionDidChange() {
+        let contains = mainView.collectionView.sections.contains(where: { section -> Bool in
+            section.elements.contains(where: { element in
+                switch element {
+                case .signal(let signal):
+                    return signal.isSelected
+                case .filter(let filter):
+                    return filter.selectedItem != nil
+                default:
+                    return false
+                }
+            })
+        })
+        
+        mainView.button.isHidden = !contains
     }
 }
