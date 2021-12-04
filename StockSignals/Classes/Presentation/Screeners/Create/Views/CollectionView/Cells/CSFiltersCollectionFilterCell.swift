@@ -6,10 +6,14 @@
 //
 
 final class CSFiltersCollectionFilterCell: UICollectionViewCell {
+    var didClearTapped: ((CSFiltersCollectionFilterElement) -> Void)?
+    
     lazy var container = makeContainer()
     lazy var titleLabel = makeLabel()
     lazy var valueLabel = makeLabel()
     lazy var clearButton = makeClearButton()
+    
+    private var element: CSFiltersCollectionFilterElement?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +30,8 @@ final class CSFiltersCollectionFilterCell: UICollectionViewCell {
 // MARK: Public
 extension CSFiltersCollectionFilterCell {
     func setup(element: CSFiltersCollectionFilterElement) {
+        self.element = element
+        
         let isSelected = element.selectedItem != nil
         
         container.backgroundColor = isSelected ? UIColor(integralRed: 62, green: 89, blue: 223) : UIColor(integralRed: 42, green: 46, blue: 57, alpha: 0.7)
@@ -46,6 +52,15 @@ private extension CSFiltersCollectionFilterCell {
     func initialize() {
         backgroundColor = UIColor.clear
         contentView.backgroundColor = UIColor.clear
+    }
+    
+    @objc
+    func clearTapped() {
+        guard let element = element else {
+            return
+        }
+        
+        didClearTapped?(element)
     }
 }
 
@@ -102,6 +117,7 @@ private extension CSFiltersCollectionFilterCell {
         let view = TapAreaButton()
         view.setImage(UIImage(named: "Screeners.Clear"), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(clearTapped), for: .touchUpInside)
         container.addSubview(view)
         return view
     }

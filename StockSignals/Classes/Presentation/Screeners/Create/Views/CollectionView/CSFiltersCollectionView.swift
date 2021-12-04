@@ -51,6 +51,9 @@ extension CSFiltersCollectionView: UICollectionViewDataSource {
         case .filter(let element):
             let cell = dequeueReusableCell(withReuseIdentifier: String(describing: CSFiltersCollectionFilterCell.self), for: indexPath) as! CSFiltersCollectionFilterCell
             cell.setup(element: element)
+            cell.didClearTapped = { [weak self] element in
+                self?.filterClearTapped(indexPath: indexPath, element: element)
+            }
             return cell
         case .signalMore:
             let cell =  dequeueReusableCell(withReuseIdentifier: String(describing: CSFiltersCollectionMoreCell.self), for: indexPath) as! CSFiltersCollectionMoreCell
@@ -199,6 +202,12 @@ private extension CSFiltersCollectionView {
             self.reloadItems(at: [indexPath])
         }
         self.vc?.present(vc, animated: true)
+    }
+    
+    func filterClearTapped(indexPath: IndexPath, element: CSFiltersCollectionFilterElement) {
+        element.selectedItem = nil
+        
+        reloadItems(at: [indexPath])
     }
     
     func moreTapped(indexPath: IndexPath) {
