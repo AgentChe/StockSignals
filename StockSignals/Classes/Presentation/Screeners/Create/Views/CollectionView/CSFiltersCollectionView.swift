@@ -8,6 +8,8 @@
 import UIKit
 
 final class CSFiltersCollectionView: UICollectionView {
+    weak var vc: UIViewController?
+    
     lazy var sections = [CSFiltersCollectionSection]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -104,8 +106,8 @@ extension CSFiltersCollectionView: UICollectionViewDelegateFlowLayout {
         switch element(for: indexPath) {
         case .signal(let element):
             signalTapped(indexPath: indexPath, element: element)
-        case .filter:
-            break
+        case .filter(let element):
+            filterTapped(indexPath: indexPath, element: element)
         case .signalMore:
             moreTapped(indexPath: indexPath)
         case .filterMore:
@@ -184,6 +186,19 @@ private extension CSFiltersCollectionView {
         paths.append(indexPath)
         
         reloadItems(at: paths)
+    }
+    
+    func filterTapped(indexPath: IndexPath, element: CSFiltersCollectionFilterElement) {
+        let vc = FiltersItemsViewController.make(filter: element.filter, selectedItem: element.selectedItem) { [weak self] selectedItem in
+            guard let self = self else {
+                return
+            }
+            
+            element.selectedItem = selectedItem
+            
+            self.reloadItems(at: [indexPath])
+        }
+        self.vc?.present(vc, animated: true)
     }
     
     func moreTapped(indexPath: IndexPath) {

@@ -26,6 +26,8 @@ final class CreateScreenerViewController: UIViewController {
             self?.mainView.collectionView.setup(sections: sections)
         })
         .disposed(by: disposeBag)
+        
+        mainView.collectionView.vc = self
     }
 }
 

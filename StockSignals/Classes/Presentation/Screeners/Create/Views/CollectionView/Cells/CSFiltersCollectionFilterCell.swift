@@ -68,8 +68,7 @@ private extension CSFiltersCollectionFilterCell {
         NSLayoutConstraint.activate([
             valueLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12.scale),
             valueLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12.scale),
-            valueLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 41.scale),
-            valueLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10.scale)
+            valueLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -4.scale)
         ])
         
         NSLayoutConstraint.activate([

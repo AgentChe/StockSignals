@@ -201,3 +201,7 @@
 // MARK: Create Screener
 "CreateScreener.Title" = "New Screener";
 "CreateScreener.More" = "More";
+
+// MARK: Filters
+"Filters.Discard" = "Discard";
+"Filters.Confirm" = "Confirm";
