@@ -203,6 +203,7 @@
 "CreateScreener.More" = "More";
 "CreateScreener.ViewResults" = "View Results";
 "CreateScreener.Discard" = "Discard";
+"CreateScreener.Save" = "Save";
 
 // MARK: Filters
 "Filters.Discard" = "Discard";

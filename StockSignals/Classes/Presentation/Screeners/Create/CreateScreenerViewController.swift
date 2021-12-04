@@ -27,6 +27,11 @@ final class CreateScreenerViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        mainView.button.rx.tap.subscribe(onNext: { [weak self] in
+            self?.goNext()
+        })
+        .disposed(by: disposeBag)
+        
         mainView.collectionView.vc = self
         mainView.collectionView.mainDelegate = self
         
@@ -82,5 +87,29 @@ private extension CreateScreenerViewController {
             self?.mainView.collectionView.discard()
         })
         .disposed(by: disposeBag)
+    }
+    
+    func goNext() {
+        var items = [Filter.Item]()
+        
+        mainView.collectionView.sections.forEach { section in
+            section.elements.forEach { element in
+                switch element {
+                case .signal(let signal):
+                    if signal.isSelected {
+                        items.append(signal.item)
+                    }
+                case .filter(let filter):
+                    if let item = filter.selectedItem {
+                        items.append(item)
+                    }
+                default:
+                    return
+                }
+            }
+        }
+        
+        let vc = ScreenersResultViewController.make(items: items)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

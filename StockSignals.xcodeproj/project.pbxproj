@@ -112,6 +112,9 @@
 		9642EBB0275A7AA80046D034 /* FiltersItemsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBAF275A7AA80046D034 /* FiltersItemsTableView.swift */; };
 		9642EBB2275A7ABB0046D034 /* FiltersItemsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBB1275A7ABB0046D034 /* FiltersItemsTableCell.swift */; };
 		9642EBB4275A7ADA0046D034 /* FiltersItemsTableElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBB3275A7ADA0046D034 /* FiltersItemsTableElement.swift */; };
+		9642EBB7275B999E0046D034 /* ScreenersResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBB6275B999E0046D034 /* ScreenersResultViewController.swift */; };
+		9642EBB9275B99AB0046D034 /* ScreenersResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBB8275B99AB0046D034 /* ScreenersResultViewModel.swift */; };
+		9642EBBB275B99B50046D034 /* ScreenersResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBBA275B99B50046D034 /* ScreenersResultView.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -399,6 +402,9 @@
 		9642EBAF275A7AA80046D034 /* FiltersItemsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersItemsTableView.swift; sourceTree = "<group>"; };
 		9642EBB1275A7ABB0046D034 /* FiltersItemsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersItemsTableCell.swift; sourceTree = "<group>"; };
 		9642EBB3275A7ADA0046D034 /* FiltersItemsTableElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersItemsTableElement.swift; sourceTree = "<group>"; };
+		9642EBB6275B999E0046D034 /* ScreenersResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersResultViewController.swift; sourceTree = "<group>"; };
+		9642EBB8275B99AB0046D034 /* ScreenersResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersResultViewModel.swift; sourceTree = "<group>"; };
+		9642EBBA275B99B50046D034 /* ScreenersResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersResultView.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1016,6 +1022,7 @@
 		9642EB802758D1B40046D034 /* Screeners */ = {
 			isa = PBXGroup;
 			children = (
+				9642EBB5275B99890046D034 /* Result */,
 				9642EBA9275A7A5A0046D034 /* Items */,
 				9642EB812758D1C50046D034 /* Create */,
 			);
@@ -1099,6 +1106,16 @@
 				9642EBB3275A7ADA0046D034 /* FiltersItemsTableElement.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		9642EBB5275B99890046D034 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBB6275B999E0046D034 /* ScreenersResultViewController.swift */,
+				9642EBB8275B99AB0046D034 /* ScreenersResultViewModel.swift */,
+				9642EBBA275B99B50046D034 /* ScreenersResultView.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
@@ -2277,6 +2294,7 @@
 				96BDBD5027218D9A00E43708 /* WatchListMediator.swift in Sources */,
 				96BDBD6C2722DEE800E43708 /* WatchListSignalCollectionElement.swift in Sources */,
 				96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */,
+				9642EBBB275B99B50046D034 /* ScreenersResultView.swift in Sources */,
 				96AD786227312F27007BF50C /* SetPushTokenRequest.swift in Sources */,
 				96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */,
 				96AD786B27314E02007BF50C /* StockSignal.swift in Sources */,
@@ -2457,6 +2475,7 @@
 				9642EB602756B6960046D034 /* MarketTableAllScreenersCell.swift in Sources */,
 				9642EB71275775B80046D034 /* MarketQuotationsCollectionCell.swift in Sources */,
 				96AD355F2754BDBC0098D472 /* MarketTableElement.swift in Sources */,
+				9642EBB9275B99AB0046D034 /* ScreenersResultViewModel.swift in Sources */,
 				96234D9C2729AF0500619CE2 /* OInterestedCell.swift in Sources */,
 				9695B1BA27451AFE00D6DEC5 /* DetailsTableAnalyticsCell.swift in Sources */,
 				96AD787827318347007BF50C /* SignalManager.swift in Sources */,
@@ -2485,6 +2504,7 @@
 				9695B1EF2749343100D6DEC5 /* DetailsTableChartRangeView.swift in Sources */,
 				9625D99727242353005A8E31 /* WatchListGroupsCollectionView.swift in Sources */,
 				96AD78FD27340521007BF50C /* AllSignalsSortView.swift in Sources */,
+				9642EBB7275B999E0046D034 /* ScreenersResultViewController.swift in Sources */,
 				96AD70B5272FDE96007BF50C /* NotificationTableCell.swift in Sources */,
 				9695B1E62749272900D6DEC5 /* GetChartResponse.swift in Sources */,
 				9625D98E2722FDF8005A8E31 /* WatchListSignalsTitlesWithIconCell.swift in Sources */,
