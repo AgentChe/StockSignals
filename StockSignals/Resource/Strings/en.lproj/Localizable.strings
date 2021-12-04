@@ -202,6 +202,7 @@
 "CreateScreener.Title" = "New Screener";
 "CreateScreener.More" = "More";
 "CreateScreener.ViewResults" = "View Results";
+"CreateScreener.Discard" = "Discard";
 
 // MARK: Filters
 "Filters.Discard" = "Discard";

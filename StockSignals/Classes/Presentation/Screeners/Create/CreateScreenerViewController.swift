@@ -31,6 +31,7 @@ final class CreateScreenerViewController: UIViewController {
         mainView.collectionView.mainDelegate = self
         
         csFiltersCollectionDidChange()
+        addDiscardItem()
     }
 }
 
@@ -61,5 +62,25 @@ extension CreateScreenerViewController: CSFiltersCollectionViewDelegate {
         })
         
         mainView.button.isHidden = !contains
+    }
+}
+
+// MARK: Private
+private extension CreateScreenerViewController {
+    func addDiscardItem() {
+        let attrs = TextAttributes()
+            .textColor(UIColor(integralRed: 62, green: 89, blue: 223))
+            .font(Fonts.SFProDisplay.regular(size: 17.scale))
+            .dictionary
+        
+        let item = UIBarButtonItem()
+        item.setTitleTextAttributes(attrs, for: .normal)
+        item.title = "CreateScreener.Discard".localized
+        navigationItem.rightBarButtonItem = item
+        
+        item.rx.tap.subscribe(onNext: { [weak self] in
+            self?.mainView.collectionView.discard()
+        })
+        .disposed(by: disposeBag)
     }
 }

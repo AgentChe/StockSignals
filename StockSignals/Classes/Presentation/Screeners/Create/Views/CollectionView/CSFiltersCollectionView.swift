@@ -35,6 +35,25 @@ extension CSFiltersCollectionView {
         
         reloadData()
     }
+    
+    func discard() {
+        sections.forEach { section in
+            section.elements.forEach { element in
+                switch element {
+                case .signal(let signal):
+                    signal.isSelected = false
+                case .filter(let filter):
+                    filter.selectedItem = nil
+                default:
+                    break
+                }
+            }
+        }
+        
+        reloadData()
+        
+        mainDelegate?.csFiltersCollectionDidChange()
+    }
 }
 
 // MARK: UICollectionViewDataSource
