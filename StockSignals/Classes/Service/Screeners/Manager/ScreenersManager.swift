@@ -11,4 +11,7 @@ protocol ScreenersManager {
     func obtainBundle() -> Single<ScreenersBundle?>
     
     func obtainFilters() -> Single<Filters?>
+    
+    func add(filterScreener: FilterScreener) -> Single<FilterScreener>
+    func obtainFilterScreeners() -> Single<[FilterScreener]>
 }

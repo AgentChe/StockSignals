@@ -7,7 +7,11 @@
 
 import RxSwift
 
-final class ScreenersManagerCore: ScreenersManager {}
+final class ScreenersManagerCore: ScreenersManager {
+    enum Constants {
+        static let filterScreenersKey = "screeners_manager_core_filter_screeners_key"
+    }
+}
 
 // MARK: ScreenersManager
 extension ScreenersManagerCore {
@@ -35,5 +39,39 @@ extension ScreenersManagerCore {
             .restApiTransport
             .callServerApi(requestBody: request)
             .map { GetFiltersResponse.map(from: $0) }
+    }
+    
+    func add(filterScreener: FilterScreener) -> Single<FilterScreener> {
+        obtainFilterScreeners().flatMap { cache -> Single<FilterScreener> in
+            Single<FilterScreener>.create { event in
+                var result = cache
+                
+                result.append(filterScreener)
+                
+                if let data = try? JSONEncoder().encode(result) {
+                    UserDefaults.standard.setValue(data, forKey: Constants.filterScreenersKey)
+                }
+                
+                event(.success(filterScreener))
+                
+                return Disposables.create()
+            }
+        }
+    }
+    
+    func obtainFilterScreeners() -> Single<[FilterScreener]> {
+        Single<[FilterScreener]>.create { event in
+            guard
+                let data = UserDefaults.standard.data(forKey: Constants.filterScreenersKey),
+                let items = try? JSONDecoder().decode([FilterScreener].self, from: data)
+            else {
+                event(.success([]))
+                return Disposables.create()
+            }
+            
+            event(.success(items))
+            
+            return Disposables.create()
+        }
     }
 }

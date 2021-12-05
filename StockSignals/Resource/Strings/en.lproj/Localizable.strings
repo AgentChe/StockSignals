@@ -204,6 +204,8 @@
 "CreateScreener.ViewResults" = "View Results";
 "CreateScreener.Discard" = "Discard";
 "CreateScreener.Save" = "Save";
+"CreateScreener.Name.Title" = "Stock Screener Name";
+"CreateScreener.Confirm" = "Confirm";
 
 // MARK: Filters
 "Filters.Discard" = "Discard";

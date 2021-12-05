@@ -39,6 +39,11 @@ final class ScreenersResultViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        viewModel.created.drive(onNext: { [weak self] _ in
+            self?.navigationController?.popToRootViewController(animated: true)
+        })
+        .disposed(by: disposeBag)
+        
         let keys = items.map { $0.key }
         viewModel.keys.accept(keys)
         
@@ -88,8 +93,16 @@ private extension ScreenersResultViewController {
         navigationItem.rightBarButtonItem = item
         
         item.rx.tap.subscribe(onNext: { [weak self] in
-            
+            let vc = ScreenerNameViewController.make { name in
+                self?.createSceener(name: name)
+            }
+            self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
+    }
+    
+    func createSceener(name: String) {
+        let screener = FilterScreener(name: name, items: items)
+        viewModel.create.accept(screener)
     }
 }

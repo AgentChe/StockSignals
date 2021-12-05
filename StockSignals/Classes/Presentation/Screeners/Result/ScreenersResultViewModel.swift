@@ -11,14 +11,29 @@ import RxCocoa
 final class ScreenersResultViewModel {
     lazy var keys = PublishRelay<[String]>()
     lazy var sort = PublishRelay<WatchListSignalsSortElement>()
+    lazy var create = PublishRelay<FilterScreener>()
     
     lazy var elements = makeElements()
+    lazy var created = makeCreated()
     
     private lazy var watchListManager = WatchListManagerCore()
+    private lazy var screenersManager = ScreenersManagerCore()
 }
 
 // MARK: Private
 private extension ScreenersResultViewModel {
+    func makeCreated() -> Driver<FilterScreener> {
+        create.flatMapLatest { [weak self] filterScreener -> Single<FilterScreener> in
+            guard let self = self else {
+                return .never()
+            }
+            
+            return self.screenersManager
+                .add(filterScreener: filterScreener)
+        }
+        .asDriver(onErrorDriveWith: .never())
+    }
+    
     func makeElements() -> Driver<[Quotation]> {
         let quotations = keys.flatMapLatest { [weak self] keys -> Single<[Quotation]> in
             guard let self = self else {
