@@ -12,4 +12,6 @@ enum MarketTableElement {
     case movers([MarketMoversCollectionElement])
     case allScreeners
     case quotations([MarketTableQuotationsElement])
+    case allUserScreeners
+    case userScreeners([UserScreener])
 }

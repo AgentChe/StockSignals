@@ -9,6 +9,7 @@ import UIKit
 
 protocol MarketTableViewDelegate: AnyObject {
     func marketTableDidSelectAllScreeners()
+    func marketTableDidSelectAllUserScreeners()
     func marketTableDidSelect(mover: Mover)
     func marketTableDidSelect(symbol: String)
 }
@@ -66,6 +67,14 @@ extension MarketTableView: UITableViewDataSource {
             cell.quotationsCollectionView.mainDelegate = mainDelegate
             cell.setup(elements: elements)
             return cell
+        case .allUserScreeners:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableAllUserScreenersCell.self)) as! MarketTableAllUserScreenersCell
+            cell.mainDelegate = mainDelegate
+            return cell
+        case .userScreeners(let elements):
+            let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableUserScreenersCell.self)) as! MarketTableUserScreenersCell
+            cell.setup(elements: elements)
+            return cell
         }
     }
 }
@@ -78,10 +87,12 @@ extension MarketTableView: UITableViewDelegate {
             return offset
         case .movers:
             return 231.scale
-        case .allScreeners:
+        case .allScreeners, .allUserScreeners:
             return 79.scale
         case .quotations:
             return 200.scale
+        case .userScreeners:
+            return 363.scale
         }
     }
 }
@@ -93,6 +104,8 @@ private extension MarketTableView {
         register(MarketTableMoversCell.self, forCellReuseIdentifier: String(describing: MarketTableMoversCell.self))
         register(MarketTableAllScreenersCell.self, forCellReuseIdentifier: String(describing: MarketTableAllScreenersCell.self))
         register(MarketTableQuotationsCell.self, forCellReuseIdentifier: String(describing: MarketTableQuotationsCell.self))
+        register(MarketTableUserScreenersCell.self, forCellReuseIdentifier: String(describing: MarketTableUserScreenersCell.self))
+        register(MarketTableAllUserScreenersCell.self, forCellReuseIdentifier: String(describing: MarketTableAllUserScreenersCell.self))
         
         dataSource = self
         delegate = self

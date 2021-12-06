@@ -70,6 +70,10 @@ extension MarketViewController: MarketTableViewDelegate {
         .disposed(by: disposeBag)
     }
     
+    func marketTableDidSelectAllUserScreeners() {
+        
+    }
+    
     func marketTableDidSelect(mover: Mover) {
         let vc = DetailsViewController.make(symbol: mover.symbol)
         present(vc, animated: true)

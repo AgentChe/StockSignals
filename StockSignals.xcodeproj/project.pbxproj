@@ -118,6 +118,12 @@
 		9642EBBE275BCF3F0046D034 /* ScreenerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBBD275BCF3F0046D034 /* ScreenerNameViewController.swift */; };
 		9642EBC0275BD08B0046D034 /* ScreenerNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBBF275BD08B0046D034 /* ScreenerNameView.swift */; };
 		9642EBC2275D0CA70046D034 /* FilterScreener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBC1275D0CA70046D034 /* FilterScreener.swift */; };
+		9642EBCA275E2CE10046D034 /* UserScreener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBC9275E2CE10046D034 /* UserScreener.swift */; };
+		9642EBCD275E2E350046D034 /* MarketTableUserScreenersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBCC275E2E350046D034 /* MarketTableUserScreenersCell.swift */; };
+		9642EBD0275E2EB10046D034 /* MarketTableUserScreenersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBCF275E2EB10046D034 /* MarketTableUserScreenersCollectionView.swift */; };
+		9642EBD2275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD1275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift */; };
+		9642EBD4275E32030046D034 /* MarketTableUserScreenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD3275E32030046D034 /* MarketTableUserScreenerView.swift */; };
+		9642EBD6275E39720046D034 /* MarketTableAllUserScreenersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD5275E39720046D034 /* MarketTableAllUserScreenersCell.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -411,6 +417,12 @@
 		9642EBBD275BCF3F0046D034 /* ScreenerNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenerNameViewController.swift; sourceTree = "<group>"; };
 		9642EBBF275BD08B0046D034 /* ScreenerNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenerNameView.swift; sourceTree = "<group>"; };
 		9642EBC1275D0CA70046D034 /* FilterScreener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterScreener.swift; sourceTree = "<group>"; };
+		9642EBC9275E2CE10046D034 /* UserScreener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreener.swift; sourceTree = "<group>"; };
+		9642EBCC275E2E350046D034 /* MarketTableUserScreenersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableUserScreenersCell.swift; sourceTree = "<group>"; };
+		9642EBCF275E2EB10046D034 /* MarketTableUserScreenersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableUserScreenersCollectionView.swift; sourceTree = "<group>"; };
+		9642EBD1275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableUserScreenersCollectionCell.swift; sourceTree = "<group>"; };
+		9642EBD3275E32030046D034 /* MarketTableUserScreenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableUserScreenerView.swift; sourceTree = "<group>"; };
+		9642EBD5275E39720046D034 /* MarketTableAllUserScreenersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableAllUserScreenersCell.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1134,6 +1146,25 @@
 			path = Name;
 			sourceTree = "<group>";
 		};
+		9642EBCB275E2E220046D034 /* UserScreeners */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBCE275E2E410046D034 /* CollectionView */,
+				9642EBCC275E2E350046D034 /* MarketTableUserScreenersCell.swift */,
+			);
+			path = UserScreeners;
+			sourceTree = "<group>";
+		};
+		9642EBCE275E2E410046D034 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBCF275E2EB10046D034 /* MarketTableUserScreenersCollectionView.swift */,
+				9642EBD1275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift */,
+				9642EBD3275E32030046D034 /* MarketTableUserScreenerView.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
 			isa = PBXGroup;
 			children = (
@@ -1367,6 +1398,7 @@
 				9642EB8B2758F29C0046D034 /* FilterGroup.swift */,
 				9642EB94275900CF0046D034 /* Filters.swift */,
 				9642EBC1275D0CA70046D034 /* FilterScreener.swift */,
+				9642EBC9275E2CE10046D034 /* UserScreener.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1419,9 +1451,11 @@
 		96AD355C2754BDA60098D472 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				9642EBCB275E2E220046D034 /* UserScreeners */,
 				9642EB61275768090046D034 /* Quotations */,
 				96AD35612754F4A80098D472 /* MoversCell */,
 				9642EB5F2756B6960046D034 /* MarketTableAllScreenersCell.swift */,
+				9642EBD5275E39720046D034 /* MarketTableAllUserScreenersCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2314,6 +2348,7 @@
 				9642EBBB275B99B50046D034 /* ScreenersResultView.swift in Sources */,
 				96AD786227312F27007BF50C /* SetPushTokenRequest.swift in Sources */,
 				96BDBD562722B54D00E43708 /* WatchListSelectModeView.swift in Sources */,
+				9642EBCA275E2CE10046D034 /* UserScreener.swift in Sources */,
 				96AD786B27314E02007BF50C /* StockSignal.swift in Sources */,
 				96AD707F272C35DA007BF50C /* Notification.swift in Sources */,
 				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
@@ -2327,6 +2362,7 @@
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
 				96AD354E2754BC100098D472 /* ScreenersManager.swift in Sources */,
+				9642EBD2275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift in Sources */,
 				9695B1D72747990700D6DEC5 /* AddToFavoriteView.swift in Sources */,
 				9642EBB4275A7ADA0046D034 /* FiltersItemsTableElement.swift in Sources */,
 				96BDBC812719C67E00E43708 /* TextAttributes.swift in Sources */,
@@ -2346,6 +2382,7 @@
 				96BDBC932719C67E00E43708 /* UIViewRxExtension.swift in Sources */,
 				96AD7087272C3746007BF50C /* GetNotificationsResponse.swift in Sources */,
 				96BDBD4D27218ACB00E43708 /* WatchListGroup.swift in Sources */,
+				9642EBCD275E2E350046D034 /* MarketTableUserScreenersCell.swift in Sources */,
 				96AD78D02732E0E5007BF50C /* SignalsTableElement.swift in Sources */,
 				96AD7091272C3D94007BF50C /* NotificationsViewModel.swift in Sources */,
 				96AD70B9273006E9007BF50C /* NotificationsFilterView.swift in Sources */,
@@ -2406,6 +2443,7 @@
 				9695B1EB27492D0A00D6DEC5 /* DetailsTableChartCell.swift in Sources */,
 				9642EBB2275A7ABB0046D034 /* FiltersItemsTableCell.swift in Sources */,
 				96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */,
+				9642EBD0275E2EB10046D034 /* MarketTableUserScreenersCollectionView.swift in Sources */,
 				9625D99F272425F0005A8E31 /* WatchListGroupsCollectionCell.swift in Sources */,
 				96BDBC8A2719C67E00E43708 /* NavigationControllerSettings.swift in Sources */,
 				9642EBA6275A2A770046D034 /* CSFiltersCollectionMoreCell.swift in Sources */,
@@ -2514,6 +2552,7 @@
 				9695B1A927444D2C00D6DEC5 /* DetailsTableSignalsCollectionCell.swift in Sources */,
 				9642EB752757BFA70046D034 /* QuotationsScreenersViewController.swift in Sources */,
 				96AD786D27314F10007BF50C /* SignalType.swift in Sources */,
+				9642EBD6275E39720046D034 /* MarketTableAllUserScreenersCell.swift in Sources */,
 				961D4217273ABDEC00711BCD /* SearchTableTypeElement.swift in Sources */,
 				96234DC1272AD0AE00619CE2 /* OnbStocksCollectionElement.swift in Sources */,
 				96BDBCB22719C7D100E43708 /* TabViewController.swift in Sources */,
@@ -2554,6 +2593,7 @@
 				96BDBC922719C67E00E43708 /* RxActivityIndicator.swift in Sources */,
 				96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */,
 				96AD786F27317D5D007BF50C /* OptionCryptoSignal.swift in Sources */,
+				9642EBD4275E32030046D034 /* MarketTableUserScreenerView.swift in Sources */,
 				96AD78DF2732E89F007BF50C /* SignalsFilter.swift in Sources */,
 				96BDBC7F2719C67E00E43708 /* GlobalDefinitions.swift in Sources */,
 				961D4221273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift in Sources */,

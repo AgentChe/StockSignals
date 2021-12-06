@@ -8,6 +8,7 @@
 struct ScreenersBundle {
     let movers: [Mover]
     let screeners: [Screener]
+    let userScreeners: [UserScreener]
 }
 
 // MARK: Codable

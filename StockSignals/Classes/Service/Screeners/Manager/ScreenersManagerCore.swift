@@ -15,12 +15,12 @@ final class ScreenersManagerCore: ScreenersManager {
 
 // MARK: ScreenersManager
 extension ScreenersManagerCore {
-    func obtainBundle() -> Single<ScreenersBundle?> {
+    func obtainBundle(filters: [FilterScreener]? = nil) -> Single<ScreenersBundle?> {
         guard let userToken = SessionManagerCore().getSession()?.userToken else {
             return .error(SignError.tokenNotFound)
         }
 
-        let request = GetScreenersBundleRequest(userToken: userToken)
+        let request = GetScreenersBundleRequest(userToken: userToken, filters: filters)
 
         return SDKStorage.shared
             .restApiTransport

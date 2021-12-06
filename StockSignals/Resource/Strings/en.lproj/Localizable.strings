@@ -192,6 +192,7 @@
 "Market.Title" = "Market";
 "Market.Movers" = "Movers";
 "Market.Screeners" = "Screeners";
+"Market.UserScreeners" = "My screeners";
 "Market.All" = "All";
 "Market.CreateScreener" = "+ Create New Screeener";
 

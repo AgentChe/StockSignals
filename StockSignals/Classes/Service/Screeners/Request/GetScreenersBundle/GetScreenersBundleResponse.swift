@@ -20,8 +20,12 @@ final class GetScreenersBundleResponse {
         let screenersJSON = body["screeners"] as? [[String: Any]] ?? []
         let screeners = map(screenersJSON: screenersJSON)
         
+        let userScreenersJSON = body["user"] as? [[String: Any]] ?? []
+        let userScreeners = map(userScreenersJSON: userScreenersJSON)
+        
         return ScreenersBundle(movers: movers,
-                               screeners: screeners)
+                               screeners: screeners,
+                               userScreeners: userScreeners)
     }
 }
 
@@ -83,6 +87,45 @@ private extension GetScreenersBundleResponse {
             return Screener(key: key,
                             value: value,
                             quotations: quotations)
+        }
+    }
+    
+    static func map(userScreenersJSON: [[String: Any]]) -> [UserScreener] {
+        userScreenersJSON.compactMap { json -> UserScreener? in
+            guard
+                let name = json["title"] as? String,
+                let data = json["data"] as? [[String: Any]]
+            else {
+                return nil
+            }
+            
+            let quotations = data.compactMap { element -> Quotation? in
+                guard
+                    let symbol = element["symbol"] as? String,
+                    let company = element["company"] as? String,
+                    let price = element["price"] as? Double,
+                    let change = element["change"] as? Double,
+                    let volume = element["volume"] as? String
+                else {
+                    return nil
+                }
+                
+                let imageUrl = element["image"] as? String
+                let peRatio = element["pe_ratio"] as? Double
+                let marketCap = element["market_cap"] as? String
+                
+                return Quotation(imageUrl: imageUrl,
+                                 symbol: symbol,
+                                 company: company,
+                                 price: price,
+                                 change: change,
+                                 volume: volume,
+                                 peRatio: peRatio,
+                                 marketCap: marketCap)
+            }
+            
+            return UserScreener(name: name,
+                                quotations: quotations)
         }
     }
 }
