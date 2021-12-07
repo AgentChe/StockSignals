@@ -67,9 +67,18 @@ private extension MarketViewModel {
     }
     
     func makeFilters() -> Driver<[FilterScreener]?> {
-        screenersManager
-            .obtainFilterScreeners()
-            .map { $0.isEmpty ? nil : Array($0.prefix(3)) }
-            .asDriver(onErrorJustReturn: [])
+        ScreenersMediator.shared
+            .changedFiltersScreeners
+            .startWith(())
+            .flatMapLatest { [weak self] _ -> Driver<[FilterScreener]?> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.screenersManager
+                    .obtainFilterScreeners()
+                    .map { $0.isEmpty ? nil : Array($0.prefix(3)) }
+                    .asDriver(onErrorJustReturn: [])
+            }
     }
 }

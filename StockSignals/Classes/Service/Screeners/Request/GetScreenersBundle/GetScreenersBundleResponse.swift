@@ -124,7 +124,13 @@ private extension GetScreenersBundleResponse {
                                  marketCap: marketCap)
             }
             
+            let filtersArray = json["filters"] as? [[String: Any]] ?? []
+            let keys = filtersArray.compactMap { element -> String? in
+                element["key"] as? String
+            }
+            
             return UserScreener(name: name,
+                                keys: keys,
                                 quotations: quotations)
         }
     }

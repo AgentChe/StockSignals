@@ -124,6 +124,10 @@
 		9642EBD2275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD1275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift */; };
 		9642EBD4275E32030046D034 /* MarketTableUserScreenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD3275E32030046D034 /* MarketTableUserScreenerView.swift */; };
 		9642EBD6275E39720046D034 /* MarketTableAllUserScreenersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD5275E39720046D034 /* MarketTableAllUserScreenersCell.swift */; };
+		9642EBD9275F52290046D034 /* FullUserScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBD8275F52290046D034 /* FullUserScreenerViewController.swift */; };
+		9642EBDB275F52340046D034 /* FullUserScreenerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBDA275F52340046D034 /* FullUserScreenerView.swift */; };
+		9642EBDD275F523C0046D034 /* FullUserScreenerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBDC275F523C0046D034 /* FullUserScreenerViewModel.swift */; };
+		9642EBE0275F531A0046D034 /* ScreenersMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBDF275F531A0046D034 /* ScreenersMediator.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -423,6 +427,10 @@
 		9642EBD1275E2EBD0046D034 /* MarketTableUserScreenersCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableUserScreenersCollectionCell.swift; sourceTree = "<group>"; };
 		9642EBD3275E32030046D034 /* MarketTableUserScreenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableUserScreenerView.swift; sourceTree = "<group>"; };
 		9642EBD5275E39720046D034 /* MarketTableAllUserScreenersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketTableAllUserScreenersCell.swift; sourceTree = "<group>"; };
+		9642EBD8275F52290046D034 /* FullUserScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserScreenerViewController.swift; sourceTree = "<group>"; };
+		9642EBDA275F52340046D034 /* FullUserScreenerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserScreenerView.swift; sourceTree = "<group>"; };
+		9642EBDC275F523C0046D034 /* FullUserScreenerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserScreenerViewModel.swift; sourceTree = "<group>"; };
+		9642EBDF275F531A0046D034 /* ScreenersMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenersMediator.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1040,6 +1048,7 @@
 		9642EB802758D1B40046D034 /* Screeners */ = {
 			isa = PBXGroup;
 			children = (
+				9642EBD7275F52120046D034 /* Full */,
 				9642EBBC275BCE810046D034 /* Name */,
 				9642EBB5275B99890046D034 /* Result */,
 				9642EBA9275A7A5A0046D034 /* Items */,
@@ -1163,6 +1172,24 @@
 				9642EBD3275E32030046D034 /* MarketTableUserScreenerView.swift */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		9642EBD7275F52120046D034 /* Full */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBD8275F52290046D034 /* FullUserScreenerViewController.swift */,
+				9642EBDC275F523C0046D034 /* FullUserScreenerViewModel.swift */,
+				9642EBDA275F52340046D034 /* FullUserScreenerView.swift */,
+			);
+			path = Full;
+			sourceTree = "<group>";
+		};
+		9642EBDE275F530C0046D034 /* Mediator */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBDF275F531A0046D034 /* ScreenersMediator.swift */,
+			);
+			path = Mediator;
 			sourceTree = "<group>";
 		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
@@ -1372,6 +1399,7 @@
 		96AD353B2750F9D60098D472 /* Screeners */ = {
 			isa = PBXGroup;
 			children = (
+				9642EBDE275F530C0046D034 /* Mediator */,
 				96AD353E2750F9F70098D472 /* Request */,
 				96AD353D2750F9E50098D472 /* Model */,
 				96AD353C2750F9E10098D472 /* Manager */,
@@ -2337,6 +2365,7 @@
 				9695B1D5274798FE00D6DEC5 /* AddToFavoriteViewModel.swift in Sources */,
 				961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
+				9642EBDB275F52340046D034 /* FullUserScreenerView.swift in Sources */,
 				96AD35572754BD7E0098D472 /* MarketView.swift in Sources */,
 				9695B18A2742EE3900D6DEC5 /* DetailsTableElement.swift in Sources */,
 				96AD7093272C3D9F007BF50C /* NotificationsView.swift in Sources */,
@@ -2352,12 +2381,14 @@
 				96AD786B27314E02007BF50C /* StockSignal.swift in Sources */,
 				96AD707F272C35DA007BF50C /* Notification.swift in Sources */,
 				96B4F9B22726E4E2007507C1 /* FavoritesWatchListViewModel.swift in Sources */,
+				9642EBD9275F52290046D034 /* FullUserScreenerViewController.swift in Sources */,
 				9642EB772757BFB40046D034 /* QuotationsScreenersViewModel.swift in Sources */,
 				9642EBB0275A7AA80046D034 /* FiltersItemsTableView.swift in Sources */,
 				9642EB912758F3500046D034 /* GetFiltersResponse.swift in Sources */,
 				961D41DD273977EB00711BCD /* SettingsTableElement.swift in Sources */,
 				96B4F9BA2726F445007507C1 /* WatchListGroupsCollectionGroupElement.swift in Sources */,
 				961D4215273ABDA100711BCD /* SearchTableElement.swift in Sources */,
+				9642EBDD275F523C0046D034 /* FullUserScreenerViewModel.swift in Sources */,
 				9642EB832758D1DC0046D034 /* CreateScreenerViewController.swift in Sources */,
 				96BDBD5A2722BB8B00E43708 /* WatchListSignalsView.swift in Sources */,
 				96BDBC8B2719C67E00E43708 /* TapAreaButton.swift in Sources */,
@@ -2453,6 +2484,7 @@
 				9625D99D2724242B005A8E31 /* WatchListGroupsCollectionCreateCell.swift in Sources */,
 				96AD786727313091007BF50C /* ProfileManagerCore.swift in Sources */,
 				96BDBD3827216C2D00E43708 /* WatchListViewController.swift in Sources */,
+				9642EBE0275F531A0046D034 /* ScreenersMediator.swift in Sources */,
 				9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */,
 				9642EB792757BFC20046D034 /* QuotationsScreenersView.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,

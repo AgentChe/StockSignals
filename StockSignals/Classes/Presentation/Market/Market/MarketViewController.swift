@@ -75,7 +75,8 @@ extension MarketViewController: MarketTableViewDelegate {
     }
     
     func marketTableDidSelect(seeAll: UserScreener) {
-        // TODO
+        let vc = FullUserScreenerViewController.make(userScreener: seeAll)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func marketTableDidSelect(mover: Mover) {

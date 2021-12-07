@@ -1,0 +1,88 @@
+//
+//  FullUserScreenerViewController.swift
+//  StockSignals
+//
+//  Created by Andrey Chernyshev on 07.12.2021.
+//
+
+import UIKit
+import RxSwift
+
+final class FullUserScreenerViewController: UIViewController {
+    lazy var mainView = FullUserScreenerView()
+    
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var viewModel = FullUserScreenerViewModel()
+    
+    private let userScreener: UserScreener
+    
+    private init(userScreener: UserScreener) {
+        self.userScreener = userScreener
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func loadView() {
+        view = mainView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.elements.drive(onNext: { [weak self] elements in
+            self?.mainView.tableView.setup(elements: elements)
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.keys.accept(userScreener.keys)
+        
+        mainView.titlesView.scrollDelegate = self
+        mainView.titlesView.mainDelegate = self
+        mainView.tableView.scrollDelegate = self
+        
+        addMenuItem()
+    }
+}
+
+// MARK: Make
+extension FullUserScreenerViewController {
+    static func make(userScreener: UserScreener) -> FullUserScreenerViewController {
+        let vc = FullUserScreenerViewController(userScreener: userScreener)
+        vc.navigationItem.title = userScreener.name
+        return vc
+    }
+}
+
+// MARK: WatchListSignalsScrollDelegate
+extension FullUserScreenerViewController: WatchListSignalsScrollDelegate {
+    func watchListSignalsDidScroll(_ scrollView: UIScrollView) {
+        mainView.titlesView.scroll(as: scrollView)
+        mainView.tableView.scroll(as: scrollView)
+    }
+}
+
+// MARK: WatchListSignalsTitlesViewDelegate
+extension FullUserScreenerViewController: WatchListSignalsTitlesViewDelegate {
+    func watchListDidSelect(sort: WatchListSignalsSortElement) {
+        viewModel.sort.accept(sort)
+    }
+}
+
+// MARK: Private
+private extension FullUserScreenerViewController {
+    func addMenuItem() {
+        let item = UIBarButtonItem()
+        item.image = UIImage(named: "Screeners.Menu")
+        navigationItem.rightBarButtonItem = item
+        
+        item.rx.tap.subscribe(onNext: { [weak self] in
+            
+        })
+        .disposed(by: disposeBag)
+    }
+}

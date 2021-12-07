@@ -54,6 +54,8 @@ extension ScreenersManagerCore {
                 
                 event(.success(filterScreener))
                 
+                ScreenersMediator.shared.notifyAboutChangedFiltersScreeners()
+                
                 return Disposables.create()
             }
         }
