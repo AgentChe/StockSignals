@@ -13,6 +13,11 @@ final class CSFiltersCollectionFilterCell: UICollectionViewCell {
     lazy var valueLabel = makeLabel()
     lazy var clearButton = makeClearButton()
     
+    private lazy var titleLabelBottomConstraint = NSLayoutConstraint()
+    private lazy var valueLabelLeadingConstraint = NSLayoutConstraint()
+    private lazy var valueLabelTrailingConstraint = NSLayoutConstraint()
+    private lazy var valueLabelBottomConstraint = NSLayoutConstraint()
+    
     private var element: CSFiltersCollectionFilterElement?
     
     override init(frame: CGRect) {
@@ -29,6 +34,23 @@ final class CSFiltersCollectionFilterCell: UICollectionViewCell {
 
 // MARK: Public
 extension CSFiltersCollectionFilterCell {
+    static func height(element: CSFiltersCollectionFilterElement) -> CGFloat {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.SFProDisplay.regular(size: 17.scale))
+            .lineHeight(20.4.scale)
+        
+        var height = element.filter.title.attributed(with: attrs).size().height
+        
+        height += 32.scale
+        
+        if let valueHeight = element.selectedItem?.value.attributed(with: attrs).size().height {
+            height += valueHeight + 8.scale
+        }
+        
+        return height
+    }
+    
     func setup(element: CSFiltersCollectionFilterElement) {
         self.element = element
         
@@ -44,6 +66,8 @@ extension CSFiltersCollectionFilterCell {
             .lineHeight(20.4.scale)
         titleLabel.attributedText = element.filter.title.attributed(with: attrs)
         valueLabel.attributedText = element.selectedItem?.value.attributed(with: attrs)
+        
+        updateConstraints(hasValue: isSelected)
     }
 }
 
@@ -62,6 +86,34 @@ private extension CSFiltersCollectionFilterCell {
         
         didClearTapped?(element)
     }
+    
+    func updateConstraints(hasValue: Bool) {
+        NSLayoutConstraint.deactivate([
+            titleLabelBottomConstraint,
+            valueLabelLeadingConstraint,
+            valueLabelTrailingConstraint,
+            valueLabelBottomConstraint
+        ])
+        
+        if hasValue {
+            titleLabelBottomConstraint = titleLabel.bottomAnchor.constraint(equalTo: valueLabel.topAnchor, constant: -8.scale)
+            valueLabelLeadingConstraint = valueLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12.scale)
+            valueLabelTrailingConstraint = valueLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12.scale)
+            valueLabelBottomConstraint = valueLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
+            
+            NSLayoutConstraint.activate([
+                titleLabelBottomConstraint,
+                valueLabelLeadingConstraint,
+                valueLabelTrailingConstraint,
+                valueLabelBottomConstraint
+            ])
+        } else {
+            titleLabelBottomConstraint = titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
+            titleLabelBottomConstraint.isActive = true
+        }
+        
+        layoutIfNeeded()
+    }
 }
 
 // MARK: Make constraints
@@ -74,22 +126,18 @@ private extension CSFiltersCollectionFilterCell {
             container.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
         
+        titleLabelBottomConstraint = titleLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
         NSLayoutConstraint.activate([
             titleLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12.scale),
             titleLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -40.scale),
-            titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 12.scale)
-        ])
-        
-        NSLayoutConstraint.activate([
-            valueLabel.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 12.scale),
-            valueLabel.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12.scale),
-            valueLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -4.scale)
+            titleLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale),
+            titleLabelBottomConstraint
         ])
         
         NSLayoutConstraint.activate([
             clearButton.widthAnchor.constraint(equalToConstant: 24.scale),
             clearButton.heightAnchor.constraint(equalToConstant: 24.scale),
-            clearButton.topAnchor.constraint(equalTo: container.topAnchor, constant: 12.scale),
+            clearButton.topAnchor.constraint(equalTo: container.topAnchor, constant: 16.scale),
             clearButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -12.scale)
         ])
     }

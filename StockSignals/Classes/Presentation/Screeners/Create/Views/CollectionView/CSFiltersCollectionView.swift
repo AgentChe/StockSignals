@@ -112,17 +112,17 @@ extension CSFiltersCollectionView: UICollectionViewDelegateFlowLayout {
         switch element(for: indexPath) {
         case .signal(let element):
             return CGSize(width: CSFiltersCollectionSignalCell.width(at: element), height: 34.scale)
-        case .filter:
-            return CGSize(width: 166.scale, height: 99.scale)
+        case .filter(let element):
+            return CGSize(width: 343.scale, height: CSFiltersCollectionFilterCell.height(element: element))
         case .signalMore:
             return CGSize(width: 57.scale, height: 34.scale)
         case .filterMore:
-            return CGSize(width: 166.scale, height: 99.scale)
+            return CGSize(width: 343.scale, height: 56.scale)
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        15.scale
+        12.scale
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
