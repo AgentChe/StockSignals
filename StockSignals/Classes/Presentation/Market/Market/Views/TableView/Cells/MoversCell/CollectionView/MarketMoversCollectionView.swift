@@ -49,7 +49,7 @@ extension MarketMoversCollectionView: UICollectionViewDataSource {
 extension MarketMoversCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mover = elements[indexPath.row].mover
-        mainDelegate?.marketTableDidSelect(mover: mover)
+        mainDelegate?.marketTableDidSelect(symbol: mover.symbol)
     }
 }
 

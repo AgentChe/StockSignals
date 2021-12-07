@@ -8,7 +8,9 @@
 import UIKit
 import Kingfisher
 
-final class MarketTableUserScreenerView: UIView {
+final class MarketTableUserScreenerView: UIButton {
+    private(set) var element: Quotation?
+    
     lazy var iconView = makeIconView()
     lazy var symbolLabel = makeLabel()
     lazy var companyLabel = makeLabel()
@@ -29,6 +31,8 @@ final class MarketTableUserScreenerView: UIView {
 // MARK: Public
 extension MarketTableUserScreenerView {
     func setup(element: Quotation?) {
+        self.element = element
+        
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
         
@@ -124,6 +128,7 @@ private extension MarketTableUserScreenerView {
 private extension MarketTableUserScreenerView {
     func makeIconView() -> UIImageView {
         let view = UIImageView()
+        view.layer.cornerRadius = 24.scale
         view.contentMode = .scaleAspectFill
         view.clipsToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false

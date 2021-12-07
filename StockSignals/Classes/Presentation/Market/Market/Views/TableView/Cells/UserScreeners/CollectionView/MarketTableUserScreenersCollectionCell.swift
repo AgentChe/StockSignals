@@ -8,12 +8,17 @@
 import UIKit
 
 final class MarketTableUserScreenersCollectionCell: UICollectionViewCell {
+    weak var mainDelegate: MarketTableViewDelegate?
+    
     lazy var container = makeContainer()
     lazy var titleLabel = makeTitleLabel()
     lazy var userScreener1View = makeUserScreenerView()
     lazy var userScreener2View = makeUserScreenerView()
     lazy var userScreener3View = makeUserScreenerView()
     lazy var userScreener4View = makeUserScreenerView()
+    lazy var seeAllButton = makeSeeAllButton()
+    
+    private var element: UserScreener?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,6 +35,8 @@ final class MarketTableUserScreenersCollectionCell: UICollectionViewCell {
 // MARK: Public
 extension MarketTableUserScreenersCollectionCell {
     func setup(element: UserScreener) {
+        self.element = element
+        
         let attrs = TextAttributes()
             .textColor(UIColor.white)
             .font(Fonts.SFProDisplay.bold(size: 19.scale))
@@ -58,6 +65,28 @@ private extension MarketTableUserScreenersCollectionCell {
         }
         
         return array[index]
+    }
+    
+    @objc
+    func didTapSymbol(sender: Any) {
+        guard let view = sender as? MarketTableUserScreenerView else {
+            return
+        }
+        
+        guard let symbol = view.element?.symbol else {
+            return
+        }
+        
+        mainDelegate?.marketTableDidSelect(symbol: symbol)
+    }
+    
+    @objc
+    func didTapSeeAll() {
+        guard let element = element else {
+            return
+        }
+        
+        mainDelegate?.marketTableDidSelect(seeAll: element)
     }
 }
 
@@ -104,6 +133,13 @@ private extension MarketTableUserScreenersCollectionCell {
             userScreener4View.topAnchor.constraint(equalTo: userScreener3View.bottomAnchor, constant: 24.scale),
             userScreener4View.heightAnchor.constraint(equalToConstant: 48.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            seeAllButton.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+            seeAllButton.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+            seeAllButton.heightAnchor.constraint(equalToConstant: 55.scale),
+            seeAllButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -10.scale)
+        ])
     }
 }
 
@@ -129,6 +165,21 @@ private extension MarketTableUserScreenersCollectionCell {
         let view = MarketTableUserScreenerView()
         view.backgroundColor = UIColor.clear
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(didTapSymbol(sender:)), for: .touchUpInside)
+        container.addSubview(view)
+        return view
+    }
+    
+    func makeSeeAllButton() -> UIButton {
+        let attrs = TextAttributes()
+            .textColor(UIColor(integralRed: 62, green: 89, blue: 223))
+            .font(Fonts.SFProDisplay.bold(size: 19.scale))
+        
+        let view = UIButton()
+        view.setAttributedTitle("Market.SeeAll".localized.attributed(with: attrs), for: .normal)
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(didTapSeeAll), for: .touchUpInside)
         container.addSubview(view)
         return view
     }

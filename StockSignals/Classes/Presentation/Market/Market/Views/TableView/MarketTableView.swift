@@ -10,8 +10,8 @@ import UIKit
 protocol MarketTableViewDelegate: AnyObject {
     func marketTableDidSelectAllScreeners()
     func marketTableDidSelectAllUserScreeners()
-    func marketTableDidSelect(mover: Mover)
     func marketTableDidSelect(symbol: String)
+    func marketTableDidSelect(seeAll: UserScreener)
 }
 
 final class MarketTableView: UITableView {
@@ -73,6 +73,7 @@ extension MarketTableView: UITableViewDataSource {
             return cell
         case .userScreeners(let elements):
             let cell = dequeueReusableCell(withIdentifier: String(describing: MarketTableUserScreenersCell.self)) as! MarketTableUserScreenersCell
+            cell.collectionView.mainDelegate = mainDelegate
             cell.setup(elements: elements)
             return cell
         }
@@ -92,7 +93,7 @@ extension MarketTableView: UITableViewDelegate {
         case .quotations:
             return 200.scale
         case .userScreeners:
-            return 363.scale
+            return 414.scale
         }
     }
 }

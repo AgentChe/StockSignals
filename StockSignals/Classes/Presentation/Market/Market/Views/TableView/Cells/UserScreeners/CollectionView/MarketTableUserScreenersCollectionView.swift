@@ -8,6 +8,8 @@
 import UIKit
 
 final class MarketTableUserScreenersCollectionView: UICollectionView {
+    weak var mainDelegate: MarketTableViewDelegate?
+    
     lazy var elements = [UserScreener]()
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -38,6 +40,7 @@ extension MarketTableUserScreenersCollectionView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: String(describing: MarketTableUserScreenersCollectionCell.self), for: indexPath) as! MarketTableUserScreenersCollectionCell
+        cell.mainDelegate = mainDelegate
         cell.setup(element: elements[indexPath.row])
         return cell
     }
@@ -46,7 +49,7 @@ extension MarketTableUserScreenersCollectionView: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegateFlowLayout
 extension MarketTableUserScreenersCollectionView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 311.scale, height: 363.scale)
+        CGSize(width: 311.scale, height: 414.scale)
     }
 }
 

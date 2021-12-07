@@ -71,7 +71,11 @@ extension MarketViewController: MarketTableViewDelegate {
     }
     
     func marketTableDidSelectAllUserScreeners() {
-        
+        print("my screeners")
+    }
+    
+    func marketTableDidSelect(seeAll: UserScreener) {
+        // TODO
     }
     
     func marketTableDidSelect(mover: Mover) {

@@ -72,7 +72,7 @@ private extension MarketView {
     
     func makeTableView() -> MarketTableView {
         let view = MarketTableView()
-        view.contentInset = UIEdgeInsets(top: 24.scale, left: 0, bottom: 90.scale, right: 0)
+        view.contentInset = UIEdgeInsets(top: 24.scale, left: 0, bottom: 100.scale, right: 0)
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false

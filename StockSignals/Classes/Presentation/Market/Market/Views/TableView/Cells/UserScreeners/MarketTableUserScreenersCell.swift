@@ -46,7 +46,7 @@ private extension MarketTableUserScreenersCell {
             collectionView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             collectionView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 363.scale)
+            collectionView.heightAnchor.constraint(equalToConstant: 414.scale)
         ])
     }
 }

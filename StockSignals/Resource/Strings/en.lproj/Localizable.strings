@@ -195,6 +195,7 @@
 "Market.UserScreeners" = "My screeners";
 "Market.All" = "All";
 "Market.CreateScreener" = "+ Create New Screeener";
+"Market.SeeAll" = "See all";
 
 // MARK: Quotations Screeners
 "QuotationsScreeners.Title" = "Screeners";

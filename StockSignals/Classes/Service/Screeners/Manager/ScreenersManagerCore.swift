@@ -49,7 +49,7 @@ extension ScreenersManagerCore {
                 result.append(filterScreener)
                 
                 if let data = try? JSONEncoder().encode(result) {
-                    UserDefaults.standard.setValue(data, forKey: Constants.filterScreenersKey)
+                    UserDefaults.standard.set(data, forKey: Constants.filterScreenersKey)
                 }
                 
                 event(.success(filterScreener))
