@@ -212,3 +212,6 @@
 // MARK: Filters
 "Filters.Discard" = "Discard";
 "Filters.Confirm" = "Confirm";
+
+// MARK: All User Screeners
+"AllUserScreeners.Title" = "My screeners";

@@ -71,17 +71,13 @@ extension MarketViewController: MarketTableViewDelegate {
     }
     
     func marketTableDidSelectAllUserScreeners() {
-        print("my screeners")
+        let vc = AllUserScreenersViewController.make()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func marketTableDidSelect(seeAll: UserScreener) {
         let vc = FullUserScreenerViewController.make(userScreener: seeAll)
         navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func marketTableDidSelect(mover: Mover) {
-        let vc = DetailsViewController.make(symbol: mover.symbol)
-        present(vc, animated: true)
     }
     
     func marketTableDidSelect(symbol: String) {

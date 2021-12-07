@@ -33,6 +33,8 @@ extension MarketTableUserScreenerView {
     func setup(element: Quotation?) {
         self.element = element
         
+        isHidden = element == nil
+        
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
         
