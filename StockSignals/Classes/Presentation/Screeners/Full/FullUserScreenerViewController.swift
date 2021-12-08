@@ -15,7 +15,7 @@ final class FullUserScreenerViewController: UIViewController {
     
     private lazy var viewModel = FullUserScreenerViewModel()
     
-    private let userScreener: UserScreener
+    private var userScreener: UserScreener
     
     private init(userScreener: UserScreener) {
         self.userScreener = userScreener
@@ -44,8 +44,7 @@ final class FullUserScreenerViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
-        let keys = userScreener.filterScreener.items.map { $0.key }
-        viewModel.keys.accept(keys)
+        editScreenerDidEdited(filterScreener: userScreener.filterScreener)
         
         mainView.titlesView.scrollDelegate = self
         mainView.titlesView.mainDelegate = self
@@ -59,8 +58,20 @@ final class FullUserScreenerViewController: UIViewController {
 extension FullUserScreenerViewController {
     static func make(userScreener: UserScreener) -> FullUserScreenerViewController {
         let vc = FullUserScreenerViewController(userScreener: userScreener)
-        vc.navigationItem.title = userScreener.filterScreener.name
+        vc.navigationItem.backButtonTitle = " "
         return vc
+    }
+}
+
+// MARK: EditScreenerViewControllerDelegate
+extension FullUserScreenerViewController: EditScreenerViewControllerDelegate {
+    func editScreenerDidEdited(filterScreener: FilterScreener) {
+        userScreener = UserScreener(filterScreener: filterScreener, quotations: userScreener.quotations)
+        
+        let keys = userScreener.filterScreener.items.map { $0.key }
+        viewModel.keys.accept(keys)
+        
+        navigationItem.title = filterScreener.name
     }
 }
 
@@ -82,7 +93,9 @@ extension FullUserScreenerViewController: WatchListSignalsTitlesViewDelegate {
 // MARK: FullUserScreenerMenuViewControllerDelegate
 extension FullUserScreenerViewController: FullUserScreenerMenuViewControllerDelegate {
     func menuControllerDidSelectEdit() {
-        
+        let vc = EditScreenerViewController.make(parentVC: self, filterScreener: userScreener.filterScreener)
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     func menuControllerDidSelectDelete() {

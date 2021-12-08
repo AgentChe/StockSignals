@@ -50,6 +50,13 @@ extension CreateScreenerViewController {
     }
 }
 
+// MARK: ScreenersResultViewController
+extension CreateScreenerViewController: ScreenersResultViewControllerDelegate {
+    func resultViewControllerDidCreated(filterScreener: FilterScreener) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+}
+
 // MARK: CSFiltersCollectionViewDelegate
 extension CreateScreenerViewController: CSFiltersCollectionViewDelegate {
     func csFiltersCollectionDidChange() {
@@ -109,7 +116,8 @@ private extension CreateScreenerViewController {
             }
         }
         
-        let vc = ScreenersResultViewController.make(items: items)
+        let vc = ScreenersResultViewController.make(mode: .create, items: items)
+        vc.delegate = self
         navigationController?.pushViewController(vc, animated: true)
     }
 }

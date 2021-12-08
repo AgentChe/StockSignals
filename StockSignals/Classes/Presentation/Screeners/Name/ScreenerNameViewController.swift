@@ -13,9 +13,11 @@ final class ScreenerNameViewController: UIViewController {
     
     private lazy var disposeBag = DisposeBag()
     
+    private let initialName: String?
     private let confirm: ((String) -> Void)
     
-    private init(confirm: @escaping ((String) -> Void)) {
+    private init(name: String?, confirm: @escaping ((String) -> Void)) {
+        self.initialName = name
         self.confirm = confirm
         
         super.init(nibName: nil, bundle: nil)
@@ -56,6 +58,8 @@ final class ScreenerNameViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        mainView.setup(name: initialName)
+        
         addDismissAction()
     }
     
@@ -68,8 +72,8 @@ final class ScreenerNameViewController: UIViewController {
 
 // MARK: Make
 extension ScreenerNameViewController {
-    static func make(confirm: @escaping ((String) -> Void)) -> ScreenerNameViewController {
-        let vc = ScreenerNameViewController(confirm: confirm)
+    static func make(name: String? = nil, confirm: @escaping ((String) -> Void)) -> ScreenerNameViewController {
+        let vc = ScreenerNameViewController(name: name, confirm: confirm)
         vc.modalPresentationStyle = .overFullScreen
         return vc
     }

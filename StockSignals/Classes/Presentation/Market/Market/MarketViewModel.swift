@@ -55,9 +55,10 @@ private extension MarketViewModel {
                 result.append(element)
             }
             
+            result.append(.allUserScreeners)
+            
             let userScreeners = bundle.userScreeners.filter { !$0.quotations.isEmpty }
             if !userScreeners.isEmpty {
-                result.append(.allUserScreeners)
                 let element = MarketTableElement.userScreeners(userScreeners)
                 result.append(element)
             }

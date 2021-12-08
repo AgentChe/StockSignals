@@ -7,17 +7,30 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+
+protocol ScreenersResultViewControllerDelegate: AnyObject {
+    func resultViewControllerDidCreated(filterScreener: FilterScreener)
+}
 
 final class ScreenersResultViewController: UIViewController {
+    enum Mode {
+        case create, edit(FilterScreener)
+    }
+    
+    weak var delegate: ScreenersResultViewControllerDelegate?
+    
     lazy var mainView = ScreenersResultView()
     
     private lazy var disposeBag = DisposeBag()
     
     private lazy var viewModel = ScreenersResultViewModel()
     
+    private let mode: Mode
     private let items: [Filter.Item]
     
-    private init(items: [Filter.Item]) {
+    private init(mode: Mode, items: [Filter.Item]) {
+        self.mode = mode
         self.items = items
         
         super.init(nibName: nil, bundle: nil)
@@ -39,10 +52,12 @@ final class ScreenersResultViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
-        viewModel.created.drive(onNext: { [weak self] _ in
-            self?.navigationController?.popToRootViewController(animated: true)
-        })
-        .disposed(by: disposeBag)
+        Driver
+            .merge(viewModel.created, viewModel.edited)
+            .drive(onNext: { [weak self] filterScreener in
+                self?.delegate?.resultViewControllerDidCreated(filterScreener: filterScreener)
+            })
+            .disposed(by: disposeBag)
         
         let keys = items.map { $0.key }
         viewModel.keys.accept(keys)
@@ -57,8 +72,8 @@ final class ScreenersResultViewController: UIViewController {
 
 // MARK: Make
 extension ScreenersResultViewController {
-    static func make(items: [Filter.Item]) -> ScreenersResultViewController {
-        let vc = ScreenersResultViewController(items: items)
+    static func make(mode: Mode, items: [Filter.Item]) -> ScreenersResultViewController {
+        let vc = ScreenersResultViewController(mode: mode, items: items)
         vc.navigationItem.title = "CreateScreener.Title".localized
         return vc
     }
@@ -93,7 +108,7 @@ private extension ScreenersResultViewController {
         navigationItem.rightBarButtonItem = item
         
         item.rx.tap.subscribe(onNext: { [weak self] in
-            let vc = ScreenerNameViewController.make { name in
+            let vc = ScreenerNameViewController.make(name: self?.nameIfHas()) { name in
                 self?.createSceener(name: name)
             }
             self?.present(vc, animated: true)
@@ -102,7 +117,21 @@ private extension ScreenersResultViewController {
     }
     
     func createSceener(name: String) {
-        let screener = FilterScreener(id: UUID().uuidString, name: name, items: items)
-        viewModel.create.accept(screener)
+        switch mode {
+        case .create:
+            let screener = FilterScreener(id: UUID().uuidString, name: name, items: items)
+            viewModel.create.accept(screener)
+        case .edit(let previous):
+            let screener = FilterScreener(id: previous.id, name: name, items: items)
+            viewModel.edit.accept(screener)
+        }
+    }
+    
+    func nameIfHas() -> String? {
+        guard case let .edit(previous) = mode else {
+            return nil
+        }
+        
+        return previous.name
     }
 }

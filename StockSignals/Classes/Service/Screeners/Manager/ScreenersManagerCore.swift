@@ -61,6 +61,28 @@ extension ScreenersManagerCore {
         }
     }
     
+    func edit(filterScreener: FilterScreener) -> Single<FilterScreener> {
+        obtainFilterScreeners().flatMap { cache -> Single<FilterScreener> in
+            Single<FilterScreener>.create { event in
+                var result = cache
+                
+                if let index = result.firstIndex(where: { $0.id == filterScreener.id }) {
+                    result[index] = filterScreener
+                }
+                
+                if let data = try? JSONEncoder().encode(result) {
+                    UserDefaults.standard.set(data, forKey: Constants.filterScreenersKey)
+                }
+                
+                event(.success(filterScreener))
+                
+                ScreenersMediator.shared.notifyAboutChangedFiltersScreeners()
+                
+                return Disposables.create()
+            }
+        }
+    }
+    
     func delete(filterScreenerId: String) -> Single<Void> {
         obtainFilterScreeners().flatMap { cache -> Single<Void> in
             Single<Void>.create { event in

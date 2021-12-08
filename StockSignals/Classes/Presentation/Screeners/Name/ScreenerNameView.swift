@@ -44,6 +44,12 @@ extension ScreenerNameView {
             self?.layoutIfNeeded()
         })
     }
+    
+    func setup(name: String?) {
+        textField.text = name
+        
+        didChangeText()
+    }
 }
 
 // MARK: Private
