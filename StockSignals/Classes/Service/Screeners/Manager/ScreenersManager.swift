@@ -13,5 +13,6 @@ protocol ScreenersManager {
     func obtainFilters() -> Single<Filters?>
     
     func add(filterScreener: FilterScreener) -> Single<FilterScreener>
+    func delete(filterScreenerId: String) -> Single<Void>
     func obtainFilterScreeners() -> Single<[FilterScreener]>
 }

@@ -39,6 +39,11 @@ final class FullUserScreenerViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
+        viewModel.deleted.drive(onNext: { [weak self] in
+            self?.navigationController?.popViewController(animated: true)
+        })
+        .disposed(by: disposeBag)
+        
         let keys = userScreener.filterScreener.items.map { $0.key }
         viewModel.keys.accept(keys)
         
@@ -81,7 +86,7 @@ extension FullUserScreenerViewController: FullUserScreenerMenuViewControllerDele
     }
     
     func menuControllerDidSelectDelete() {
-        
+        viewModel.delete.accept(userScreener.filterScreener.id)
     }
 }
 

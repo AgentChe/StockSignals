@@ -11,9 +11,12 @@ import RxCocoa
 final class FullUserScreenerViewModel {
     lazy var keys = PublishRelay<[String]>()
     lazy var sort = PublishRelay<WatchListSignalsSortElement>()
+    lazy var delete = PublishRelay<String>()
     
     lazy var elements = makeElements()
+    lazy var deleted = makeDeleted()
     
+    private lazy var screenersManager = ScreenersManagerCore()
     private lazy var watchListManager = WatchListManagerCore()
 }
 
@@ -44,5 +47,17 @@ private extension FullUserScreenerViewModel {
                 return quotations.sorted(by: { ($0.peRatio ?? 0) > ($1.peRatio ?? 0) })
             }
         }
+    }
+    
+    func makeDeleted() -> Driver<Void> {
+        delete.flatMapLatest { [weak self] id -> Single<Void> in
+            guard let self = self else {
+                return .never()
+            }
+            
+            return self.screenersManager
+                .delete(filterScreenerId: id)
+        }
+        .asDriver(onErrorDriveWith: .never())
     }
 }
