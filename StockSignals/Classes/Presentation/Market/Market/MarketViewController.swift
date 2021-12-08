@@ -49,7 +49,11 @@ extension MarketViewController {
 // MARK: MarketTableViewDelegate
 extension MarketViewController: MarketTableViewDelegate {
     func marketTableDidSelectAllScreeners() {
-        viewModel.elements.drive(onNext: { [weak self] elements in
+        viewModel.elements
+            .asObservable()
+            .take(1)
+            .asDriver(onErrorJustReturn: [])
+            .drive(onNext: { [weak self] elements in
             let values = elements
                 .compactMap { element -> [MarketQuotationsKeysCollectionElement]? in
                     switch element {

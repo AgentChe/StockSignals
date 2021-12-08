@@ -102,7 +102,7 @@ private extension ScreenersResultViewController {
     }
     
     func createSceener(name: String) {
-        let screener = FilterScreener(name: name, items: items)
+        let screener = FilterScreener(id: UUID().uuidString, name: name, items: items)
         viewModel.create.accept(screener)
     }
 }

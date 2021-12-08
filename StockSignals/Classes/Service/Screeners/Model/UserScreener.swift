@@ -6,8 +6,7 @@
 //
 
 struct UserScreener {
-    let name: String
-    let keys: [String]
+    let filterScreener: FilterScreener
     let quotations: [Quotation]
 }
 

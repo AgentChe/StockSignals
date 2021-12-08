@@ -25,7 +25,7 @@ extension ScreenersManagerCore {
         return SDKStorage.shared
             .restApiTransport
             .callServerApi(requestBody: request)
-            .map { GetScreenersBundleResponse.map(from: $0) }
+            .map { GetScreenersBundleResponse.map(from: $0, filtersScreeners: filters ?? []) }
     }
     
     func obtainFilters() -> Single<Filters?> {

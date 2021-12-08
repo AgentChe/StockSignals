@@ -41,7 +41,7 @@ extension MarketTableUserScreenersCollectionCell {
             .textColor(UIColor.white)
             .font(Fonts.SFProDisplay.bold(size: 19.scale))
             .lineHeight(26.6.scale)
-        titleLabel.attributedText = element.name.attributed(with: attrs)
+        titleLabel.attributedText = element.filterScreener.name.attributed(with: attrs)
         
         let quotations = element.quotations
         

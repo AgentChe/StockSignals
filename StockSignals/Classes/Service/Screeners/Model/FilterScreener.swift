@@ -6,6 +6,7 @@
 //
 
 struct FilterScreener {
+    let id: String
     let name: String
     let items: [Filter.Item]
 }

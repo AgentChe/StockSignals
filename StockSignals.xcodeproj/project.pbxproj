@@ -133,6 +133,9 @@
 		9642EBE7275F6B690046D034 /* AllUserScreenersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBE6275F6B690046D034 /* AllUserScreenersView.swift */; };
 		9642EBEB275F9CB10046D034 /* AllUserScreenersTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBEA275F9CB10046D034 /* AllUserScreenersTableView.swift */; };
 		9642EBED275F9CC80046D034 /* AllUserScreenersTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBEC275F9CC80046D034 /* AllUserScreenersTableCell.swift */; };
+		9642EBEF276083810046D034 /* FullUserScreenerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBEE276083810046D034 /* FullUserScreenerMenuView.swift */; };
+		9642EBF2276084270046D034 /* FullUserScreenerMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBF1276084270046D034 /* FullUserScreenerMenuButton.swift */; };
+		9642EBF5276091340046D034 /* FullUserScreenerMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBF4276091340046D034 /* FullUserScreenerMenuViewController.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -441,6 +444,9 @@
 		9642EBE6275F6B690046D034 /* AllUserScreenersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserScreenersView.swift; sourceTree = "<group>"; };
 		9642EBEA275F9CB10046D034 /* AllUserScreenersTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserScreenersTableView.swift; sourceTree = "<group>"; };
 		9642EBEC275F9CC80046D034 /* AllUserScreenersTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllUserScreenersTableCell.swift; sourceTree = "<group>"; };
+		9642EBEE276083810046D034 /* FullUserScreenerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserScreenerMenuView.swift; sourceTree = "<group>"; };
+		9642EBF1276084270046D034 /* FullUserScreenerMenuButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserScreenerMenuButton.swift; sourceTree = "<group>"; };
+		9642EBF4276091340046D034 /* FullUserScreenerMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullUserScreenerMenuViewController.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1188,6 +1194,7 @@
 		9642EBD7275F52120046D034 /* Full */ = {
 			isa = PBXGroup;
 			children = (
+				9642EBF327608ACB0046D034 /* Views */,
 				9642EBD8275F52290046D034 /* FullUserScreenerViewController.swift */,
 				9642EBDC275F523C0046D034 /* FullUserScreenerViewModel.swift */,
 				9642EBDA275F52340046D034 /* FullUserScreenerView.swift */,
@@ -1229,6 +1236,24 @@
 				9642EBEC275F9CC80046D034 /* AllUserScreenersTableCell.swift */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		9642EBF0276084120046D034 /* AllUserScreenersMenu */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBF4276091340046D034 /* FullUserScreenerMenuViewController.swift */,
+				9642EBEE276083810046D034 /* FullUserScreenerMenuView.swift */,
+				9642EBF1276084270046D034 /* FullUserScreenerMenuButton.swift */,
+			);
+			path = AllUserScreenersMenu;
+			sourceTree = "<group>";
+		};
+		9642EBF327608ACB0046D034 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9642EBF0276084120046D034 /* AllUserScreenersMenu */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
@@ -2408,6 +2433,7 @@
 				96AD35572754BD7E0098D472 /* MarketView.swift in Sources */,
 				9695B18A2742EE3900D6DEC5 /* DetailsTableElement.swift in Sources */,
 				96AD7093272C3D9F007BF50C /* NotificationsView.swift in Sources */,
+				9642EBF2276084270046D034 /* FullUserScreenerMenuButton.swift in Sources */,
 				9625D9A5272558AE005A8E31 /* CreateWatchListGroupViewModel.swift in Sources */,
 				9642EB6C2757707E0046D034 /* MarketTableQuotationsElement.swift in Sources */,
 				9642EBED275F9CC80046D034 /* AllUserScreenersTableCell.swift in Sources */,
@@ -2478,6 +2504,7 @@
 				9695B1D3274798F200D6DEC5 /* AddToFavoriteViewController.swift in Sources */,
 				9695B16F2742884D00D6DEC5 /* SignalsOptionCryptoCollectionView.swift in Sources */,
 				9695B1E12749200400D6DEC5 /* Chart.swift in Sources */,
+				9642EBF5276091340046D034 /* FullUserScreenerMenuViewController.swift in Sources */,
 				9695B1792742BB9700D6DEC5 /* AllSignalsTableStockCell.swift in Sources */,
 				9695B1DF2747994300D6DEC5 /* AddToFavoriteTableElement.swift in Sources */,
 				96AD78E72732EFE0007BF50C /* SignalsTableGroup.swift in Sources */,
@@ -2634,6 +2661,7 @@
 				96BDBCB22719C7D100E43708 /* TabViewController.swift in Sources */,
 				9695B1CE2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift in Sources */,
 				96234D9A272984FC00619CE2 /* OnbTradingStyleView.swift in Sources */,
+				9642EBEF276083810046D034 /* FullUserScreenerMenuView.swift in Sources */,
 				96AD78DA2732E271007BF50C /* SignalsOptionCryptoCollectionCell.swift in Sources */,
 				96234DA0272A02E500619CE2 /* OnbRiskView.swift in Sources */,
 				9695B1EF2749343100D6DEC5 /* DetailsTableChartRangeView.swift in Sources */,

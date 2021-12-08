@@ -6,7 +6,7 @@
 //
 
 final class GetScreenersBundleResponse {
-    static func map(from response: Any) -> ScreenersBundle? {
+    static func map(from response: Any, filtersScreeners: [FilterScreener]) -> ScreenersBundle? {
         guard
             let json = response as? [String: Any],
             let body = json["body"] as? [String: Any]
@@ -21,7 +21,7 @@ final class GetScreenersBundleResponse {
         let screeners = map(screenersJSON: screenersJSON)
         
         let userScreenersJSON = body["user"] as? [[String: Any]] ?? []
-        let userScreeners = map(userScreenersJSON: userScreenersJSON)
+        let userScreeners = map(userScreenersJSON: userScreenersJSON, filtersScreeners: filtersScreeners)
         
         return ScreenersBundle(movers: movers,
                                screeners: screeners,
@@ -90,10 +90,11 @@ private extension GetScreenersBundleResponse {
         }
     }
     
-    static func map(userScreenersJSON: [[String: Any]]) -> [UserScreener] {
+    static func map(userScreenersJSON: [[String: Any]], filtersScreeners: [FilterScreener]) -> [UserScreener] {
         userScreenersJSON.compactMap { json -> UserScreener? in
             guard
-                let name = json["title"] as? String,
+                let id = json["id"] as? String,
+                let filterScreener = filtersScreeners.first(where: { $0.id == id }),
                 let data = json["data"] as? [[String: Any]]
             else {
                 return nil
@@ -124,13 +125,7 @@ private extension GetScreenersBundleResponse {
                                  marketCap: marketCap)
             }
             
-            let filtersArray = json["filters"] as? [[String: Any]] ?? []
-            let keys = filtersArray.compactMap { element -> String? in
-                element["key"] as? String
-            }
-            
-            return UserScreener(name: name,
-                                keys: keys,
+            return UserScreener(filterScreener: filterScreener,
                                 quotations: quotations)
         }
     }

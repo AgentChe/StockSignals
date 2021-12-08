@@ -39,7 +39,8 @@ final class FullUserScreenerViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
-        viewModel.keys.accept(userScreener.keys)
+        let keys = userScreener.filterScreener.items.map { $0.key }
+        viewModel.keys.accept(keys)
         
         mainView.titlesView.scrollDelegate = self
         mainView.titlesView.mainDelegate = self
@@ -53,7 +54,7 @@ final class FullUserScreenerViewController: UIViewController {
 extension FullUserScreenerViewController {
     static func make(userScreener: UserScreener) -> FullUserScreenerViewController {
         let vc = FullUserScreenerViewController(userScreener: userScreener)
-        vc.navigationItem.title = userScreener.name
+        vc.navigationItem.title = userScreener.filterScreener.name
         return vc
     }
 }
@@ -73,6 +74,17 @@ extension FullUserScreenerViewController: WatchListSignalsTitlesViewDelegate {
     }
 }
 
+// MARK: FullUserScreenerMenuViewControllerDelegate
+extension FullUserScreenerViewController: FullUserScreenerMenuViewControllerDelegate {
+    func menuControllerDidSelectEdit() {
+        
+    }
+    
+    func menuControllerDidSelectDelete() {
+        
+    }
+}
+
 // MARK: Private
 private extension FullUserScreenerViewController {
     func addMenuItem() {
@@ -81,7 +93,9 @@ private extension FullUserScreenerViewController {
         navigationItem.rightBarButtonItem = item
         
         item.rx.tap.subscribe(onNext: { [weak self] in
-            
+            let vc = FullUserScreenerMenuViewController.make()
+            vc.delegate = self
+            self?.present(vc, animated: false)
         })
         .disposed(by: disposeBag)
     }

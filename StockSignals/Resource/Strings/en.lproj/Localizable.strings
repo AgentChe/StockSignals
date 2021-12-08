@@ -215,3 +215,5 @@
 
 // MARK: All User Screeners
 "AllUserScreeners.Title" = "My screeners";
+"AllUserScreeners.Edit" = "Edit";
+"AllUserScreeners.Delete" = "Delete screener";

@@ -31,7 +31,7 @@ struct GetScreenersBundleRequest: APIRequestBody {
                     ["key": item.key]
                 }
                 return [
-                    "title": filter.name,
+                    "id": filter.id,
                     "filters": keys
                 ]
             }
