@@ -315,6 +315,17 @@
 		96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD712722E31400E43708 /* WatchListSignalCollectionCell.swift */; };
 		96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD732722E43100E43708 /* WatchListSignalCollectionSection.swift */; };
 		96BDBD762722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BDBD752722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift */; };
+		96CC1BFD2761F2D30022A04C /* Paygate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1BFC2761F2D30022A04C /* Paygate.swift */; };
+		96CC1BFF2761F3EC0022A04C /* PaygateOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1BFE2761F3EC0022A04C /* PaygateOption.swift */; };
+		96CC1C062761F5D70022A04C /* GetPaygateRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C052761F5D70022A04C /* GetPaygateRequest.swift */; };
+		96CC1C082761F7080022A04C /* GetPaygateTransferResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C072761F7080022A04C /* GetPaygateTransferResponse.swift */; };
+		96CC1C0B2761F7590022A04C /* PaygateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C0A2761F7590022A04C /* PaygateManager.swift */; };
+		96CC1C0D2761F7D60022A04C /* ProductPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C0C2761F7D60022A04C /* ProductPrice.swift */; };
+		96CC1C0F2761F9D00022A04C /* PaygateManagerCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C0E2761F9D00022A04C /* PaygateManagerCore.swift */; };
+		96CC1C122761FAA20022A04C /* PaygateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C112761FAA20022A04C /* PaygateViewController.swift */; };
+		96CC1C142761FAAE0022A04C /* PaygateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C132761FAAE0022A04C /* PaygateViewModel.swift */; };
+		96CC1C162761FAB70022A04C /* PaygateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C152761FAB70022A04C /* PaygateView.swift */; };
+		96CC1C182762210E0022A04C /* PreparePaygatePrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C172762210E0022A04C /* PreparePaygatePrices.swift */; };
 		CFCA8DE48D921377EA7168EA /* Pods_StockSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */; };
 /* End PBXBuildFile section */
 
@@ -631,6 +642,17 @@
 		96BDBD712722E31400E43708 /* WatchListSignalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionCell.swift; sourceTree = "<group>"; };
 		96BDBD732722E43100E43708 /* WatchListSignalCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionSection.swift; sourceTree = "<group>"; };
 		96BDBD752722EAF000E43708 /* WatchListSignalCollectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListSignalCollectionHeaderView.swift; sourceTree = "<group>"; };
+		96CC1BFC2761F2D30022A04C /* Paygate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paygate.swift; sourceTree = "<group>"; };
+		96CC1BFE2761F3EC0022A04C /* PaygateOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateOption.swift; sourceTree = "<group>"; };
+		96CC1C052761F5D70022A04C /* GetPaygateRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaygateRequest.swift; sourceTree = "<group>"; };
+		96CC1C072761F7080022A04C /* GetPaygateTransferResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaygateTransferResponse.swift; sourceTree = "<group>"; };
+		96CC1C0A2761F7590022A04C /* PaygateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManager.swift; sourceTree = "<group>"; };
+		96CC1C0C2761F7D60022A04C /* ProductPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductPrice.swift; sourceTree = "<group>"; };
+		96CC1C0E2761F9D00022A04C /* PaygateManagerCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateManagerCore.swift; sourceTree = "<group>"; };
+		96CC1C112761FAA20022A04C /* PaygateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateViewController.swift; sourceTree = "<group>"; };
+		96CC1C132761FAAE0022A04C /* PaygateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateViewModel.swift; sourceTree = "<group>"; };
+		96CC1C152761FAB70022A04C /* PaygateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateView.swift; sourceTree = "<group>"; };
+		96CC1C172762210E0022A04C /* PreparePaygatePrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreparePaygatePrices.swift; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1954,6 +1976,7 @@
 		96BDBC522719C65C00E43708 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				96CC1C102761FA950022A04C /* Paygate */,
 				9642EB802758D1B40046D034 /* Screeners */,
 				96AD35512754BD550098D472 /* Market */,
 				9695B17C2742EC3800D6DEC5 /* Details */,
@@ -2059,6 +2082,7 @@
 		96BDBC952719C68100E43708 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				96CC1BFA2761F2390022A04C /* Paygate */,
 				96AD353B2750F9D60098D472 /* Screeners */,
 				96AD786827314DE0007BF50C /* Signals */,
 				96AD785F27312F0D007BF50C /* Profile */,
@@ -2269,6 +2293,55 @@
 				96BDBD732722E43100E43708 /* WatchListSignalCollectionSection.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		96CC1BFA2761F2390022A04C /* Paygate */ = {
+			isa = PBXGroup;
+			children = (
+				96CC1C092761F7500022A04C /* Manager */,
+				96CC1C042761F5C90022A04C /* Request */,
+				96CC1BFB2761F2C70022A04C /* Model */,
+			);
+			path = Paygate;
+			sourceTree = "<group>";
+		};
+		96CC1BFB2761F2C70022A04C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96CC1BFC2761F2D30022A04C /* Paygate.swift */,
+				96CC1BFE2761F3EC0022A04C /* PaygateOption.swift */,
+				96CC1C0C2761F7D60022A04C /* ProductPrice.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		96CC1C042761F5C90022A04C /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				96CC1C052761F5D70022A04C /* GetPaygateRequest.swift */,
+				96CC1C072761F7080022A04C /* GetPaygateTransferResponse.swift */,
+				96CC1C172762210E0022A04C /* PreparePaygatePrices.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		96CC1C092761F7500022A04C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				96CC1C0A2761F7590022A04C /* PaygateManager.swift */,
+				96CC1C0E2761F9D00022A04C /* PaygateManagerCore.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		96CC1C102761FA950022A04C /* Paygate */ = {
+			isa = PBXGroup;
+			children = (
+				96CC1C112761FAA20022A04C /* PaygateViewController.swift */,
+				96CC1C132761FAAE0022A04C /* PaygateViewModel.swift */,
+				96CC1C152761FAB70022A04C /* PaygateView.swift */,
+			);
+			path = Paygate;
 			sourceTree = "<group>";
 		};
 		BE0CB3E3FB8869BE07601F03 /* Frameworks */ = {
@@ -2484,9 +2557,12 @@
 				9625D9942724221C005A8E31 /* WatchListGroupsViewModel.swift in Sources */,
 				96234DAF272A0D5D00619CE2 /* IndustriesCollectionView.swift in Sources */,
 				96BDBC882719C67E00E43708 /* Toast.swift in Sources */,
+				96CC1C082761F7080022A04C /* GetPaygateTransferResponse.swift in Sources */,
 				961D41E0273977FE00711BCD /* SettingsTableNotificationsCell.swift in Sources */,
 				96BDBC862719C67E00E43708 /* Weak.swift in Sources */,
+				96CC1C142761FAAE0022A04C /* PaygateViewModel.swift in Sources */,
 				9695B1952742FBDE00D6DEC5 /* DetailsSummary.swift in Sources */,
+				96CC1C0B2761F7590022A04C /* PaygateManager.swift in Sources */,
 				96B4F9B42726E4EC007507C1 /* FavoritesWatchListView.swift in Sources */,
 				96AD78C82732DA7F007BF50C /* SignalsView.swift in Sources */,
 				9695B19F2743EE5600D6DEC5 /* DetailsTableSignal.swift in Sources */,
@@ -2554,7 +2630,9 @@
 				9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */,
 				96AD708F272C3D86007BF50C /* NotificationsViewController.swift in Sources */,
 				96234DC3272ADE9F00619CE2 /* OnbProfitView.swift in Sources */,
+				96CC1BFD2761F2D30022A04C /* Paygate.swift in Sources */,
 				9642EB6627576A6A0046D034 /* MarketQuotationsKeysCollectionView.swift in Sources */,
+				96CC1BFF2761F3EC0022A04C /* PaygateOption.swift in Sources */,
 				9695B1EB27492D0A00D6DEC5 /* DetailsTableChartCell.swift in Sources */,
 				9642EBB2275A7ABB0046D034 /* FiltersItemsTableCell.swift in Sources */,
 				96234D2327282AD500619CE2 /* OnboardingViewController.swift in Sources */,
@@ -2619,6 +2697,7 @@
 				96BDBD582722BB8000E43708 /* WatchListGroupsView.swift in Sources */,
 				9642EBA0275A0A650046D034 /* CSFiltersCollectionHeaderView.swift in Sources */,
 				96234D982729585A00619CE2 /* OnbSelectCell.swift in Sources */,
+				96CC1C0F2761F9D00022A04C /* PaygateManagerCore.swift in Sources */,
 				96AD35482750FD7A0098D472 /* GetScreenersBundleRequest.swift in Sources */,
 				9642EB982759EC230046D034 /* CSFiltersCollectionView.swift in Sources */,
 				96BDBD46272180D200E43708 /* GetWatchListSignalsResponse.swift in Sources */,
@@ -2632,6 +2711,7 @@
 				9695B1872742EE2000D6DEC5 /* DetailsTableView.swift in Sources */,
 				96AD787A2731838B007BF50C /* SignalManagerCore.swift in Sources */,
 				9642EBBE275BCF3F0046D034 /* ScreenerNameViewController.swift in Sources */,
+				96CC1C182762210E0022A04C /* PreparePaygatePrices.swift in Sources */,
 				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
 				9695B1822742EC6000D6DEC5 /* DetailsView.swift in Sources */,
 				96AD78D82732E25D007BF50C /* SignalsStockCollectionCell.swift in Sources */,
@@ -2640,6 +2720,7 @@
 				961D420E273AB38800711BCD /* PaddingTextField.swift in Sources */,
 				961D420B273AAC9500711BCD /* SearchView.swift in Sources */,
 				961D41E22739780C00711BCD /* SettingsTableRateAppCell.swift in Sources */,
+				96CC1C0D2761F7D60022A04C /* ProductPrice.swift in Sources */,
 				96BDBD492721889E00E43708 /* WatchListManager.swift in Sources */,
 				9642EB872758D2030046D034 /* CreateScreenerView.swift in Sources */,
 				96BDBC822719C67E00E43708 /* ScreenSize.swift in Sources */,
@@ -2710,13 +2791,16 @@
 				961D41E42739781C00711BCD /* SettingsTablePrivacyPolicyCell.swift in Sources */,
 				96BDBD722722E31400E43708 /* WatchListSignalCollectionCell.swift in Sources */,
 				9695B1972742FD4700D6DEC5 /* GetDetailsRequest.swift in Sources */,
+				96CC1C062761F5D70022A04C /* GetPaygateRequest.swift in Sources */,
 				96BDBC922719C67E00E43708 /* RxActivityIndicator.swift in Sources */,
 				96AD7076272BDEF6007BF50C /* GetIndustriesResponse.swift in Sources */,
 				96AD786F27317D5D007BF50C /* OptionCryptoSignal.swift in Sources */,
 				9642EBD4275E32030046D034 /* MarketTableUserScreenerView.swift in Sources */,
 				96AD78DF2732E89F007BF50C /* SignalsFilter.swift in Sources */,
 				96BDBC7F2719C67E00E43708 /* GlobalDefinitions.swift in Sources */,
+				96CC1C122761FAA20022A04C /* PaygateViewController.swift in Sources */,
 				961D4221273B0A4800711BCD /* SearchTableQuotationCollectionCell.swift in Sources */,
+				96CC1C162761FAB70022A04C /* PaygateView.swift in Sources */,
 				96234D942729440A00619CE2 /* OnbLevelView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
