@@ -8,6 +8,15 @@
 import UIKit
 
 final class PaygateView: UIView {
+    lazy var tableView = makeTableView()
+    lazy var closeButton = makeCloseButton()
+    lazy var securedIconView = makeSecuredIconView()
+    lazy var securedLabel = makeSecuredLabel()
+    lazy var purchaseButton = makePurchaseButton()
+    lazy var restoreButton = makeLinkButton(title: "Paygate.Restore".localized)
+    lazy var termsButton = makeLinkButton(title: "Paygate.Terms".localized)
+    lazy var privacyButton = makeLinkButton(title: "Paygate.Privacy".localized)
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -30,11 +39,122 @@ private extension PaygateView {
 // MARK: Make constraints
 private extension PaygateView {
     func makeConstraints() {
+        NSLayoutConstraint.activate([
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.topAnchor.constraint(equalTo: topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: securedLabel.topAnchor, constant: -1.scale)
+        ])
         
+        NSLayoutConstraint.activate([
+            closeButton.widthAnchor.constraint(equalToConstant: 36.scale),
+            closeButton.heightAnchor.constraint(equalToConstant: 36.scale),
+            closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 68.scale),
+            closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            securedIconView.widthAnchor.constraint(equalToConstant: 17.scale),
+            securedIconView.heightAnchor.constraint(equalToConstant: 17.scale),
+            securedIconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 68.scale),
+            securedIconView.centerYAnchor.constraint(equalTo: securedLabel.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            securedLabel.leadingAnchor.constraint(equalTo: securedIconView.trailingAnchor, constant: 5.scale),
+            securedLabel.bottomAnchor.constraint(equalTo: purchaseButton.topAnchor, constant: -8.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            purchaseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
+            purchaseButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
+            purchaseButton.heightAnchor.constraint(equalToConstant: 60.scale),
+            purchaseButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -76.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            restoreButton.heightAnchor.constraint(equalToConstant: 17.scale),
+            restoreButton.trailingAnchor.constraint(equalTo: termsButton.leadingAnchor, constant: -41.scale),
+            restoreButton.centerYAnchor.constraint(equalTo: termsButton.centerYAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            termsButton.heightAnchor.constraint(equalToConstant: 17.scale),
+            termsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            termsButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            privacyButton.heightAnchor.constraint(equalToConstant: 17.scale),
+            privacyButton.leadingAnchor.constraint(equalTo: termsButton.trailingAnchor, constant: 41.scale),
+            privacyButton.centerYAnchor.constraint(equalTo: termsButton.centerYAnchor)
+        ])
     }
 }
 
 // MARK: Lazy initialization
 private extension PaygateView {
+    func makeTableView() -> PaygateTableView {
+        let view = PaygateTableView()
+        view.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 24.scale, right: 0)
+        view.backgroundColor = UIColor.clear
+        view.separatorStyle = .none
+        view.showsVerticalScrollIndicator = false
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
     
+    func makeCloseButton() -> UIButton {
+        let view = UIButton()
+        view.setImage(UIImage(named: "Paygate.Close"), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSecuredIconView() -> UIImageView {
+        let view = UIImageView()
+        view.contentMode = .scaleAspectFit
+        view.image = UIImage(named: "Paygate.Secured")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeSecuredLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(UIColor(integralRed: 252, green: 252, blue: 252))
+            .font(Fonts.SFProDisplay.regular(size: 14.scale))
+            .lineHeight(16.71.scale)
+        
+        let view = UILabel()
+        view.attributedText = "Paygate.Secured".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makePurchaseButton() -> PaygatePurchaseButton {
+        let view = PaygatePurchaseButton()
+        view.layer.cornerRadius = 16.scale
+        view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
+    func makeLinkButton(title: String) -> TapAreaButton {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white.withAlphaComponent(0.4))
+            .font(Fonts.SFProDisplay.semiBold(size: 14.scale))
+        
+        let view = TapAreaButton()
+        view.dx = -20.scale
+        view.dy = -20.scale
+        view.setAttributedTitle(title.attributed(with: attrs), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
 }

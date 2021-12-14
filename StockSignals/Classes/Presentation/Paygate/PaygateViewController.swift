@@ -22,10 +22,30 @@ final class PaygateViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.paygate.drive(onNext: { paygate in
-            print()
+        mainView.closeButton.rx.tap.subscribe(onNext: { [weak self] in
+            self?.dismiss(animated: true)
         })
         .disposed(by: disposeBag)
+        
+        viewModel.elements.drive(onNext: { [weak self] elements in
+            self?.mainView.tableView.setup(elements: elements)
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.buttonBundle.drive(onNext: { [weak self] bundle in
+            self?.mainView.purchaseButton.setup(top: bundle.0, bottom: bundle.1)
+        })
+        .disposed(by: disposeBag)
+        
+        Observable
+            .merge(
+                mainView.termsButton.rx.tap.map { GlobalDefinitions.termsOfServiceUrl },
+                mainView.privacyButton.rx.tap.map { GlobalDefinitions.privacyPolicyUrl }
+            )
+            .subscribe(onNext: { [weak self] path in
+                self?.open(path: path)
+            })
+            .disposed(by: disposeBag)
     }
 }
 
@@ -35,5 +55,16 @@ extension PaygateViewController {
         let vc = PaygateViewController()
         vc.modalPresentationStyle = .fullScreen
         return vc
+    }
+}
+
+// MARK: Private
+private extension PaygateViewController {
+    func open(path: String) {
+        guard let url = URL(string: path) else {
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:])
     }
 }
