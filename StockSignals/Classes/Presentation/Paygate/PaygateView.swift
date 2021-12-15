@@ -11,6 +11,9 @@ final class PaygateView: UIView {
     lazy var tableView = makeTableView()
     lazy var closeButton = makeCloseButton()
     lazy var bottomContainer = makeBottomContainer()
+    lazy var firstOptionButton = makeOptionButton()
+    lazy var secondOptionButton = makeOptionButton()
+    lazy var thirdOptionButton = makeOptionButton()
     lazy var securedIconView = makeSecuredIconView()
     lazy var securedLabel = makeSecuredLabel()
     lazy var purchaseButton = makePurchaseButton()
@@ -58,7 +61,28 @@ private extension PaygateView {
             bottomContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
             bottomContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomContainer.bottomAnchor.constraint(equalTo: bottomAnchor),
-            bottomContainer.heightAnchor.constraint(equalToConstant: 355.scale)
+            bottomContainer.heightAnchor.constraint(equalToConstant: ScreenSize.isIphoneXFamily ? 355.scale : 335.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            firstOptionButton.widthAnchor.constraint(equalToConstant: 110.scale),
+            firstOptionButton.heightAnchor.constraint(equalToConstant: 146.scale),
+            firstOptionButton.topAnchor.constraint(equalTo: bottomContainer.topAnchor, constant: 24.scale),
+            firstOptionButton.leadingAnchor.constraint(equalTo: bottomContainer.leadingAnchor, constant: 16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            secondOptionButton.widthAnchor.constraint(equalToConstant: 110.scale),
+            secondOptionButton.heightAnchor.constraint(equalToConstant: 146.scale),
+            secondOptionButton.topAnchor.constraint(equalTo: bottomContainer.topAnchor, constant: 24.scale),
+            secondOptionButton.leadingAnchor.constraint(equalTo: bottomContainer.leadingAnchor, constant: 133.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            thirdOptionButton.widthAnchor.constraint(equalToConstant: 110.scale),
+            thirdOptionButton.heightAnchor.constraint(equalToConstant: 146.scale),
+            thirdOptionButton.topAnchor.constraint(equalTo: bottomContainer.topAnchor, constant: 24.scale),
+            thirdOptionButton.leadingAnchor.constraint(equalTo: bottomContainer.leadingAnchor, constant: 249.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -77,7 +101,7 @@ private extension PaygateView {
             purchaseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             purchaseButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             purchaseButton.heightAnchor.constraint(equalToConstant: 60.scale),
-            purchaseButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor, constant: -76.scale)
+            purchaseButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -76.scale : -56.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -89,7 +113,7 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             termsButton.heightAnchor.constraint(equalToConstant: 17.scale),
             termsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            termsButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor, constant: -35.scale)
+            termsButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor, constant: ScreenSize.isIphoneXFamily ? -35.scale : -15.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -128,6 +152,14 @@ private extension PaygateView {
         view.backgroundColor = UIColor(integralRed: 42, green: 46, blue: 57, alpha: 0.7)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
+        return view
+    }
+    
+    func makeOptionButton() -> PaygateOptionView {
+        let view = PaygateOptionView()
+        view.backgroundColor = UIColor.clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        bottomContainer.addSubview(view)
         return view
     }
     

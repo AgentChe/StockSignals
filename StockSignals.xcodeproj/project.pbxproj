@@ -144,6 +144,7 @@
 		966CB07327690E7300B85A77 /* PaygateReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07227690E7300B85A77 /* PaygateReviewsCell.swift */; };
 		966CB07527690E7E00B85A77 /* PaygateReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */; };
 		966CB07727691BCB00B85A77 /* PaygateReviewStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */; };
+		966CB07A2769C79A00B85A77 /* PaygateOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB0792769C79A00B85A77 /* PaygateOptionView.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -481,6 +482,7 @@
 		966CB07227690E7300B85A77 /* PaygateReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewsCell.swift; sourceTree = "<group>"; };
 		966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewsView.swift; sourceTree = "<group>"; };
 		966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewStarsView.swift; sourceTree = "<group>"; };
+		966CB0792769C79A00B85A77 /* PaygateOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateOptionView.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -2396,6 +2398,7 @@
 			children = (
 				96CC1C1C276360E60022A04C /* TableView */,
 				96CC1C1A276343870022A04C /* PaygatePurchaseButton.swift */,
+				966CB0792769C79A00B85A77 /* PaygateOptionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2716,6 +2719,7 @@
 				961D41FF273A910000711BCD /* SearchResult.swift in Sources */,
 				9642EBE5275F6B5E0046D034 /* AllUserScreenersViewModel.swift in Sources */,
 				9642EBAD275A7A950046D034 /* FiltersItemsView.swift in Sources */,
+				966CB07A2769C79A00B85A77 /* PaygateOptionView.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
 				96AD35432750FCB90098D472 /* Screener.swift in Sources */,

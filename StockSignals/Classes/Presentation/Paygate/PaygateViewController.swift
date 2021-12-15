@@ -32,8 +32,8 @@ final class PaygateViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
-        viewModel.buttonBundle.drive(onNext: { [weak self] bundle in
-            self?.mainView.purchaseButton.setup(top: bundle.0, bottom: bundle.1)
+        viewModel.options.drive(onNext: { [weak self] options in
+            self?.setup(options: options)
         })
         .disposed(by: disposeBag)
         
@@ -46,6 +46,8 @@ final class PaygateViewController: UIViewController {
                 self?.open(path: path)
             })
             .disposed(by: disposeBag)
+        
+        addOptionsActions()
     }
 }
 
@@ -66,5 +68,61 @@ private extension PaygateViewController {
         }
         
         UIApplication.shared.open(url, options: [:])
+    }
+    
+    func setup(options: [PaygateOption]) {
+        if options.indices.contains(0) {
+            mainView.firstOptionButton.option = options[0]
+        }
+        
+        if options.indices.contains(1) {
+            let option = options[1]
+            mainView.secondOptionButton.option = option
+            mainView.purchaseButton.setup(top: option.buttonCaption, bottom: option.subCaption)
+        }
+        
+        if options.indices.contains(2) {
+            mainView.thirdOptionButton.option = options[2]
+        }
+        
+        mainView.secondOptionButton.isBestValue = true
+        mainView.secondOptionButton.isSelect = true
+    }
+    
+    func addOptionsActions() {
+        Observable
+            .merge(
+                mainView.firstOptionButton.rx.tap
+                    .map { [weak self] _ -> PaygateOptionView? in
+                        self?.mainView.firstOptionButton
+                    },
+                
+                mainView.secondOptionButton.rx.tap
+                    .map { [weak self] _ -> PaygateOptionView? in
+                        self?.mainView.secondOptionButton
+                    },
+                
+                mainView.thirdOptionButton.rx.tap
+                    .map { [weak self] _ -> PaygateOptionView? in
+                        self?.mainView.thirdOptionButton
+                    }
+            )
+            .compactMap { $0 }
+            .subscribe(onNext: { [weak self] view in
+                guard let self = self, let option = view.option else {
+                    return
+                }
+                
+                [
+                    self.mainView.firstOptionButton,
+                    self.mainView.secondOptionButton,
+                    self.mainView.thirdOptionButton
+                ].forEach { $0.isSelect = false }
+                
+                view.isSelect = true
+                
+                self.mainView.purchaseButton.setup(top: option.buttonCaption, bottom: option.buttonSubCaption)
+            })
+            .disposed(by: disposeBag)
     }
 }

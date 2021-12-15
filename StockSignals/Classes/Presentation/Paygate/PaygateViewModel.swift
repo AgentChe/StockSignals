@@ -10,7 +10,7 @@ import RxCocoa
 
 final class PaygateViewModel {
     lazy var elements = makeElements()
-    lazy var buttonBundle = makeButtonBundle()
+    lazy var options = makeOptions()
     
     private lazy var paygate = makePaygate()
     
@@ -77,12 +77,8 @@ private extension PaygateViewModel {
         }
     }
     
-    func makeButtonBundle() -> Driver<(String, String?)> {
-        paygate
-            .compactMap { $0 }
-            .map {
-                ($0.headlineBottom, $0.headlineBottom)
-            }
+    func makeOptions() -> Driver<[PaygateOption]> {
+        paygate.map { $0?.options ?? [] }
     }
     
     func makePaygate() -> Driver<Paygate?> {
