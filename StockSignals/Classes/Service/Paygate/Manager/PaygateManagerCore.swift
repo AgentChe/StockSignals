@@ -7,7 +7,11 @@
 
 import RxSwift
 
-final class PaygateManagerCore: PaygateManager {}
+final class PaygateManagerCore: PaygateManager {
+    enum Constants {
+        static let configKey = "paygate_manager_core_config_key"
+    }
+}
 
 // MARK: Public
 extension PaygateManagerCore {
@@ -36,5 +40,39 @@ extension PaygateManagerCore {
             .map { productPrices -> Paygate? in
                 PreparePaygatePrices.prepare(prices: productPrices, transfer: transfer)
             }
+    }
+    
+    func retrieveConfig(forceUpdate: Bool) -> Single<PaygateConfig?> {
+        guard forceUpdate else {
+            return .deferred { [weak self] in
+                let config = self?.getConfig()
+                return .just(config)
+            }
+        }
+        
+        let request = GetPaygateConfigRequest()
+        
+        return SDKStorage.shared
+            .restApiTransport
+            .callServerApi(requestBody: request)
+            .map { GetPaygateConfigResponse.map(from: $0) }
+            .do(onSuccess: { config in
+                guard let config = config, let data = try? JSONEncoder().encode(config) else {
+                    return
+                }
+                
+                UserDefaults.standard.set(data, forKey: Constants.configKey)
+            })
+    }
+    
+    func getConfig() -> PaygateConfig? {
+        guard
+            let data = UserDefaults.standard.data(forKey: Constants.configKey),
+            let config = try? JSONDecoder().decode(PaygateConfig.self, from: data)
+        else {
+            return nil
+        }
+        
+        return config
     }
 }

@@ -145,6 +145,9 @@
 		966CB07527690E7E00B85A77 /* PaygateReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */; };
 		966CB07727691BCB00B85A77 /* PaygateReviewStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */; };
 		966CB07A2769C79A00B85A77 /* PaygateOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB0792769C79A00B85A77 /* PaygateOptionView.swift */; };
+		968A18A4276A0A8B0076442D /* PaygateConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A18A3276A0A8B0076442D /* PaygateConfig.swift */; };
+		968A18A7276A0B530076442D /* GetPaygateConfigRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A18A6276A0B530076442D /* GetPaygateConfigRequest.swift */; };
+		968A18A9276A0CD00076442D /* GetPaygateConfigResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 968A18A8276A0CD00076442D /* GetPaygateConfigResponse.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -483,6 +486,9 @@
 		966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewsView.swift; sourceTree = "<group>"; };
 		966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewStarsView.swift; sourceTree = "<group>"; };
 		966CB0792769C79A00B85A77 /* PaygateOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateOptionView.swift; sourceTree = "<group>"; };
+		968A18A3276A0A8B0076442D /* PaygateConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateConfig.swift; sourceTree = "<group>"; };
+		968A18A6276A0B530076442D /* GetPaygateConfigRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaygateConfigRequest.swift; sourceTree = "<group>"; };
+		968A18A8276A0CD00076442D /* GetPaygateConfigResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPaygateConfigResponse.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1338,6 +1344,15 @@
 				966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */,
 			);
 			path = Reviews;
+			sourceTree = "<group>";
+		};
+		968A18A5276A0B3D0076442D /* GetConfig */ = {
+			isa = PBXGroup;
+			children = (
+				968A18A6276A0B530076442D /* GetPaygateConfigRequest.swift */,
+				968A18A8276A0CD00076442D /* GetPaygateConfigResponse.swift */,
+			);
+			path = GetConfig;
 			sourceTree = "<group>";
 		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
@@ -2359,6 +2374,7 @@
 				96CC1BFC2761F2D30022A04C /* Paygate.swift */,
 				96CC1BFE2761F3EC0022A04C /* PaygateOption.swift */,
 				96CC1C0C2761F7D60022A04C /* ProductPrice.swift */,
+				968A18A3276A0A8B0076442D /* PaygateConfig.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2366,6 +2382,7 @@
 		96CC1C042761F5C90022A04C /* Request */ = {
 			isa = PBXGroup;
 			children = (
+				968A18A5276A0B3D0076442D /* GetConfig */,
 				96CC1C052761F5D70022A04C /* GetPaygateRequest.swift */,
 				96CC1C072761F7080022A04C /* GetPaygateTransferResponse.swift */,
 				96CC1C172762210E0022A04C /* PreparePaygatePrices.swift */,
@@ -2727,6 +2744,7 @@
 				96BDBC9E2719C69200E43708 /* SessionManager.swift in Sources */,
 				9625D98A2722FC8A005A8E31 /* WatchListSignalsTitlesElement.swift in Sources */,
 				96AD708F272C3D86007BF50C /* NotificationsViewController.swift in Sources */,
+				968A18A4276A0A8B0076442D /* PaygateConfig.swift in Sources */,
 				96234DC3272ADE9F00619CE2 /* OnbProfitView.swift in Sources */,
 				96CC1BFD2761F2D30022A04C /* Paygate.swift in Sources */,
 				9642EB6627576A6A0046D034 /* MarketQuotationsKeysCollectionView.swift in Sources */,
@@ -2850,6 +2868,7 @@
 				96AD708A272C397A007BF50C /* NotificationManager.swift in Sources */,
 				9695B17B2742BBA800D6DEC5 /* AllSignalsTableOptionCryptoCell.swift in Sources */,
 				96BDBD5227218DD400E43708 /* WatchListMediatorDelegate.swift in Sources */,
+				968A18A9276A0CD00076442D /* GetPaygateConfigResponse.swift in Sources */,
 				9695B1A927444D2C00D6DEC5 /* DetailsTableSignalsCollectionCell.swift in Sources */,
 				9642EBFA2760AECD0046D034 /* EditScreenerViewModel.swift in Sources */,
 				9642EB752757BFA70046D034 /* QuotationsScreenersViewController.swift in Sources */,
@@ -2859,6 +2878,7 @@
 				96234DC1272AD0AE00619CE2 /* OnbStocksCollectionElement.swift in Sources */,
 				96BDBCB22719C7D100E43708 /* TabViewController.swift in Sources */,
 				9695B1CE2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift in Sources */,
+				968A18A7276A0B530076442D /* GetPaygateConfigRequest.swift in Sources */,
 				96234D9A272984FC00619CE2 /* OnbTradingStyleView.swift in Sources */,
 				9642EBEF276083810046D034 /* FullUserScreenerMenuView.swift in Sources */,
 				96AD78DA2732E271007BF50C /* SignalsOptionCryptoCollectionCell.swift in Sources */,

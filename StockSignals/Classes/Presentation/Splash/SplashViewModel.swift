@@ -13,12 +13,22 @@ final class SplashViewModel {
         case onboarding, main
     }
     
-    lazy var step = makeStep()
+    lazy var step = library()
+        .andThen(makeStep())
+        .asDriver(onErrorDriveWith: .never())
+    
+    private lazy var paygateManager = PaygateManagerCore()
 }
 
 // MARK: Private
 private extension SplashViewModel {
-    func makeStep() -> Driver<Step> {
+    func library() -> Completable {
+        paygateManager
+            .retrieveConfig(forceUpdate: true)
+            .asCompletable()
+    }
+    
+    func makeStep() -> Single<Step> {
         guard OnboardingViewController.wasViewed() else {
             return .deferred { .just(.onboarding) }
         }
