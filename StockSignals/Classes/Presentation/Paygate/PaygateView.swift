@@ -20,6 +20,7 @@ final class PaygateView: UIView {
     lazy var restoreButton = makeLinkButton(title: "Paygate.Restore".localized)
     lazy var termsButton = makeLinkButton(title: "Paygate.Terms".localized)
     lazy var privacyButton = makeLinkButton(title: "Paygate.Privacy".localized)
+    lazy var preloader = makePreloader()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -121,6 +122,11 @@ private extension PaygateView {
             privacyButton.leadingAnchor.constraint(equalTo: termsButton.trailingAnchor, constant: 41.scale),
             privacyButton.centerYAnchor.constraint(equalTo: termsButton.centerYAnchor)
         ])
+        
+        NSLayoutConstraint.activate([
+            preloader.centerXAnchor.constraint(equalTo: purchaseButton.centerXAnchor),
+            preloader.centerYAnchor.constraint(equalTo: purchaseButton.centerYAnchor)
+        ])
     }
 }
 
@@ -203,6 +209,15 @@ private extension PaygateView {
         view.dx = -20.scale
         view.dy = -20.scale
         view.setAttributedTitle(title.attributed(with: attrs), for: .normal)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        bottomContainer.addSubview(view)
+        return view
+    }
+    
+    func makePreloader() -> UIActivityIndicatorView {
+        let view = UIActivityIndicatorView()
+        view.hidesWhenStopped = true
+        view.style = .whiteLarge
         view.translatesAutoresizingMaskIntoConstraints = false
         bottomContainer.addSubview(view)
         return view

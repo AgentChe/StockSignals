@@ -9,16 +9,73 @@ import RxSwift
 import RxCocoa
 
 final class PaygateViewModel {
+    enum Step {
+        case buyed, restored, error, canceled
+    }
+    
+    let buy = PublishRelay<String>()
+    let restore = PublishRelay<Void>()
+    
+    lazy var step = Driver.merge(makeBuyed(), makeRestored())
+    
     lazy var elements = makeElements()
     lazy var options = makeOptions()
+    lazy var activity = RxActivityIndicator()
     
     private lazy var paygate = makePaygate()
     
     private lazy var paygateManager = PaygateManagerCore()
+    private lazy var purchaseInteractor = SDKStorage.shared.purchaseInteractor
 }
 
 // MARK: Private
 private extension PaygateViewModel {
+    func makeBuyed() -> Driver<Step> {
+        buy
+            .flatMapLatest { [weak self] productId -> Observable<Step> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.purchaseInteractor
+                    .makeActiveSubscriptionByBuy(productId: productId)
+                    .map { result -> Step in
+                        switch result {
+                        case .completed(let response):
+                            return response != nil ? .buyed : .error
+                        case .cancelled:
+                            return .canceled
+                        }
+                    }
+                    .trackActivity(self.activity)
+                    .catchAndReturn(.error)
+            }
+            .asDriver(onErrorJustReturn: .error)
+    }
+    
+    func makeRestored() -> Driver<Step> {
+        restore
+            .flatMapLatest { [weak self] _ -> Observable<Step> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.purchaseInteractor
+                    .makeActiveSubscriptionByRestore()
+                    .map { result -> Step in
+                        switch result {
+                        case .completed(let response):
+                            return response != nil ? .restored : .error
+                        case .cancelled:
+                            return .canceled
+                        }
+                    }
+                    .trackActivity(self.activity)
+                    .catchAndReturn(.error)
+            }
+            .asDriver(onErrorJustReturn: .error)
+    }
+    
     func makeElements() -> Driver<[PaygateTableElement]> {
         paygate.map { paygate -> [PaygateTableElement] in
             guard let paygate = paygate else {
@@ -91,6 +148,8 @@ private extension PaygateViewModel {
                 
                 return self.paygateManager
                     .preparePrices(for: transfer)
+                    .trackActivity(self.activity)
+                    .asSingle()
             }
             .asDriver(onErrorJustReturn: nil)
     }
