@@ -24,17 +24,17 @@ extension PaygateReviewsElement {
             PaygateReviewsElement(image: "Paygate.Review.2",
                                   text: "Paygate.Review.2.Text".localized,
                                   name: "Paygate.Review.2.Name".localized,
-                                  stars: 4),
+                                  stars: 5),
             
             PaygateReviewsElement(image: "Paygate.Review.3",
                                   text: "Paygate.Review.3.Text".localized,
                                   name: "Paygate.Review.3.Name".localized,
-                                  stars: 3),
+                                  stars: 5),
             
             PaygateReviewsElement(image: "Paygate.Review.4",
                                   text: "Paygate.Review.4.Text".localized,
                                   name: "Paygate.Review.4.Name".localized,
-                                  stars: 2)
+                                  stars: 5)
         ]
     }
 }

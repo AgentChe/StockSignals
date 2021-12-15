@@ -28,11 +28,8 @@ final class MarketViewController: UIViewController {
         .disposed(by: disposeBag)
         
         mainView.createButton.rx.tap.subscribe(onNext: { [weak self] in
-            // TODO
-            let vc = PaygateViewController.make()
-            self?.present(vc, animated: true)
-//            let vc = CreateScreenerViewController.make()
-//            self?.navigationController?.pushViewController(vc, animated: true)
+            let vc = CreateScreenerViewController.make()
+            self?.navigationController?.pushViewController(vc, animated: true)
         })
         .disposed(by: disposeBag)
         
