@@ -10,10 +10,19 @@ import RxCocoa
 
 final class OnboardingViewModel {
     enum Step {
-        case main
+        case main, paygate
     }
     
+    private lazy var sessionManager = SessionManagerCore()
+    private lazy var paygateManager = PaygateManagerCore()
+    
     func whatNext() -> Step {
-        .main
+        if let session = sessionManager.getSession(), session.activeSubscription {
+            return .main
+        }
+        
+        let config = paygateManager.getConfig() ?? PaygateConfig.default()
+        
+        return config.afterOnboarding ? .paygate : .main
     }
 }

@@ -14,6 +14,18 @@ struct PaygateConfig {
     let signalsLimit: Int
 }
 
+// MARK: Make
+extension PaygateConfig {
+    static func `default`() -> PaygateConfig {
+        PaygateConfig(afterOnboarding: false,
+                      technicalAnalysis: false,
+                      watchListLimit: 1000,
+                      screenerSaveLimit: 1000,
+                      screenerLimit: 1000,
+                      signalsLimit: 1000)
+    }
+}
+
 // MARK: Codable
 extension PaygateConfig: Codable {}
 
