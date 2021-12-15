@@ -42,6 +42,7 @@ extension PaygateTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self))!
             cell.backgroundColor = UIColor.clear
             cell.contentView.backgroundColor = UIColor.clear
+            cell.selectionStyle = .none
             return cell
         case .header(let element):
             let cell = dequeueReusableCell(withIdentifier: String(describing: PaygateTableHeaderCell.self)) as! PaygateTableHeaderCell
@@ -53,6 +54,8 @@ extension PaygateTableView: UITableViewDataSource {
             return cell
         case .moreFeatures:
             return dequeueReusableCell(withIdentifier: String(describing: PaygateTableMoreFeaturesCell.self))!
+        case .traders:
+            return dequeueReusableCell(withIdentifier: String(describing: PaygateTableTradersCell.self))!
         }
     }
 }
@@ -76,6 +79,7 @@ private extension PaygateTableView {
         register(PaygateTableHeaderCell.self, forCellReuseIdentifier: String(describing: PaygateTableHeaderCell.self))
         register(PaygateTableFeatureCell.self, forCellReuseIdentifier: String(describing: PaygateTableFeatureCell.self))
         register(PaygateTableMoreFeaturesCell.self, forCellReuseIdentifier: String(describing: PaygateTableMoreFeaturesCell.self))
+        register(PaygateTableTradersCell.self, forCellReuseIdentifier: String(describing: PaygateTableTradersCell.self))
         
         dataSource = self
         delegate = self

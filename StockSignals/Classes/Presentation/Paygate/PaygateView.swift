@@ -10,6 +10,7 @@ import UIKit
 final class PaygateView: UIView {
     lazy var tableView = makeTableView()
     lazy var closeButton = makeCloseButton()
+    lazy var bottomContainer = makeBottomContainer()
     lazy var securedIconView = makeSecuredIconView()
     lazy var securedLabel = makeSecuredLabel()
     lazy var purchaseButton = makePurchaseButton()
@@ -43,7 +44,7 @@ private extension PaygateView {
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.topAnchor.constraint(equalTo: topAnchor),
-            tableView.bottomAnchor.constraint(equalTo: securedLabel.topAnchor, constant: -1.scale)
+            tableView.bottomAnchor.constraint(equalTo: bottomContainer.topAnchor, constant: -1.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -51,6 +52,13 @@ private extension PaygateView {
             closeButton.heightAnchor.constraint(equalToConstant: 36.scale),
             closeButton.topAnchor.constraint(equalTo: topAnchor, constant: 68.scale),
             closeButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale)
+        ])
+        
+        NSLayoutConstraint.activate([
+            bottomContainer.leadingAnchor.constraint(equalTo: leadingAnchor),
+            bottomContainer.trailingAnchor.constraint(equalTo: trailingAnchor),
+            bottomContainer.bottomAnchor.constraint(equalTo: bottomAnchor),
+            bottomContainer.heightAnchor.constraint(equalToConstant: 355.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -69,7 +77,7 @@ private extension PaygateView {
             purchaseButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.scale),
             purchaseButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16.scale),
             purchaseButton.heightAnchor.constraint(equalToConstant: 60.scale),
-            purchaseButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -76.scale)
+            purchaseButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor, constant: -76.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -81,7 +89,7 @@ private extension PaygateView {
         NSLayoutConstraint.activate([
             termsButton.heightAnchor.constraint(equalToConstant: 17.scale),
             termsButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            termsButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -35.scale)
+            termsButton.bottomAnchor.constraint(equalTo: bottomContainer.bottomAnchor, constant: -35.scale)
         ])
         
         NSLayoutConstraint.activate([
@@ -96,7 +104,7 @@ private extension PaygateView {
 private extension PaygateView {
     func makeTableView() -> PaygateTableView {
         let view = PaygateTableView()
-        view.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 24.scale, right: 0)
+        view.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 35.scale, right: 0)
         view.backgroundColor = UIColor.clear
         view.separatorStyle = .none
         view.showsVerticalScrollIndicator = false
@@ -113,12 +121,22 @@ private extension PaygateView {
         return view
     }
     
+    func makeBottomContainer() -> UIView {
+        let view = UIView()
+        view.layer.cornerRadius = 16.scale
+        view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        view.backgroundColor = UIColor(integralRed: 42, green: 46, blue: 57, alpha: 0.7)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(view)
+        return view
+    }
+    
     func makeSecuredIconView() -> UIImageView {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         view.image = UIImage(named: "Paygate.Secured")
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        bottomContainer.addSubview(view)
         return view
     }
     
@@ -131,7 +149,7 @@ private extension PaygateView {
         let view = UILabel()
         view.attributedText = "Paygate.Secured".localized.attributed(with: attrs)
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        bottomContainer.addSubview(view)
         return view
     }
     
@@ -140,7 +158,7 @@ private extension PaygateView {
         view.layer.cornerRadius = 16.scale
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        bottomContainer.addSubview(view)
         return view
     }
     
@@ -154,7 +172,7 @@ private extension PaygateView {
         view.dy = -20.scale
         view.setAttributedTitle(title.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(view)
+        bottomContainer.addSubview(view)
         return view
     }
 }

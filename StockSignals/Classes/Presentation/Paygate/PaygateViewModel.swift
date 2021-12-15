@@ -69,6 +69,10 @@ private extension PaygateViewModel {
                                               text2: "Paygate.StockTracker.Text".localized)
             result.append(.feature(tracker))
             
+            result.append(.offset(32.scale))
+            
+            result.append(.traders)
+            
             return result
         }
     }

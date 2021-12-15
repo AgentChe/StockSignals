@@ -12,4 +12,5 @@ enum PaygateTableElement {
     case header(PaygateTableHeader)
     case feature(PaygateTableFeature)
     case moreFeatures
+    case traders
 }

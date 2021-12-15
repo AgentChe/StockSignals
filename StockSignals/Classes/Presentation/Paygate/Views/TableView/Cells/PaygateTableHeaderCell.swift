@@ -78,7 +78,7 @@ private extension PaygateTableHeaderCell {
             headerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             headerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             headerView.topAnchor.constraint(equalTo: contentView.topAnchor),
-            headerView.heightAnchor.constraint(equalToConstant: 270.scale)
+            headerView.heightAnchor.constraint(equalToConstant: 226.scale)
         ])
         
         NSLayoutConstraint.activate([

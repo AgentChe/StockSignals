@@ -139,6 +139,11 @@
 		9642EBF82760AEAB0046D034 /* EditScreenerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBF72760AEAB0046D034 /* EditScreenerViewController.swift */; };
 		9642EBFA2760AECD0046D034 /* EditScreenerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9642EBF92760AECD0046D034 /* EditScreenerViewModel.swift */; };
 		966CB06B2768F17F00B85A77 /* PaygateTableMoreFeaturesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB06A2768F17F00B85A77 /* PaygateTableMoreFeaturesCell.swift */; };
+		966CB06D27690C9B00B85A77 /* PaygateTableTradersCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB06C27690C9B00B85A77 /* PaygateTableTradersCell.swift */; };
+		966CB07127690E6700B85A77 /* PaygateReviewsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07027690E6700B85A77 /* PaygateReviewsElement.swift */; };
+		966CB07327690E7300B85A77 /* PaygateReviewsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07227690E7300B85A77 /* PaygateReviewsCell.swift */; };
+		966CB07527690E7E00B85A77 /* PaygateReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */; };
+		966CB07727691BCB00B85A77 /* PaygateReviewStarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */; };
 		9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */; };
 		9695B1692742875800D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */; };
 		9695B16C2742882E00D6DEC5 /* SignalsStocksCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */; };
@@ -471,6 +476,11 @@
 		9642EBF72760AEAB0046D034 /* EditScreenerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreenerViewController.swift; sourceTree = "<group>"; };
 		9642EBF92760AECD0046D034 /* EditScreenerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditScreenerViewModel.swift; sourceTree = "<group>"; };
 		966CB06A2768F17F00B85A77 /* PaygateTableMoreFeaturesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableMoreFeaturesCell.swift; sourceTree = "<group>"; };
+		966CB06C27690C9B00B85A77 /* PaygateTableTradersCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableTradersCell.swift; sourceTree = "<group>"; };
+		966CB07027690E6700B85A77 /* PaygateReviewsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewsElement.swift; sourceTree = "<group>"; };
+		966CB07227690E7300B85A77 /* PaygateReviewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewsCell.swift; sourceTree = "<group>"; };
+		966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewsView.swift; sourceTree = "<group>"; };
+		966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateReviewStarsView.swift; sourceTree = "<group>"; };
 		9695B1642742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableStocksCollectionCell.swift; sourceTree = "<group>"; };
 		9695B1682742875700D6DEC5 /* SignalsTableOptionCryptoCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsTableOptionCryptoCollectionCell.swift; sourceTree = "<group>"; };
 		9695B16B2742882E00D6DEC5 /* SignalsStocksCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalsStocksCollectionView.swift; sourceTree = "<group>"; };
@@ -1306,6 +1316,26 @@
 				9642EBF92760AECD0046D034 /* EditScreenerViewModel.swift */,
 			);
 			path = Edit;
+			sourceTree = "<group>";
+		};
+		966CB06E27690CE600B85A77 /* Traders */ = {
+			isa = PBXGroup;
+			children = (
+				966CB06F27690E4900B85A77 /* Reviews */,
+				966CB06C27690C9B00B85A77 /* PaygateTableTradersCell.swift */,
+			);
+			path = Traders;
+			sourceTree = "<group>";
+		};
+		966CB06F27690E4900B85A77 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				966CB07027690E6700B85A77 /* PaygateReviewsElement.swift */,
+				966CB07227690E7300B85A77 /* PaygateReviewsCell.swift */,
+				966CB07427690E7D00B85A77 /* PaygateReviewsView.swift */,
+				966CB07627691BCB00B85A77 /* PaygateReviewStarsView.swift */,
+			);
+			path = Reviews;
 			sourceTree = "<group>";
 		};
 		9695B16A2742881E00D6DEC5 /* SignalsStocksCollection */ = {
@@ -2393,6 +2423,7 @@
 		96CC1C22276361400022A04C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				966CB06E27690CE600B85A77 /* Traders */,
 				96CC1C23276362E80022A04C /* PaygateTableHeaderCell.swift */,
 				96CC1C27276373FD0022A04C /* PaygateTableFeatureCell.swift */,
 				966CB06A2768F17F00B85A77 /* PaygateTableMoreFeaturesCell.swift */,
@@ -2567,12 +2598,14 @@
 				9695B1CC27469F7900D6DEC5 /* GetMarketStateResponse.swift in Sources */,
 				96234D962729552800619CE2 /* OnbAssetsSignalsView.swift in Sources */,
 				9695B1DD2747993300D6DEC5 /* AddToFavoriteTableCell.swift in Sources */,
+				966CB07327690E7300B85A77 /* PaygateReviewsCell.swift in Sources */,
 				9695B1C52746775600D6DEC5 /* DetailsTableAnalyticsGaugeView.swift in Sources */,
 				9695B1C7274698E300D6DEC5 /* DetailsPreMarket.swift in Sources */,
 				9695B1D5274798FE00D6DEC5 /* AddToFavoriteViewModel.swift in Sources */,
 				961D4219273ACCB200711BCD /* SearchTableTypeCell.swift in Sources */,
 				96BDBC8F2719C67E00E43708 /* CircleView.swift in Sources */,
 				9642EBDB275F52340046D034 /* FullUserScreenerView.swift in Sources */,
+				966CB06D27690C9B00B85A77 /* PaygateTableTradersCell.swift in Sources */,
 				96AD35572754BD7E0098D472 /* MarketView.swift in Sources */,
 				9695B18A2742EE3900D6DEC5 /* DetailsTableElement.swift in Sources */,
 				96AD7093272C3D9F007BF50C /* NotificationsView.swift in Sources */,
@@ -2595,6 +2628,7 @@
 				9642EB772757BFB40046D034 /* QuotationsScreenersViewModel.swift in Sources */,
 				9642EBB0275A7AA80046D034 /* FiltersItemsTableView.swift in Sources */,
 				9642EB912758F3500046D034 /* GetFiltersResponse.swift in Sources */,
+				966CB07127690E6700B85A77 /* PaygateReviewsElement.swift in Sources */,
 				961D41DD273977EB00711BCD /* SettingsTableElement.swift in Sources */,
 				96B4F9BA2726F445007507C1 /* WatchListGroupsCollectionGroupElement.swift in Sources */,
 				9642EBE3275F6B470046D034 /* AllUserScreenersViewController.swift in Sources */,
@@ -2631,6 +2665,7 @@
 				9642EBCD275E2E350046D034 /* MarketTableUserScreenersCell.swift in Sources */,
 				96AD78D02732E0E5007BF50C /* SignalsTableElement.swift in Sources */,
 				96AD7091272C3D94007BF50C /* NotificationsViewModel.swift in Sources */,
+				966CB07527690E7E00B85A77 /* PaygateReviewsView.swift in Sources */,
 				96AD70B9273006E9007BF50C /* NotificationsFilterView.swift in Sources */,
 				961D41D227396B4900711BCD /* SettingsViewController.swift in Sources */,
 				9642EBC0275BD08B0046D034 /* ScreenerNameView.swift in Sources */,
@@ -2640,6 +2675,7 @@
 				96BDBC892719C67E00E43708 /* NavigationController.swift in Sources */,
 				96AD7074272BDE76007BF50C /* GetIndustriesRequest.swift in Sources */,
 				961D41D627396B5E00711BCD /* SettingsView.swift in Sources */,
+				966CB07727691BCB00B85A77 /* PaygateReviewStarsView.swift in Sources */,
 				96B4F9B82726F0A2007507C1 /* WatchListGroupNavItem.swift in Sources */,
 				9695B1652742836600D6DEC5 /* SignalsTableStocksCollectionCell.swift in Sources */,
 				9625D99227231915005A8E31 /* WatchListSignalsSortElement.swift in Sources */,
