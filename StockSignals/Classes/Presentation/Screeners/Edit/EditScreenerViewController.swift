@@ -101,6 +101,10 @@ extension EditScreenerViewController: CSFiltersCollectionViewDelegate {
         
         mainView.button.isHidden = !contains
     }
+    
+    func csFiltersCollectionNeedPayment() -> Bool {
+        return false
+    }
 }
 
 // MARK: Private

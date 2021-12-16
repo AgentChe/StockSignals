@@ -9,6 +9,7 @@ import UIKit
 
 protocol CSFiltersCollectionViewDelegate: AnyObject {
     func csFiltersCollectionDidChange()
+    func csFiltersCollectionNeedPayment() -> Bool
 }
 
 final class CSFiltersCollectionView: UICollectionView {
@@ -186,6 +187,10 @@ private extension CSFiltersCollectionView {
             return
         }
         
+        if openPaygateIfNeeded() {
+            return
+        }
+        
         var paths = [IndexPath]()
         
         let elements = sections[indexPath.section].elements
@@ -218,6 +223,10 @@ private extension CSFiltersCollectionView {
     }
     
     func filterTapped(indexPath: IndexPath, element: CSFiltersCollectionFilterElement) {
+        if openPaygateIfNeeded() {
+            return
+        }
+        
         let vc = FiltersItemsViewController.make(filter: element.filter, selectedItem: element.selectedItem) { [weak self] selectedItem in
             guard let self = self else {
                 return
@@ -244,5 +253,16 @@ private extension CSFiltersCollectionView {
         sections[indexPath.section].isExpanded = true
         
         reloadSections([indexPath.section])
+    }
+    
+    func openPaygateIfNeeded() -> Bool {
+        let needPayment = mainDelegate?.csFiltersCollectionNeedPayment() ?? false
+        
+        if needPayment {
+            let paygateVC = PaygateViewController.make()
+            vc?.present(paygateVC, animated: true)
+        }
+        
+        return needPayment
     }
 }

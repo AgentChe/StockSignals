@@ -75,6 +75,29 @@ extension CreateScreenerViewController: CSFiltersCollectionViewDelegate {
         
         mainView.button.isHidden = !contains
     }
+    
+    func csFiltersCollectionNeedPayment() -> Bool {
+        let config = PaygateManagerCore().getConfig() ?? PaygateConfig.default()
+        
+        let activeSubscription = SessionManagerCore().getSession()?.activeSubscription ?? false
+        
+        var currentCount = 0
+        
+        mainView.collectionView.sections.forEach { section in
+            section.elements.forEach { element in
+                switch element {
+                case .signal(let signal):
+                    currentCount += signal.isSelected ? 1 : 0
+                case .filter(let filter):
+                    currentCount += filter.selectedItem != nil ? 1 : 0
+                default:
+                    return
+                }
+            }
+        }
+        
+        return activeSubscription ? false : (currentCount >= config.screenerLimit)
+    }
 }
 
 // MARK: Private
