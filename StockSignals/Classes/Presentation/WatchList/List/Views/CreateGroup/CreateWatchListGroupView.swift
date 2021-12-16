@@ -76,9 +76,8 @@ private extension CreateWatchListGroupView {
             })
             .disposed(by: disposeBag)
         
-        viewModel.group.drive(onNext: { [weak self] group in
-            self?.dismiss()
-            self?.delegate?.createWatchListDidCreated(group: group)
+        viewModel.group.drive(onNext: { [weak self] result in
+            self?.handle(result: result)
         })
         .disposed(by: disposeBag)
         
@@ -91,6 +90,17 @@ private extension CreateWatchListGroupView {
             self.viewModel.create.accept(text)
         })
         .disposed(by: disposeBag)
+    }
+    
+    func handle(result: CreateWatchListGroupViewModel.Result) {
+        switch result {
+        case .group(let group):
+            dismiss()
+            delegate?.createWatchListDidCreated(group: group)
+        case .paygate:
+            let paygateVC = PaygateViewController.make()
+            vc?.present(paygateVC, animated: true)
+        }
     }
     
     func update(keyboardFrame: CGRect, completion: (() -> Void)? = nil) {
