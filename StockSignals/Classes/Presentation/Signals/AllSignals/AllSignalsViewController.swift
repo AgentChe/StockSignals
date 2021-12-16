@@ -82,8 +82,8 @@ extension AllSignalsViewController: AllSignalsSortViewDelegate {
 
 // MARK: AllSignalsTableViewDelegate
 extension AllSignalsViewController: AllSignalsTableViewDelegate {
-    func allSignalsTableDidSelect(symbol: String) {
-        let vc = DetailsViewController.make(symbol: symbol)
+    func allSignalsTableDidSelect(symbol: String, isLocked: Bool) {
+        let vc = isLocked ? PaygateViewController.make() : DetailsViewController.make(symbol: symbol)
         present(vc, animated: true)
     }
 }

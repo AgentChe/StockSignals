@@ -31,6 +31,8 @@ final class AllSignalsTableOptionCryptoCell: UITableViewCell {
     lazy var target3rdLabel = makeValueLabel()
     lazy var target3rdEmptyPlaceholder = makeEmptyPlaceholder()
     lazy var noteLabel = makeValueLabel()
+    lazy var lockView = makeLockView()
+    lazy var lockLabel = makeLockLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -46,27 +48,29 @@ final class AllSignalsTableOptionCryptoCell: UITableViewCell {
 
 // MARK: Public
 extension AllSignalsTableOptionCryptoCell {
-    func setup(element: OptionCryptoSignal) {
+    func setup(element: AllSignalsTableOCSignal) {
+        let signal = element.signal
+        
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
         
-        if let url = URL(string: element.imageUrl) {
+        if let url = URL(string: signal.imageUrl) {
             iconView.kf.setImage(with: url)
         }
         
-        symbolLabel.attributedText = element.symbol
+        symbolLabel.attributedText = signal.symbol
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        descrLabel.attributedText = element.description
+        descrLabel.attributedText = signal.description
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.regular(size: 13.scale))
                             .lineHeight(15.6.scale))
         
-        let date = Date(timeIntervalSince1970: element.created)
+        let date = Date(timeIntervalSince1970: signal.created)
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy.MM.dd"
         let dateString = formatter.string(from: date)
@@ -80,7 +84,7 @@ extension AllSignalsTableOptionCryptoCell {
                             .lineHeight(18.2.scale)
                             .textAlignment(.right))
         
-        let buyTarget = "$" + String(element.targetBuy)
+        let buyTarget = "$" + String(signal.targetBuy)
         buyTargetLabel.attributedText = buyTarget
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
@@ -88,7 +92,7 @@ extension AllSignalsTableOptionCryptoCell {
                             .lineHeight(20.4.scale))
         
         var stopLoss: String?
-        if let value = element.targetStop {
+        if let value = signal.targetStop {
             stopLoss = "$" + String(value)
         }
         stopLossLabel.attributedText = stopLoss?
@@ -96,9 +100,9 @@ extension AllSignalsTableOptionCryptoCell {
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
-        stopLossEmptyPlaceholder.isHidden = element.targetStop != nil
+        stopLossEmptyPlaceholder.isHidden = signal.targetStop != nil
         
-        let maxGain = String(element.maxGain) + "%"
+        let maxGain = String(signal.maxGain) + "%"
         maxGainLabel.attributedText = maxGain
             .attributed(with: TextAttributes()
                             .textColor(UIColor(integralRed: 112, green: 226, blue: 248))
@@ -106,8 +110,8 @@ extension AllSignalsTableOptionCryptoCell {
                             .lineHeight(23.8.scale))
         
         target1stLabel.text = nil
-        if element.targetSell.indices.contains(0) {
-            let target1st = element.targetSell[0]
+        if signal.targetSell.indices.contains(0) {
+            let target1st = signal.targetSell[0]
             let string = "$" + String(target1st)
             target1stLabel.attributedText = string
                 .attributed(with: TextAttributes()
@@ -115,11 +119,11 @@ extension AllSignalsTableOptionCryptoCell {
                                 .font(Fonts.SFProDisplay.bold(size: 17.scale))
                                 .lineHeight(20.4.scale))
         }
-        target1stEmptyPlaceholder.isHidden = element.targetSell.indices.contains(0)
+        target1stEmptyPlaceholder.isHidden = signal.targetSell.indices.contains(0)
         
         target2ndLabel.text = nil
-        if element.targetSell.indices.contains(1) {
-            let target2nd = element.targetSell[1]
+        if signal.targetSell.indices.contains(1) {
+            let target2nd = signal.targetSell[1]
             let string = "$" + String(target2nd)
             target2ndLabel.attributedText = string
                 .attributed(with: TextAttributes()
@@ -127,11 +131,11 @@ extension AllSignalsTableOptionCryptoCell {
                                 .font(Fonts.SFProDisplay.bold(size: 17.scale))
                                 .lineHeight(20.4.scale))
         }
-        target2ndEmptyPlaceholder.isHidden = element.targetSell.indices.contains(1)
+        target2ndEmptyPlaceholder.isHidden = signal.targetSell.indices.contains(1)
         
         target3rdLabel.text = nil
-        if element.targetSell.indices.contains(2) {
-            let target3rd = element.targetSell[2]
+        if signal.targetSell.indices.contains(2) {
+            let target3rd = signal.targetSell[2]
             let string = "$" + String(target3rd)
             target3rdLabel.attributedText = string
                 .attributed(with: TextAttributes()
@@ -139,12 +143,15 @@ extension AllSignalsTableOptionCryptoCell {
                                 .font(Fonts.SFProDisplay.bold(size: 17.scale))
                                 .lineHeight(20.4.scale))
         }
-        target3rdEmptyPlaceholder.isHidden = element.targetSell.indices.contains(2)
+        target3rdEmptyPlaceholder.isHidden = signal.targetSell.indices.contains(2)
         
-        noteLabel.attributedText = element.note?
+        noteLabel.attributedText = signal.note?
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.4))
                             .font(Fonts.SFProDisplay.regular(size: 13.scale)))
+        
+        lockView.isHidden = !element.isLocked
+        lockLabel.isHidden = !element.isLocked
     }
 }
 
@@ -288,6 +295,18 @@ private extension AllSignalsTableOptionCryptoCell {
             noteLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 236.scale),
             noteLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            lockView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
+            lockView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
+            lockView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            lockView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            lockLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            lockLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
     }
 }
 
@@ -339,6 +358,30 @@ private extension AllSignalsTableOptionCryptoCell {
         view.backgroundColor = UIColor(integralRed: 24, green: 26, blue: 36, alpha: 0.4)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
+        return view
+    }
+    
+    func makeLockView() -> UIVisualEffectView {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let view = UIVisualEffectView(effect: blurEffect)
+        view.layer.cornerRadius = 20.scale
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeLockLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.SFProDisplay.bold(size: 19.scale))
+            .lineHeight(22.8.scale)
+            .textAlignment(.center)
+
+        let view = UILabel()
+        view.attributedText = "Signals.All.Unlock".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
         return view
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AllSignalsTableViewDelegate: AnyObject {
-    func allSignalsTableDidSelect(symbol: String)
+    func allSignalsTableDidSelect(symbol: String, isLocked: Bool)
 }
 
 final class AllSignalsTableView: UITableView {
@@ -75,10 +75,10 @@ extension AllSignalsTableView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch elements[indexPath.row] {
-        case .stock(let signal):
-            mainDelegate?.allSignalsTableDidSelect(symbol: signal.symbol)
-        case .optionCrypto(let signal):
-            mainDelegate?.allSignalsTableDidSelect(symbol: signal.symbol)
+        case .stock(let element):
+            mainDelegate?.allSignalsTableDidSelect(symbol: element.signal.symbol, isLocked: element.isLocked)
+        case .optionCrypto(let element):
+            mainDelegate?.allSignalsTableDidSelect(symbol: element.signal.symbol, isLocked: element.isLocked)
         default:
             break
         }

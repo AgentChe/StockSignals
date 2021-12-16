@@ -16,6 +16,8 @@ final class AllSignalsViewModel {
     lazy var elements = makeElements()
     
     private lazy var signalsManager = SignalManagerCore()
+    private lazy var sessionManager = SessionManagerCore()
+    private lazy var paygateManager = PaygateManagerCore()
     
     private lazy var stockElements = makeStockElements()
     private lazy var optionCryptoElements = makeOptionCryptoElements()
@@ -25,6 +27,8 @@ final class AllSignalsViewModel {
     
     private lazy var stockSignals = makeStockSignals()
     private lazy var optionCryptoSignals = makeOptionCryptoSignals()
+    
+    private lazy var activeSubscription = makeActiveSubscription()
 }
 
 // MARK: Private
@@ -35,39 +39,57 @@ private extension AllSignalsViewModel {
     }
     
     func makeStockElements() -> Driver<[AllSignalsTableElement]> {
-        stockSortedSignals
-            .map { signals -> [AllSignalsTableElement] in
-                var result = [AllSignalsTableElement]()
-
-                signals.enumerated().forEach { index, signal in
-                    result.append(.stock(signal))
-
-                    if (signals.count - 1) != index {
-                        result.append(.offset(16.scale))
-                    }
-                }
-
-                return result
+        Driver.combineLatest(stockSortedSignals, activeSubscription) { [weak self] signals, activeSubscription -> [AllSignalsTableElement] in
+            guard let self = self else {
+                return []
             }
-            .asDriver(onErrorJustReturn: [])
+            
+            var result = [AllSignalsTableElement]()
+            
+            let needPayment = self.needPayment(activeSubscription: activeSubscription)
+            
+            let config = self.paygateManager.getConfig() ?? PaygateConfig.default()
+            let limit = config.signalsLimit
+
+            signals.enumerated().forEach { index, signal in
+                let element = AllSignalsTableSSignal(signal: signal,
+                                                     isLocked: needPayment ? (index > limit) : false)
+                result.append(.stock(element))
+
+                if (signals.count - 1) != index {
+                    result.append(.offset(16.scale))
+                }
+            }
+
+            return result
+        }
     }
 
     func makeOptionCryptoElements() -> Driver<[AllSignalsTableElement]> {
-        optionCryptoSortedSignals
-            .map { signals -> [AllSignalsTableElement] in
-                var result = [AllSignalsTableElement]()
-
-                signals.enumerated().forEach { index, signal in
-                    result.append(.optionCrypto(signal))
-
-                    if (signals.count - 1) != index {
-                        result.append(.offset(16.scale))
-                    }
-                }
-
-                return result
+        Driver.combineLatest(optionCryptoSortedSignals, activeSubscription) { [weak self] signals, activeSubscription -> [AllSignalsTableElement] in
+            guard let self = self else {
+                return []
             }
-            .asDriver(onErrorJustReturn: [])
+            
+            var result = [AllSignalsTableElement]()
+            
+            let needPayment = self.needPayment(activeSubscription: activeSubscription)
+            
+            let config = self.paygateManager.getConfig() ?? PaygateConfig.default()
+            let limit = config.signalsLimit
+            
+            signals.enumerated().forEach { index, signal in
+                let element = AllSignalsTableOCSignal(signal: signal,
+                                                      isLocked: needPayment ? (index > limit) : false)
+                result.append(.optionCrypto(element))
+
+                if (signals.count - 1) != index {
+                    result.append(.offset(16.scale))
+                }
+            }
+
+            return result
+        }
     }
 
     func makeSortedStockSignals() -> Driver<[StockSignal]> {
@@ -165,6 +187,45 @@ private extension AllSignalsViewModel {
             return 0
         case .longTerm:
             return 2
+        }
+    }
+    
+    func makeActiveSubscription() -> Driver<Bool> {
+        let updated = SDKStorage.shared
+            .purchaseMediator
+            .rxPurchaseMediatorDidValidateReceipt
+            .compactMap { $0?.activeSubscription }
+            .asDriver(onErrorJustReturn: false)
+        
+        let initial = Driver<Bool>
+            .deferred { [weak self] in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                let activeSubscription = this.sessionManager.getSession()?.activeSubscription ?? false
+                
+                return .just(activeSubscription)
+            }
+        
+        return Driver
+            .merge(initial, updated)
+    }
+    
+    func needPayment(activeSubscription: Bool) -> Bool {
+        guard !activeSubscription else {
+            return false
+        }
+        
+        guard let activity = self.activity.value else {
+            return false
+        }
+        
+        switch activity {
+        case .working, .longTerm:
+            return true
+        case .closed:
+            return false
         }
     }
 }

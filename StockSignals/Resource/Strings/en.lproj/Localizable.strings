@@ -113,6 +113,7 @@
 "Signals.Option" = "Option";
 "Signals.Crypto" = "Crypto";
 "Signals.All" = "All";
+"Signals.All.Unlock" = "Unlock All Signals ";
 "Signals.MaxGain" = "Max Gain";
 "Signals.BuyTarget" = "Buy target";
 "Signals.StopLoss" = "Stop loss";

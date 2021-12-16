@@ -345,6 +345,8 @@
 		96CC1C2A2763747B0022A04C /* PaygateTableFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C292763747B0022A04C /* PaygateTableFeature.swift */; };
 		CFCA8DE48D921377EA7168EA /* Pods_StockSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */; };
 		DE2B2032276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */; };
+		DE2B2035276B60090044EF1A /* AllSignalsTableSSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2034276B60090044EF1A /* AllSignalsTableSSignal.swift */; };
+		DE2B2037276B602E0044EF1A /* AllSignalsTableOCSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2036276B602E0044EF1A /* AllSignalsTableOCSignal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -690,6 +692,8 @@
 		96CC1C292763747B0022A04C /* PaygateTableFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableFeature.swift; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableUnlockAnalyticsCell.swift; sourceTree = "<group>"; };
+		DE2B2034276B60090044EF1A /* AllSignalsTableSSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsTableSSignal.swift; sourceTree = "<group>"; };
+		DE2B2036276B602E0044EF1A /* AllSignalsTableOCSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsTableOCSignal.swift; sourceTree = "<group>"; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1388,8 +1392,8 @@
 		9695B1712742B9CC00D6DEC5 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
+				DE2B2033276B5FEE0044EF1A /* Elements */,
 				9695B1732742BB5B00D6DEC5 /* Cells */,
-				9695B1762742BB8000D6DEC5 /* AllSignalsTableElement.swift */,
 				9695B1742742BB6C00D6DEC5 /* AllSignalsTableView.swift */,
 			);
 			path = TableView;
@@ -2462,6 +2466,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DE2B2033276B5FEE0044EF1A /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				9695B1762742BB8000D6DEC5 /* AllSignalsTableElement.swift */,
+				DE2B2034276B60090044EF1A /* AllSignalsTableSSignal.swift */,
+				DE2B2036276B602E0044EF1A /* AllSignalsTableOCSignal.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2768,6 +2782,7 @@
 				9642EBE0275F531A0046D034 /* ScreenersMediator.swift in Sources */,
 				9625D9A227242CB6005A8E31 /* CreateWatchListGroupView.swift in Sources */,
 				9642EB792757BFC20046D034 /* QuotationsScreenersView.swift in Sources */,
+				DE2B2037276B602E0044EF1A /* AllSignalsTableOCSignal.swift in Sources */,
 				96BDBC7E2719C67E00E43708 /* StringExtension.swift in Sources */,
 				9695B1752742BB6C00D6DEC5 /* AllSignalsTableView.swift in Sources */,
 				96CC1C1E276360F20022A04C /* PaygateTableView.swift in Sources */,
@@ -2833,6 +2848,7 @@
 				9642EBBE275BCF3F0046D034 /* ScreenerNameViewController.swift in Sources */,
 				96CC1C182762210E0022A04C /* PreparePaygatePrices.swift in Sources */,
 				96BDBD742722E43100E43708 /* WatchListSignalCollectionSection.swift in Sources */,
+				DE2B2035276B60090044EF1A /* AllSignalsTableSSignal.swift in Sources */,
 				9695B1822742EC6000D6DEC5 /* DetailsView.swift in Sources */,
 				96CC1C26276364BE0022A04C /* PaygateTableHeader.swift in Sources */,
 				96AD78D82732E25D007BF50C /* SignalsStockCollectionCell.swift in Sources */,
@@ -3079,7 +3095,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GYTR7VMKM;
 				INFOPLIST_FILE = "$(SRCROOT)/StockSignals/Resource/Info.plist";
@@ -3088,7 +3104,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = stocks.signals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "StockSignals AppStore";
@@ -3106,7 +3122,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 7GYTR7VMKM;
 				INFOPLIST_FILE = "$(SRCROOT)/StockSignals/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -3114,7 +3130,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = stocks.signals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "StockSignals AppStore";

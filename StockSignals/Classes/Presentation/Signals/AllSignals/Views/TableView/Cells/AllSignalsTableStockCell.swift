@@ -27,6 +27,8 @@ final class AllSignalsTableStockCell: UITableViewCell {
     lazy var riskLabel = makeValueLabel()
     lazy var noteLabel = makeNoteLabel()
     lazy var riskEmptyPlaceholder = makeEmptyPlaceholder()
+    lazy var lockView = makeLockView()
+    lazy var lockLabel = makeLockLabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -42,21 +44,23 @@ final class AllSignalsTableStockCell: UITableViewCell {
 
 // MARK: Public
 extension AllSignalsTableStockCell {
-    func setup(element: StockSignal) {
+    func setup(element: AllSignalsTableSSignal) {
+        let signal = element.signal
+        
         iconView.kf.cancelDownloadTask()
         iconView.image = nil
         
-        if let url = URL(string: element.imageUrl) {
+        if let url = URL(string: signal.imageUrl) {
             iconView.kf.setImage(with: url)
         }
         
-        symbolLabel.attributedText = element.symbol
+        symbolLabel.attributedText = signal.symbol
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        let date = Date(timeIntervalSince1970: element.created)
+        let date = Date(timeIntervalSince1970: signal.created)
         let formatter = DateFormatter()
         formatter.dateFormat = "MM.dd.yyyy HH:mm:ss"
         let created = formatter.string(from: date)
@@ -67,20 +71,20 @@ extension AllSignalsTableStockCell {
                             .lineHeight(15.6.scale)
                             .textAlignment(.left))
         
-        companyLabel.attributedText = element.company
+        companyLabel.attributedText = signal.company
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.4))
                             .font(Fonts.SFProDisplay.regular(size: 13.scale))
                             .lineHeight(15.6.scale))
         
-        let maxGain = String(element.maxGain) + "%"
+        let maxGain = String(signal.maxGain) + "%"
         maxGainLabel.attributedText = maxGain
             .attributed(with: TextAttributes()
                             .textColor(UIColor(integralRed: 112, green: 226, blue: 248))
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(23.8.scale))
         
-        let buyTarget = "$" + String(element.targetBuy)
+        let buyTarget = "$" + String(signal.targetBuy)
         buyTargetLabel.attributedText = buyTarget
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
@@ -89,7 +93,7 @@ extension AllSignalsTableStockCell {
         
         
         var stopLoss: String?
-        if let value = element.targetStop {
+        if let value = signal.targetStop {
             stopLoss = "$" + String(value)
         }
         stopLossLabel.attributedText = stopLoss?
@@ -97,26 +101,29 @@ extension AllSignalsTableStockCell {
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
-        stopLossEmptyPlaceholder.isHidden = element.targetStop != nil
+        stopLossEmptyPlaceholder.isHidden = signal.targetStop != nil
         
-        let sellTarget = "$" + String(element.targetSell)
+        let sellTarget = "$" + String(signal.targetSell)
         sellTargetLabel.attributedText = sellTarget
             .attributed(with: TextAttributes()
-                            .textColor(element.targetSell > 0 ? UIColor(integralRed: 129, green: 232, blue: 129) : UIColor(integralRed: 235, green: 96, blue: 42))
+                            .textColor(signal.targetSell > 0 ? UIColor(integralRed: 129, green: 232, blue: 129) : UIColor(integralRed: 235, green: 96, blue: 42))
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
         
-        riskLabel.attributedText = element.risk?
+        riskLabel.attributedText = signal.risk?
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white)
                             .font(Fonts.SFProDisplay.bold(size: 17.scale))
                             .lineHeight(20.4.scale))
-        riskEmptyPlaceholder.isHidden = element.risk != nil
+        riskEmptyPlaceholder.isHidden = signal.risk != nil
         
-        noteLabel.attributedText = element.note?
+        noteLabel.attributedText = signal.note?
             .attributed(with: TextAttributes()
                             .textColor(UIColor.white.withAlphaComponent(0.4))
                             .font(Fonts.SFProDisplay.regular(size: 13.scale)))
+        
+        lockView.isHidden = !element.isLocked
+        lockLabel.isHidden = !element.isLocked
     }
 }
 
@@ -236,6 +243,18 @@ private extension AllSignalsTableStockCell {
             noteLabel.topAnchor.constraint(equalTo: container.topAnchor, constant: 183.scale),
             noteLabel.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -16.scale)
         ])
+        
+        NSLayoutConstraint.activate([
+            lockView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16.scale),
+            lockView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16.scale),
+            lockView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            lockView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            lockLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            lockLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
     }
 }
 
@@ -324,6 +343,30 @@ private extension AllSignalsTableStockCell {
         view.backgroundColor = UIColor(integralRed: 24, green: 26, blue: 36, alpha: 0.4)
         view.translatesAutoresizingMaskIntoConstraints = false
         container.addSubview(view)
+        return view
+    }
+    
+    func makeLockView() -> UIVisualEffectView {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        let view = UIVisualEffectView(effect: blurEffect)
+        view.layer.cornerRadius = 20.scale
+        view.layer.masksToBounds = true
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
+        return view
+    }
+    
+    func makeLockLabel() -> UILabel {
+        let attrs = TextAttributes()
+            .textColor(UIColor.white)
+            .font(Fonts.SFProDisplay.bold(size: 19.scale))
+            .lineHeight(22.8.scale)
+            .textAlignment(.center)
+
+        let view = UILabel()
+        view.attributedText = "Signals.All.Unlock".localized.attributed(with: attrs)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(view)
         return view
     }
 }

@@ -13,32 +13,13 @@ final class PreparePaygatePrices {
         
         let options = transfer.options
         
-//        guard
-//            let firstOptionPrice = prices.first(where: { $0.id == options[0].productId }),
-//            let secondOptionPrice = prices.first(where: { $0.id == options[1].productId }),
-//            let thirdOptionPrice = prices.first(where: { $0.id == options[2].productId })
-//        else {
-//            return nil
-//        }
-        
-        // TODO
-        let firstOptionPrice = ProductPrice(id: options[0].productId,
-                                            priceLocalized: "$49.99",
-                                            priceValue: 49.99,
-                                            priceLocale: Locale.current,
-                                            currency: Locale.current.currencySymbol ?? "RUB")
-        
-        let secondOptionPrice = ProductPrice(id: options[1].productId,
-                                            priceLocalized: "$319.99",
-                                            priceValue: 319.99,
-                                            priceLocale: Locale.current,
-                                            currency: Locale.current.currencySymbol ?? "RUB")
-        
-        let thirdOptionPrice = ProductPrice(id: options[2].productId,
-                                            priceLocalized: "$439.99",
-                                            priceValue: 439.99,
-                                            priceLocale: Locale.current,
-                                            currency: Locale.current.currencySymbol ?? "RUB")
+        guard
+            let firstOptionPrice = prices.first(where: { $0.id == options[0].productId }),
+            let secondOptionPrice = prices.first(where: { $0.id == options[1].productId }),
+            let thirdOptionPrice = prices.first(where: { $0.id == options[2].productId })
+        else {
+            return nil
+        }
         
         return Paygate(headlineTop: transfer.headlineTop,
                        headlineBottom: transfer.headlineBottom,

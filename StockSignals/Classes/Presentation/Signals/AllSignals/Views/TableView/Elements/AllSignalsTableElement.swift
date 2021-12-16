@@ -9,6 +9,6 @@ import Foundation
 
 enum AllSignalsTableElement {
     case offset(CGFloat)
-    case stock(StockSignal)
-    case optionCrypto(OptionCryptoSignal)
+    case stock(AllSignalsTableSSignal)
+    case optionCrypto(AllSignalsTableOCSignal)
 }
