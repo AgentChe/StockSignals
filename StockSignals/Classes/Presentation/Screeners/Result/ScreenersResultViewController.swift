@@ -52,12 +52,15 @@ final class ScreenersResultViewController: UIViewController {
         })
         .disposed(by: disposeBag)
         
-        Driver
-            .merge(viewModel.created, viewModel.edited)
-            .drive(onNext: { [weak self] filterScreener in
-                self?.delegate?.resultViewControllerDidCreated(filterScreener: filterScreener)
-            })
-            .disposed(by: disposeBag)
+        viewModel.created.drive(onNext: { [weak self] result in
+            self?.handle(result: result)
+        })
+        .disposed(by: disposeBag)
+        
+        viewModel.edited.drive(onNext: { [weak self] filterScreener in
+            self?.delegate?.resultViewControllerDidCreated(filterScreener: filterScreener)
+        })
+        .disposed(by: disposeBag)
         
         let keys = items.map { $0.key }
         viewModel.keys.accept(keys)
@@ -109,14 +112,14 @@ private extension ScreenersResultViewController {
         
         item.rx.tap.subscribe(onNext: { [weak self] in
             let vc = ScreenerNameViewController.make(name: self?.nameIfHas()) { name in
-                self?.createSceener(name: name)
+                self?.createScreener(name: name)
             }
             self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
     }
     
-    func createSceener(name: String) {
+    func createScreener(name: String) {
         switch mode {
         case .create:
             let screener = FilterScreener(id: UUID().uuidString, name: name, items: items)
@@ -124,6 +127,16 @@ private extension ScreenersResultViewController {
         case .edit(let previous):
             let screener = FilterScreener(id: previous.id, name: name, items: items)
             viewModel.edit.accept(screener)
+        }
+    }
+    
+    func handle(result: ScreenersResultViewModel.CreateResult) {
+        switch result {
+        case .screener(let filterScreener):
+            delegate?.resultViewControllerDidCreated(filterScreener: filterScreener)
+        case .paygate:
+            let vc = PaygateViewController.make()
+            present(vc, animated: true)
         }
     }
     

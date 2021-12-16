@@ -9,6 +9,11 @@ import RxSwift
 import RxCocoa
 
 final class ScreenersResultViewModel {
+    enum CreateResult {
+        case screener(FilterScreener)
+        case paygate
+    }
+    
     lazy var keys = PublishRelay<[String]>()
     lazy var sort = PublishRelay<WatchListSignalsSortElement>()
     lazy var create = PublishRelay<FilterScreener>()
@@ -20,6 +25,8 @@ final class ScreenersResultViewModel {
     
     private lazy var watchListManager = WatchListManagerCore()
     private lazy var screenersManager = ScreenersManagerCore()
+    private lazy var sessionManager = SessionManagerCore()
+    private lazy var paygateManager = PaygateManagerCore()
 }
 
 // MARK: Private
@@ -51,14 +58,24 @@ private extension ScreenersResultViewModel {
         }
     }
     
-    func makeCreated() -> Driver<FilterScreener> {
-        create.flatMapLatest { [weak self] filterScreener -> Single<FilterScreener> in
+    func makeCreated() -> Driver<CreateResult> {
+        create.flatMapLatest { [weak self] filterScreener -> Single<CreateResult> in
             guard let self = self else {
                 return .never()
             }
             
             return self.screenersManager
-                .add(filterScreener: filterScreener)
+                .obtainFilterScreeners()
+                .map { $0.count }
+                .flatMap { currentCount -> Single<CreateResult> in
+                    if self.needPayment(currentCount: currentCount) {
+                        return .deferred { .just(.paygate) }
+                    }
+                    
+                    return self.screenersManager
+                        .add(filterScreener: filterScreener)
+                        .map { .screener($0) }
+                }
         }
         .asDriver(onErrorDriveWith: .never())
     }
@@ -73,5 +90,15 @@ private extension ScreenersResultViewModel {
                 .edit(filterScreener: filterScreener)
         }
         .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func needPayment(currentCount: Int) -> Bool {
+        let config = paygateManager.getConfig() ?? PaygateConfig.default()
+        
+        let activeSubscription = sessionManager.getSession()?.activeSubscription ?? false
+        
+        let needPayment = activeSubscription ? false : (currentCount >= config.screenerSaveLimit)
+        
+        return needPayment
     }
 }
