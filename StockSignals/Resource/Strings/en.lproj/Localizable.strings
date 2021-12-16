@@ -157,6 +157,8 @@
 "Details.Chart.5Y" = "5Y";
 "Details.Chart.MAX" = "MAX";
 "Details.Analytics" = "Technical Analysis";
+"Details.Analytics.Unlock.Title" = "Technical analysis";
+"Details.Analytics.Unlock.Button" = "Unlock Full Access";
 "Details.Signals.Open" = "Open Signals";
 "Details.Signals.Closed" = "Closed Signals";
 "Details.Signals.MaxGain" = "Max Gain";

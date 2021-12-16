@@ -60,6 +60,8 @@ final class DetailsViewController: UIViewController {
         .disposed(by: disposeBag)
         
         addFilterAction()
+        
+        mainView.tableView.mainDelegate = self
     }
 }
 
@@ -69,6 +71,14 @@ extension DetailsViewController {
         let vc = DetailsViewController(symbol: symbol)
         vc.modalPresentationStyle = .fullScreen
         return vc
+    }
+}
+
+// MARK: DetailsTableViewDelegate
+extension DetailsViewController: DetailsTableViewDelegate {
+    func detailsTableViewDidTappedUnlockAnalytics() {
+        let vc = PaygateViewController.make()
+        present(vc, animated: true)
     }
 }
 

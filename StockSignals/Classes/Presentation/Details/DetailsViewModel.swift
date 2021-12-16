@@ -7,6 +7,7 @@
 
 import RxSwift
 import RxCocoa
+import RushSDK
 
 final class DetailsViewModel {
     lazy var filter = PublishRelay<DetailsFilter>()
@@ -15,6 +16,8 @@ final class DetailsViewModel {
     lazy var elements = makeElements()
     
     private lazy var signalsManager = SignalManagerCore()
+    private lazy var sessionManager = SessionManagerCore()
+    private lazy var paygateManager = PaygateManagerCore()
     
     private lazy var socketManager = DetailsSocketManager(symbol: symbol.value)
     
@@ -25,6 +28,7 @@ final class DetailsViewModel {
     private lazy var details = makeDetails()
     private lazy var marketState = makeMarketState()
     private lazy var socketBundle = makeSocketBundle()
+    private lazy var activeSubscription = makeActiveSubscription()
     
     private let symbol: BehaviorRelay<String>
     
@@ -70,7 +74,7 @@ private extension DetailsViewModel {
             )
         
         
-        return Driver.combineLatest(details, marketState, preMarket, primary) { [weak self] details, marketState, preMarket, primary -> [DetailsTableElement] in
+        return Driver.combineLatest(details, marketState, preMarket, primary, activeSubscription) { [weak self] details, marketState, preMarket, primary, activeSubscription -> [DetailsTableElement] in
             guard let self = self else {
                 return []
             }
@@ -80,7 +84,7 @@ private extension DetailsViewModel {
             let primary = self.makePrimaryElements(primary: primary)
             let preMarket = self.makePreMarketElements(preMarket: preMarket, marketState: marketState)
             let chart = self.makeChartElements()
-            let analytics = self.makeAnalyticsElements(details: details)
+            let analytics = self.makeAnalyticsElements(details: details, activeSubscription: activeSubscription)
             let signals = self.makeSignalsElements(details: details)
             
             result.append(contentsOf: primary)
@@ -122,7 +126,15 @@ private extension DetailsViewModel {
         return [element, offset]
     }
     
-    func makeAnalyticsElements(details: Details) -> [DetailsTableElement] {
+    func makeAnalyticsElements(details: Details, activeSubscription: Bool) -> [DetailsTableElement] {
+        let config = paygateManager.getConfig() ?? PaygateConfig.default()
+        
+        let needPayment = activeSubscription ? false : config.technicalAnalysis
+        
+        if needPayment {
+            return [.unlockAnalytics, .offset(24.scale)]
+        }
+        
         guard let analytics = details.analytics else {
             return []
         }
@@ -131,7 +143,7 @@ private extension DetailsViewModel {
         let offset1 = DetailsTableElement.offset(24.scale)
         let element = DetailsTableElement.analytics(analytics)
         let offset2 = DetailsTableElement.offset(24.scale)
-        
+
         return [title, offset1, element, offset2]
     }
     
@@ -345,5 +357,27 @@ private extension DetailsViewModel {
         socketManager
             .bundle
             .asDriver(onErrorDriveWith: .never())
+    }
+    
+    func makeActiveSubscription() -> Driver<Bool> {
+        let updated = SDKStorage.shared
+            .purchaseMediator
+            .rxPurchaseMediatorDidValidateReceipt
+            .compactMap { $0?.activeSubscription }
+            .asDriver(onErrorJustReturn: false)
+        
+        let initial = Driver<Bool>
+            .deferred { [weak self] in
+                guard let this = self else {
+                    return .never()
+                }
+                
+                let activeSubscription = this.sessionManager.getSession()?.activeSubscription ?? false
+                
+                return .just(activeSubscription)
+            }
+        
+        return Driver
+            .merge(initial, updated)
     }
 }

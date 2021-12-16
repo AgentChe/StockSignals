@@ -344,6 +344,7 @@
 		96CC1C28276373FD0022A04C /* PaygateTableFeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C27276373FD0022A04C /* PaygateTableFeatureCell.swift */; };
 		96CC1C2A2763747B0022A04C /* PaygateTableFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC1C292763747B0022A04C /* PaygateTableFeature.swift */; };
 		CFCA8DE48D921377EA7168EA /* Pods_StockSignals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */; };
+		DE2B2032276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -688,6 +689,7 @@
 		96CC1C27276373FD0022A04C /* PaygateTableFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableFeatureCell.swift; sourceTree = "<group>"; };
 		96CC1C292763747B0022A04C /* PaygateTableFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableFeature.swift; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableUnlockAnalyticsCell.swift; sourceTree = "<group>"; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1445,6 +1447,7 @@
 				9695B1A02743F40A00D6DEC5 /* DetailsTableOverviewTitleCell.swift */,
 				9695B1CD2746A01300D6DEC5 /* DetailsTablePreMarketCell.swift */,
 				9695B1CF2746B24F00D6DEC5 /* DetailsTablePrimaryCell.swift */,
+				DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -2833,6 +2836,7 @@
 				9695B1822742EC6000D6DEC5 /* DetailsView.swift in Sources */,
 				96CC1C26276364BE0022A04C /* PaygateTableHeader.swift in Sources */,
 				96AD78D82732E25D007BF50C /* SignalsStockCollectionCell.swift in Sources */,
+				DE2B2032276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift in Sources */,
 				96234DC5272ADEBC00619CE2 /* ProfitView.swift in Sources */,
 				96AD35452750FD2D0098D472 /* ScreenersBundle.swift in Sources */,
 				961D420E273AB38800711BCD /* PaddingTextField.swift in Sources */,

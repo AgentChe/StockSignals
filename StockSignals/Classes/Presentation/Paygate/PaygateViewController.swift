@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import RushSDK
 
 final class PaygateViewController: UIViewController {
     enum Result {
@@ -107,11 +108,11 @@ private extension PaygateViewController {
             mainView.secondOptionButton,
             mainView.thirdOptionButton
         ].first(where: { $0.isSelect })?.option
-        
+
         guard let option = option else {
             return
         }
-        
+
         viewModel.buy.accept(option.productId)
     }
     

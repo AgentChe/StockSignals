@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol DetailsTableViewDelegate: AnyObject {
+    func detailsTableViewDidTappedUnlockAnalytics()
+}
+
 final class DetailsTableView: UITableView {
+    weak var mainDelegate: DetailsTableViewDelegate?
+    
     private lazy var elements = [DetailsTableElement]()
     
     override init(frame: CGRect, style: UITableView.Style) {
@@ -62,6 +68,10 @@ extension DetailsTableView: UITableViewDataSource {
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableAnalyticsCell.self)) as! DetailsTableAnalyticsCell
             cell.setup(element: analytics)
             return cell
+        case .unlockAnalytics:
+            let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableUnlockAnalyticsCell.self)) as! DetailsTableUnlockAnalyticsCell
+            cell.mainDelegate = mainDelegate
+            return cell
         case .signals(let signals):
             let cell = dequeueReusableCell(withIdentifier: String(describing: DetailsTableSignalsCell.self)) as! DetailsTableSignalsCell
             cell.setup(elements: signals)
@@ -86,6 +96,8 @@ extension DetailsTableView: UITableViewDelegate {
             return offset
         case .signals:
             return 235.scale
+        case .unlockAnalytics:
+            return 163.scale
         default:
             return UITableView.automaticDimension
         }
@@ -103,6 +115,7 @@ private extension DetailsTableView {
         register(DetailsTableOverviewTitleCell.self, forCellReuseIdentifier: String(describing: DetailsTableOverviewTitleCell.self))
         register(DetailsTableSummaryCell.self, forCellReuseIdentifier: String(describing: DetailsTableSummaryCell.self))
         register(DetailsTableAboutCell.self, forCellReuseIdentifier: String(describing: DetailsTableAboutCell.self))
+        register(DetailsTableUnlockAnalyticsCell.self, forCellReuseIdentifier: String(describing: DetailsTableUnlockAnalyticsCell.self))
         
         dataSource = self
         delegate = self
