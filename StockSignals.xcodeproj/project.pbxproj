@@ -691,6 +691,7 @@
 		96CC1C27276373FD0022A04C /* PaygateTableFeatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableFeatureCell.swift; sourceTree = "<group>"; };
 		96CC1C292763747B0022A04C /* PaygateTableFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaygateTableFeature.swift; sourceTree = "<group>"; };
 		CD71EB4A017DFF304D5ED003 /* Pods_StockSignals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StockSignals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE176CDF276CEB06009D983D /* StockSignals.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StockSignals.entitlements; sourceTree = "<group>"; };
 		DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableUnlockAnalyticsCell.swift; sourceTree = "<group>"; };
 		DE2B2034276B60090044EF1A /* AllSignalsTableSSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsTableSSignal.swift; sourceTree = "<group>"; };
 		DE2B2036276B602E0044EF1A /* AllSignalsTableOCSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsTableOCSignal.swift; sourceTree = "<group>"; };
@@ -2013,6 +2014,7 @@
 		96BDBC3B2719C56300E43708 /* StockSignals */ = {
 			isa = PBXGroup;
 			children = (
+				DE176CDF276CEB06009D983D /* StockSignals.entitlements */,
 				96BDBC512719C65700E43708 /* Classes */,
 				96BDBC502719C57A00E43708 /* Resource */,
 			);
@@ -3093,9 +3095,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StockSignals/StockSignals.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GYTR7VMKM;
 				INFOPLIST_FILE = "$(SRCROOT)/StockSignals/Resource/Info.plist";
@@ -3104,7 +3107,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = stocks.signals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "StockSignals AppStore";
@@ -3120,9 +3123,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StockSignals/StockSignals.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7GYTR7VMKM;
 				INFOPLIST_FILE = "$(SRCROOT)/StockSignals/Resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
@@ -3130,7 +3134,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.3;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = stocks.signals;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "StockSignals AppStore";
