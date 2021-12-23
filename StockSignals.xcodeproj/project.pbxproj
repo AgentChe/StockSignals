@@ -347,6 +347,7 @@
 		DE2B2032276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */; };
 		DE2B2035276B60090044EF1A /* AllSignalsTableSSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2034276B60090044EF1A /* AllSignalsTableSSignal.swift */; };
 		DE2B2037276B602E0044EF1A /* AllSignalsTableOCSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2B2036276B602E0044EF1A /* AllSignalsTableOCSignal.swift */; };
+		DE344A05277467DC00632F72 /* OnboardingScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE344A04277467DC00632F72 /* OnboardingScope.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -695,6 +696,7 @@
 		DE2B2031276A77D10044EF1A /* DetailsTableUnlockAnalyticsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableUnlockAnalyticsCell.swift; sourceTree = "<group>"; };
 		DE2B2034276B60090044EF1A /* AllSignalsTableSSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsTableSSignal.swift; sourceTree = "<group>"; };
 		DE2B2036276B602E0044EF1A /* AllSignalsTableOCSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSignalsTableOCSignal.swift; sourceTree = "<group>"; };
+		DE344A04277467DC00632F72 /* OnboardingScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScope.swift; sourceTree = "<group>"; };
 		EFF0FE1A24CE127C02ED73A2 /* Pods-StockSignals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StockSignals.debug.xcconfig"; path = "Target Support Files/Pods-StockSignals/Pods-StockSignals.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -866,6 +868,7 @@
 		96234CF927282AD500619CE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE344A03277467A200632F72 /* Utils */,
 				96234D1027282AD500619CE2 /* Source */,
 				96234CFD27282AD500619CE2 /* Atoms */,
 				96234D1427282AD500619CE2 /* OSlideView.swift */,
@@ -2470,6 +2473,14 @@
 			path = Elements;
 			sourceTree = "<group>";
 		};
+		DE344A03277467A200632F72 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DE344A04277467DC00632F72 /* OnboardingScope.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2748,6 +2759,7 @@
 				9642EBE5275F6B5E0046D034 /* AllUserScreenersViewModel.swift in Sources */,
 				9642EBAD275A7A950046D034 /* FiltersItemsView.swift in Sources */,
 				966CB07A2769C79A00B85A77 /* PaygateOptionView.swift in Sources */,
+				DE344A05277467DC00632F72 /* OnboardingScope.swift in Sources */,
 				96BDBC802719C67E00E43708 /* Scalable.swift in Sources */,
 				96234DAA272A0B9A00619CE2 /* ContentManager.swift in Sources */,
 				96AD35432750FCB90098D472 /* Screener.swift in Sources */,

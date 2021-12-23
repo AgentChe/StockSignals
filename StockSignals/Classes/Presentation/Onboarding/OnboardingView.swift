@@ -30,17 +30,19 @@ final class OnboardingView: UIView {
     
     private lazy var contentViews: [OSlideView] = {
         [
-            OnbLevelView(step: .level),
-            OnbAssetsSignalsView(step: .assetsSignals),
-            OnbTradingStyleView(step: .tradingStyle),
-            OnbInterestedView(step: .interested),
-            OnbRiskView(step: .risk),
-            OnbIndustriesView(step: .industries),
-            OnbStocksView(step: .stocks),
-            OnbProfitView(step: .profit),
-            OnbPreloaderView(step: .preloader)
+            OnbLevelView(step: .level, scope: scope),
+            OnbAssetsSignalsView(step: .assetsSignals, scope: scope),
+            OnbTradingStyleView(step: .tradingStyle, scope: scope),
+            OnbInterestedView(step: .interested, scope: scope),
+            OnbRiskView(step: .risk, scope: scope),
+            OnbIndustriesView(step: .industries, scope: scope),
+            OnbStocksView(step: .stocks, scope: scope),
+            OnbProfitView(step: .profit, scope: scope),
+            OnbPreloaderView(step: .preloader, scope: scope)
         ]
     }()
+    
+    private lazy var scope = OnboardingScope()
     
     convenience init(vc: UIViewController?) {
         self.init(frame: .zero)

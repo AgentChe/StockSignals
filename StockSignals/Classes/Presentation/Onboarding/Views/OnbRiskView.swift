@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RxSwift
 
 final class OnbRiskView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -17,12 +16,8 @@ final class OnbRiskView: OSlideView {
     lazy var gainLabel = makeGainLabel()
     lazy var button = makeButton()
     
-    private lazy var disposeBag = DisposeBag()
-    
-    private lazy var contentManager = ContentManagerCore()
-    
-    override init(step: OnboardingView.Step) {
-        super.init(step: step)
+    override init(step: OnboardingView.Step, scope: OnboardingScope) {
+        super.init(step: step, scope: scope)
         
         makeConstraints()
         initialize()
@@ -38,32 +33,19 @@ final class OnbRiskView: OSlideView {
 private extension OnbRiskView {
     func initialize() {
         backgroundColor = UIColor.clear
+    }
+    
+    @objc
+    func nextTappedAction() {
+        let value = Int(self.slider.value)
         
-        button.rx.tap
-            .flatMapLatest { [weak self] _ -> Single<Bool> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                let value = Int(self.slider.value)
-                
-                guard let code = self.code(for: value) else {
-                    return .never()
-                }
-                
-                return self.contentManager.set(risk: code)
-                    .map { true }
-                    .catchAndReturn(false)
-            }
-            .subscribe(onNext: { [weak self] success in
-                guard success else {
-                    Toast.notify(with: "Error".localized, style: .danger)
-                    return
-                }
-                
-                self?.onNext()
-            })
-            .disposed(by: disposeBag)
+        guard let code = self.code(for: value) else {
+            return
+        }
+        
+        scope.risk = code
+        
+        onNext()
     }
     
     func code(for value: Int) -> String? {
@@ -241,6 +223,7 @@ private extension OnbRiskView {
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(nextTappedAction), for: .touchUpInside)
         addSubview(view)
         return view
     }

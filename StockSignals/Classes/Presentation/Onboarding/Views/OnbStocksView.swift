@@ -17,10 +17,9 @@ final class OnbStocksView: OSlideView {
     private lazy var disposeBag = DisposeBag()
     
     private lazy var watchListManager = WatchListManagerCore()
-    private lazy var contentManager = ContentManagerCore()
     
-    override init(step: OnboardingView.Step) {
-        super.init(step: step)
+    override init(step: OnboardingView.Step, scope: OnboardingScope) {
+        super.init(step: step, scope: scope)
         
         makeConstraints()
         initialize()
@@ -58,30 +57,16 @@ private extension OnbStocksView {
                 self?.stocksCollectionDidChangeSelection()
             })
             .disposed(by: disposeBag)
+    }
+    
+    @objc
+    func nextTappedAction() {
+        let symbols = self.collectionView.elements
+            .filter { $0.isSelected }
+            .map { $0.signal.symbol }
+        scope.stocks = symbols
         
-        button.rx.tap
-            .flatMapLatest { [weak self] _ -> Single<Bool> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                let symbols = self.collectionView.elements
-                    .filter { $0.isSelected }
-                    .map { $0.signal.symbol }
-            
-                return self.contentManager.set(stocks: symbols)
-                    .map { true }
-                    .catchAndReturn(false)
-            }
-            .subscribe(onNext: { [weak self] success in
-                guard success else {
-                    Toast.notify(with: "Error".localized, style: .danger)
-                    return
-                }
-                
-                self?.onNext()
-            })
-            .disposed(by: disposeBag)
+        onNext()
     }
 }
 
@@ -170,6 +155,7 @@ private extension OnbStocksView {
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(nextTappedAction), for: .touchUpInside)
         addSubview(view)
         return view
     }

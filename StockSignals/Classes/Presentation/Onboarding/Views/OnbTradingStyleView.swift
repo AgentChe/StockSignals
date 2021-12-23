@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RxSwift
 
 final class OnbTradingStyleView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -16,12 +15,8 @@ final class OnbTradingStyleView: OSlideView {
     lazy var positionTraderCell = makeCell(tag: 4, title: "Onboarding.TradingStyle.PositionTrader".localized)
     lazy var button = makeButton()
     
-    private lazy var disposeBag = DisposeBag()
-    
-    private lazy var contentManager = ContentManagerCore()
-    
-    override init(step: OnboardingView.Step) {
-        super.init(step: step)
+    override init(step: OnboardingView.Step, scope: OnboardingScope) {
+        super.init(step: step, scope: scope)
         
         makeConstraints()
         initialize()
@@ -37,40 +32,27 @@ final class OnbTradingStyleView: OSlideView {
 private extension OnbTradingStyleView {
     func initialize() {
         backgroundColor = UIColor.clear
+    }
+    
+    @objc
+    func nextTappedAction() {
+        let cells = [
+            self.scalperCell,
+            self.dayTraderCell,
+            self.swingTraderCell,
+            self.positionTraderCell
+        ]
         
-        button.rx.tap
-            .flatMapLatest { [weak self] _ -> Single<Bool> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                let cells = [
-                    self.scalperCell,
-                    self.dayTraderCell,
-                    self.swingTraderCell,
-                    self.positionTraderCell
-                ]
-                
-                guard
-                    let tag = cells.first(where: { $0.isSelect })?.tag,
-                    let code = self.code(for: tag)
-                else {
-                    return .never()
-                }
-            
-                return self.contentManager.set(tradingStyle: code)
-                    .map { true }
-                    .catchAndReturn(false)
-            }
-            .subscribe(onNext: { [weak self] success in
-                guard success else {
-                    Toast.notify(with: "Error".localized, style: .danger)
-                    return
-                }
-                
-                self?.onNext()
-            })
-            .disposed(by: disposeBag)
+        guard
+            let tag = cells.first(where: { $0.isSelect })?.tag,
+            let code = self.code(for: tag)
+        else {
+            return
+        }
+        
+        scope.tradingStyle = code
+        
+        onNext()
     }
     
     func code(for tag: Int) -> String? {
@@ -199,6 +181,7 @@ private extension OnbTradingStyleView {
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(nextTappedAction), for: .touchUpInside)
         addSubview(view)
         return view
     }

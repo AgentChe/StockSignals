@@ -18,8 +18,8 @@ final class OnbIndustriesView: OSlideView {
     
     private lazy var contentManager = ContentManagerCore()
     
-    override init(step: OnboardingView.Step) {
-        super.init(step: step)
+    override init(step: OnboardingView.Step, scope: OnboardingScope) {
+        super.init(step: step, scope: scope)
         
         makeConstraints()
         initialize()
@@ -57,30 +57,17 @@ private extension OnbIndustriesView {
                 self?.industriesCollectionDidChangeSelection()
             })
             .disposed(by: disposeBag)
+    }
+    
+    @objc
+    func nextTappedAction() {
+        let industries = self.collectionView.elements
+            .filter { $0.isSelected }
+            .map { $0.industry.name }
         
-        button.rx.tap
-            .flatMapLatest { [weak self] _ -> Single<Bool> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                let industries = self.collectionView.elements
-                    .filter { $0.isSelected }
-                    .map { $0.industry.name }
-            
-                return self.contentManager.set(industries: industries)
-                    .map { true }
-                    .catchAndReturn(false)
-            }
-            .subscribe(onNext: { [weak self] success in
-                guard success else {
-                    Toast.notify(with: "Error".localized, style: .danger)
-                    return
-                }
-                
-                self?.onNext()
-            })
-            .disposed(by: disposeBag)
+        scope.industries = industries
+        
+        onNext()
     }
 }
 
@@ -169,6 +156,7 @@ private extension OnbIndustriesView {
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(nextTappedAction), for: .touchUpInside)
         addSubview(view)
         return view
     }

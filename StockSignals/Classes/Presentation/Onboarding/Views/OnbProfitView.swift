@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class OnbProfitView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -18,8 +19,12 @@ final class OnbProfitView: OSlideView {
     
     private lazy var sliderValueLabel = makeSliderValueLabel()
     
-    override init(step: OnboardingView.Step) {
-        super.init(step: step)
+    private lazy var disposeBag = DisposeBag()
+    
+    private lazy var contentManager = ContentManagerCore()
+    
+    override init(step: OnboardingView.Step, scope: OnboardingScope) {
+        super.init(step: step, scope: scope)
         
         makeConstraints()
     }
@@ -40,6 +45,34 @@ final class OnbProfitView: OSlideView {
 private extension OnbProfitView {
     func initialize() {
         backgroundColor = UIColor.clear
+        
+        button.rx.tap
+            .compactMap { [weak self] in self?.scope }
+            .flatMapLatest { [weak self] scope -> Single<Bool> in
+                guard let self = self else {
+                    return .never()
+                }
+                
+                return self.contentManager
+                    .set(level: scope.level,
+                         assetsSignals: scope.assetsSignals,
+                         tradingStyle: scope.tradingStyle,
+                         interested: scope.interested,
+                         risk: scope.risk,
+                         industries: scope.industries,
+                         stocks: scope.stocks)
+                    .map { true }
+                    .catchAndReturn(false)
+            }
+            .subscribe(onNext: { [weak self] success in
+                guard success else {
+                    Toast.notify(with: "Error".localized, style: .danger)
+                    return
+                }
+                
+                self?.onNext()
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc
@@ -238,7 +271,6 @@ private extension OnbProfitView {
         view.backgroundColor = UIColor(integralRed: 62, green: 89, blue: 223)
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
-        view.addTarget(self, action: #selector(onNext), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
         addSubview(view)
         return view

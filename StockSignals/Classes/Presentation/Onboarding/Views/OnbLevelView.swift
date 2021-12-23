@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RxSwift
 
 final class OnbLevelView: OSlideView {
     lazy var titleLabel = makeTitleLabel()
@@ -20,12 +19,8 @@ final class OnbLevelView: OSlideView {
     lazy var descrValueLabel = makeDescrLabel()
     lazy var button = makeButton()
     
-    private lazy var disposeBag = DisposeBag()
-    
-    private lazy var contentManager = ContentManagerCore()
-    
-    override init(step: OnboardingView.Step) {
-        super.init(step: step)
+    override init(step: OnboardingView.Step, scope: OnboardingScope) {
+        super.init(step: step, scope: scope)
         
         makeConstraints()
         initialize()
@@ -41,28 +36,14 @@ final class OnbLevelView: OSlideView {
 private extension OnbLevelView {
     func initialize() {
         backgroundColor = UIColor.clear
+    }
+    
+    @objc
+    func tapped() {
+        let level = Int(self.slider.value) - 1
+        scope.level = level
         
-        button.rx.tap
-            .flatMapLatest { [weak self] _ -> Single<Bool> in
-                guard let self = self else {
-                    return .never()
-                }
-                
-                let level = Int(self.slider.value) - 1
-                
-                return self.contentManager.set(level: level)
-                    .map { true }
-                    .catchAndReturn(false)
-            }
-            .subscribe(onNext: { [weak self] success in
-                guard success else {
-                    Toast.notify(with: "Error".localized, style: .danger)
-                    return
-                }
-                
-                self?.onNext()
-            })
-            .disposed(by: disposeBag)
+        onNext()
     }
     
     @objc
@@ -273,6 +254,7 @@ private extension OnbLevelView {
         view.layer.cornerRadius = 16.scale
         view.setAttributedTitle("Onboarding.Next".localized.attributed(with: attrs), for: .normal)
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.addTarget(self, action: #selector(tapped), for: .touchUpInside)
         addSubview(view)
         return view
     }
