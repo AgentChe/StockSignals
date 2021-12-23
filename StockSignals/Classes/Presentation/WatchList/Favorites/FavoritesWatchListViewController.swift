@@ -42,6 +42,7 @@ final class FavoritesWatchListViewController: UIViewController {
         mainView.titlesView.scrollDelegate = self
         mainView.titlesView.mainDelegate = self
         mainView.tableView.scrollDelegate = self
+        mainView.tableView.mainDelegate = self
     }
 }
 
@@ -67,5 +68,13 @@ extension FavoritesWatchListViewController: WatchListSignalsScrollDelegate {
 extension FavoritesWatchListViewController: WatchListSignalsTitlesViewDelegate {
     func watchListDidSelect(sort: WatchListSignalsSortElement) {
         viewModel.sort.accept(sort)
+    }
+}
+
+// MARK: WatchListSignalsTableViewDelegate
+extension FavoritesWatchListViewController: WatchListSignalsTableViewDelegate {
+    func watchListSignalsDidSelect(quotation: Quotation) {
+        let vc = DetailsViewController.make(symbol: quotation.symbol)
+        present(vc, animated: true)
     }
 }
