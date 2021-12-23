@@ -26,6 +26,8 @@ final class ScreenersResultViewController: UIViewController {
     
     private lazy var viewModel = ScreenersResultViewModel()
     
+    private lazy var saveButton = UIBarButtonItem()
+    
     private let mode: Mode
     private let items: [Filter.Item]
     
@@ -49,6 +51,7 @@ final class ScreenersResultViewController: UIViewController {
         
         viewModel.elements.drive(onNext: { [weak self] elements in
             self?.mainView.tableView.setup(elements: elements)
+            self?.handle(canSave: !elements.isEmpty)
         })
         .disposed(by: disposeBag)
         
@@ -70,6 +73,7 @@ final class ScreenersResultViewController: UIViewController {
         mainView.tableView.scrollDelegate = self
         
         addSaveItem()
+        handle(canSave: false)
     }
 }
 
@@ -105,18 +109,21 @@ private extension ScreenersResultViewController {
             .font(Fonts.SFProDisplay.regular(size: 17.scale))
             .dictionary
         
-        let item = UIBarButtonItem()
-        item.setTitleTextAttributes(attrs, for: .normal)
-        item.title = "CreateScreener.Save".localized
-        navigationItem.rightBarButtonItem = item
+        saveButton.setTitleTextAttributes(attrs, for: .normal)
+        saveButton.title = "CreateScreener.Save".localized
+        navigationItem.rightBarButtonItem = saveButton
         
-        item.rx.tap.subscribe(onNext: { [weak self] in
+        saveButton.rx.tap.subscribe(onNext: { [weak self] in
             let vc = ScreenerNameViewController.make(name: self?.nameIfHas()) { name in
                 self?.createScreener(name: name)
             }
             self?.present(vc, animated: true)
         })
         .disposed(by: disposeBag)
+    }
+    
+    func handle(canSave: Bool) {
+        saveButton.isEnabled = canSave
     }
     
     func createScreener(name: String) {
