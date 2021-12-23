@@ -53,7 +53,7 @@ private extension AllSignalsViewModel {
 
             signals.enumerated().forEach { index, signal in
                 let element = AllSignalsTableSSignal(signal: signal,
-                                                     isLocked: needPayment ? (index > limit) : false)
+                                                     isLocked: needPayment ? (index + 1 > limit) : false)
                 result.append(.stock(element))
 
                 if (signals.count - 1) != index {
@@ -80,7 +80,7 @@ private extension AllSignalsViewModel {
             
             signals.enumerated().forEach { index, signal in
                 let element = AllSignalsTableOCSignal(signal: signal,
-                                                      isLocked: needPayment ? (index > limit) : false)
+                                                      isLocked: needPayment ? (index + 1 > limit) : false)
                 result.append(.optionCrypto(element))
 
                 if (signals.count - 1) != index {
