@@ -1113,19 +1113,11 @@
 		9642EB732757BF980046D034 /* QuotationsScreeners */ = {
 			isa = PBXGroup;
 			children = (
-				9642EB7A2757CA320046D034 /* Views */,
 				9642EB742757BFA70046D034 /* QuotationsScreenersViewController.swift */,
 				9642EB762757BFB40046D034 /* QuotationsScreenersViewModel.swift */,
 				9642EB782757BFC20046D034 /* QuotationsScreenersView.swift */,
 			);
 			path = QuotationsScreeners;
-			sourceTree = "<group>";
-		};
-		9642EB7A2757CA320046D034 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		9642EB802758D1B40046D034 /* Screeners */ = {

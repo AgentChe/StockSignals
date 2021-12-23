@@ -51,6 +51,7 @@ final class QuotationsScreenersViewController: UIViewController {
         mainView.titlesView.scrollDelegate = self
         mainView.titlesView.mainDelegate = self
         mainView.tableView.scrollDelegate = self
+        mainView.tableView.mainDelegate = self
     }
 }
 
@@ -76,5 +77,13 @@ extension QuotationsScreenersViewController: WatchListSignalsScrollDelegate {
 extension QuotationsScreenersViewController: WatchListSignalsTitlesViewDelegate {
     func watchListDidSelect(sort: WatchListSignalsSortElement) {
         viewModel.sort.accept(sort)
+    }
+}
+
+// MARK: WatchListSignalsTableViewDelegate
+extension QuotationsScreenersViewController: WatchListSignalsTableViewDelegate {
+    func watchListSignalsDidSelect(quotation: Quotation) {
+        let vc = DetailsViewController.make(symbol: quotation.symbol)
+        present(vc, animated: true)
     }
 }

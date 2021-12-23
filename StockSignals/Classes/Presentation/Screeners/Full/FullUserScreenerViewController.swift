@@ -49,6 +49,7 @@ final class FullUserScreenerViewController: UIViewController {
         mainView.titlesView.scrollDelegate = self
         mainView.titlesView.mainDelegate = self
         mainView.tableView.scrollDelegate = self
+        mainView.tableView.mainDelegate = self
         
         addMenuItem()
     }
@@ -100,6 +101,14 @@ extension FullUserScreenerViewController: FullUserScreenerMenuViewControllerDele
     
     func menuControllerDidSelectDelete() {
         viewModel.delete.accept(userScreener.filterScreener.id)
+    }
+}
+
+// MARK: WatchListSignalsTableViewDelegate
+extension FullUserScreenerViewController: WatchListSignalsTableViewDelegate {
+    func watchListSignalsDidSelect(quotation: Quotation) {
+        let vc = DetailsViewController.make(symbol: quotation.symbol)
+        present(vc, animated: true)
     }
 }
 

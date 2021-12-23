@@ -71,6 +71,7 @@ final class ScreenersResultViewController: UIViewController {
         mainView.titlesView.scrollDelegate = self
         mainView.titlesView.mainDelegate = self
         mainView.tableView.scrollDelegate = self
+        mainView.tableView.mainDelegate = self
         
         addSaveItem()
         handle(canSave: false)
@@ -98,6 +99,14 @@ extension ScreenersResultViewController: WatchListSignalsScrollDelegate {
 extension ScreenersResultViewController: WatchListSignalsTitlesViewDelegate {
     func watchListDidSelect(sort: WatchListSignalsSortElement) {
         viewModel.sort.accept(sort)
+    }
+}
+
+// MARK: WatchListSignalsTableViewDelegate
+extension ScreenersResultViewController: WatchListSignalsTableViewDelegate {
+    func watchListSignalsDidSelect(quotation: Quotation) {
+        let vc = DetailsViewController.make(symbol: quotation.symbol)
+        present(vc, animated: true)
     }
 }
 
